@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="phukienipadxModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="phukienipadxModelStoreContainer">
+          <EntitySet Name="admin" EntityType="phukienipadxModel.Store.admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="categories" EntityType="phukienipadxModel.Store.categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="categories_description" EntityType="phukienipadxModel.Store.categories_description" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ezpages" EntityType="phukienipadxModel.Store.ezpages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="manufacturers" EntityType="phukienipadxModel.Store.manufacturers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="manufacturers_info" EntityType="phukienipadxModel.Store.manufacturers_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders" EntityType="phukienipadxModel.Store.orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders_products" EntityType="phukienipadxModel.Store.orders_products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders_status" EntityType="phukienipadxModel.Store.orders_status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders_status_history" EntityType="phukienipadxModel.Store.orders_status_history" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="product_types" EntityType="phukienipadxModel.Store.product_types" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products" EntityType="phukienipadxModel.Store.products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_description" EntityType="phukienipadxModel.Store.products_description" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products_to_categories" EntityType="phukienipadxModel.Store.products_to_categories" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="admin_name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="admin_email" Type="nvarchar" Nullable="false" MaxLength="96" />
+          <Property Name="admin_pass" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="admin_level" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categories">
+          <Key>
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Name="categories_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="categories_image" Type="nvarchar" MaxLength="64" />
+          <Property Name="parent_id" Type="int" Nullable="false" />
+          <Property Name="sort_order" Type="int" />
+          <Property Name="date_added" Type="datetime2" Precision="0" />
+          <Property Name="last_modified" Type="datetime2" Precision="0" />
+          <Property Name="categories_status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categories_description">
+          <Key>
+            <PropertyRef Name="categories_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="categories_id" Type="int" Nullable="false" />
+          <Property Name="language_id" Type="int" Nullable="false" />
+          <Property Name="categories_name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="categories_description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ezpages">
+          <Key>
+            <PropertyRef Name="pages_id" />
+          </Key>
+          <Property Name="pages_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="languages_id" Type="int" Nullable="false" />
+          <Property Name="pages_title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="alt_url" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="alt_url_external" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="pages_html_text" Type="nvarchar(max)" />
+          <Property Name="status_header" Type="int" Nullable="false" />
+          <Property Name="status_sidebox" Type="int" Nullable="false" />
+          <Property Name="status_footer" Type="int" Nullable="false" />
+          <Property Name="status_toc" Type="int" Nullable="false" />
+          <Property Name="header_sort_order" Type="int" Nullable="false" />
+          <Property Name="sidebox_sort_order" Type="int" Nullable="false" />
+          <Property Name="footer_sort_order" Type="int" Nullable="false" />
+          <Property Name="toc_sort_order" Type="int" Nullable="false" />
+          <Property Name="page_open_new_window" Type="int" Nullable="false" />
+          <Property Name="page_is_ssl" Type="int" Nullable="false" />
+          <Property Name="toc_chapter" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="manufacturers">
+          <Key>
+            <PropertyRef Name="manufacturers_id" />
+          </Key>
+          <Property Name="manufacturers_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="manufacturers_name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="manufacturers_image" Type="nvarchar" MaxLength="64" />
+          <Property Name="date_added" Type="datetime2" Precision="0" />
+          <Property Name="last_modified" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="manufacturers_info">
+          <Key>
+            <PropertyRef Name="manufacturers_id" />
+            <PropertyRef Name="languages_id" />
+          </Key>
+          <Property Name="manufacturers_id" Type="int" Nullable="false" />
+          <Property Name="languages_id" Type="int" Nullable="false" />
+          <Property Name="manufacturers_url" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="url_clicked" Type="int" Nullable="false" />
+          <Property Name="date_last_click" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="orders_id" />
+          </Key>
+          <Property Name="orders_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customers_id" Type="int" Nullable="false" />
+          <Property Name="customers_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="customers_company" Type="nvarchar" MaxLength="64" />
+          <Property Name="customers_street_address" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="customers_suburb" Type="nvarchar" MaxLength="32" />
+          <Property Name="customers_city" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="customers_postcode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="customers_state" Type="nvarchar" MaxLength="32" />
+          <Property Name="customers_country" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="customers_telephone" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="customers_email_address" Type="nvarchar" Nullable="false" MaxLength="96" />
+          <Property Name="customers_address_format_id" Type="int" Nullable="false" />
+          <Property Name="delivery_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="delivery_company" Type="nvarchar" MaxLength="64" />
+          <Property Name="delivery_street_address" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="delivery_suburb" Type="nvarchar" MaxLength="32" />
+          <Property Name="delivery_city" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="delivery_postcode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="delivery_state" Type="nvarchar" MaxLength="32" />
+          <Property Name="delivery_country" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="delivery_address_format_id" Type="int" Nullable="false" />
+          <Property Name="billing_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="billing_company" Type="nvarchar" MaxLength="64" />
+          <Property Name="billing_street_address" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="billing_suburb" Type="nvarchar" MaxLength="32" />
+          <Property Name="billing_city" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="billing_postcode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="billing_state" Type="nvarchar" MaxLength="32" />
+          <Property Name="billing_country" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="billing_address_format_id" Type="int" Nullable="false" />
+          <Property Name="payment_method" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="payment_module_code" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="shipping_method" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="shipping_module_code" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="coupon_code" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="cc_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="cc_owner" Type="nvarchar" MaxLength="64" />
+          <Property Name="cc_number" Type="nvarchar" MaxLength="32" />
+          <Property Name="cc_expires" Type="nvarchar" MaxLength="4" />
+          <Property Name="cc_cvv" Type="varbinary(max)" />
+          <Property Name="last_modified" Type="datetime2" Precision="0" />
+          <Property Name="date_purchased" Type="datetime2" Precision="0" />
+          <Property Name="orders_status" Type="int" Nullable="false" />
+          <Property Name="orders_date_finished" Type="datetime2" Precision="0" />
+          <Property Name="currency" Type="nchar" MaxLength="3" />
+          <Property Name="currency_value" Type="decimal" Precision="14" Scale="6" />
+          <Property Name="order_total" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="order_tax" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="paypal_ipn_id" Type="int" Nullable="false" />
+          <Property Name="ip_address" Type="nvarchar" Nullable="false" MaxLength="96" />
+        </EntityType>
+        <EntityType Name="orders_products">
+          <Key>
+            <PropertyRef Name="orders_products_id" />
+          </Key>
+          <Property Name="orders_products_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orders_id" Type="int" Nullable="false" />
+          <Property Name="products_id" Type="int" Nullable="false" />
+          <Property Name="products_model" Type="nvarchar" MaxLength="32" />
+          <Property Name="products_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="products_price" Type="decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="final_price" Type="decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="products_tax" Type="decimal" Nullable="false" Precision="7" Scale="4" />
+          <Property Name="products_quantity" Type="real" Nullable="false" />
+          <Property Name="onetime_charges" Type="decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="products_priced_by_attribute" Type="smallint" Nullable="false" />
+          <Property Name="product_is_free" Type="smallint" Nullable="false" />
+          <Property Name="products_discount_type" Type="smallint" Nullable="false" />
+          <Property Name="products_discount_type_from" Type="smallint" Nullable="false" />
+          <Property Name="products_prid" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="orders_status">
+          <Key>
+            <PropertyRef Name="orders_status_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="orders_status_id" Type="int" Nullable="false" />
+          <Property Name="language_id" Type="int" Nullable="false" />
+          <Property Name="orders_status_name" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="orders_status_history">
+          <Key>
+            <PropertyRef Name="orders_status_history_id" />
+          </Key>
+          <Property Name="orders_status_history_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orders_id" Type="int" Nullable="false" />
+          <Property Name="orders_status_id" Type="int" Nullable="false" />
+          <Property Name="date_added" Type="datetime2" Nullable="false" Precision="0" />
+          <Property Name="customer_notified" Type="int" />
+          <Property Name="comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="product_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="type_name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="type_handler" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="type_master_type" Type="int" Nullable="false" />
+          <Property Name="allow_add_to_cart" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="default_image" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="date_added" Type="datetime2" Nullable="false" Precision="0" />
+          <Property Name="last_modified" Type="datetime2" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="products_id" />
+          </Key>
+          <Property Name="products_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="products_type" Type="int" Nullable="false" />
+          <Property Name="products_quantity" Type="real" Nullable="false" />
+          <Property Name="products_model" Type="nvarchar" MaxLength="32" />
+          <Property Name="products_image" Type="nvarchar" MaxLength="64" />
+          <Property Name="products_price" Type="decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="products_virtual" Type="smallint" Nullable="false" />
+          <Property Name="products_date_added" Type="datetime2" Nullable="false" Precision="0" />
+          <Property Name="products_last_modified" Type="datetime2" Precision="0" />
+          <Property Name="products_date_available" Type="datetime2" Precision="0" />
+          <Property Name="products_weight" Type="real" Nullable="false" />
+          <Property Name="products_status" Type="smallint" Nullable="false" />
+          <Property Name="products_tax_class_id" Type="int" Nullable="false" />
+          <Property Name="manufacturers_id" Type="int" />
+          <Property Name="products_ordered" Type="real" Nullable="false" />
+          <Property Name="products_quantity_order_min" Type="real" Nullable="false" />
+          <Property Name="products_quantity_order_units" Type="real" Nullable="false" />
+          <Property Name="products_priced_by_attribute" Type="smallint" Nullable="false" />
+          <Property Name="product_is_free" Type="smallint" Nullable="false" />
+          <Property Name="product_is_call" Type="smallint" Nullable="false" />
+          <Property Name="products_quantity_mixed" Type="smallint" Nullable="false" />
+          <Property Name="product_is_always_free_shipping" Type="smallint" Nullable="false" />
+          <Property Name="products_qty_box_status" Type="smallint" Nullable="false" />
+          <Property Name="products_quantity_order_max" Type="real" Nullable="false" />
+          <Property Name="products_sort_order" Type="int" Nullable="false" />
+          <Property Name="products_discount_type" Type="smallint" Nullable="false" />
+          <Property Name="products_discount_type_from" Type="smallint" Nullable="false" />
+          <Property Name="products_price_sorter" Type="decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="master_categories_id" Type="int" Nullable="false" />
+          <Property Name="products_mixed_discount_quantity" Type="smallint" Nullable="false" />
+          <Property Name="metatags_title_status" Type="smallint" Nullable="false" />
+          <Property Name="metatags_products_name_status" Type="smallint" Nullable="false" />
+          <Property Name="metatags_model_status" Type="smallint" Nullable="false" />
+          <Property Name="metatags_price_status" Type="smallint" Nullable="false" />
+          <Property Name="metatags_title_tagline_status" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="products_description">
+          <Key>
+            <PropertyRef Name="products_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="products_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="language_id" Type="int" Nullable="false" />
+          <Property Name="products_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="products_images" Type="nvarchar(max)" />
+          <Property Name="products_description" Type="nvarchar(max)" />
+          <Property Name="products_url" Type="nvarchar" MaxLength="255" />
+          <Property Name="products_viewed" Type="int" />
+        </EntityType>
+        <EntityType Name="products_to_categories">
+          <Key>
+            <PropertyRef Name="products_id" />
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Name="products_id" Type="int" Nullable="false" />
+          <Property Name="categories_id" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="phukienipadxModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categories" EntityType="phukienipadxModel.categories" />
+          <EntitySet Name="categories_descriptions" EntityType="phukienipadxModel.categories_descriptions" />
+          <EntitySet Name="ezpages" EntityType="phukienipadxModel.ezpages" />
+          <EntitySet Name="manufacturers" EntityType="phukienipadxModel.manufacturer" />
+          <EntitySet Name="manufacturers_info" EntityType="phukienipadxModel.manufacturers_info" />
+          <EntitySet Name="orders" EntityType="phukienipadxModel.orders" />
+          <EntitySet Name="orders_products" EntityType="phukienipadxModel.orders_products" />
+          <EntitySet Name="orders_status" EntityType="phukienipadxModel.orders_status" />
+          <EntitySet Name="orders_status_history" EntityType="phukienipadxModel.orders_status_history" />
+          <EntitySet Name="product_types" EntityType="phukienipadxModel.product_types" />
+          <EntitySet Name="products_descriptions" EntityType="phukienipadxModel.products_descriptions" />
+          <EntitySet Name="admins" EntityType="phukienipadxModel.admin" />
+          <EntitySet Name="products_to_categories" EntityType="phukienipadxModel.products_to_categories" />
+          <EntitySet Name="products" EntityType="phukienipadxModel.products" />
+        </EntityContainer>
+        <EntityType Name="categories">
+          <Key>
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Name="categories_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categories_image" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="parent_id" Type="Int32" Nullable="false" />
+          <Property Name="sort_order" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" />
+          <Property Name="last_modified" Type="DateTime" />
+          <Property Name="categories_status" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categories_descriptions">
+          <Key>
+            <PropertyRef Name="categories_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="categories_id" Type="Int32" Nullable="false" />
+          <Property Name="language_id" Type="Int32" Nullable="false" />
+          <Property Name="categories_name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="categories_description1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ezpages">
+          <Key>
+            <PropertyRef Name="pages_id" />
+          </Key>
+          <Property Name="pages_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="languages_id" Type="Int32" Nullable="false" />
+          <Property Name="pages_title" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="alt_url" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="alt_url_external" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="pages_html_text" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="status_header" Type="Int32" Nullable="false" />
+          <Property Name="status_sidebox" Type="Int32" Nullable="false" />
+          <Property Name="status_footer" Type="Int32" Nullable="false" />
+          <Property Name="status_toc" Type="Int32" Nullable="false" />
+          <Property Name="header_sort_order" Type="Int32" Nullable="false" />
+          <Property Name="sidebox_sort_order" Type="Int32" Nullable="false" />
+          <Property Name="footer_sort_order" Type="Int32" Nullable="false" />
+          <Property Name="toc_sort_order" Type="Int32" Nullable="false" />
+          <Property Name="page_open_new_window" Type="Int32" Nullable="false" />
+          <Property Name="page_is_ssl" Type="Int32" Nullable="false" />
+          <Property Name="toc_chapter" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="manufacturer">
+          <Key>
+            <PropertyRef Name="manufacturers_id" />
+          </Key>
+          <Property Name="manufacturers_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="manufacturers_name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="manufacturers_image" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="date_added" Type="DateTime" />
+          <Property Name="last_modified" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="manufacturers_info">
+          <Key>
+            <PropertyRef Name="manufacturers_id" />
+            <PropertyRef Name="languages_id" />
+          </Key>
+          <Property Name="manufacturers_id" Type="Int32" Nullable="false" />
+          <Property Name="languages_id" Type="Int32" Nullable="false" />
+          <Property Name="manufacturers_url" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="url_clicked" Type="Int32" Nullable="false" />
+          <Property Name="date_last_click" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="orders_id" />
+          </Key>
+          <Property Name="orders_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customers_id" Type="Int32" Nullable="false" />
+          <Property Name="customers_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="customers_company" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="customers_street_address" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="customers_suburb" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="customers_city" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="customers_postcode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="customers_state" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="customers_country" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="customers_telephone" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="customers_email_address" Type="String" Nullable="false" MaxLength="96" Unicode="true" FixedLength="false" />
+          <Property Name="customers_address_format_id" Type="Int32" Nullable="false" />
+          <Property Name="delivery_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_company" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_street_address" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_suburb" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_city" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_postcode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_state" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_country" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="delivery_address_format_id" Type="Int32" Nullable="false" />
+          <Property Name="billing_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="billing_company" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="billing_street_address" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="billing_suburb" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="billing_city" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="billing_postcode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="billing_state" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="billing_country" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="billing_address_format_id" Type="Int32" Nullable="false" />
+          <Property Name="payment_method" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="payment_module_code" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="shipping_method" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="shipping_module_code" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="coupon_code" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="cc_type" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="cc_owner" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="cc_number" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="cc_expires" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="cc_cvv" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="last_modified" Type="DateTime" />
+          <Property Name="date_purchased" Type="DateTime" />
+          <Property Name="orders_status" Type="Int32" Nullable="false" />
+          <Property Name="orders_date_finished" Type="DateTime" />
+          <Property Name="currency" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="currency_value" Type="Decimal" Precision="14" Scale="6" />
+          <Property Name="order_total" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="order_tax" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="paypal_ipn_id" Type="Int32" Nullable="false" />
+          <Property Name="ip_address" Type="String" Nullable="false" MaxLength="96" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="orders_products">
+          <Key>
+            <PropertyRef Name="orders_products_id" />
+          </Key>
+          <Property Name="orders_products_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orders_id" Type="Int32" Nullable="false" />
+          <Property Name="products_id" Type="Int32" Nullable="false" />
+          <Property Name="products_model" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="products_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="products_price" Type="Decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="final_price" Type="Decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="products_tax" Type="Decimal" Nullable="false" Precision="7" Scale="4" />
+          <Property Name="products_quantity" Type="Single" Nullable="false" />
+          <Property Name="onetime_charges" Type="Decimal" Nullable="false" Precision="15" Scale="4" />
+          <Property Name="products_priced_by_attribute" Type="Int16" Nullable="false" />
+          <Property Name="product_is_free" Type="Int16" Nullable="false" />
+          <Property Name="products_discount_type" Type="Int16" Nullable="false" />
+          <Property Name="products_discount_type_from" Type="Int16" Nullable="false" />
+          <Property Name="products_prid" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="orders_status">
+          <Key>
+            <PropertyRef Name="orders_status_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="orders_status_id" Type="Int32" Nullable="false" />
+          <Property Name="language_id" Type="Int32" Nullable="false" />
+          <Property Name="orders_status_name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="orders_status_history">
+          <Key>
+            <PropertyRef Name="orders_status_history_id" />
+          </Key>
+          <Property Name="orders_status_history_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orders_id" Type="Int32" Nullable="false" />
+          <Property Name="orders_status_id" Type="Int32" Nullable="false" />
+          <Property Name="date_added" Type="DateTime" Nullable="false" />
+          <Property Name="customer_notified" Type="Int32" />
+          <Property Name="comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="product_types">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="type_handler" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="type_master_type" Type="Int32" Nullable="false" />
+          <Property Name="allow_add_to_cart" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+          <Property Name="default_image" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="date_added" Type="DateTime" Nullable="false" />
+          <Property Name="last_modified" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="products_descriptions">
+          <Key>
+            <PropertyRef Name="products_id" />
+            <PropertyRef Name="language_id" />
+          </Key>
+          <Property Name="products_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="language_id" Type="Int32" Nullable="false" />
+          <Property Name="products_name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="products_images" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="products_description1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="products_url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="products_viewed" Type="Int32" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Type="Int32" Name="admin_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="admin_name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="admin_email" Nullable="false" MaxLength="96" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="admin_pass" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="admin_level" Nullable="false" />
+        </EntityType>
+        <EntityType Name="products_to_categories">
+          <Key>
+            <PropertyRef Name="products_id" />
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Type="Int32" Name="products_id" Nullable="false" />
+          <Property Type="Int32" Name="categories_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="products_id" />
+          </Key>
+          <Property Type="Int32" Name="products_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="products_type" Nullable="false" />
+          <Property Type="Single" Name="products_quantity" Nullable="false" />
+          <Property Type="String" Name="products_model" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="products_image" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="products_price" Nullable="false" Precision="15" Scale="4" />
+          <Property Type="Int16" Name="products_virtual" Nullable="false" />
+          <Property Type="DateTime" Name="products_date_added" Nullable="false" />
+          <Property Type="DateTime" Name="products_last_modified" />
+          <Property Type="DateTime" Name="products_date_available" />
+          <Property Type="Single" Name="products_weight" Nullable="false" />
+          <Property Type="Int16" Name="products_status" Nullable="false" />
+          <Property Type="Int32" Name="products_tax_class_id" Nullable="false" />
+          <Property Type="Int32" Name="manufacturers_id" />
+          <Property Type="Single" Name="products_ordered" Nullable="false" />
+          <Property Type="Single" Name="products_quantity_order_min" Nullable="false" />
+          <Property Type="Single" Name="products_quantity_order_units" Nullable="false" />
+          <Property Type="Int16" Name="products_priced_by_attribute" Nullable="false" />
+          <Property Type="Int16" Name="product_is_free" Nullable="false" />
+          <Property Type="Int16" Name="product_is_call" Nullable="false" />
+          <Property Type="Int16" Name="products_quantity_mixed" Nullable="false" />
+          <Property Type="Int16" Name="product_is_always_free_shipping" Nullable="false" />
+          <Property Type="Int16" Name="products_qty_box_status" Nullable="false" />
+          <Property Type="Single" Name="products_quantity_order_max" Nullable="false" />
+          <Property Type="Int32" Name="products_sort_order" Nullable="false" />
+          <Property Type="Int16" Name="products_discount_type" Nullable="false" />
+          <Property Type="Int16" Name="products_discount_type_from" Nullable="false" />
+          <Property Type="Decimal" Name="products_price_sorter" Nullable="false" Precision="15" Scale="4" />
+          <Property Type="Int32" Name="master_categories_id" Nullable="false" />
+          <Property Type="Int16" Name="products_mixed_discount_quantity" Nullable="false" />
+          <Property Type="Int16" Name="metatags_title_status" Nullable="false" />
+          <Property Type="Int16" Name="metatags_products_name_status" Nullable="false" />
+          <Property Type="Int16" Name="metatags_model_status" Nullable="false" />
+          <Property Type="Int16" Name="metatags_price_status" Nullable="false" />
+          <Property Type="Int16" Name="metatags_title_tagline_status" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="phukienipadxModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="phukienipadxModel.categories">
+              <MappingFragment StoreEntitySet="categories">
+                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
+                <ScalarProperty Name="categories_image" ColumnName="categories_image" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+                <ScalarProperty Name="categories_status" ColumnName="categories_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories_descriptions">
+            <EntityTypeMapping TypeName="phukienipadxModel.categories_descriptions">
+              <MappingFragment StoreEntitySet="categories_description">
+                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
+                <ScalarProperty Name="language_id" ColumnName="language_id" />
+                <ScalarProperty Name="categories_name" ColumnName="categories_name" />
+                <ScalarProperty Name="categories_description1" ColumnName="categories_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ezpages">
+            <EntityTypeMapping TypeName="phukienipadxModel.ezpages">
+              <MappingFragment StoreEntitySet="ezpages">
+                <ScalarProperty Name="pages_id" ColumnName="pages_id" />
+                <ScalarProperty Name="languages_id" ColumnName="languages_id" />
+                <ScalarProperty Name="pages_title" ColumnName="pages_title" />
+                <ScalarProperty Name="alt_url" ColumnName="alt_url" />
+                <ScalarProperty Name="alt_url_external" ColumnName="alt_url_external" />
+                <ScalarProperty Name="pages_html_text" ColumnName="pages_html_text" />
+                <ScalarProperty Name="status_header" ColumnName="status_header" />
+                <ScalarProperty Name="status_sidebox" ColumnName="status_sidebox" />
+                <ScalarProperty Name="status_footer" ColumnName="status_footer" />
+                <ScalarProperty Name="status_toc" ColumnName="status_toc" />
+                <ScalarProperty Name="header_sort_order" ColumnName="header_sort_order" />
+                <ScalarProperty Name="sidebox_sort_order" ColumnName="sidebox_sort_order" />
+                <ScalarProperty Name="footer_sort_order" ColumnName="footer_sort_order" />
+                <ScalarProperty Name="toc_sort_order" ColumnName="toc_sort_order" />
+                <ScalarProperty Name="page_open_new_window" ColumnName="page_open_new_window" />
+                <ScalarProperty Name="page_is_ssl" ColumnName="page_is_ssl" />
+                <ScalarProperty Name="toc_chapter" ColumnName="toc_chapter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manufacturers">
+            <EntityTypeMapping TypeName="phukienipadxModel.manufacturer">
+              <MappingFragment StoreEntitySet="manufacturers">
+                <ScalarProperty Name="manufacturers_id" ColumnName="manufacturers_id" />
+                <ScalarProperty Name="manufacturers_name" ColumnName="manufacturers_name" />
+                <ScalarProperty Name="manufacturers_image" ColumnName="manufacturers_image" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manufacturers_info">
+            <EntityTypeMapping TypeName="phukienipadxModel.manufacturers_info">
+              <MappingFragment StoreEntitySet="manufacturers_info">
+                <ScalarProperty Name="manufacturers_id" ColumnName="manufacturers_id" />
+                <ScalarProperty Name="languages_id" ColumnName="languages_id" />
+                <ScalarProperty Name="manufacturers_url" ColumnName="manufacturers_url" />
+                <ScalarProperty Name="url_clicked" ColumnName="url_clicked" />
+                <ScalarProperty Name="date_last_click" ColumnName="date_last_click" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="phukienipadxModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="orders_id" ColumnName="orders_id" />
+                <ScalarProperty Name="customers_id" ColumnName="customers_id" />
+                <ScalarProperty Name="customers_name" ColumnName="customers_name" />
+                <ScalarProperty Name="customers_company" ColumnName="customers_company" />
+                <ScalarProperty Name="customers_street_address" ColumnName="customers_street_address" />
+                <ScalarProperty Name="customers_suburb" ColumnName="customers_suburb" />
+                <ScalarProperty Name="customers_city" ColumnName="customers_city" />
+                <ScalarProperty Name="customers_postcode" ColumnName="customers_postcode" />
+                <ScalarProperty Name="customers_state" ColumnName="customers_state" />
+                <ScalarProperty Name="customers_country" ColumnName="customers_country" />
+                <ScalarProperty Name="customers_telephone" ColumnName="customers_telephone" />
+                <ScalarProperty Name="customers_email_address" ColumnName="customers_email_address" />
+                <ScalarProperty Name="customers_address_format_id" ColumnName="customers_address_format_id" />
+                <ScalarProperty Name="delivery_name" ColumnName="delivery_name" />
+                <ScalarProperty Name="delivery_company" ColumnName="delivery_company" />
+                <ScalarProperty Name="delivery_street_address" ColumnName="delivery_street_address" />
+                <ScalarProperty Name="delivery_suburb" ColumnName="delivery_suburb" />
+                <ScalarProperty Name="delivery_city" ColumnName="delivery_city" />
+                <ScalarProperty Name="delivery_postcode" ColumnName="delivery_postcode" />
+                <ScalarProperty Name="delivery_state" ColumnName="delivery_state" />
+                <ScalarProperty Name="delivery_country" ColumnName="delivery_country" />
+                <ScalarProperty Name="delivery_address_format_id" ColumnName="delivery_address_format_id" />
+                <ScalarProperty Name="billing_name" ColumnName="billing_name" />
+                <ScalarProperty Name="billing_company" ColumnName="billing_company" />
+                <ScalarProperty Name="billing_street_address" ColumnName="billing_street_address" />
+                <ScalarProperty Name="billing_suburb" ColumnName="billing_suburb" />
+                <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+                <ScalarProperty Name="billing_postcode" ColumnName="billing_postcode" />
+                <ScalarProperty Name="billing_state" ColumnName="billing_state" />
+                <ScalarProperty Name="billing_country" ColumnName="billing_country" />
+                <ScalarProperty Name="billing_address_format_id" ColumnName="billing_address_format_id" />
+                <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+                <ScalarProperty Name="payment_module_code" ColumnName="payment_module_code" />
+                <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
+                <ScalarProperty Name="shipping_module_code" ColumnName="shipping_module_code" />
+                <ScalarProperty Name="coupon_code" ColumnName="coupon_code" />
+                <ScalarProperty Name="cc_type" ColumnName="cc_type" />
+                <ScalarProperty Name="cc_owner" ColumnName="cc_owner" />
+                <ScalarProperty Name="cc_number" ColumnName="cc_number" />
+                <ScalarProperty Name="cc_expires" ColumnName="cc_expires" />
+                <ScalarProperty Name="cc_cvv" ColumnName="cc_cvv" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+                <ScalarProperty Name="date_purchased" ColumnName="date_purchased" />
+                <ScalarProperty Name="orders_status" ColumnName="orders_status" />
+                <ScalarProperty Name="orders_date_finished" ColumnName="orders_date_finished" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="currency_value" ColumnName="currency_value" />
+                <ScalarProperty Name="order_total" ColumnName="order_total" />
+                <ScalarProperty Name="order_tax" ColumnName="order_tax" />
+                <ScalarProperty Name="paypal_ipn_id" ColumnName="paypal_ipn_id" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders_products">
+            <EntityTypeMapping TypeName="phukienipadxModel.orders_products">
+              <MappingFragment StoreEntitySet="orders_products">
+                <ScalarProperty Name="orders_products_id" ColumnName="orders_products_id" />
+                <ScalarProperty Name="orders_id" ColumnName="orders_id" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="products_model" ColumnName="products_model" />
+                <ScalarProperty Name="products_name" ColumnName="products_name" />
+                <ScalarProperty Name="products_price" ColumnName="products_price" />
+                <ScalarProperty Name="final_price" ColumnName="final_price" />
+                <ScalarProperty Name="products_tax" ColumnName="products_tax" />
+                <ScalarProperty Name="products_quantity" ColumnName="products_quantity" />
+                <ScalarProperty Name="onetime_charges" ColumnName="onetime_charges" />
+                <ScalarProperty Name="products_priced_by_attribute" ColumnName="products_priced_by_attribute" />
+                <ScalarProperty Name="product_is_free" ColumnName="product_is_free" />
+                <ScalarProperty Name="products_discount_type" ColumnName="products_discount_type" />
+                <ScalarProperty Name="products_discount_type_from" ColumnName="products_discount_type_from" />
+                <ScalarProperty Name="products_prid" ColumnName="products_prid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders_status">
+            <EntityTypeMapping TypeName="phukienipadxModel.orders_status">
+              <MappingFragment StoreEntitySet="orders_status">
+                <ScalarProperty Name="orders_status_id" ColumnName="orders_status_id" />
+                <ScalarProperty Name="language_id" ColumnName="language_id" />
+                <ScalarProperty Name="orders_status_name" ColumnName="orders_status_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders_status_history">
+            <EntityTypeMapping TypeName="phukienipadxModel.orders_status_history">
+              <MappingFragment StoreEntitySet="orders_status_history">
+                <ScalarProperty Name="orders_status_history_id" ColumnName="orders_status_history_id" />
+                <ScalarProperty Name="orders_id" ColumnName="orders_id" />
+                <ScalarProperty Name="orders_status_id" ColumnName="orders_status_id" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="customer_notified" ColumnName="customer_notified" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_types">
+            <EntityTypeMapping TypeName="phukienipadxModel.product_types">
+              <MappingFragment StoreEntitySet="product_types">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="type_name" ColumnName="type_name" />
+                <ScalarProperty Name="type_handler" ColumnName="type_handler" />
+                <ScalarProperty Name="type_master_type" ColumnName="type_master_type" />
+                <ScalarProperty Name="allow_add_to_cart" ColumnName="allow_add_to_cart" />
+                <ScalarProperty Name="default_image" ColumnName="default_image" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_descriptions">
+            <EntityTypeMapping TypeName="phukienipadxModel.products_descriptions">
+              <MappingFragment StoreEntitySet="products_description">
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+                <ScalarProperty Name="language_id" ColumnName="language_id" />
+                <ScalarProperty Name="products_name" ColumnName="products_name" />
+                <ScalarProperty Name="products_images" ColumnName="products_images" />
+                <ScalarProperty Name="products_description1" ColumnName="products_description" />
+                <ScalarProperty Name="products_url" ColumnName="products_url" />
+                <ScalarProperty Name="products_viewed" ColumnName="products_viewed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="phukienipadxModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="admin_level" ColumnName="admin_level" />
+                <ScalarProperty Name="admin_pass" ColumnName="admin_pass" />
+                <ScalarProperty Name="admin_email" ColumnName="admin_email" />
+                <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products_to_categories">
+            <EntityTypeMapping TypeName="phukienipadxModel.products_to_categories">
+              <MappingFragment StoreEntitySet="products_to_categories">
+                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="phukienipadxModel.products">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="metatags_title_tagline_status" ColumnName="metatags_title_tagline_status" />
+                <ScalarProperty Name="metatags_price_status" ColumnName="metatags_price_status" />
+                <ScalarProperty Name="metatags_model_status" ColumnName="metatags_model_status" />
+                <ScalarProperty Name="metatags_products_name_status" ColumnName="metatags_products_name_status" />
+                <ScalarProperty Name="metatags_title_status" ColumnName="metatags_title_status" />
+                <ScalarProperty Name="products_mixed_discount_quantity" ColumnName="products_mixed_discount_quantity" />
+                <ScalarProperty Name="master_categories_id" ColumnName="master_categories_id" />
+                <ScalarProperty Name="products_price_sorter" ColumnName="products_price_sorter" />
+                <ScalarProperty Name="products_discount_type_from" ColumnName="products_discount_type_from" />
+                <ScalarProperty Name="products_discount_type" ColumnName="products_discount_type" />
+                <ScalarProperty Name="products_sort_order" ColumnName="products_sort_order" />
+                <ScalarProperty Name="products_quantity_order_max" ColumnName="products_quantity_order_max" />
+                <ScalarProperty Name="products_qty_box_status" ColumnName="products_qty_box_status" />
+                <ScalarProperty Name="product_is_always_free_shipping" ColumnName="product_is_always_free_shipping" />
+                <ScalarProperty Name="products_quantity_mixed" ColumnName="products_quantity_mixed" />
+                <ScalarProperty Name="product_is_call" ColumnName="product_is_call" />
+                <ScalarProperty Name="product_is_free" ColumnName="product_is_free" />
+                <ScalarProperty Name="products_priced_by_attribute" ColumnName="products_priced_by_attribute" />
+                <ScalarProperty Name="products_quantity_order_units" ColumnName="products_quantity_order_units" />
+                <ScalarProperty Name="products_quantity_order_min" ColumnName="products_quantity_order_min" />
+                <ScalarProperty Name="products_ordered" ColumnName="products_ordered" />
+                <ScalarProperty Name="manufacturers_id" ColumnName="manufacturers_id" />
+                <ScalarProperty Name="products_tax_class_id" ColumnName="products_tax_class_id" />
+                <ScalarProperty Name="products_status" ColumnName="products_status" />
+                <ScalarProperty Name="products_weight" ColumnName="products_weight" />
+                <ScalarProperty Name="products_date_available" ColumnName="products_date_available" />
+                <ScalarProperty Name="products_last_modified" ColumnName="products_last_modified" />
+                <ScalarProperty Name="products_date_added" ColumnName="products_date_added" />
+                <ScalarProperty Name="products_virtual" ColumnName="products_virtual" />
+                <ScalarProperty Name="products_price" ColumnName="products_price" />
+                <ScalarProperty Name="products_image" ColumnName="products_image" />
+                <ScalarProperty Name="products_model" ColumnName="products_model" />
+                <ScalarProperty Name="products_quantity" ColumnName="products_quantity" />
+                <ScalarProperty Name="products_type" ColumnName="products_type" />
+                <ScalarProperty Name="products_id" ColumnName="products_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NiceStore">
+        <EntityTypeShape EntityType="phukienipadxModel.categories" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.categories_descriptions" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.ezpages" Width="1.5" PointX="2.75" PointY="3.75" Height="4.2879036458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.manufacturer" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.manufacturers_info" Width="1.5" PointX="4.75" PointY="3.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.orders" Width="1.5" PointX="6.75" PointY="0.75" Height="10.826152343750003" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.orders_products" Width="1.5" PointX="8.75" PointY="0.75" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.orders_status" Width="1.5" PointX="8.75" PointY="5.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.orders_status_history" Width="1.5" PointX="8.75" PointY="8.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.product_types" Width="1.5" PointX="2.75" PointY="9.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.products_descriptions" Width="1.5" PointX="10.75" PointY="9.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="phukienipadxModel.admin" Width="1.5" PointX="5.375" PointY="12.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="phukienipadxModel.products_to_categories" Width="2.5" PointX="7.375" PointY="12.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="phukienipadxModel.products" Width="1.5" PointX="11.375" PointY="0.75" Height="7.7493294270833388" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿{#template MAIN}
+<table id="grid" cellpadding="6" cellspacing="0" class="grid" border="0">
+    <thead>
+        <tr>
+            <th>
+                Chủ đề
+            </th>
+            <th>
+                Nhóm tin
+            </th>
+            <th class="crud">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {#foreach $T.List as item}
+        <tr class="{#cycle values=['','evenRow']}">
+            {#include ROW root=$T.item}
+            <td>
+                <a href="http://phukienipadx.com/Pages/TopicPage.aspx?ID={$T.item.PagesID}" class="btnEdit">View</a>&nbsp;|&nbsp;
+                <a href="/Admin/Pages/TopicEntry.aspx?ID={$T.item.PagesID}" class="btnEdit">Edit</a>&nbsp;|&nbsp;<a
+                    href="javascript:void(0)" id="{$T.item.PagesID}" class="btnDelete">Xóa</a>
+            </td>
+        </tr>
+        {#/for}
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+{#/template MAIN} {#template ROW}
+<td align="center">
+    {$T.PagesTitle}
+</td>
+<td>
+    {$T.PageType}
+</td>
+{#/template ROW}

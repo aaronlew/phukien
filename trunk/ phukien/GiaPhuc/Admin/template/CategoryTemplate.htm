@@ -1,0 +1,30 @@
+﻿{#template MAIN}
+<table id="grid" cellpadding="6" cellspacing="0" class="grid" border="0">
+    <thead>
+        <tr>
+            <th>
+                Nhóm phụ kiện
+            </th>
+            <th class="crud">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {#foreach $T.List as item}
+        <tr class="{#cycle values=['','evenRow']}">
+            {#include ROW root=$T.item}
+            <td>
+                <a href="/Admin/Pages/CategoryEntry.aspx?ID={$T.item.CategoryID}" class="btnEdit">Edit</a>&nbsp;|&nbsp;<a
+                    href="javascript:void(0)" id="{$T.item.CategoryID}" class="btnDelete">Xóa</a>
+            </td>
+        </tr>
+        {#/for}
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+{#/template MAIN} {#template ROW}
+<td align="center">
+    {$T.CategoryName}
+</td>
+{#/template ROW}

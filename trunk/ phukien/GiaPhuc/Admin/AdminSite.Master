@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite.master.cs"
+    Inherits="GiaPhuc.Admin.AdminSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Portal Administration</title>
+    <link href="/static/css/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/ExpressMenu.css" rel="stylesheet" type="text/css" />
+    <link href="/third-party/jtable/themes/lightcolor/green/jtable.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/third-party/jtable/themes-ext/highlight.css" rel="stylesheet" type="text/css" />
+    <link href="/third-party/jtable/themes-ext/themes/metroblue/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+
+    <script src="/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.10.0.min.js" type="text/javascript"></script>
+    <script src="/third-party/jtable/jquery.jtable.min.js" type="text/javascript"></script>
+    <script src="/third-party/jtable/extensions/jquery.jtable.aspnetpagemethods.min.js"
+        type="text/javascript"></script>
+    <script src="/Scripts/knockout-2.2.1.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".menu li").hover(function () {
+                var ulTag = $(this).children("ul:first");
+                if (ulTag.offset() != null) {
+                    var marginLeft = -ulTag.children("li").outerWidth() / 2;
+                    ulTag.children("li:first").css("margin-left", marginLeft);
+                }
+            }, function () {
+            });
+
+            $(".children").hover(function () {
+                $(this).closest("li").children("a:first").addClass("hover");
+            }, function () {
+                $(this).closest("li").children("a:first").removeClass("hover");
+            });
+
+            // hide #back-top first
+            $(".back-top").hide();
+
+            // fade in #back-top
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 0) {
+                        $('.back-top').fadeIn();
+                    } else {
+                        $('.back-top').fadeOut();
+                    }
+                });
+
+                $('.back-top a').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div>
+                <asp:SiteMapPath ID="siteMapPath1" runat="server" />
+            </div>
+            <div class="title">
+                <h1>
+                    <%=Application["CompanyName"] %>
+                    - Portal Administration
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="/Admin/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                            LogoutPageUrl="/" />
+                        ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <ul class="menu">
+                    <li><a href="/"><span>Home</span></a></li>
+                    <li><a href="/About.aspx"><span>About</span></a></li>
+                    <li><a href="/"><span>Meta & Content</span></a>
+                        <ul class="children">
+                            <li><a href="/Admin/Pages/MetaEntry.aspx">Meta</a></li>
+                            <li><a href="/Admin/Pages/TopicManager.aspx">Content</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span>Product</span></a>
+                        <ul class="children">
+                            <li><a href="/Admin/Pages/CategoryManager.aspx">Category</a></li>
+                            <li><a href="/Admin/Pages/ManufacturerManager.aspx">Manufacturer</a></li>
+                            <li><a href="/Admin/Pages/ProductManager.aspx">Product</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/"><span>Order</span></a>
+                        <ul class="children">
+                            <li><a href="#">Customer</a></li>
+                            <li><a href="/Admin/Pages/ProductManager.aspx">Order</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear submenu">
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer">
+            <p>
+                © 2012 Rs - <a href="http://htsofts.com">htsofts.com</a>. Add: 363/29/12/16
+                ĐẤT MỚI, P BTDA, Q BÌNH TÂN - Mobi: (0907) 02 88 02 - Email: huutai.alz@gmail.com.
+            </p>
+        </div>
+        <div>
+            <p>
+                <a href="http://phukienipadx.com">Phụ kiện Ipad</a> | <a href="http://simsovn.net">Sim
+                    số Vietnam</a>
+            </p>
+            <p class="back-top">
+                <a><span></span></a>
+            </p>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

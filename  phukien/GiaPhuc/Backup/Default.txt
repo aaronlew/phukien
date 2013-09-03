@@ -1,0 +1,74 @@
+﻿<tr>
+            <td>
+                <asp:Repeater ID="rptTopBestSellers" runat="server">
+                    <HeaderTemplate>
+                        <table border="0" width="100%" cellpadding="0" cellspacing="8" class="tproduct">
+                            <thead class="thead">
+                                <tr>
+                                    <th colspan="2">
+                                        ĐANG BÁN CHẠY
+                                    </th>
+                                </tr>
+                            </thead>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="86px" height="86px"
+                                    alt="phu kien laptop" />
+                            </td>
+                            <td>
+                                <a href="/Pages/ProductDetail.aspx?ID=<%#DataBinder.Eval(Container.DataItem, "ProductID")%>"
+                                    class="name">
+                                    <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a>
+                                <p>
+                                    Giá bán: <span style="color: Red">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        đ</span><br />
+                                    <a href="/Pages/CartPage.aspx?ProductID=<%#DataBinder.Eval(Container.DataItem, "ProductID")%>"
+                                        class="cart">Mua hàng</a></p>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+            </td>
+            <td>
+                <asp:Repeater ID="rptHotDeal" runat="server">
+                    <HeaderTemplate>
+                        <table border="0" width="100%" cellpadding="0" cellspacing="8" class="tproduct">
+                            <thead class="thead">
+                                <tr>
+                                    <th colspan="2">
+                                        SẢN PHẨM NỔI BẬT
+                                    </th>
+                                </tr>
+                            </thead>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="86px" height="86px"
+                                    alt="phu kien laptop" />
+                            </td>
+                            <td>
+                                <a href="/Pages/ProductDetail.aspx?ID=<%#DataBinder.Eval(Container.DataItem, "ProductID")%>"
+                                    class="name">
+                                    <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a>
+                                <p>
+                                    Giá bán: <span style="color: Red">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        đ</span><br />
+                                    <a href="/Pages/CartPage.aspx?ProductID=<%#DataBinder.Eval(Container.DataItem, "ProductID")%>"
+                                        class="cart">Mua hàng</a></p>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+            </td>
+        </tr>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flash_Slide_Show_Project version="1.00" Photo_count="3" Flash_Width="728" Flash_Height="300" Flash_Title="Images" Background_Color="0x000000" Background_Music_Count="0" Frame_Rate="25" duration_transition="2" duration_show="2" Theme_id="15" Decoration_id="1" _blank="0" theme_style="1">
+    <Temp_Folder>D:\Documents and Settings\HUUTAI\My Documents\Flash Slideshow Maker Professional\temp\</Temp_Folder>
+    <Output_Folder Output_SWF="pinduphong.swf" Output_HTML="images.html" Output_XML="slides.xml">D:\Documents and Settings\HUUTAI\My Documents\Flash Slideshow Maker Professional\output\</Output_Folder>
+    <Theme_Data xml_file="slides_001.xml" xml_path="template\custom\Banner_simple" preset_xml_file="slides_001.xml" preset_xml_path="template\preset\Banner_simple">
+        <flash_template_parameters_profile display_name="slides_001" item_category="0" web_album="0" folder="default" swf_file="common.swf" preview="slides_001.jpg" xml_config_file="slides.xml" swf_path_base="template\preset\Banner_simple\" group_all_count="5" donot_create_big_image="0">
+            <group id="0" display_name="Global" item_category="0" category_count="3">
+                <category id="0" display_name="Stage" item_category="0" item_count="8">
+                    <item id="0" display_name="Width" item_category="9000" value="720"/>
+                    <item id="1" display_name="Height" item_category="9001" value="320"/>
+                    <item id="2" display_name="Align" item_category="30" value="TL"/>
+                    <item id="3" display_name="ScaleMode" item_category="30" value="noScale"/>
+                    <item id="4" display_name="Screen" item_category="30" value="normal"/>
+                    <item id="5" display_name="Menu" item_category="30" value="hide"/>
+                    <item id="6" display_name="Color" item_category="40" value="0xffffffff"/>
+                    <item id="7" display_name="FrameRate" item_category="0" value="3"/>
+                </category>
+                <category id="1" display_name="Loading" item_category="0" item_count="2">
+                    <item id="0" display_name="File" item_category="50" value="l-0001.swf"/>
+                    <item id="1" display_name="scale" item_category="32" value="0.600000"/>
+                </category>
+                <category id="2" display_name="Picture" item_category="0" item_count="4">
+                    <item id="0" display_name="PhotoWidth" item_category="9004" value="720"/>
+                    <item id="1" display_name="PhotoHeight" item_category="9005" value="320"/>
+                    <item id="2" display_name="ThumbnailWidth" item_category="9006" value="150"/>
+                    <item id="3" display_name="ThumbnailHeight" item_category="9007" value="75"/>
+                </category>
+            </group>
+            <group id="1" display_name="Model" item_category="0" category_count="4">
+                <category id="0" display_name="Basic" item_category="0" item_count="4">
+                    <item id="0" display_name="Enable" item_category="30" value="on"/>
+                    <item id="1" display_name="Index" item_category="31" value="0"/>
+                    <item id="2" display_name="Name" item_category="30" value="transitions"/>
+                    <item id="3" display_name="File" item_category="50" value="model\m-0001.swf"/>
+                </category>
+                <category id="1" display_name="Professional" item_category="0" item_count="8">
+                    <item id="0" display_name="X" item_category="0" value="0"/>
+                    <item id="1" display_name="Y" item_category="0" value="0"/>
+                    <item id="2" display_name="Scale" item_category="0" value="1"/>
+                    <item id="3" display_name="Rotation" item_category="0" value="0"/>
+                    <item id="4" display_name="Red" item_category="32" value="1.000000"/>
+                    <item id="5" display_name="Green" item_category="32" value="1.000000"/>
+                    <item id="6" display_name="Blue" item_category="32" value="1.000000"/>
+                    <item id="7" display_name="Alpha" item_category="32" value="1.000000"/>
+                </category>
+                <category id="2" display_name="Advanced" item_category="0" item_count="5">
+                    <item id="0" display_name="State" item_category="30" value="enable"/>
+                    <item id="1" display_name="Speed" item_category="30" value="5"/>
+                    <item id="2" display_name="Transition_Mode" item_category="30" value="0"/>
+                    <item id="3" display_name="Transition_Style" item_category="30" value="0"/>
+                    <item id="4" display_name="Transition_Value" item_category="30" value="0"/>
+                </category>
+                <category id="3" display_name="Insert" item_category="0" item_count="1">
+                    <item id="0" display_name="Link" item_category="30" value=""/>
+                </category>
+            </group>
+            <group id="2" display_name="Button" item_category="0" category_count="2">
+                <category id="0" display_name="Basic" item_category="0" item_count="4">
+                    <item id="0" display_name="Enable" item_category="30" value="on"/>
+                    <item id="1" display_name="Index" item_category="31" value="1"/>
+                    <item id="2" display_name="Name" item_category="30" value="jump"/>
+                    <item id="3" display_name="File" item_category="50" value="button\jump\b0001.swf"/>
+                </category>
+                <category id="1" display_name="Professional" item_category="0" item_count="10">
+                    <item id="0" display_name="X" item_category="0" value="330"/>
+                    <item id="1" display_name="Y" item_category="0" value="245"/>
+                    <item id="2" display_name="W" item_category="0" value=""/>
+                    <item id="3" display_name="H" item_category="0" value=""/>
+                    <item id="4" display_name="Scale" item_category="0" value="1.5"/>
+                    <item id="5" display_name="Rotation" item_category="0" value="0"/>
+                    <item id="6" display_name="Red" item_category="32" value="1.000000"/>
+                    <item id="7" display_name="Green" item_category="32" value="1.000000"/>
+                    <item id="8" display_name="Blue" item_category="32" value="1.000000"/>
+                    <item id="9" display_name="Alpha" item_category="32" value="1.000000"/>
+                </category>
+            </group>
+            <group id="3" display_name="Button" item_category="0" category_count="3">
+                <category id="0" display_name="Basic" item_category="0" item_count="4">
+                    <item id="0" display_name="Enable" item_category="30" value="off"/>
+                    <item id="1" display_name="Index" item_category="31" value="2"/>
+                    <item id="2" display_name="Name" item_category="30" value="play_stop"/>
+                    <item id="3" display_name="File" item_category="50" value="button\play_stop\b0102.swf"/>
+                </category>
+                <category id="1" display_name="Professional" item_category="0" item_count="7">
+                    <item id="0" display_name="X" item_category="0" value="260"/>
+                    <item id="1" display_name="Y" item_category="0" value="90"/>
+                    <item id="2" display_name="Scale" item_category="0" value="1.5"/>
+                    <item id="3" display_name="Red" item_category="32" value="1.000000"/>
+                    <item id="4" display_name="Green" item_category="32" value="1.000000"/>
+                    <item id="5" display_name="Blue" item_category="32" value="1.000000"/>
+                    <item id="6" display_name="Alpha" item_category="32" value="1.000000"/>
+                </category>
+                <category id="2" display_name="Advanced" item_category="0" item_count="1">
+                    <item id="0" display_name="Hide_Mode" item_category="30" value="2"/>
+                </category>
+            </group>
+            <group id="4" display_name="Text" item_category="0" category_count="4">
+                <category id="0" display_name="Basic" item_category="0" item_count="4">
+                    <item id="0" display_name="Enable" item_category="30" value="on"/>
+                    <item id="1" display_name="Index" item_category="31" value="3"/>
+                    <item id="2" display_name="Name" item_category="30" value="Title"/>
+                    <item id="3" display_name="File" item_category="50" value="text\t-0001.swf"/>
+                </category>
+                <category id="1" display_name="Professional" item_category="0" item_count="8">
+                    <item id="0" display_name="X" item_category="0" value="30"/>
+                    <item id="1" display_name="Y" item_category="0" value="255"/>
+                    <item id="2" display_name="Scale" item_category="0" value="1.5"/>
+                    <item id="3" display_name="Rotation" item_category="0" value="0"/>
+                    <item id="4" display_name="Red" item_category="32" value="1.000000"/>
+                    <item id="5" display_name="Green" item_category="32" value="1.000000"/>
+                    <item id="6" display_name="Blue" item_category="32" value="1.000000"/>
+                    <item id="7" display_name="Alpha" item_category="32" value="0.800000"/>
+                </category>
+                <category id="2" display_name="Advanced" item_category="0" item_count="5">
+                    <item id="0" display_name="State" item_category="30" value="ready"/>
+                    <item id="1" display_name="Text_Width" item_category="30" value="190"/>
+                    <item id="2" display_name="Transition_Mode" item_category="30" value="0"/>
+                    <item id="3" display_name="Transition_Style" item_category="30" value="0"/>
+                    <item id="4" display_name="Value" item_category="30" value=""/>
+                </category>
+                <category id="3" display_name="Insert" item_category="0" item_count="4">
+                    <item id="0" display_name="Link" item_category="30" value=""/>
+                    <item id="1" display_name="Color" item_category="40" value="0x00000000"/>
+                    <item id="2" display_name="Text" item_category="30" value=""/>
+                    <item id="3" display_name="Font" item_category="30" value=""/>
+                </category>
+            </group>
+        </flash_template_parameters_profile>
+    </Theme_Data>
+    <Photo_Data id="0" rotate_angle="0" duration_show="2" transition_duration="2" transition_effect="0" Title="banner1" Description="" Url="http://www.flash-slideshow-maker.com">C:\AProject\GiaPhuc\Images\banner1.jpg    </Photo_Data>
+    <Photo_Data id="1" rotate_angle="0" duration_show="2" transition_duration="2" transition_effect="0" Title="banner2" Description="" Url="http://www.flash-slideshow-maker.com">C:\AProject\GiaPhuc\Images\banner2.jpg    </Photo_Data>
+    <Photo_Data id="2" rotate_angle="0" duration_show="2" transition_duration="2" transition_effect="0" Title="banner3" Description="" Url="http://www.flash-slideshow-maker.com">C:\AProject\GiaPhuc\Images\banner3.jpg    </Photo_Data>
+</Flash_Slide_Show_Project>

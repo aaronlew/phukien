@@ -1,0 +1,228 @@
+﻿<tr>
+            <td>
+                <asp:DataList ID="datPowerBank" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                PIN DỰ PHÒNG</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DataList ID="datBluetoothKeyboard" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                BLUETOOTH KEYBOARD</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DataList ID="datBluetoothHeadphone" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                TAI NGHE BLUETOOTH</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DataList ID="datLeatherCase" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                BAO DA IPAD</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DataList ID="datIphoneCase" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                CASE IPHONE</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:DataList ID="datIphoneCab" runat="server" RepeatColumns="4" CellPadding="0"
+                    CellSpacing="0" BorderColor="#DEE7EE" BorderWidth="1" BorderStyle="Solid" ItemStyle-VerticalAlign="Top" ItemStyle-Width="186">
+                    <HeaderTemplate>
+                        <div class="product-header">
+                            <img src='/Images/mainmenuhover.gif' alt="phu kien ipad" />
+                            <div>
+                                CÁP, TAI NGHE & SẠC IPHONE</div>
+                        </div>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>" class="screenshot" rel="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "ImagePath")%>" width="100px" height="100px"
+                                        alt="phu kien ipad" /></a>
+                            </div>
+                            <div class="product-description clear">
+                                <div class="description">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "Url")%>">
+                                        <%#DataBinder.Eval(Container.DataItem, "ProductName")%></a></div>
+                                <div>
+                                    <span class="price">
+                                        <%#DataBinder.Eval(Container.DataItem, "Price", "{0:n0}")%>
+                                        VND</span>
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <a href="<%#DataBinder.Eval(Container.DataItem, "CartUrl")%>" class="button">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </FooterTemplate>
+                </asp:DataList>
+            </td>
+        </tr>

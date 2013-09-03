@@ -1,0 +1,1618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F6873F7-C257-4F64-88ED-A73DFB6BAFB2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GiaPhuc</RootNamespace>
+    <AssemblyName>GiaPhuc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbLinq">
+      <HintPath>Required\DbLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.MySql, Version=0.20.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required\DbLinq.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Analytics">
+      <HintPath>E:\Program Files (x86)\Google\Google Data API SDK\Redist\Google.GData.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client">
+      <HintPath>E:\Program Files (x86)\Google\Google Data API SDK\Redist\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>Required\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Pages\CategoryEntry.aspx" />
+    <Content Include="Admin\Pages\CategoryManager.aspx" />
+    <Content Include="Admin\Pages\ManufacturerEntry.aspx" />
+    <Content Include="Admin\Pages\ManufacturerManager.aspx" />
+    <Content Include="Admin\Scripts\jsManufacturer.js" />
+    <Content Include="Admin\Scripts\jsCategory.js" />
+    <Content Include="Admin\Scripts\jsTopic.js" />
+    <Content Include="Admin\Scripts\jsProduct.js" />
+    <Content Include="Admin\template\CategoryTemplate.htm" />
+    <Content Include="Admin\template\ManufacturerTemplate.htm" />
+    <Content Include="Admin\template\ProductTemplate.htm" />
+    <Content Include="Admin\template\TopicTemplate.htm" />
+    <Content Include="Admin\Pages\TopicManager.aspx" />
+    <Content Include="Admin\Pages\TopicEntry.aspx" />
+    <Content Include="BingSiteAuth.xml" />
+    <Content Include="CMS.asmx" />
+    <Content Include="Controls\AdvertiseControl.ascx" />
+    <Content Include="Controls\ContactControl.ascx" />
+    <Content Include="Controls\HorizontalBannerControl.ascx" />
+    <Content Include="Controls\LeftLayout.ascx" />
+    <Content Include="Controls\LocationControl.ascx" />
+    <Content Include="Controls\PageHeaderControl.ascx" />
+    <Content Include="Controls\TopMenuControl.ascx" />
+    <Content Include="Controls\UCProductCategory.ascx" />
+    <Content Include="Controls\UCProductCell.ascx" />
+    <Content Include="favicon.ico" />
+    <Content Include="google5ac0acf9e33b1e0e.html" />
+    <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
+    <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\helper-plugins\jquery.touchSwipe.min.js" />
+    <Content Include="Scripts\helper-plugins\jquery.transit.min.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="static\images\box-heading.jpg" />
+    <Content Include="static\images\button-bg.png" />
+    <Content Include="static\images\delete.png" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Images\banner1.jpg" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\banner3.jpg" />
+    <Content Include="Images\bannerleft.gif" />
+    <Content Include="Images\cart.gif" />
+    <Content Include="static\images\about\image001.gif" />
+    <Content Include="static\images\about\image002.gif" />
+    <Content Include="static\images\about\image003.gif" />
+    <Content Include="static\images\about\image004.gif" />
+    <Content Include="static\images\about\image005.gif" />
+    <Content Include="static\images\about\image006.gif" />
+    <Content Include="static\images\about\image007.jpg" />
+    <Content Include="static\images\about\image008.jpg" />
+    <Content Include="static\images\banner\thumbl_728_001.png" />
+    <Content Include="static\images\banner\thumbl_728_002.png" />
+    <Content Include="static\images\banner\thumbl_728_003.png" />
+    <Content Include="static\images\banner\thumbl_728_004.png" />
+    <Content Include="static\images\banner\thumbl_728_005.png" />
+    <Content Include="static\images\goTop.png" />
+    <Content Include="static\images\home.png" />
+    <Content Include="static\images\hot.gif" />
+    <Content Include="Images\icon_moi.gif" />
+    <Content Include="static\images\input.gif" />
+    <Content Include="Images\itemarrow.gif" />
+    <Content Include="Images\leftmenu.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\menu.gif" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\top_back.jpg" />
+    <Content Include="Pages\AboutPage.aspx" />
+    <Content Include="Pages\ContactPage.aspx" />
+    <Content Include="pinduphong.swf" />
+    <Content Include="Images\rightmenu.gif" />
+    <Content Include="Images\searchicon.png" />
+    <Content Include="static\images\loading2.gif" />
+    <Content Include="static\images\main-shining.jpg" />
+    <Content Include="static\images\nolines_minus.png" />
+    <Content Include="static\images\slide-arrow.gif" />
+    <Content Include="Images\slider\nav-bg.png" />
+    <Content Include="Images\slider\slide-bg.png" />
+    <Content Include="Images\slider\slide-nav.png" />
+    <Content Include="Scripts\ddaccordion.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
+    <Content Include="Scripts\jquery.easing.js" />
+    <Content Include="Scripts\jquery.lazy.min.js" />
+    <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Services\CategoryService.asmx" />
+    <Content Include="slides.xml" />
+    <Content Include="static\images\spinner.gif" />
+    <Content Include="Images\thead.gif" />
+    <Content Include="MJ12_150F160CCAC887085409B2912DE35AD7.txt" />
+    <Content Include="Pages\CartPage.aspx" />
+    <Content Include="Admin\Pages\MetaEntry.aspx" />
+    <Content Include="Pages\ProductDetail.aspx" />
+    <Content Include="Admin\Pages\ProductEntry.aspx" />
+    <Content Include="Admin\Pages\ProductManager.aspx" />
+    <Content Include="Pages\TopicPage.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="s7Qu46ECyPDnsggQiL3Mgg_RyX0.html" />
+    <Content Include="Scripts\accounting.js" />
+    <Content Include="Scripts\accounting.min.js" />
+    <Content Include="Scripts\autoNumeric-1.7.4.js" />
+    <Content Include="Scripts\autoNumeric-1.7.4.min.js" />
+    <Content Include="Scripts\jquery-jtemplates.js" />
+    <Content Include="Scripts\jquery.jqzoom-core.js" />
+    <Content Include="Scripts\jquery.tabify.js" />
+    <Content Include="Scripts\lib.min.js" />
+    <Content Include="Scripts\screenshot.js" />
+    <Content Include="Scripts\screenshot.min.js" />
+    <Content Include="Scripts\script_jcarousellite.js" />
+    <Content Include="Scripts\smartpaginator.js" />
+    <Content Include="sitemap.xml" />
+    <Content Include="static\css\productstyle.css" />
+    <Content Include="static\images\addToCart.png" />
+    <Content Include="static\images\arrow-bg.png" />
+    <Content Include="static\images\banner\18215261315520131895753485182.jpg" />
+    <Content Include="static\images\banner\18443816620131078274660184.png" />
+    <Content Include="static\images\banner\left-banner.png" />
+    <Content Include="static\images\banner\right-banner.png" />
+    <Content Include="static\images\banner\thumbl_980x340_006.png" />
+    <Content Include="static\images\banner\thumbl_980x340_007.png" />
+    <Content Include="static\images\banner\thumbl_980x340_008.png" />
+    <Content Include="static\images\box-cart.gif" />
+    <Content Include="static\images\box-head-bg.gif" />
+    <Content Include="static\images\collapse-small-blue-Shapes4FREE.png" />
+    <Content Include="static\images\expand-small-blue-Shapes4FREE.png" />
+    <Content Include="static\images\GPKD.jpg" />
+    <Content Include="static\images\grad-bg.gif" />
+    <Content Include="static\images\header_user_bg.gif" />
+    <Content Include="static\images\header_user_info_shadow.gif" />
+    <Content Include="static\images\image-background.gif" />
+    <Content Include="static\images\img-bg.png" />
+    <Content Include="static\images\list-item-tail.gif" />
+    <Content Include="static\images\logo horizontal.gif" />
+    <Content Include="static\images\menu-bg.png" />
+    <Content Include="static\images\menu-footer.png" />
+    <Content Include="static\images\menu-header.png" />
+    <Content Include="static\images\menu-tail.gif" />
+    <Content Include="static\images\nav_normal_bg.png" />
+    <Content Include="static\images\search-icon.gif" />
+    <Content Include="static\images\shopping_cart_webshop.gif" />
+    <Content Include="static\css\ExpressMenu.css" />
+    <Content Include="static\css\jquery.jqzoom.css" />
+    <Content Include="static\css\tabify.css" />
+    <Content Include="static\css\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="static\css\smartpaginator.css" />
+    <Content Include="static\response\1024.css" />
+    <Content Include="static\response\10cols.css" />
+    <Content Include="static\response\11cols.css" />
+    <Content Include="static\response\12cols.css" />
+    <Content Include="static\response\2cols.css" />
+    <Content Include="static\response\3cols.css" />
+    <Content Include="static\response\480.css" />
+    <Content Include="static\response\4cols.css" />
+    <Content Include="static\response\5cols.css" />
+    <Content Include="static\response\6cols.css" />
+    <Content Include="static\response\768.css" />
+    <Content Include="static\response\7cols.css" />
+    <Content Include="static\response\8cols.css" />
+    <Content Include="static\response\9cols.css" />
+    <Content Include="static\response\col.css" />
+    <Content Include="static\response\html5reset.css" />
+    <Content Include="static\response\responsivegridsystem.css" />
+    <Content Include="template\shopcarttemplate.htm" />
+    <Content Include="third-party\jtable\extensions\jquery.jtable.aspnetpagemethods.js" />
+    <Content Include="third-party\jtable\extensions\jquery.jtable.aspnetpagemethods.min.js" />
+    <Content Include="third-party\jtable\external\json2.js" />
+    <Content Include="third-party\jtable\external\json2.min.js" />
+    <Content Include="third-party\jtable\jquery.jtable.js" />
+    <Content Include="third-party\jtable\jquery.jtable.min.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.de.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.es.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.fr.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.hu.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.it.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.lt.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.nl-NL.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.pl.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.pt-BR.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.pt-PT.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.ru.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.tr.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.vi.js" />
+    <Content Include="third-party\jtable\localization\jquery.jtable.zh-CN.js" />
+    <Content Include="third-party\jtable\themes-ext\highlight.css" />
+    <Content Include="third-party\jtable\themes-ext\images\Misc\note.png" />
+    <Content Include="third-party\jtable\themes-ext\images\Misc\phone.png" />
+    <Content Include="third-party\jtable\themes-ext\Site.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\animated-overlay.gif" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery-ui.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.accordion.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.all.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.base.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.button.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.core.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.dialog.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.menu.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.resizable.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.selectable.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.slider.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.spinner.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.tabs.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.theme.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\images\ui-icons_2d89ef_0.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\images\ui-icons_525252_0.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\images\ui-icons_66B3FF_0.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\images\ui-icons_d4d4d4_0.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\images\ui-icons_ffffff_0.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\metroblue\jquery-ui.css" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="third-party\jtable\themes-ext\themes\redmond\jquery-ui-1.8.16.custom.css" />
+    <Content Include="third-party\jtable\themes\basic\close.png" />
+    <Content Include="third-party\jtable\themes\basic\column-asc.png" />
+    <Content Include="third-party\jtable\themes\basic\column-desc.png" />
+    <Content Include="third-party\jtable\themes\basic\column-sortable.png" />
+    <Content Include="third-party\jtable\themes\basic\delete.png" />
+    <Content Include="third-party\jtable\themes\basic\edit.png" />
+    <Content Include="third-party\jtable\themes\basic\jtable_basic.css" />
+    <Content Include="third-party\jtable\themes\basic\jtable_basic.min.css" />
+    <Content Include="third-party\jtable\themes\jqueryui\add.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\bg-thead.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\close.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\column-asc.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\column-desc.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\column-sortable.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\delete.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\edit.png" />
+    <Content Include="third-party\jtable\themes\jqueryui\jtable_jqueryui.css" />
+    <Content Include="third-party\jtable\themes\jqueryui\jtable_jqueryui.min.css" />
+    <Content Include="third-party\jtable\themes\jqueryui\loading.gif" />
+    <Content Include="third-party\jtable\themes\lightcolor\add.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\bg-thead.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\blue\jtable.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\blue\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\blue\loading.gif" />
+    <Content Include="third-party\jtable\themes\lightcolor\close.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\column-asc.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\column-desc.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\column-sortable.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\delete.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\edit.png" />
+    <Content Include="third-party\jtable\themes\lightcolor\gray\jtable.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\gray\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\gray\loading.gif" />
+    <Content Include="third-party\jtable\themes\lightcolor\green\jtable.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\green\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\green\loading.gif" />
+    <Content Include="third-party\jtable\themes\lightcolor\orange\jtable.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\orange\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\orange\loading.gif" />
+    <Content Include="third-party\jtable\themes\lightcolor\red\jtable.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\red\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\lightcolor\red\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\add.png" />
+    <Content Include="third-party\jtable\themes\metro\blue\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\blue\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\blue\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\brown\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\brown\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\brown\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\close.png" />
+    <Content Include="third-party\jtable\themes\metro\column-asc.png" />
+    <Content Include="third-party\jtable\themes\metro\column-desc.png" />
+    <Content Include="third-party\jtable\themes\metro\column-sortable.png" />
+    <Content Include="third-party\jtable\themes\metro\crimson\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\crimson\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\crimson\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\darkgray\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\darkgray\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\darkgray\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\darkorange\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\darkorange\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\darkorange\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\delete.png" />
+    <Content Include="third-party\jtable\themes\metro\edit.png" />
+    <Content Include="third-party\jtable\themes\metro\green\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\green\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\green\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\jtable_metro_base.css" />
+    <Content Include="third-party\jtable\themes\metro\jtable_metro_base.min.css" />
+    <Content Include="third-party\jtable\themes\metro\lightgray\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\lightgray\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\lightgray\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\pink\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\pink\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\pink\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\purple\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\purple\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\purple\loading.gif" />
+    <Content Include="third-party\jtable\themes\metro\red\jtable.css" />
+    <Content Include="third-party\jtable\themes\metro\red\jtable.min.css" />
+    <Content Include="third-party\jtable\themes\metro\red\loading.gif" />
+    <Content Include="third-party\tiny_mce\jquery.tinymce.js" />
+    <Content Include="third-party\tiny_mce\langs\en.js" />
+    <Content Include="third-party\tiny_mce\langs\ru.js" />
+    <Content Include="third-party\tiny_mce\langs\uk.js" />
+    <Content Include="third-party\tiny_mce\langs\vi.js" />
+    <Content Include="third-party\tiny_mce\license.txt" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advimage\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="third-party\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\autosave\langs\en.js" />
+    <Content Include="third-party\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\ccSimpleUploader\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\ccSimpleUploader\FileUpload.aspx" />
+    <Content Include="third-party\tiny_mce\plugins\ccSimpleUploader\img\ccSimpleUploader.png" />
+    <Content Include="third-party\tiny_mce\plugins\ccSimpleUploader\langs\en.js" />
+    <Content Include="third-party\tiny_mce\plugins\ccSimpleUploader\progress.gif" />
+    <Content Include="third-party\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\emotions\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="third-party\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="third-party\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="third-party\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="third-party\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\docs\license.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\examples.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\moreimages\dogleft.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\moreimages\mcith\mcith_dogleft.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\sample.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\teddybear.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\another_directory\index.htm" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\another_document.htm" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\directory\images\gotmoxie.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\directory\index.htm" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\document.htm" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\files\templates\readme.txt" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\js\mcfilemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\js\mcimagemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\de.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\el.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\en.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\es.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\fr.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\ja.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\ja_utf-8.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\ru.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\language\fm\sv.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\createdir.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\createdoc.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\createzip.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\core.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\dialog.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\dropmenu.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\filemanager.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\filetypes.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\forms.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\toolbar.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\css\window_clearlooks2.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\edit.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\alert-small.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\checkbox.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\check_arrow.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\alert_error.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\alert_info.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\alert_warn.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\bottom_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\bottom_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\bottom_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\button.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\buttons.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\middle_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\middle_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\statusbar_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\statusbar_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\statusbar_resize.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\statusbar_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_chromeless_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_chromeless_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_chromeless_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_middle_fg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\top_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\clearlooks2\transparent.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\close.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-icon-compress.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-icon-edit.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-icon-newfile.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-icon-newfolder.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-icon-upload.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\dialog-top.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filelist-border.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filelist-headbg.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filelist-headbg2.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\archive.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\document.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\excel.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\exe.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\folder.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\html.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\image.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\movie.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\pdf.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\powerpoint.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\sound.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\swf.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\trash.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\txt.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\unknown.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\up_folder.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\word.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\filetypes\xml.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-bg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-bottom-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-middle-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-small.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder-top-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\folder_big.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\google_gears_logo.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\add.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\category-closed.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\category-open.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\crop.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\help.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\imagemanager.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\newdoc.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\newfolder.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\reload.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\resize.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\revert.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\save.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\settings.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\toggle_selection.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\icons\up.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-botleft.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-delete.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-edit.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-info.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-topleft.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im-topright.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\im.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\insertfile.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\left.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\loading.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\navdesc_bg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\preview.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\progress.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\right.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\separator.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\sortasc.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\sortdesc.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-cancel.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-default.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-delete.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-grey.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-greyWide.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\submit-wide.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\toolbar.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\transparent.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\img\x.gif" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\index.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\createdir.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\createdoc.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\createzip.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\edit.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\filemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.cleanname.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.dialog.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.dialog.status.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.domutils.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.dropmenu.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.i18n.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.json.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.flash.expressinstall.swf" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.flash.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.flash.swf" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.gears.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.silverlight.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.multiupload.silverlight.xap" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.scrollto.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.sortarray.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.template.ext.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.template.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\jquery\jquery.uri.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\upload.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\basemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\domain.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\fixpng.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\gears_init.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\rpc.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\swfobject.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\js\utils\tinymce.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\pages\fm\upload.html" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\auth_example.asp" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\md5.asp" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Favorites\css\favorites.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Favorites\img\favorites.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Favorites\js\favorites.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Favorites\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\History\css\history.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\History\img\clock.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\History\js\history.js" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\History\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Trash\css\trash.css" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Trash\img\trash.png" />
+    <Content Include="third-party\tiny_mce\plugins\filemanager\plugins\Trash\img\trash_empty.png" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullpage\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="third-party\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\docs\license.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\mcith\mcith_teddybear.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\moreimages\dogleft.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\moreimages\mcith\mcith_dogleft.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\teddybear.jpg" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\another_directory\index.htm" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\another_document.htm" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\directory\images\gotmoxie.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\directory\index.htm" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\document.htm" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\files\templates\readme.txt" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\js\mcfilemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\js\mcimagemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\ca.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\de.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\en.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\fr.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\ja_utf-8.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\nb.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\nl.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\nn.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\ru.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\language\im\sv.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\createdir.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\core.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\dialog.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\dropmenu.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\forms.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\imageeditor.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\imagemanager.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\toolbar.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\view.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\viewmodes.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\css\window_clearlooks2.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\edit.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\flvplayer\flvPlayer.swf" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\act.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\alert-small.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\alert.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\avi.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\check_arrow.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\alert_error.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\alert_info.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\alert_warn.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\bottom_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\bottom_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\bottom_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\button.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\buttons.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\middle_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\middle_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\statusbar_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\statusbar_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\statusbar_resize.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\statusbar_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_chromeless_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_chromeless_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_chromeless_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_middle.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_middle_fg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\top_right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\clearlooks2\transparent.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\close.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\dcr.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\dialog-icon-edit.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\dialog-icon-newfolder.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\dialog-icon-upload.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\dialog-top.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\editimage.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\filelist-border.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\filelist-headbg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\filelist-headbg2.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\first.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\flash.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-bg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-bottom-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-middle-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-small.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder-top-bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\folder_big.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\gallery.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\google_gears_logo.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\accept.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\add.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\cancel.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\category-closed.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\category-open.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\crop.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\filemanager.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\flip_h.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\flip_v.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\help.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\newdoc.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\newfolder.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\picture_save.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\reload.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\resize.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\revert.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\rotate_ac.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\rotate_c.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\save.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\settings.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\toggle_selection.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\icons\up.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-botleft.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-delete.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-edit.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-info.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-topleft.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im-topright.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\im.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\imageeditor\bg.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\imageeditor\editarea.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\img_generic.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\insertimage.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\last.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\left.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\left.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\left_disabled.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\loading.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\loading_bg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\navdesc_bg.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\parent_big.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\progress.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\qt.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\right.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\right.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\right_disabled.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\rm.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\selection_corner.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\separator.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-cancel.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-default.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-delete.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-grey.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-greyWide.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\submit-wide.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\textlist.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\toolbar.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\img\transparent.gif" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\index.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\createdir.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\edit.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\imagemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.cleanname.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.dialog.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.dialog.status.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.domutils.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.dropmenu.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.i18n.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.imageselection.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.imageutils.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.json.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.flash.expressinstall.swf" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.flash.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.flash.swf" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.gears.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.silverlight.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.multiupload.silverlight.xap" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.scrollto.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.template.ext.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.template.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\jquery\jquery.uri.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\upload.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\basemanager.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\domain.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\fixpng.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\gears_init.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\rpc.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\swfobject.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\utils\tinymce.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\js\view.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\upload.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\pages\im\view.html" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\auth_example.asp" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\md5.asp" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Favorites\css\favorites.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Favorites\img\favorites.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Favorites\js\favorites.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Favorites\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\History\css\history.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\History\img\clock.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\History\js\history.js" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\History\resources.xml" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Trash\css\trash.css" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Trash\img\trash.png" />
+    <Content Include="third-party\tiny_mce\plugins\imagemanager\plugins\Trash\img\trash_empty.png" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="third-party\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="third-party\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\css\content.css" />
+    <Content Include="third-party\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="third-party\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\flash.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\flv_player.swf" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\quicktime.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\realmedia.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\shockwave.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\trans.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\img\windowsmedia.gif" />
+    <Content Include="third-party\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\media\media.htm" />
+    <Content Include="third-party\tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="third-party\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\pagebreak\css\content.css" />
+    <Content Include="third-party\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\pagebreak\img\pagebreak.gif" />
+    <Content Include="third-party\tiny_mce\plugins\pagebreak\img\trans.gif" />
+    <Content Include="third-party\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="third-party\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="third-party\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\preview\example.html" />
+    <Content Include="third-party\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="third-party\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="third-party\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="third-party\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="third-party\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="third-party\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="third-party\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\style\props.htm" />
+    <Content Include="third-party\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="third-party\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="third-party\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="third-party\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="third-party\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="third-party\tiny_mce\plugins\table\row.htm" />
+    <Content Include="third-party\tiny_mce\plugins\table\table.htm" />
+    <Content Include="third-party\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="third-party\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="third-party\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\template\template.htm" />
+    <Content Include="third-party\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\wordc\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\plugins\xhtmlxtras\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\ru.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\ru_dlg.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\uk.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\uk_dlg.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\vi.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\langs\vi_dlg.js" />
+    <Content Include="third-party\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="third-party\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="third-party\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="third-party\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\langs\ru.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\langs\uk.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\langs\vi.js" />
+    <Content Include="third-party\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="third-party\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="third-party\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="third-party\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="third-party\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="third-party\tiny_mce\tiny_mce.js" />
+    <Content Include="third-party\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="third-party\tiny_mce\tiny_mce_src.js" />
+    <Content Include="third-party\tiny_mce\utils\editable_selects.js" />
+    <Content Include="third-party\tiny_mce\utils\form_utils.js" />
+    <Content Include="third-party\tiny_mce\utils\mctabs.js" />
+    <Content Include="third-party\tiny_mce\utils\validate.js" />
+    <Content Include="thumbs\t_0001.jpg" />
+    <Content Include="thumbs\t_0002.jpg" />
+    <Content Include="thumbs\t_0003.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminSite.Master.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSite.Master.designer.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\CategoryEntry.aspx.cs">
+      <DependentUpon>CategoryEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\CategoryEntry.aspx.designer.cs">
+      <DependentUpon>CategoryEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\CategoryManager.aspx.cs">
+      <DependentUpon>CategoryManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\CategoryManager.aspx.designer.cs">
+      <DependentUpon>CategoryManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\ManufacturerEntry.aspx.cs">
+      <DependentUpon>ManufacturerEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\ManufacturerEntry.aspx.designer.cs">
+      <DependentUpon>ManufacturerEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\ManufacturerManager.aspx.cs">
+      <DependentUpon>ManufacturerManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\ManufacturerManager.aspx.designer.cs">
+      <DependentUpon>ManufacturerManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\MetaEntry.aspx.designer.cs">
+      <DependentUpon>MetaEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\ProductEntry.aspx.designer.cs">
+      <DependentUpon>ProductEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\ProductManager.aspx.designer.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\TopicManager.aspx.cs">
+      <DependentUpon>TopicManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\TopicManager.aspx.designer.cs">
+      <DependentUpon>TopicManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\TopicEntry.aspx.cs">
+      <DependentUpon>TopicEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\TopicEntry.aspx.designer.cs">
+      <DependentUpon>TopicEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GiaPhucDataExtensions.cs" />
+    <Compile Include="App_Data\GiaPhucData.cs" />
+    <Compile Include="App_GlobalResources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS.asmx.cs">
+      <DependentUpon>CMS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CMSContext.cs" />
+    <Compile Include="Controls\AdvertiseControl.ascx.cs">
+      <DependentUpon>AdvertiseControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvertiseControl.ascx.designer.cs">
+      <DependentUpon>AdvertiseControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContactControl.ascx.cs">
+      <DependentUpon>ContactControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ContactControl.ascx.designer.cs">
+      <DependentUpon>ContactControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HorizontalBannerControl.ascx.cs">
+      <DependentUpon>HorizontalBannerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HorizontalBannerControl.ascx.designer.cs">
+      <DependentUpon>HorizontalBannerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LeftLayout.ascx.cs">
+      <DependentUpon>LeftLayout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LeftLayout.ascx.designer.cs">
+      <DependentUpon>LeftLayout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LocationControl.ascx.cs">
+      <DependentUpon>LocationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LocationControl.ascx.designer.cs">
+      <DependentUpon>LocationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHeaderControl.ascx.cs">
+      <DependentUpon>PageHeaderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHeaderControl.ascx.designer.cs">
+      <DependentUpon>PageHeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopMenuControl.ascx.cs">
+      <DependentUpon>TopMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TopMenuControl.ascx.designer.cs">
+      <DependentUpon>TopMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCProductCategory.ascx.cs">
+      <DependentUpon>UCProductCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UCProductCategory.ascx.designer.cs">
+      <DependentUpon>UCProductCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCProductCell.ascx.cs">
+      <DependentUpon>UCProductCell.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UCProductCell.ascx.designer.cs">
+      <DependentUpon>UCProductCell.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ActionValidator.cs" />
+    <Compile Include="Helper\CategoryHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\ProductHelper.cs" />
+    <Compile Include="Pages\AboutPage.aspx.cs">
+      <DependentUpon>AboutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AboutPage.aspx.designer.cs">
+      <DependentUpon>AboutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ContactPage.aspx.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ContactPage.aspx.designer.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CategoryService.asmx.cs">
+      <DependentUpon>CategoryService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="third-party\tiny_mce\plugins\ccSimpleUploader\FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="third-party\tiny_mce\plugins\ccSimpleUploader\FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RssFeedItem.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ManufacturerHelper.cs" />
+    <Compile Include="Helper\UserHelper.cs" />
+    <Compile Include="Helper\MetaTagHelper.cs" />
+    <Compile Include="Helper\TopicHelper.cs" />
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Helper\Sample.cs" />
+    <Compile Include="Pages\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\MetaEntry.aspx.cs">
+      <DependentUpon>MetaEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\ProductEntry.aspx.cs">
+      <DependentUpon>ProductEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\ProductManager.aspx.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TopicPage.aspx.cs">
+      <DependentUpon>TopicPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TopicPage.aspx.designer.cs">
+      <DependentUpon>TopicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Encryption.cs" />
+    <Compile Include="Utility\MathUtil.cs" />
+    <Compile Include="Utility\RssManager.cs" />
+    <Compile Include="Utility\Security.cs" />
+    <Compile Include="Utility\SendMail.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SessionUtils.cs" />
+    <Compile Include="VisitorCounter.ashx.cs">
+      <DependentUpon>VisitorCounter.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminSite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Backgrounds\" />
+    <Folder Include="static\images\products\new\" />
+    <Folder Include="static\images\products\thumbs\new\" />
+    <Folder Include="third-party\tiny_mce\uploads\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\phukienipadx.Bl\phukienipadx.Bl.csproj">
+      <Project>{BA9A3D15-84B6-4E9F-AF90-42A6550DB5D7}</Project>
+      <Name>phukienipadx.Bl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\phukienipadx.Core\phukienipadx.Core.csproj">
+      <Project>{43CD2C73-D33C-4DF3-AA1D-D0C100D9518D}</Project>
+      <Name>phukienipadx.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VisitorCounter.ashx" />
+    <Content Include="Admin\Web.config" />
+    <None Include="static\Fonts\ANTON.ttf" />
+    <None Include="third-party\jtable\themes\basic\jtable_basic.less" />
+    <None Include="third-party\jtable\themes\jqueryui\jtable_jqueryui.less" />
+    <None Include="third-party\jtable\themes\jtable_theme_base.less" />
+    <None Include="third-party\jtable\themes\lightcolor\blue\jtable.less" />
+    <None Include="third-party\jtable\themes\lightcolor\gray\jtable.less" />
+    <None Include="third-party\jtable\themes\lightcolor\green\jtable.less" />
+    <None Include="third-party\jtable\themes\lightcolor\jtable_lightcolor_base.less" />
+    <None Include="third-party\jtable\themes\lightcolor\orange\jtable.less" />
+    <None Include="third-party\jtable\themes\lightcolor\red\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\blue\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\brown\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\crimson\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\darkgray\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\darkorange\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\green\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\jtable_metro_base.less" />
+    <None Include="third-party\jtable\themes\metro\lightgray\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\pink\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\purple\jtable.less" />
+    <None Include="third-party\jtable\themes\metro\red\jtable.less" />
+    <None Include="third-party\tiny_mce\plugins\advimage\img\Thumbs.db" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Authenticators\BaseAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Authenticators\IPAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Authenticators\SessionAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\CorePlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileManager\FileManagerPlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileManager\FileSystems\ZipFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileManager\Utils\ZipFile.class.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\BaseFile.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\BaseFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\FileFilter.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\FileStream.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\FileTreeHandler.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\LocalFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\FileSystems\RootFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\ManagerEngine.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\ManagerPlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\ClientResources.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\CSSCompressor.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\Error.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\JSCompressor.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\JSON.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\LanguagePack.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\Logger.class.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\classes\Utils\ResultSet.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\config.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\css\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\css\_cache\fm_core_css.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\css\_cache\fm_index_css.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\default.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\includes\general.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\default.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_core.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_createdir.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_createdoc.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_createzip.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_edit.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_filemanager.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\js\_cache\fm_upload.gz" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\language\default.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\language\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\language\language.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\login_session_auth.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\mime.types" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\CustomInfoExample\CustomInfoExample.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\DrupalAuthenticator\DrupalAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\auth_drupal.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\auth_example.jsp" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\auth_example.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\ExternalAuthenticator\ExternalAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\Favorites\Favorites.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\History\History.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\JoomlaAuthenticator\JoomlaAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\JoomlaAuthenticator\JoomlaAuthenticator_1_5_8.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\MamboAuthenticator\MamboAuthenticatorImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\PHPNukeAuthenticator\PHPNukeAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\WordpressAuthenticator\WordpressAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\plugins\_Template\Template.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\rpc\default.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\rpc\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\rpc\rpc.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\stream\default.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\stream\index.php" />
+    <None Include="third-party\tiny_mce\plugins\filemanager\stream\stream.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Authenticators\BaseAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Authenticators\IPAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Authenticators\SessionAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\CorePlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\BaseFile.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\BaseFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\FileFilter.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\FileStream.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\FileTreeHandler.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\LocalFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\FileSystems\RootFileImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\ImageManager\ImageManagerPlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\ImageManager\Utils\MCImageToolsGD.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\ManagerEngine.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\ManagerPlugin.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\ClientResources.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\CSSCompressor.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\Error.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\JSCompressor.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\JSON.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\LanguagePack.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\Logger.class.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\classes\Utils\ResultSet.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\config.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\css\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\css\_cache\im_core_css.gz" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\default.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\includes\general.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\js\default.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\js\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\js\_cache\im_core.gz" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\js\_cache\im_imagemanager.gz" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\js\_cache\im_upload.gz" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\language\default.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\language\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\language\language.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\login_session_auth.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\mime.types" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\CustomInfoExample\CustomInfoExample.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\DrupalAuthenticator\DrupalAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\auth_drupal.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\auth_example.jsp" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\auth_example.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\ExternalAuthenticator\ExternalAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\Favorites\Favorites.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\History\History.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\JoomlaAuthenticator\JoomlaAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\MamboAuthenticator\MamboAuthenticatorImpl.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\PHPNukeAuthenticator\PHPNukeAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\WordpressAuthenticator\WordpressAuthenticator.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\plugins\_Template\Template.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\rpc\default.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\rpc\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\rpc\rpc.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\stream\default.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\stream\index.php" />
+    <None Include="third-party\tiny_mce\plugins\imagemanager\stream\stream.php" />
+    <None Include="third-party\tiny_mce\themes\advanced\img\Thumbs.db" />
+    <None Include="third-party\tiny_mce\themes\advanced\skins\default\img\Thumbs.db" />
+    <None Include="third-party\tiny_mce\themes\advanced\skins\o2k7\img\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Resources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6644</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

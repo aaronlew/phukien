@@ -1,10 +1,5 @@
 ﻿/* DEFAULTS
 ----------------------------------------------------------*/
-*
-{
-    margin: 0;
-    padding: 0;
-}
 
 body
 {
@@ -13,8 +8,8 @@ body
     line-height: 18px;
     color: #333;
     font-size: 10pt;
-    background: url(/static/images/main-shining.jpg) center top no-repeat fixed;
     font-family: "Helvetica Neue" , "Helvetica" , Arial, sans-serif; /*font-size: 10pt;*/
+    background: url(/static/images/imgbg.jpg);
 }
 
 .wrapper
@@ -1018,43 +1013,35 @@ div#header #advertise-right
 }
 
 /* Top Menu */
+/*
 div#header #topmenu .wrapper
 {
-    background: #f1e767;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZTc2NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWI2NDUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #f1e767 0%, #feb645 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1e767), color-stop(100%,#feb645));
-    background: -webkit-linear-gradient(top,  #f1e767 0%,#feb645 100%);
-    background: -o-linear-gradient(top,  #f1e767 0%,#feb645 100%);
-    background: -ms-linear-gradient(top,  #f1e767 0%,#feb645 100%);
-    background: linear-gradient(to bottom,  #f1e767 0%,#feb645 100%);
-    border-bottom: solid 2px #006e2e;
     font-weight: bold;
     font-family: "Helvetica";
-    border-radius: 6px;
     margin: 15px auto;
 }
 
 div#header #topmenu ul
 {
-    width: 100%;
     list-style: none;
 }
 
 div#header #topmenu ul li
 {
     float: left;
-    font-size: 15pt;
+    font-size: 12pt;
 }
 
 div#header #topmenu ul li a
 {
-    color: #fff;
+    color: #666;
+    text-shadow: 1px 1px 1px #eee;
     text-decoration: none;
     display: block;
-    padding: 18px;
-    border-right: 1px solid #f1e767;
-    border-left: 1px solid #feb645;
+    padding: 13px 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-bottom: solid 5px #006e2e;
 }
 
 div#header #topmenu ul li:last-child a
@@ -1064,6 +1051,8 @@ div#header #topmenu ul li:last-child a
 
 div#header #topmenu ul li:hover a
 {
+    color: #fff;
+    text-shadow: 1px 1px 1px #666;
     background: #00913c;
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwOTEzYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDZlMmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     background: -moz-linear-gradient(top,  #00913c 0%, #006e2e 100%);
@@ -1072,6 +1061,19 @@ div#header #topmenu ul li:hover a
     background: -o-linear-gradient(top,  #00913c 0%,#006e2e 100%);
     background: -ms-linear-gradient(top,  #00913c 0%,#006e2e 100%);
     background: linear-gradient(to bottom,  #00913c 0%,#006e2e 100%);
+}
+*/
+
+#top-menu
+{
+    margin-bottom: 16px;
+    background: #222 url(menu/skins/images/bg_white.png) repeat-x 0 -80px;
+    box-shadow: 0 4px 6px -4px #ccc;
+}
+
+#top-menu #hor-menu
+{
+    margin: 0 auto;
 }
 
 #cartDiv #custTable, .shop-cart
@@ -1165,6 +1167,8 @@ table .button
     background-color: #fff;
     border-radius: 0 0 6px 6px;
     list-style: none;
+    padding: 6px 0;
+    margin-bottom: 16px;
 }
 
 ul.info li
@@ -1177,91 +1181,43 @@ ul.info li.seperator
     border-bottom: dotted 1px rgb(35, 86, 109);
 }
 
-/* Vertical Navigator Menu */
-
-
-
-/* Product Special */
-
-#vertical-navigator .box-content
-{
-    border-top: 1px solid #a9da02;
-    padding: 0 0 0px 0;
-    background: url(/static/images/category-bg.jpg) repeat-x #6eba17;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0px 0px 0px #2c5304,0px 5px 2px #2c5304,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
-    -moz-box-shadow: 0px 0px 0px #2c5304,0px 5px 2px #2c5304,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
-    -webkit-box-shadow: 0px 0px 0px #2c5304,0px 5px 2px #2c5304,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
-    position: relative;
-    padding: 10px 0 12px 19px;
-}
-
-#vertical-navigator .box-content ul
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#vertical-navigator div.box-content > ul > li
-{
-    position: relative;
-}
-
-#vertical-navigator div.box-content > ul > li a
-{
-    text-decoration: none;
-    display: block;
-    padding: 0 0 0 0px;
-    color: #fff;
-    font-size: 17px;
-    line-height: 38px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-
-#vertical-navigator div.box-content > ul > li span
-{
-    background: url(/static/images/nolines_minus.png) 0px 0px no-repeat;
-    width: 18px;
-    height: 12px;
-    float: right;
-    margin-right: 10px;
-    margin-top: 6px;
-}
-
-#vertical-navigator div.box-content > ul > li span:hover
-{
-    cursor: pointer;
-}
-
-#vertical-navigator div.box-content > ul > li > ul
-{
-    padding-bottom: 19px;
-    padding-left: 20px;
-    display: none;
-    margin-top: 2px;
-    padding-top: 6px;
-}
-
-#vertical-navigator div.box-content > ul > li > ul > li > a
-{
-text-decoration: none;
-font-size: 12px!important;
-display: block;
-color: #fff;
-margin-bottom: 2px;
-font-weight: bold;
-}
-
-.act-cat
-{
-    position: absolute;
-    top: 5px;
-    right: 10px;
-}
 
 .products
 {
     background-color: #fff;
 }
+
+#footer
+{
+    border-top: 5px solid #006e2e;
+    padding: 10px;
+}
+
+#footer ul li
+{
+    margin-top: 16px;
+}
+
+#footer ul li ul li
+{
+    margin-top: 6px;
+}
+
+#footer ul li a
+{
+    font-weight: bold;
+    font-size: 13pt;
+    color: #006e2e;
+    text-decoration: none;
+}
+
+#footer ul li ul li a
+{
+    margin-left: 10px;
+    font-size: 9pt;
+    color: #333;
+    text-decoration: none;
+}
+
+.fb_iframe_widget span { width: 220px !important; }
+.fb-like-box iframe { width: 220px !important; }

@@ -3,11 +3,9 @@
 
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <script src="/Scripts/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#siteMapPath').hide();
-            $(".box-categories").carouFredSel();
         });
     </script>
 </asp:Content>
@@ -16,14 +14,10 @@
         <!-- The New Products -->
         <asp:Repeater ID="Repeater1" runat="server">
             <ItemTemplate>
-                <uc:ProductCategory ID="ucProductCategory" runat="server" CategoryName='<%#DataBinder
-                                                                                                   .
-                                                                                                   Eval
-                                                                                                   (Container
-                                                                                                        .
-                                                                                                        DataItem,
-                                                                                                    "Name") %>'
-                    DataSource='<%#                DataBinder.Eval(Container.DataItem, "Products") %>' />
+                <uc:ProductCategory ID="ucProductCategory" runat="server" 
+                    CategoryName='<%#DataBinder.Eval(Container.DataItem, "Name") %>'
+                    CategoryUrl='<%#DataBinder.Eval(Container.DataItem, "Url") %>'
+                    DataSource='<%# DataBinder.Eval(Container.DataItem, "Products") %>' />
             </ItemTemplate>
         </asp:Repeater>
         <div class="clear">

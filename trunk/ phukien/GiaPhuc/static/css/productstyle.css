@@ -1,21 +1,20 @@
 ﻿/* Product Layout */
 .box-heading
 {
-    margin-top: 16px;
-    padding: 20px;
+    padding: 6px;
     font-size: 13pt;
     font-weight: bold;
     line-height: normal;
-    color: #fff;
-    border-radius: 6px 6px 0 0;
-    background: url(/static/images/box-heading.jpg) repeat-x #6fba16;
-    text-transform: uppercase;
+    color: #06412E;
     font-family: 'Anton' ,sans-serif;
+    border-bottom: 6px solid #06412E;
+    margin-bottom: 6px;
 }
 
 .box-categories
 {
     background-color: #fff;
+    margin-bottom: 16px;
 }
 
 .box-categories .product-cell
@@ -71,11 +70,37 @@
     font-size: 13pt;
 }
 
+.view-more
+{
+    height: 38px;
+    font-family: Impact;
+    font-size: 13pt;
+}
+
+.view-more a
+{
+    float: right;
+    margin-top: 4px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-more a span
+{
+    display: inline-block;
+    padding: 6px 15px 7px 15px;
+}
+
+.view-more a:hover span
+{
+    color: #ffea00;
+}
+
 .clear
 {
     clear: float;
 }
-
 .box-categories .product-cell .price span
 {
     float: left;
@@ -167,7 +192,7 @@
 {
     border-bottom: none;
 }
-
+/*
 div.category-caption
 {
     width: 100%;
@@ -300,3 +325,4 @@ div.productCell div.productInfo span.discount-price, .discount-price
     font-size: 11pt;
     text-decoration: line-through;
 }
+*/

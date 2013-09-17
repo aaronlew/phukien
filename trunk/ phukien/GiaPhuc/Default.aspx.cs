@@ -65,14 +65,17 @@ namespace GiaPhuc
             if (string.Empty != Keyword)
             {
                 categories = CategoryImpl.GetAllProductInCategory(Keyword);
+                SessionUtils.Set("AllCategories", false);
             }
             else if (0 != CategoryId)
             {
                 categories = CategoryImpl.GetAllProductInCategory(CategoryId);
+                SessionUtils.Set("AllCategories", false);
             }
             else
             {
                 categories = SessionManager.AllCategories;
+                SessionUtils.Set("AllCategories", true);
             }
 
             this.Repeater1.DataSource = categories;

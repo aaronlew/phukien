@@ -115,6 +115,7 @@ namespace phukienipadx.Bl
                                                    productToCategoryRep.Findproducts_to_categories(
                                                        x => x.categories_id == categoryId)
                                                    on item.x.products_id equals z.products_id
+                                               orderby item.x.products_price descending, item.x.products_model, item.y.products_name 
                                                select new ProductInfo(item.x, item.y)).ToList()
                                }
                        };
@@ -133,6 +134,7 @@ namespace phukienipadx.Bl
             var queryProducts = from x in productRep.Findproducts(x => x.products_status == 1)
                                 join y in productDescriptionRep.GetAllproducts_descriptions()
                                 on x.products_id equals y.products_id
+                                orderby x.products_price descending, x.products_model, y.products_name
                                 select new { x, y };
 
 

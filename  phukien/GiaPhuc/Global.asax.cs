@@ -71,7 +71,7 @@ namespace GiaPhuc
                     }
 
                     //Rewrite the path with the actual path
-                    inRequest.RewritePath(newPath, string.Empty, stringBuilder.ToString());
+                    inRequest.RewritePath(newPath.TrimStart('.'), string.Empty, stringBuilder.ToString());
                 }
             }
         }

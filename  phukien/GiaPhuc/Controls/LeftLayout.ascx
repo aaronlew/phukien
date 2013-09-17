@@ -28,12 +28,12 @@
         js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));
+
+
 </script>
 <div id="vertical-navigator">
-    <div class="box-heading">
-        LOẠI PHỤ KIỆN</div>
-    <div class="box-content">
-        <ul>
+    <div>
+        <ul id="vertical-menu" class="mega-menu">
             <%
                 foreach (CategoryInfo item in SessionManager.Categories)
                 {
@@ -44,8 +44,7 @@
                 <%
                     if (item.Categories != null && item.Categories.Count > 0)
                     {%>
-                <span class="act-cat"></span>
-                <ul class="level-2-cat" style="display: none;">
+                <ul>
                     <%
                         int i = 0;
                         foreach (CategoryInfo subItem in item.Categories)
@@ -65,8 +64,8 @@
             %>
         </ul>
     </div>
-    <div class="box-heading">
-        LIÊN HỆ</div>
+    <%--<div class="box-heading">
+        LIÊN HỆ</div>--%>
     <ul class="info">
         <li><b style="color: blue">TPHCM:</b></li>
         <li>
@@ -97,9 +96,22 @@
             đến cửa hàng</span></li>
         <li class="clear"></li>
     </ul>
-    <div class="box-heading">
-        THỐNG KÊ TRUY CẬP</div>
+    <%--<div class="box-heading">
+        THỐNG KÊ TRUY CẬP</div>--%>
     <ul class="info">
+        <li class="center" style="color: Red; font-weight: bold">Online:
+            <%= Application["OnlineUsers"] %></li>
+        <li class="center" style="color: #006e2e">
+            <div id="visitorCount">
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $.get('/VisitorCounter.ashx', function (data) {
+                        $('#visitorCount').html(data);
+                    });
+                });
+            </script>
+        </li>
         <li class="center">
             <g:plusone></g:plusone>
         </li>
@@ -107,22 +119,15 @@
             data-url="http://phukienipadx.com" data-via="phukienipadx" data-size="large">Tweet</a>
         </li>
         <li class="center">
-            <div id="fb-root">
-            </div>
             <fb:like font="tahoma" href="http://phukienipadx.com" layout="button_count" show_faces="true"
                 width="10" />
+            <div id="fb-root">
+            </div>
         </li>
-        <li class="center">Online:
-            <%= Application["OnlineUsers"] %></li>
-        <li><span id="visitorCount"></span>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $.get('/VisitorCounter.ashx', function (data) {
-                        $('#visitorCount').html(data);
-                    });
-                });
-
-            </script>
+        <li style="height: 300px">
+            <div class="fb-like-box" data-href="https://www.facebook.com/pages/Phukienipadx_com/312769268813657"
+                data-width="220" data-stream="false">
+            </div>
         </li>
         <li class="clear"></li>
     </ul>
@@ -130,7 +135,7 @@
         PHỤ KIỆN BÁN CHẠY</div>
     <asp:Repeater ID="datDefault" runat="server">
         <HeaderTemplate>
-            <div class="product-special info">
+            <div id="highlight-product" class="product-special info">
         </HeaderTemplate>
         <ItemTemplate>
             <uc:ProductCell ID="ucProductCell" runat="server" ProductClass='<%--#DataBinder.Eval(Container.DataItem, "ClassHot") + " " + DataBinder.Eval(Container.DataItem, "ClassNew")--%>'
@@ -144,5 +149,4 @@
             </div>
         </FooterTemplate>
     </asp:Repeater>
-    </ul>
 </div>

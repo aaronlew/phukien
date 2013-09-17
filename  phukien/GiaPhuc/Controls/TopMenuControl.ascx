@@ -1,19 +1,26 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TopMenuControl.ascx.cs"
     Inherits="GiaPhuc.Controls.TopMenuControl" %>
-<div id="topmenu">
-    <div class="wrapper">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="<%="/pages/aboutpage.aspx".ParseSimpleUrl("Giới thiệu phukienipadx") %>">
-                Giới thiệu</a></li>
-            <li><a href="<%="/pages/topicpage.aspx?ID=9".ParseSimpleUrl("Hướng dẫn mua hàng") %>">
-                Hướng dẫn mua hàng</a></li>
-            <li><a href="<%="/pages/topicpage.aspx?ID=6".ParseSimpleUrl("Quy định bảo hành") %>">
-                Quy định bảo hành</a></li>
-            <li><a href="<%="/pages/topicpage.aspx?ID=8".ParseSimpleUrl("Tìm đối tác") %>">Tìm đối
-                tác</a></li>
-            <li><a href="<%="/pages/contactpage.aspx".ParseSimpleUrl("Liên hệ phukienipadx") %>">
-                Liên hệ</a></li>
-        </ul>
-    </div>
+<div id="top-menu" class="white">
+    <%
+        XElement xelement1 = XElement.Load(Server.MapPath("~/web.sitemap"));
+        var urlDescList = xelement1.Descendants()
+            .Where(sel => (string)sel.Attribute("resourceKey") == "Home")
+            .SelectMany(e => e.Elements()).Select(nd => new
+                        {
+                            title = nd.Attribute("title").Value,
+                            url = nd.Attribute("url").Value
+                        });
+    %>
+    <ul id="hor-menu" class="mega-menu wrapper">
+        <li><a href="/">Home</a></li>
+        <%
+            foreach (var v in urlDescList)
+            {
+        %>
+        <li><a href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
+            <%=v.title %></span></a></li>
+        <%
+                } 
+        %>
+    </ul>
 </div>

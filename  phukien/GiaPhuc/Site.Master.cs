@@ -35,7 +35,7 @@ namespace GiaPhuc
                 }
 
                 this.SiteMapPath1.Visible = (!Equals(SiteMap.CurrentNode, SiteMap.RootNode));
-                this.HorizontalBanner1.Visible = !this.SiteMapPath1.Visible;
+                //this.HorizontalBanner1.Visible = !this.SiteMapPath1.Visible;
             }
         }
     }

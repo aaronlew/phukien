@@ -1067,12 +1067,13 @@ div#header #topmenu ul li:hover a
 #top-menu
 {
     margin-bottom: 16px;
-    background: #222 url(menu/skins/images/bg_white.png) repeat-x 0 -80px;
+    background: #222 url(menu/skins/images/bg_black.png) repeat-x 0 -80px;
     box-shadow: 0 4px 6px -4px #ccc;
 }
 
 #top-menu #hor-menu
 {
+    width: 970px;
     margin: 0 auto;
 }
 
@@ -1219,5 +1220,11 @@ ul.info li.seperator
     text-decoration: none;
 }
 
-.fb_iframe_widget span { width: 220px !important; }
-.fb-like-box iframe { width: 220px !important; }
+.fb_iframe_widget span
+{
+    width: 220px !important;
+}
+.fb-like-box iframe
+{
+    width: 220px !important;
+}

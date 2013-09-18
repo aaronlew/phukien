@@ -32,7 +32,7 @@
 
 </script>
 <div id="vertical-navigator">
-    <div>
+    <%--<div>
         <ul id="vertical-menu" class="mega-menu">
             <%
                 foreach (CategoryInfo item in SessionManager.Categories)
@@ -63,10 +63,10 @@
                 }
             %>
         </ul>
-    </div>
+    </div>--%>
     <%--<div class="box-heading">
         LIÊN HỆ</div>--%>
-    <ul class="info">
+    <%--<ul class="info">
         <li><b style="color: blue">TPHCM:</b></li>
         <li>
             <asp:Literal runat="server" Text="<%$Resources:Resources, Address1 %>"></asp:Literal></li>
@@ -95,7 +95,7 @@
         <li class="center"><span style="color: red; font-style: italic">Vui lòng gọi trước khi
             đến cửa hàng</span></li>
         <li class="clear"></li>
-    </ul>
+    </ul>--%>
     <%--<div class="box-heading">
         THỐNG KÊ TRUY CẬP</div>--%>
     <ul class="info">

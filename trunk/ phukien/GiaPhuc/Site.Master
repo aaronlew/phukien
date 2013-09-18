@@ -5,6 +5,7 @@
 <%@ Register Src="~/Controls/TopMenuControl.ascx" TagName="TopMenu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/HorizontalBannerControl.ascx" TagName="HorizontalBanner"
     TagPrefix="uc" %>
+<%@ Register Src="~/Controls/AddressLineControl.ascx" TagName="Address" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/AdvertiseControl.ascx" TagName="Advertise" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/HeaderControl.ascx" TagName="Header" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/FooterControl.ascx" TagName="Footer" TagPrefix="uc" %>
@@ -39,7 +40,7 @@
     <link href="/static/response/9cols.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/col.css" rel="stylesheet" type="text/css" />
     <%--<link href="/static/css/menu/dcmegamenu.css" rel="stylesheet" type="text/css" />--%>
-    <link href="static/css/menu/skins/white.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/menu/skins/black.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/slider/slider.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/menu/dcverticalmegamenu.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
@@ -80,7 +81,7 @@
             jQuery("img").lazy();
 
             $('#hor-menu').dcMegaMenu({
-                rowItems: '3',
+                rowItems: '5',
                 speed: 0,
                 effect: 'slide',
                 event: 'hover',
@@ -137,23 +138,24 @@
 <body>
     <form runat="server" submitdisabledcontrols="true">
     <div id="header">
-        <uc:TopMenu ID="TopMenu1" runat="server"></uc:TopMenu>
+        <uc:Address ID="Address1" runat="server"></uc:Address>
         <uc:Advertise ID="Advertise1" runat="server"></uc:Advertise>
         <uc:Header ID="PageHeader1" runat="server"></uc:Header>
+        <uc:TopMenu ID="TopMenu1" runat="server"></uc:TopMenu>
+        <uc:HorizontalBanner ID="HorizontalBanner1" runat="server"></uc:HorizontalBanner>
     </div>
     <div class="clear">
     </div>
     <div class="wrapper">
         <div class="section group">
-            <div class="col span_1_of_4">
+            <%--<div class="col span_1_of_4">
                 <uc:LeftLayout ID="LeftLayout" runat="server" />
-            </div>
-            <div class="col span_3_of_4">
+            </div>--%>
+            <div class="col span_4_of_4">
                 <div id="siteMapPath" style="line-height: 35px">
                     <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="::">
                     </asp:SiteMapPath>
                 </div>
-                <uc:HorizontalBanner ID="HorizontalBanner1" runat="server"></uc:HorizontalBanner>
                 <div id="content">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server" />
                 </div>

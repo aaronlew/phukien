@@ -105,6 +105,7 @@
     <Content Include="Admin\Pages\TopicEntry.aspx" />
     <Content Include="BingSiteAuth.xml" />
     <Content Include="CMS.asmx" />
+    <Content Include="Controls\AddressLineControl.ascx" />
     <Content Include="Controls\AdvertiseControl.ascx" />
     <Content Include="Controls\ContactControl.ascx" />
     <Content Include="Controls\FooterControl.ascx" />
@@ -117,6 +118,7 @@
     <Content Include="Controls\UCProductCell.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="google5ac0acf9e33b1e0e.html" />
+    <Content Include="Images\flash-demo.jpg" />
     <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.touchSwipe.min.js" />
@@ -186,6 +188,7 @@
     <Content Include="static\images\banner\thumbl_728_003.png" />
     <Content Include="static\images\banner\thumbl_728_004.png" />
     <Content Include="static\images\banner\thumbl_728_005.png" />
+    <Content Include="static\images\flash-demo.jpg" />
     <Content Include="static\images\goTop.png" />
     <Content Include="static\images\home.png" />
     <Content Include="static\images\hot.gif" />
@@ -1277,6 +1280,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CMSContext.cs" />
+    <Compile Include="Controls\AddressLineControl.ascx.cs">
+      <DependentUpon>AddressLineControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AddressLineControl.ascx.designer.cs">
+      <DependentUpon>AddressLineControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AdvertiseControl.ascx.cs">
       <DependentUpon>AdvertiseControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

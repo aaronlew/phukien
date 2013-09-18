@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HorizontalBannerControl.ascx.cs"
     Inherits="GiaPhuc.Controls.HorizontalBannerControl" %>
 <%@ Import Namespace="GiaPhuc.Utility" %>
-<div class="group section">
+<%--<div class="group section">
     <div class="col span_2_of_3">
         <div class="image_carousel">
             <ul id="foo2" style="height: 140px;">
@@ -67,4 +67,7 @@
         <a class="prev" id="foo2_prev" href="#"><span>prev</span></a> <a class="next" id="foo2_next"
             href="#"><span>next</span></a>
     </div>
+</div>--%>
+<div class="wrapper">
+    <img src="../static/images/flash-demo.jpg" />
 </div>

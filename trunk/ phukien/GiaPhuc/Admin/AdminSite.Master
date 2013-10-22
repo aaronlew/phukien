@@ -80,7 +80,7 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="/Admin/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
+                        [ <a target="_blank" href="/Admin/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Welcome <span class="bold">
@@ -94,25 +94,24 @@
             </div>
             <div class="clear hideSkiplink">
                 <ul class="menu">
-                    <li><a href="/"><span>Home</span></a></li>
-                    <li><a href="/About.aspx"><span>About</span></a></li>
-                    <li><a href="/"><span>Meta & Content</span></a>
+                    <li><a target="_blank" href="/"><span>Home</span></a></li>
+                    <li><a target="_blank" href="/"><span>Meta & Content</span></a>
                         <ul class="children">
-                            <li><a href="/Admin/Pages/MetaEntry.aspx">Meta</a></li>
-                            <li><a href="/Admin/Pages/TopicManager.aspx">Content</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/MetaEntry.aspx">Meta</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/TopicManager.aspx">Content</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span>Product</span></a>
+                    <li><a target="_blank" href="#"><span>Product</span></a>
                         <ul class="children">
-                            <li><a href="/Admin/Pages/CategoryManager.aspx">Category</a></li>
-                            <li><a href="/Admin/Pages/ManufacturerManager.aspx">Manufacturer</a></li>
-                            <li><a href="/Admin/Pages/ProductManager.aspx">Product</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/CategoryManager.aspx">Category</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/ManufacturerManager.aspx">Manufacturer</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/ProductManager.aspx">Product</a></li>
                         </ul>
                     </li>
-                    <li><a href="/"><span>Order</span></a>
+                    <li><a target="_blank" href="/"><span>Order</span></a>
                         <ul class="children">
-                            <li><a href="#">Customer</a></li>
-                            <li><a href="/Admin/Pages/ProductManager.aspx">Order</a></li>
+                            <li><a target="_blank" href="#">Customer</a></li>
+                            <li><a target="_blank" href="/Admin/Pages/ProductManager.aspx">Order</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -127,13 +126,13 @@
         </div>
         <div class="footer">
             <p>
-                © 2012 Rs - <a href="http://htsofts.com">htsofts.com</a>. Add: 363/29/12/16
+                © 2012 Rs - <a target="_blank" href="http://diembanhang.com">diembanhang.com</a>. Add: 363/29/12/16
                 ĐẤT MỚI, P BTDA, Q BÌNH TÂN - Mobi: (0907) 02 88 02 - Email: huutai.alz@gmail.com.
             </p>
         </div>
         <div>
             <p>
-                <a href="http://phukienipadx.com">Phụ kiện Ipad</a> | <a href="http://simsovn.net">Sim
+                <a target="_blank" href="http://phukienipadx.com">Phụ kiện Ipad</a> | <a target="_blank" href="http://simsovn.net">Sim
                     số Vietnam</a>
             </p>
             <p class="back-top">

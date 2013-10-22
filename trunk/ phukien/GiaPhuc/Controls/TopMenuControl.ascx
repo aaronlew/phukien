@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TopMenuControl.ascx.cs"
     Inherits="GiaPhuc.Controls.TopMenuControl" %>
-<%--<div id="top-menu" class="white">
+<div id="top-menu" class="black">
     <%
         XElement xelement1 = XElement.Load(Server.MapPath("~/web.sitemap"));
         var urlDescList = xelement1.Descendants()
@@ -17,15 +17,16 @@
             foreach (var v in urlDescList)
             {
         %>
-        <li><a href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
+        <li><a target="_blank" href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
             <%=v.title %></span></a></li>
         <%
                 } 
         %>
     </ul>
-</div>--%>
-<div id="top-menu" class="black">
+</div>
+<%--<div id="top-menu" class="black">
     <ul id="hor-menu" class="mega-menu">
+        <li><a href="/">Home</a></li>
         <li><a href="/">YOOBAO</a>
             <ul>
                 <li><a href="/">Pin dự phòng cao cấp</a></li></ul>
@@ -127,3 +128,4 @@
         </li>
     </ul>
 </div>
+--%>

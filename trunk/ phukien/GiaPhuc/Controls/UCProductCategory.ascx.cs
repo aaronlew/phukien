@@ -39,7 +39,7 @@ namespace GiaPhuc.Controls
                     }
                     if (itemIndex < products.Count)
                     {
-                        pnlLayout.Controls.Add(new LiteralControl("<div class=\"view-more\"><a href=\"" + CategoryUrl + "\"><span>>> Xem thêm</span></a></div>"));
+                        pnlLayout.Controls.Add(new LiteralControl("<div class=\"view-more\"><a target=\"_blank\" href=\"" + CategoryUrl + "\"><span>>> Xem thêm</span></a></div>"));
                     }
                     pnlLayout.Controls.Add(new LiteralControl("</div>"));
                 }

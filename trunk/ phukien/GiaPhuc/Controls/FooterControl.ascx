@@ -18,12 +18,13 @@
                     foreach (var v in urlDescList)
                     {
                 %>
-                <li><a href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
+                <li><a target="_blank" href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
                     <%=v.title %></span></a></li>
                 <%
                     } 
                 %>
             </ul>
+            
         </div>
         <div class="col span_3_of_4">
             <%
@@ -35,7 +36,7 @@
             %>
             <ul class="section group">
                 <% } %>
-                <li class="col span_1_of_3"><a href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
+                <li class="col span_1_of_3"><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
                     title="<%=item.Name %>">
                     <%= item.Name %></a>
                     <%
@@ -46,7 +47,7 @@
                         foreach (phukienipadx.Bl.Models.CategoryInfo subItem in item.Categories)
                         {
                         %>
-                        <li><a href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
+                        <li><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
                             title="<%=subItem.Name %>">
                             <%= subItem.Name %></a></li>
                         <%

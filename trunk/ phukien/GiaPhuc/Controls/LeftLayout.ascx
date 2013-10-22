@@ -132,6 +132,71 @@
     <div id="light_menu" class="menu">
         <ul id="litb-nav">
             <%
+                XElement xelement1 = XElement.Load(Server.MapPath("~/web.sitemap"));
+                var urlDescList = xelement1.Descendants()
+                    .Where(sel => (string)sel.Attribute("resourceKey") == "MainMenu")
+                    .SelectMany(e => e.Elements()).Select(nd => new
+                                {
+                                    title = nd.Attribute("title").Value,
+                                    url = nd.Attribute("url").Value,
+                                    children = nd.Elements()
+                                });
+            %>
+            <%
+                bool first = true;
+                foreach (var v in urlDescList)
+                {
+            %>
+            <li class="<%=(first ? "first" : string.Empty) %> mainlist" style="position: static;">
+                <a target="_blank" class="navItem" href="<%=v.url %>" title="<%=v.title %>">
+                    <%=v.title %></a>
+                <%
+                    if (first) first = false;
+                    if (v.children != null && v.children.Count() > 0)
+                    {
+                        var ndChild = v.children.Select(nd => new
+                        {
+                            title = nd.Attribute("title").Value,
+                            url = nd.Attribute("url").Value,
+                            children = nd.Elements()
+                        });
+                %>
+                <div class="sub-nav-container">
+                    <dl>
+                        <%
+                        int i = 0;
+                        foreach (var subItem in ndChild)
+                        {
+                        %>
+                        <dt><a target="_blank" href="<%=subItem.url %>" title="<%=subItem.title %>">
+                            <%= subItem.title %></a></dt>
+                        <%
+                            if (subItem.children != null && subItem.children.Count() > 0)
+                            {
+                                var ndChildOfChild = subItem.children.Select(nd => new
+                                {
+                                    title = nd.Attribute("title").Value,
+                                    url = nd.Attribute("url").Value,
+                                    children = nd.Elements()
+                                });
+                                foreach (var subOfSubItem in ndChildOfChild)
+                                {
+                        %>
+                        <dd>
+                            <a target="_blank" href="<%=subOfSubItem.url %>" title="<%=subOfSubItem.title %>">
+                                <%= subOfSubItem.title %></a></dd>
+                        <%
+                                }
+                            }
+                            i++;
+                        }%>
+                    </dl>
+                </div>
+                <% } %></li>
+            <%
+                } 
+            %>
+            <%--<%
                 bool first = true;
                 foreach (CategoryInfo item in SessionManager.Categories)
                 {
@@ -163,7 +228,7 @@
             </li>
             <%
                 }
-            %>
+            %>--%>
         </ul>
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderControl.ascx.cs"
     Inherits="GiaPhuc.Controls.HeaderControl" %>
+<%@ Register Src="~/Controls/SocialControl.ascx" TagName="Social" TagPrefix="uc" %>
 <%@ Import Namespace="System.Linq" %>
 <%@ Import Namespace="GiaPhuc.App_Data" %>
 <%@ Import Namespace="GiaPhuc.Utility" %>
@@ -25,9 +26,12 @@
                     <asp:RectangleHotSpot Top="0" Left="0" Right="430" Bottom="86" NavigateUrl="/" />
                 </asp:ImageMap>
             </div>
+            <div class="float-left">
+                <uc:Social ID="social1" runat="server" />
+            </div>
             <div class="float-right">
                 <div>
-                    <a href="/Pages/CartPage.aspx" class="cart">Giỏ hàng <span style="color: Red">
+                    <a target="_blank" href="/Pages/CartPage.aspx" class="cart">Giỏ hàng <span style="color: Red">
                         <%="(" + SessionManager.Cart.Sum(x => x.Value.Quantity) + ")" %></span> </a>
                 </div>
                 <div class="clear">

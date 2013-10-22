@@ -22,15 +22,6 @@ namespace GiaPhuc {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// Address1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::GiaPhuc.Controls.AddressLineControl Address1;
-        
-        /// <summary>
         /// Advertise1 control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace GiaPhuc {
         protected global::GiaPhuc.Controls.HeaderControl PageHeader1;
         
         /// <summary>
+        /// Address1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.AddressLineControl Address1;
+        
+        /// <summary>
         /// TopMenu1 control.
         /// </summary>
         /// <remarks>
@@ -58,13 +58,13 @@ namespace GiaPhuc {
         protected global::GiaPhuc.Controls.TopMenuControl TopMenu1;
         
         /// <summary>
-        /// HorizontalBanner1 control.
+        /// LeftLayout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GiaPhuc.Controls.HorizontalBannerControl HorizontalBanner1;
+        protected global::GiaPhuc.Controls.LeftLayout LeftLayout;
         
         /// <summary>
         /// SiteMapPath1 control.

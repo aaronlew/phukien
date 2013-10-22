@@ -113,6 +113,7 @@
     <Content Include="Controls\LeftLayout.ascx" />
     <Content Include="Controls\LocationControl.ascx" />
     <Content Include="Controls\HeaderControl.ascx" />
+    <Content Include="Controls\SocialControl.ascx" />
     <Content Include="Controls\TopMenuControl.ascx" />
     <Content Include="Controls\UCProductCategory.ascx" />
     <Content Include="Controls\UCProductCell.ascx" />
@@ -124,7 +125,6 @@
     <Content Include="Scripts\helper-plugins\jquery.touchSwipe.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.transit.min.js" />
     <Content Include="Scripts\jquery-scrolltofixed-min.js" />
-    <Content Include="Scripts\jquery.carouFredSel-6.2.1-packed.js" />
     <Content Include="Scripts\menu\jquery.dcmegamenu.1.3.3.min.js" />
     <Content Include="Scripts\menu\jquery.dcverticalmegamenu.1.3.js" />
     <Content Include="Scripts\menu\jquery.hoverIntent.minified.js" />
@@ -165,11 +165,11 @@
     <Content Include="static\css\menu\skins\white.css" />
     <Content Include="static\css\slider\slider.css" />
     <Content Include="static\images\arrows.gif" />
+    <Content Include="static\images\bg_caidan.jpg" />
     <Content Include="static\images\box-heading.jpg" />
     <Content Include="static\images\button-bg.png" />
     <Content Include="static\images\delete.png" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />
-    <Content Include="Scripts\jquery.cycle.all.js" />
     <Content Include="Images\banner1.jpg" />
     <Content Include="Images\banner2.jpg" />
     <Content Include="Images\banner3.jpg" />
@@ -209,6 +209,7 @@
     <Content Include="static\images\loading2.gif" />
     <Content Include="static\images\main-shining.jpg" />
     <Content Include="static\images\nolines_minus.png" />
+    <Content Include="static\images\repeat.png" />
     <Content Include="static\images\slide-arrow.gif" />
     <Content Include="Images\slider\nav-bg.png" />
     <Content Include="Images\slider\slide-bg.png" />
@@ -1335,6 +1336,13 @@
     </Compile>
     <Compile Include="Controls\HeaderControl.ascx.designer.cs">
       <DependentUpon>HeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SocialControl.ascx.cs">
+      <DependentUpon>SocialControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SocialControl.ascx.designer.cs">
+      <DependentUpon>SocialControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\TopMenuControl.ascx.cs">
       <DependentUpon>TopMenuControl.ascx</DependentUpon>

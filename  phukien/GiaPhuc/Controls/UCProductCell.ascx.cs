@@ -32,13 +32,13 @@ namespace GiaPhuc.Controls
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
             writer.AddAttribute(HtmlTextWriterAttribute.Class, "col span_1_of_2");
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
-            writer.WriteLine("<a href=\"{2}\"><img src=\"{0}\" alt=\"{1}\" title=\"{1}\" /></a>", PhotoPath, ProductName, ProductUrl);
+            writer.WriteLine("<a target=\"_blank\" href=\"{2}\"><img src=\"{0}\" alt=\"{1}\" title=\"{1}\" /></a>", PhotoPath, ProductName, ProductUrl);
             writer.RenderEndTag();
             writer.AddAttribute(HtmlTextWriterAttribute.Class, "col span_1_of_2");
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
             writer.AddAttribute(HtmlTextWriterAttribute.Class, "description");
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
-            writer.WriteLine("<a href=\"{1}\">{2}</a><p>{0}</p>", ProductCode, ProductUrl, ProductName.Length > 30 ? ProductName.Substring(0, 30) + " ..." : ProductName);
+            writer.WriteLine("<a target=\"_blank\" href=\"{1}\">{2}</a><p>{0}</p>", ProductCode, ProductUrl, ProductName.Length > 30 ? ProductName.Substring(0, 30) + " ..." : ProductName);
             if (IsDiscountItem)
                 writer.WriteLine("<div>{0}</div>", ProductDiscountPrice);
             writer.WriteLine("<div class=\"price\"><span>{0}</span></div>", ProductPrice);

@@ -203,7 +203,7 @@ div.hideSkiplink
 {
     width: 100%;
 }
-
+/*
 div.menu ul
 {
     background: #333;
@@ -236,7 +236,6 @@ div.menu ul li:hover
 
 div.menu ul li:hover a
 {
-    color: #fff;
     text-decoration: none;
 }
 
@@ -254,7 +253,7 @@ div.menu ul li.double-line a, div.menu ul.double-line li:visited a
 {
     padding: 10px 10px 0;
 }
-
+*/
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
 
@@ -1066,7 +1065,6 @@ div#header #topmenu ul li:hover a
 
 #top-menu
 {
-    margin-bottom: 16px;
     background: #222 url(menu/skins/images/bg_black.png) repeat-x 0 -80px;
     box-shadow: 0 4px 6px -4px #ccc;
 }
@@ -1227,4 +1225,157 @@ ul.info li.seperator
 .fb-like-box iframe
 {
     width: 220px !important;
+}
+#left_menu
+{
+    margin-bottom: 10px;
+    height: 419px;
+    padding-top: 17px;
+    background: url(/static/images/bg_caidan.jpg) repeat left top;
+}
+
+.menu ul li a.navItem
+{
+    z-index: 9999;
+}
+.menu a, .menu a:visited
+{
+    display: block;
+    font-size: 1em;
+    height: 100%;
+    text-decoration: none;
+}
+#category_menu, #left_menu
+{
+    margin-bottom: 10px;
+    height: 419px;
+    padding-top: 17px;
+    background: url(../images/bg_caidan.jpg) repeat left top;
+}
+#menu_index_top
+{
+    height: 45px;
+}
+#menu_index_top li
+{
+    height: 48px;
+    position: absolute;
+}
+#menu_index_top li a:link, #menu_index_top li a:visited
+{
+    color: #FFFFFF;
+    display: block;
+    font-size: 15px;
+    height: 48px;
+    line-height: 45px;
+    text-indent: 1em;
+}
+#light_menu
+{
+    position: relative;
+}
+.menu
+{
+    float: left;
+    font-size: 12px;
+    z-index: 500;
+}
+.menu ul
+{
+    padding-left: 10px;
+    float: left;
+    width: 199px;
+}
+.menu ul li.mainlist
+{
+    display: block;
+    float: left;
+    width: 190px;
+    height: 25px;
+    line-height: 25px;
+    background: url(/static/images/repeat.png) repeat scroll 0 0 transparent;
+    background-position: 0 -803px;
+}
+.menu ul li a.navItem
+{
+    z-index: 9999;
+    font-family: Arial Bold;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    margin-left: -6px;
+    padding-left: 6px;
+    background: url(../images/icon.png) no-repeat 178px -401px;
+    color: #FFF;
+}
+
+.menu ul li a.show_back
+{
+    background-position: 170px -401px;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-color: #FFC9C9 -moz-use-text-color #FFC9C9 #FFC9C9;
+    border-radius: 3px 0 0 3px;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    box-shadow: 1px 1px 2px #333333;
+    line-height: 26px;
+    text-decoration: none;
+    top: -1px;
+    color: #F66907;
+}
+
+.menu ul div.sub-nav-container
+{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #FFC9C9 #FFC9C9 #FFC9C9 -moz-use-text-color;
+    border-radius: 0 0 5px 5px;
+    border-style: solid solid solid none;
+    border-width: 0 1px 1px medium;
+    box-shadow: 2px 1px 2px #333333;
+    z-index: 9999;
+    height: auto;
+    left: 190px;
+    position: absolute;
+    text-align: left;
+    top: -10000px;
+    min-height: 407px;
+    padding: 13px 0 15px 20px;
+    width: 700px;
+}
+.sub-nav-container
+{
+    margin: 0;
+    padding: 0;
+}
+.menu ul div.sub-nav-container dl
+{
+    overflow: hidden;
+    width: 220px;
+}
+#light_menu div.sub-nav-container dt a
+{
+    font: bold 11px Verdana,sans-serif;
+    margin-right: 20px;
+    border-bottom: 1px dotted #D5D5D5;
+    color: #333333;
+    line-height: 14px;
+    padding: 8px 0;
+    display: block;
+    font-size: 12px;
+}
+
+#light_menu div.sub-nav-container dd a
+{
+    color: #666666;
+    font-weight: normal;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 0 0 10px;
+    display: block;
+    font-size: 12px;
 }

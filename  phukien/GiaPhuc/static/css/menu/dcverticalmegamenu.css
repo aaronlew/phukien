@@ -94,7 +94,7 @@ h2
 }
 .mega-menu li .sub-container .sub
 {
-    display: inherit;
+    /* display: inherit; */ 
 }
 
 .mega-menu li .sub .row

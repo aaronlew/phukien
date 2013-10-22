@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div style="border: 1px solid #000; width: 100%">
-        <a href="/Admin/Pages/ProductEntry.aspx" class="button">Add New</a>
+        <a target="_blank" href="/Admin/Pages/ProductEntry.aspx" class="button">Add New</a>
     </div>
     <div class="clear"></div>
     <div id="gridProduct">

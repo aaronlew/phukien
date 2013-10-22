@@ -5,6 +5,7 @@
 <%@ Register Src="~/Controls/UCProductCell.ascx" TagName="ProductCell" TagPrefix="uc" %>
 <script type="text/javascript">
 
+    <!--
     /* google plus */
     window.___gcfg = {
         lang: 'vi-VN'
@@ -29,44 +30,146 @@
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));
 
+    function hoverMenu() {
+        //初始化
+        var end_num = 4;
+        var array_num = $(".navItem").size();
+        $(".mainlist").css("position", "static");
+        $(".sub-nav-container").css("top", "-10000000px");
+        $(".navItem").removeClass("show_back");
+
+        if ($(this).closest('li').has('div').length == 0) return true;
+
+        $(this).addClass("show_back");
+
+        //计算尺寸
+        var indexs = $(".navItem").index($(this));
+        var show_box_height = $(this).next().height() + $(".right-tr").height() + $(".right-br").height();
+
+        var li_height = $("#litb-nav li").height();
+        var li_height_total = (indexs + 1) * (li_height + 1);
+
+        //判断并做出改变
+        if ((li_height_total + li_height + 1) > show_box_height) {
+            $(this).parent().css("position", "relative");
+            if (indexs > array_num - end_num) {
+                $(this).next().css("top", -show_box_height + 70 + "px");
+            } else {
+                $(this).next().css("top", "-11px");
+            }
+        } else {
+            $(this).next().css("top", "-17px");
+        }
+    }
+
+    function hoverMenu1() {
+
+        //初始化
+        var end_num = 4;
+        var array_num = $(".navItem").size();
+        $(".mainlist").css("position", "static");
+        $(".sub-nav-container").css("top", "-10000000px");
+        $(".navItem").removeClass("show_back");
+
+        if ($(this).closest('li').has('div').length == 0) return true;
+
+        $(this).addClass("show_back");
+
+        //计算尺寸
+        var indexs = $(".navItem").index($(this));
+        var show_box_height = $(this).next().height() + $(".right-tr").height() + $(".right-br").height();
+
+        var li_height = $("#litb-nav li").height();
+        var li_height_total = (indexs + 1) * (li_height + 1);
+
+        //判断并做出改变
+        if ((li_height_total + li_height + 1) > show_box_height) {
+            $(this).parent().css("position", "relative");
+            if (indexs > array_num - end_num) {
+                $(this).next().css("top", -show_box_height + 70 + "px");
+            } else {
+                $(this).next().css("top", "-11px");
+            }
+        } else {
+            $(this).next().css("top", "-17px");
+        }
+
+        return false;
+    }
+
+    $(function () {
+        $('#litb-nav li:last').attr('style', 'border-radius:0 0 5px 5px');
+
+        $(".navItem").click(hoverMenu1).hover(
+    	  hoverMenu,
+    	    function () {
+    	        $(".sub-nav-container").hover(
+    				function () {
+    				    //nothing
+    				},
+    				function () {
+    				    $(this).css("top", "-10000000px");
+    				    //$(this).css("z-index","9999999");
+    				    $(this).parent().css("position", "static");
+    				    $(".navItem").removeClass("show_back");
+    				}
+    			);
+    	    }
+    	);
+
+    });
+
+    $(document).click(function () {
+        $(".mainlist").css("position", "static");
+        $(".sub-nav-container").css("top", "-10000000px");
+        $(".navItem").removeClass("show_back");
+    });
+
+    //-->
 
 </script>
-<div id="vertical-navigator">
-    <%--<div>
-        <ul id="vertical-menu" class="mega-menu">
+<div id="left_menu">
+    <div id="light_menu" class="menu">
+        <ul id="litb-nav">
             <%
+                bool first = true;
                 foreach (CategoryInfo item in SessionManager.Categories)
                 {
             %>
-            <li><a href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
-                title="<%=item.Name %>">
-                <%= item.Name %></a>
+            <li class="<%=(first ? "first" : string.Empty) %> mainlist" style="position: static;">
+                <a target="_blank" class="navItem" href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
+                    title="<%=item.Name %>">
+                    <%= item.Name %></a>
                 <%
+                    if (first) first = false;
                     if (item.Categories != null && item.Categories.Count > 0)
                     {%>
-                <ul>
-                    <%
+                <div class="sub-nav-container">
+                    <dl>
+                        <%
                         int i = 0;
                         foreach (CategoryInfo subItem in item.Categories)
                         {
-                    %>
-                    <li><a href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
-                        title="<%=subItem.Name %>">
-                        <%= subItem.Name %></a></li>
-                    <%
+                        %>
+                        <dt><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
+                            title="<%=subItem.Name %>">
+                            <%= subItem.Name %></a></dt>
+                        <%
                             i++;
                         }%>
-                </ul>
+                    </dl>
+                </div>
                 <% } %>
             </li>
             <%
                 }
             %>
         </ul>
-    </div>--%>
-    <%--<div class="box-heading">
+    </div>
+</div>
+<%--<div class="box-heading">
         LIÊN HỆ</div>--%>
-    <%--<ul class="info">
+<%--<ul class="info">
         <li><b style="color: blue">TPHCM:</b></li>
         <li>
             <asp:Literal runat="server" Text="<%$Resources:Resources, Address1 %>"></asp:Literal></li>
@@ -96,57 +199,38 @@
             đến cửa hàng</span></li>
         <li class="clear"></li>
     </ul>--%>
-    <%--<div class="box-heading">
+<%--<div class="box-heading">
         THỐNG KÊ TRUY CẬP</div>--%>
-    <ul class="info">
-        <li class="center" style="color: Red; font-weight: bold">Online:
-            <%= Application["OnlineUsers"] %></li>
-        <li class="center" style="color: #006e2e">
-            <div id="visitorCount">
-            </div>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $.get('/VisitorCounter.ashx', function (data) {
-                        $('#visitorCount').html(data);
+<div class="box-heading">
+    PHỤ KIỆN BÁN CHẠY</div>
+<asp:Repeater ID="datDefault" runat="server">
+    <HeaderTemplate>
+        <div id="highlight-product" class="product-special info">
+    </HeaderTemplate>
+    <ItemTemplate>
+        <uc:ProductCell ID="ucProductCell" runat="server" ProductClass='<%--#DataBinder.Eval(Container.DataItem, "ClassHot") + " " + DataBinder.Eval(Container.DataItem, "ClassNew")--%>'
+            ProductCode='<%#DataBinder.Eval(Container.DataItem, "ProductNumber")%>' ProductName='<%#DataBinder.Eval(Container.DataItem, "ProductName")%>'
+            ProductPrice='<%#DataBinder.Eval(Container.DataItem, "DisplayPrice")%>' ProductUrl='<%#DataBinder.Eval(Container.DataItem, "DetailsUrl")%>'
+            PhotoPath='<%#DataBinder.Eval(Container.DataItem, "ThumbsUrl")%>' AddToCartUrl='<%#DataBinder.Eval(Container.DataItem, "ShopCartUrl")%>'
+            ProductDiscountPrice='<%#DataBinder.Eval(Container.DataItem, "DisplayDiscountPrice")%>'
+            IsDiscountItem='<%#DataBinder.Eval(Container.DataItem, "IsDiscountItem")%>' />
+    </ItemTemplate>
+    <FooterTemplate>
+        <ul id="visit-counter">
+            <li class="center" style="color: Red; font-weight: bold">Online:
+                <%= Application["OnlineUsers"] %></li>
+            <li class="center" style="color: #006e2e">
+                <div id="visitorCount">
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $.get('/VisitorCounter.ashx', function (data) {
+                            $('#visitorCount').html(data);
+                        });
                     });
-                });
-            </script>
-        </li>
-        <li class="center">
-            <g:plusone></g:plusone>
-        </li>
-        <li class="center"><a href="https://twitter.com/share" class="twitter-share-button"
-            data-url="http://phukienipadx.com" data-via="phukienipadx" data-size="large">Tweet</a>
-        </li>
-        <li class="center">
-            <fb:like font="tahoma" href="http://phukienipadx.com" layout="button_count" show_faces="true"
-                width="10" />
-            <div id="fb-root">
-            </div>
-        </li>
-        <li style="height: 300px">
-            <div class="fb-like-box" data-href="https://www.facebook.com/pages/Phukienipadx_com/312769268813657"
-                data-width="220" data-stream="false">
-            </div>
-        </li>
-        <li class="clear"></li>
-    </ul>
-    <div class="box-heading">
-        PHỤ KIỆN BÁN CHẠY</div>
-    <asp:Repeater ID="datDefault" runat="server">
-        <HeaderTemplate>
-            <div id="highlight-product" class="product-special info">
-        </HeaderTemplate>
-        <ItemTemplate>
-            <uc:ProductCell ID="ucProductCell" runat="server" ProductClass='<%--#DataBinder.Eval(Container.DataItem, "ClassHot") + " " + DataBinder.Eval(Container.DataItem, "ClassNew")--%>'
-                ProductCode='<%#DataBinder.Eval(Container.DataItem, "ProductNumber")%>' ProductName='<%#DataBinder.Eval(Container.DataItem, "ProductName")%>'
-                ProductPrice='<%#DataBinder.Eval(Container.DataItem, "DisplayPrice")%>' ProductUrl='<%#DataBinder.Eval(Container.DataItem, "DetailsUrl")%>'
-                PhotoPath='<%#DataBinder.Eval(Container.DataItem, "ThumbsUrl")%>' AddToCartUrl='<%#DataBinder.Eval(Container.DataItem, "ShopCartUrl")%>'
-                ProductDiscountPrice='<%#DataBinder.Eval(Container.DataItem, "DisplayDiscountPrice")%>'
-                IsDiscountItem='<%#DataBinder.Eval(Container.DataItem, "IsDiscountItem")%>' />
-        </ItemTemplate>
-        <FooterTemplate>
-            </div>
-        </FooterTemplate>
-    </asp:Repeater>
-</div>
+                </script>
+            </li>
+        </ul>
+        </div>
+    </FooterTemplate>
+</asp:Repeater>

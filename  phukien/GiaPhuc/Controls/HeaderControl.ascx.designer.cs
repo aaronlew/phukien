@@ -13,15 +13,6 @@ namespace GiaPhuc.Controls {
     public partial class HeaderControl {
         
         /// <summary>
-        /// ImageMap1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageMap ImageMap1;
-        
-        /// <summary>
         /// social1 control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace GiaPhuc.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::GiaPhuc.Controls.SocialControl social1;
+        
+        /// <summary>
+        /// ImageMap1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageMap ImageMap1;
         
         /// <summary>
         /// txtSearchBox control.

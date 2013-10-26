@@ -113,6 +113,7 @@
     <Content Include="Controls\LeftLayout.ascx" />
     <Content Include="Controls\LocationControl.ascx" />
     <Content Include="Controls\HeaderControl.ascx" />
+    <Content Include="Controls\PostsControl.ascx" />
     <Content Include="Controls\SocialControl.ascx" />
     <Content Include="Controls\TopMenuControl.ascx" />
     <Content Include="Controls\UCProductCategory.ascx" />
@@ -206,6 +207,8 @@
     <Content Include="pinduphong.swf" />
     <Content Include="Images\rightmenu.gif" />
     <Content Include="Images\searchicon.png" />
+    <Content Include="static\images\iPad_5_release_date.jpg" />
+    <Content Include="static\images\line_banner.png" />
     <Content Include="static\images\loading2.gif" />
     <Content Include="static\images\main-shining.jpg" />
     <Content Include="static\images\nolines_minus.png" />
@@ -1336,6 +1339,13 @@
     </Compile>
     <Compile Include="Controls\HeaderControl.ascx.designer.cs">
       <DependentUpon>HeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostsControl.ascx.cs">
+      <DependentUpon>PostsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PostsControl.ascx.designer.cs">
+      <DependentUpon>PostsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\SocialControl.ascx.cs">
       <DependentUpon>SocialControl.ascx</DependentUpon>

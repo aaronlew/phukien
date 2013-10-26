@@ -5,6 +5,7 @@ using System.Web;
 using GiaPhuc.Data;
 using GiaPhuc.Helper;
 using phukienipadx.Core;
+using GiaPhuc.Controls;
 
 namespace GiaPhuc
 {
@@ -14,10 +15,12 @@ namespace GiaPhuc
 
         public IList<EZPages> Guides
         {
-            get { 
-                if(Session["Guide"] == null)
+            get
+            {
+                if (Session["Guide"] == null)
                     Session["Guide"] = TopicHelper.GetTopics(PageType.Guide).ToList();
-                return Session["Guide"] as IList<EZPages>; }
+                return Session["Guide"] as IList<EZPages>;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,9 +37,13 @@ namespace GiaPhuc
                     //Session["InfoNews"] = RssManager.ReadFeed(WebConfigurationManager.AppSettings["rss"]).Take(8).ToList();
                 }
 
-                this.SiteMapPath1.Visible = (!Equals(SiteMap.CurrentNode, SiteMap.RootNode));
-                //this.HorizontalBanner1.Visible = !this.SiteMapPath1.Visible;
+                if (Page is Default)
+                {
+                    PostsControl postsControl = LoadControl("~/Controls/PostsControl.ascx") as PostsControl;
+                    this.pnlPost.Controls.Add(postsControl);
+                }
             }
+
         }
     }
 }

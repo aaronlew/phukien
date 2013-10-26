@@ -1065,14 +1065,19 @@ div#header #topmenu ul li:hover a
 
 #top-menu
 {
-    background: #222 url(menu/skins/images/bg_black.png) repeat-x 0 -80px;
-    box-shadow: 0 4px 6px -4px #ccc;
+    /* background: #222 url(menu/skins/images/bg_black.png) repeat-x 0 -80px;      box-shadow: 0 4px 6px -4px #ccc;*/
 }
 
 #top-menu #hor-menu
 {
     width: 970px;
     margin: 0 auto;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #cartDiv #custTable, .shop-cart
@@ -1229,9 +1234,9 @@ ul.info li.seperator
 #left_menu
 {
     margin-bottom: 10px;
-    height: 419px;
+    height: 380px;
     padding-top: 17px;
-    background: url(/static/images/bg_caidan.jpg) repeat left top;
+    background: #F76907;
 }
 
 .menu ul li a.navItem
@@ -1244,13 +1249,6 @@ ul.info li.seperator
     font-size: 1em;
     height: 100%;
     text-decoration: none;
-}
-#category_menu, #left_menu
-{
-    margin-bottom: 10px;
-    height: 419px;
-    padding-top: 17px;
-    background: url(../images/bg_caidan.jpg) repeat left top;
 }
 #menu_index_top
 {
@@ -1306,8 +1304,7 @@ ul.info li.seperator
     position: relative;
     text-decoration: none;
     margin-left: -6px;
-    padding-left: 6px;
-    background: url(../images/icon.png) no-repeat 178px -401px;
+    padding-left: 6px; /* background: url(../images/icon.png) no-repeat 178px -401px; */
     color: #FFF;
 }
 
@@ -1343,7 +1340,7 @@ ul.info li.seperator
     position: absolute;
     text-align: left;
     top: -10000px;
-    min-height: 407px;
+    min-height: 368px;
     padding: 13px 0 15px 20px;
     width: 700px;
 }
@@ -1378,4 +1375,97 @@ ul.info li.seperator
     padding: 0 0 0 10px;
     display: block;
     font-size: 12px;
+}
+
+#social-icons
+{
+    position: absolute;
+    z-index: 5;
+    margin-left: -130px;
+    width: 110px;
+    overflow: hidden;
+    top: 235px;
+    background-color: Navy;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#posts
+{
+    min-height: 377px;
+    margin-bottom: 10px;
+    margin-left: -30px;
+    padding: 10px 25px 10px 0;
+    background: #F76907;
+}
+
+#posts .content
+{
+    margin-left: 25px;
+    background: #fff;
+    min-height: 377px;
+}
+
+#posts .content .main-pic
+{
+    float: left;
+    width: 60%;
+}
+
+#posts .content .main-pic img 
+{
+    width: 96%;
+}
+
+#posts .content ul 
+{
+    margin: 5px;
+    width: 36%;
+    float: right;
+}
+
+
+#posts .content ul li
+{
+    height: 90px;
+    padding-top: 10px;
+    border-bottom: dotted 1px #F76907;
+    clear: both;
+}
+
+#posts .content ul li img
+{
+    float: left;
+    height: 80px;
+    margin-right: 5px;
+}
+
+#posts .content ul li a
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#posts .content ul li a:hover
+{
+    text-decoration: underline;
+}
+
+#posts
+{
+}
+
+#posts .shadow {
+width: 27px;
+height: 377px;
+float: left;
+top: 0;
+left: 0;
+background: url(/static/images/line_banner.png) no-repeat left top;
+}
+
+#layout-contain
+{
 }

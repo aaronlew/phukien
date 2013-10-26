@@ -20,14 +20,12 @@
 <div class="page-header">
     <div class="main-width">
         <div class="wrapper">
+            <uc:Social ID="social1" runat="server" />
             <div class="logo">
                 <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="/static/images/logo horizontal.gif"
                     ToolTip="phukienipadx.com" AlternateText="Pin dự phòng" Height="86px" HotSpotMode="Navigate">
                     <asp:RectangleHotSpot Top="0" Left="0" Right="430" Bottom="86" NavigateUrl="/" />
                 </asp:ImageMap>
-            </div>
-            <div class="float-left">
-                <uc:Social ID="social1" runat="server" />
             </div>
             <div class="float-right">
                 <div>

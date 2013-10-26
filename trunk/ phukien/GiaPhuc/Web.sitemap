@@ -8,33 +8,43 @@
       <siteMapNode url="./pages/topicpage.aspx?ID=8" title="Tìm đối tác"  description="Tìm đối tác" />
       <siteMapNode url="./pages/contactpage.aspx" title="Liên hệ"  description="Liên hệ" />
     </siteMapNode>
+    <siteMapNode url="./post.aspx" title="Bài viết"  description="Bài viết" resourceKey="Post">
+      <siteMapNode url="./pages/topicpage.aspx?ID=1" title="CAM KẾT PIN YOOBAO CHÍNH HẢNG"  description="http://phukienipadx.com/Upload/Thumbs/YB-000-131012101908.jpg" />
+      <siteMapNode url="./pages/topicpage.aspx?ID=2" title="SẢN PHẨM CAM KẾT CHECK KIỂM TRA VỚI MỌI HÌNH THỨC"  description="http://phukienipadx.com/Upload/Thumbs/YB-001-131016112319.jpg" />
+      <siteMapNode url="./pages/topicpage.aspx?ID=3" title="Cách phân biệt Pin dự phòng cao cấp hiệu Yoobao HÀNG THẬT VÀ HÀNG GIẢ"  description="http://phukienipadx.com/Upload/Thumbs/YB-002-131016015310.jpg" />
+    </siteMapNode>
     <siteMapNode url="./pages/main-menu.aspx" title="Menu chính"  description="Menu chính" resourceKey="MainMenu">
       <siteMapNode url="./index.html" title="Pin dự phòng cao cấp"  description="Pin dự phòng cao cấp" >
         <siteMapNode url="./index1.html" title="Pin Yoobao"  description="Pin Yoobao" />
       </siteMapNode>
       <siteMapNode url="./index2.html" title="Bàn phím Bluetooth"  description="Bàn phím Bluetooth" >
         <siteMapNode url="./index21.html" title="IPAD"  description="IPAD" >
-          <siteMapNode url="./index211.html" title="Ipad 4 / 3 / 2"  description="Ipad 4 / 3 / 2" />
-          <siteMapNode url="./index212.html" title="Ipad mini"  description="Ipad mini" />
-          <siteMapNode url="./index213.html" title="Ipad 1"  description="Ipad 1" />
+          <siteMapNode url="./index211.html" title="Ipad Air (Ipad 5)"  description="Ipad Air (Ipad 5)" />
+          <siteMapNode url="./index212.html" title="Ipad 4 / 3 / 2"  description="Ipad 4 / 3 / 2" />
+          <siteMapNode url="./index213.html" title="Ipad mini 2"  description="Ipad mini 2" />
+          <siteMapNode url="./index214.html" title="Ipad mini"  description="Ipad mini" />
+          <siteMapNode url="./index215.html" title="Ipad 1"  description="Ipad 1" />
         </siteMapNode>
-        <siteMapNode url="./index22.html" title="Samsung"  description="IPAD" >
+        <siteMapNode url="./index22.html" title="SAMSUNG"  description="IPAD" >
           <siteMapNode url="./index221.html" title="Galaxy Tab 3 P5200"  description="Galaxy Tab 3 P5200" />
-          <siteMapNode url="./index222.html" title="Galaxy Tab 3 T2100"  description="Galaxy Tab 3 T2100" />
-          <siteMapNode url="./index223.html" title="Galaxy Tab 3 T3100"  description="Galaxy Tab 3 T3100" />
+          <siteMapNode url="./index222.html" title="Galaxy Tab 3 T3100"  description="Galaxy Tab 3 T3100" />
+          <siteMapNode url="./index223.html" title="Galaxy Tab 3 T2100 / T211 / P3200"  description="Galaxy Tab 3 T2100 / T211 / P3200" />
           <siteMapNode url="./index224.html" title="Galaxy Tab 2 P5100/P7500"  description="Galaxy Tab 2 P5100/P7500" />
           <siteMapNode url="./index225.html" title="Galaxy Tab 2 P3100/P6200"  description="Galaxy Tab 2 P3100/P6200" />
           <siteMapNode url="./index226.html" title="Galaxy Note 2 N8000"  description="Galaxy Note 2 N8000" />
           <siteMapNode url="./index227.html" title="Galaxy Note 8.0 N5100"  description="Galaxy Note 8.0 N5100" />
         </siteMapNode>
       </siteMapNode>
-      <siteMapNode url="./index3.html" title="Bao da Apple"  description="Bao da Apple" >
-        <siteMapNode url="./index31.html" title="Bao da Ipad"  description="Bao da Ipad" >
-          <siteMapNode url="./index311.html" title="Ipad 4 / 3 / 2"  description="Ipad 4 / 3 / 2" />
-          <siteMapNode url="./index312.html" title="Ipad mini"  description="Ipad mini" />
-          <siteMapNode url="./index313.html" title="Ipad 1"  description="Ipad 1" />
+      <siteMapNode url="./index3.html" title="BAO DA APPLE"  description="BAO DA APPLE" >
+        <siteMapNode url="./index31.html" title="IPAD"  description="IPAD" >
+          <siteMapNode url="./index311.html" title="Ipad Air (Ipad 5)"  description="Ipad Air (Ipad 5)" />
+          <siteMapNode url="./index312.html" title="Ipad 4"  description="Ipad 4" />
+          <siteMapNode url="./index313.html" title="Ipad 3 / 2"  description="Ipad 3 / 2" />
+          <siteMapNode url="./index314.html" title="Ipad mini 2"  description="Ipad mini 2" />
+          <siteMapNode url="./index315.html" title="Ipad mini"  description="Ipad mini" />
+          <siteMapNode url="./index316.html" title="Ipad 1"  description="Ipad 1" />
         </siteMapNode>
-        <siteMapNode url="./index32.html" title="Bao da Iphone"  description="Bao da Iphone" >
+        <siteMapNode url="./index32.html" title="IPHONE"  description="IPHONE" >
           <siteMapNode url="./index321.html" title="Iphone 5 / 5S"  description="Iphone 5 / 5S" />
           <siteMapNode url="./index322.html" title="Iphone 5C"  description="Iphone 5C" />
           <siteMapNode url="./index323.html" title="Iphone 4 / 4S"  description="Iphone 4 / 4S" />
@@ -45,31 +55,45 @@
           <siteMapNode url="./index333.html" title="Iphone 4 / 4S"  description="Iphone 4 / 4S" />
         </siteMapNode>
       </siteMapNode>
-      <siteMapNode url="./index4.html" title="Bao da Samsung"  description="Bao da Samsung" >
-        <siteMapNode url="./index41.html" title="Bao da Samsung Tablet"  description="Bao da Samsung Tablet" >
-          <siteMapNode url="./index411.html" title="Galaxy Tab 3 P5200"  description="Galaxy Tab 3 P5200" />
-          <siteMapNode url="./index412.html" title="Galaxy Tab 3 T2100"  description="Galaxy Tab 3 T2100" />
-          <siteMapNode url="./index413.html" title="Galaxy Tab 3 T3100"  description="Galaxy Tab 3 T3100" />
-          <siteMapNode url="./index414.html" title="Galaxy Tab 2 P5100/P7500"  description="Galaxy Tab 2 P5100/P7500" />
-          <siteMapNode url="./index415.html" title="Galaxy Tab 2 P3100/P6200"  description="Galaxy Tab 2 P3100/P6200" />
-          <siteMapNode url="./index416.html" title="Galaxy Note 2 N8000"  description="Galaxy Note 2 N8000" />
+      <siteMapNode url="./index4.html" title="BAO DA SAMSUNG"  description="BAO DA SAMSUNG" >
+        <siteMapNode url="./index41.html" title="Galaxy Tablet"  description="Galaxy Tablet" >
+          <siteMapNode url="./index411.html" title="Galaxy Tab 3 10.1 P5200"  description="Galaxy Tab 3 10.1 P5200" />
+          <siteMapNode url="./index412.html" title="Galaxy Tab 3 8.0 T3100"  description="Galaxy Tab 3 8.0 T3100" />
+          <siteMapNode url="./index413.html" title="Galaxy Tab 3 7.0 T2100 / T211 / P3200"  description="Galaxy Tab 3 7.0 T2100 / T211 / P3200" />
+          <siteMapNode url="./index414.html" title="Galaxy Tab 2 10.1 P5100/P7500"  description="Galaxy Tab 2 10.1 P5100/P7500" />
+          <siteMapNode url="./index415.html" title="Galaxy Tab 2 7.0 P3100/P6200"  description="Galaxy Tab 2 7.0 P3100/P6200" />
+          <siteMapNode url="./index416.html" title="Galaxy Note 2 10.1 N8000"  description="Galaxy Note 2 10.1 N8000" />
           <siteMapNode url="./index417.html" title="Galaxy Note 8.0 N5100"  description="Galaxy Note 8.0 N5100" />
         </siteMapNode>
-        <siteMapNode url="./index42.html" title="Bao da Samsung Mobile"  description="Bao da Samsung Mobile" >
-          <siteMapNode url="./index421.html" title="Galaxy Note 2 N7100"  description="Galaxy Note 2 N7100" />
-          <siteMapNode url="./index422.html" title="Galaxy Note N7000"  description="Galaxy Note N7000" />
-          <siteMapNode url="./index423.html" title="Galaxy S4"  description="Galaxy S4" />
-          <siteMapNode url="./index424.html" title="Galaxy S3"  description="Galaxy S3" />
+        <siteMapNode url="./index42.html" title="Galaxy Mobile"  description="Galaxy Mobile" >
+          <siteMapNode url="./index421.html" title="Galaxy Note 3 N9000"  description="Galaxy Note 3 N9000" />
+          <siteMapNode url="./index422.html" title="Galaxy Note 2 N7100"  description="Galaxy Note 2 N7100" />
+          <siteMapNode url="./index423.html" title="Galaxy Note N7000"  description="Galaxy Note N7000" />
+          <siteMapNode url="./index424.html" title="Galaxy S4"  description="Galaxy S4" />
+          <siteMapNode url="./index425.html" title="Galaxy S3"  description="Galaxy S3" />
         </siteMapNode>
       </siteMapNode>
-      <siteMapNode url="./index5.html" title="Túi chống sốc"  description="Túi chống sốc" >
+      <siteMapNode url="./index5.html" title="BAO DA NOKIA"  description="BAO DA NOKIA" >
+        <siteMapNode url="./index51.html" title="Lumia Tablet"  description="Lumina Tablet" >
+          <siteMapNode url="./index511.html" title="Lumina 2520"  description="Lumina 2520" />
+        </siteMapNode>
+        <siteMapNode url="./index52.html" title="Lumia Mobile"  description="Galaxy Mobile" >
+          <siteMapNode url="./index521.html" title="Lumia 1520"  description="Lumia 1520" />
+          <siteMapNode url="./index522.html" title="Lumia 1320"  description="Lumia 1320" />
+          <siteMapNode url="./index523.html" title="Lumia 1020"  description="Lumia 1020" />
+          <siteMapNode url="./index524.html" title="Lumia 925"  description="Lumia 925" />
+        </siteMapNode>
       </siteMapNode>
-      <siteMapNode url="./index6.html" title="Phụ kiện MACBOOK"  description="Phụ kiện MACBOOK" >
+      <siteMapNode url="./index6.html" title="Bút cảm ứng ADONIT"  description="Bút cảm ứng ADONIT" >
       </siteMapNode>
-      <siteMapNode url="./index7.html" title="Phụ kiện, đồ chơi độc"  description="Phụ kiện, đồ chơi độc" >
-        <siteMapNode url="./index71.html" title="Cáp, Sạc, Truyền dữ liệu"  description="Cáp, Sạc, Truyền dữ liệu" />
-        <siteMapNode url="./index72.html" title="Loa Bluetooth"  description="Loa Bluetooth" />
-        <siteMapNode url="./index73.html" title="Thiết bị mạng wireless không dây (wifi)"  description="Thiết bị mạng wireless không dây (wifi)" />
+      <siteMapNode url="./index7.html" title="Phụ kiện MACBOOK"  description="Phụ kiện MACBOOK" >
+      </siteMapNode>
+      <siteMapNode url="./index8.html" title="Phụ kiện, đồ chơi độc"  description="Phụ kiện, đồ chơi độc" >
+        <siteMapNode url="./index81.html" title="Cáp, Sạc, Truyền dữ liệu"  description="Cáp, Sạc, Truyền dữ liệu" />
+        <siteMapNode url="./index82.html" title="Modem 3G thành WIFI"  description="Modem 3G thành WIFI" />
+        <siteMapNode url="./index83.html" title="Túi chống sốc"  description="Túi chống sốc" />
+        <siteMapNode url="./index84.html" title="Loa Bluetooth"  description="Loa Bluetooth" />
+        <siteMapNode url="./index85.html" title="Đồ chơi khác"  description="Đồ chơi khác" />
       </siteMapNode>
     </siteMapNode>
     <siteMapNode url="./pages/cartpage.aspx" title="Giỏ hàng"  description="Giỏ hàng" />

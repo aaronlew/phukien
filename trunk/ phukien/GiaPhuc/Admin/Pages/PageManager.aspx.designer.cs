@@ -8,9 +8,8 @@
 //------------------------------------------------------------------------------
 
 namespace GiaPhuc.Admin {
-
-
-    public partial class TopicManager
-    {
+    
+    
+    public partial class PageManager {
     }
 }

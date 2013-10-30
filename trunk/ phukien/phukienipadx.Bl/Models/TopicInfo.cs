@@ -1,15 +1,16 @@
 ﻿
 namespace phukienipadx.Bl.Models
 {
-    public class TopicInfo
+    public class PageInfo
     {
-        public int TopicId { get; set; }
+        public int PageId { get; set; }
         public string Title { get; set; }
         public string HtmlContent { get; set; }
+        public int CategoryId { get; set; }
 
-        public TopicInfo(int topicId, string htmlContent)
+        public PageInfo(int pageId, string htmlContent)
         {
-            this.TopicId = topicId;
+            this.PageId = pageId;
             this.HtmlContent = htmlContent;
         }
     }

@@ -22,6 +22,15 @@ namespace GiaPhuc {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
+        /// OnTop1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.OnTopControl OnTop1;
+        
+        /// <summary>
         /// PageHeader1 control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace GiaPhuc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::GiaPhuc.Controls.HeaderControl PageHeader1;
-        
-        /// <summary>
-        /// Address1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::GiaPhuc.Controls.AddressLineControl Address1;
         
         /// <summary>
         /// TopMenu1 control.
@@ -49,13 +49,13 @@ namespace GiaPhuc {
         protected global::GiaPhuc.Controls.TopMenuControl TopMenu1;
         
         /// <summary>
-        /// LeftLayout control.
+        /// pnlMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GiaPhuc.Controls.LeftLayout LeftLayout;
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlMenu;
         
         /// <summary>
         /// pnlPost control.
@@ -65,6 +65,24 @@ namespace GiaPhuc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder pnlPost;
+        
+        /// <summary>
+        /// pnlMenu1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlMenu1;
+        
+        /// <summary>
+        /// LeftLayout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.LeftLayout LeftLayout;
         
         /// <summary>
         /// SiteMapPath1 control.
@@ -83,6 +101,15 @@ namespace GiaPhuc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        
+        /// <summary>
+        /// PostFooter1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.PostFooterControl PostFooter1;
         
         /// <summary>
         /// Footer1 control.

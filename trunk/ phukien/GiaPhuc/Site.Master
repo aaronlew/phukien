@@ -1,13 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GiaPhuc.SiteMaster" %>
 
 <%--http://www.templatemonster.com/demo/31674.html--%>
+<%@ Register Src="~/Controls/OnTopControl.ascx" TagName="OnTop" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/LeftLayout.ascx" TagName="LeftLayout" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/TopMenuControl.ascx" TagName="TopMenu" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/HorizontalBannerControl.ascx" TagName="HorizontalBanner"
     TagPrefix="uc" %>
-<%@ Register Src="~/Controls/AddressLineControl.ascx" TagName="Address" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/AdvertiseControl.ascx" TagName="Advertise" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/HeaderControl.ascx" TagName="Header" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/PostFooterControl.ascx" TagName="PostFooter" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/FooterControl.ascx" TagName="Footer" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/LocationControl.ascx" TagName="Location" TagPrefix="uc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -22,6 +23,7 @@
     <%--. Giao hàng tận nơi, giá tốt nhất. ĐT: 0903.71.20.70 (Mr.Đạt)--%>
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
+    <link href="/static/css/dropdown-menu.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/Site.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/productstyle.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/1024.css" rel="stylesheet" type="text/css" />
@@ -39,7 +41,7 @@
     <link href="/static/response/8cols.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/9cols.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/col.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/menu/skins/white.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/menu/skins/black.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/slider/slider.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/menu/dcverticalmegamenu.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
@@ -91,13 +93,13 @@
             //                direction: 'right'
             //            });
 
-            $('#highlight-product').scrollToFixed({ marginTop: 10,
-                limit: $('#footer').offset().top,
-                zIndex: 999
-            });
+            //            $('#highlight-product').scrollToFixed({ marginTop: 10,
+            //                limit: $('#footer').offset().top,
+            //                zIndex: 9
+            //            });
 
             $('#social-icons').scrollToFixed({ marginTop: 10,
-                zIndex: 999
+                zIndex: 99
             });
 
             //            $("#foo2").carouFredSel({
@@ -137,10 +139,10 @@
 </head>
 <body>
     <form runat="server" submitdisabledcontrols="true">
+    <uc:OnTop ID="OnTop1" runat="server"></uc:OnTop>
     <div id="header">
         <%--<uc:Advertise ID="Advertise1" runat="server"></uc:Advertise>--%>
         <uc:Header ID="PageHeader1" runat="server"></uc:Header>
-        <uc:Address ID="Address1" runat="server"></uc:Address>
         <uc:TopMenu ID="TopMenu1" runat="server"></uc:TopMenu>
     </div>
     <div class="clear">
@@ -148,10 +150,18 @@
     <div class="wrapper" id="layout-contain">
         <div class="section group">
             <div class="col span_1_of_4">
-                <uc:LeftLayout ID="LeftLayout" runat="server" />
+                <asp:PlaceHolder ID="pnlMenu" runat="server"></asp:PlaceHolder>
             </div>
             <div class="col span_3_of_4">
                 <asp:PlaceHolder ID="pnlPost" runat="server"></asp:PlaceHolder>
+            </div>
+        </div>
+        <div class="section group" style="margin: 0 10px 0 0;">
+            <div class="col span_1_of_4">
+                <asp:PlaceHolder ID="pnlMenu1" runat="server"></asp:PlaceHolder>
+                <div style="margin-left: 10px;">
+                    <uc:LeftLayout ID="LeftLayout" runat="server" />
+                </div>
             </div>
             <div class="col span_3_of_4">
                 <div id="siteMapPath" style="line-height: 35px">
@@ -162,6 +172,9 @@
                     <asp:ContentPlaceHolder ID="MainContent" runat="server" />
                 </div>
             </div>
+        </div>
+        <div class="section group" style="margin: 0 10px 10px 10px;">
+            <uc:PostFooter ID="PostFooter1" runat="server"></uc:PostFooter>
         </div>
     </div>
     <div class="clear">

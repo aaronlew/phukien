@@ -1,30 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminSite.Master" AutoEventWireup="true"
-    CodeBehind="TopicEntry.aspx.cs" Inherits="GiaPhuc.Admin.TopicEntry" %>
+    CodeBehind="PageEntry.aspx.cs" Inherits="GiaPhuc.Admin.PageEntry" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="/Scripts/tiny_mce/themes/advanced/skins/default/ui.css" rel="Stylesheet"
+    <link href="/third-party/tiny_mce/themes/advanced/skins/default/ui.css" rel="Stylesheet"
         type="text/css" />
-    <link href="/Scripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css"
+    <link href="/third-party/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css"
         rel="Stylesheet" type="text/css" />
 
-    <script src="/Scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+    <script src="/third-party/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 
         $(document).ready(function () {
+            var style = "/third-party/tiny_mce/themes/advanced/skins/o2k7/content.css";
+            var jscript = "/third-party/tiny_mce/tiny_mce.js";
 
-            function loadMce() {
-                $('textarea.tinymce').tinymce({
+            function loadMce(key) {
+                $(key).tinymce({
                     remove_script_host: false,
                     convert_urls: false,
                     paste_auto_cleanup_on_paste: false,
                     mode: "textareas",
                     elements: "txt_Detail,contactinfo,signature",
                     // Location of TinyMCE script
-                    script_url: '/Scripts/tiny_mce/tiny_mce.js',
+                    script_url: jscript,
 
                     // General options
                     height: 0,
+                    width: 698,
                     theme: "advanced",
                     skin: "o2k7",
                     skin_variant: "silver",
@@ -33,10 +36,10 @@
                     plugins: "ccSimpleUploader,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
 
                     // Theme options
-                    theme_advanced_buttons1: "bold,italic,underline,|,forecolor,backcolor,fontselect,fontsizeselect,|,emotions,ccSimpleUploader,image,|,outdent,indent,|,undo,redo,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,code",
-                    theme_advanced_buttons2: "", //"pastetext,pasteword,selectall",
-                    theme_advanced_buttons3: "",
-                    theme_advanced_buttons4: "",
+//                    theme_advanced_buttons1: "emotions,ccSimpleUploader,image",
+//                    theme_advanced_buttons2: '',
+                    theme_advanced_buttons3: "emotions,ccSimpleUploader,image",
+                    theme_advanced_buttons4: '',
                     theme_advanced_toolbar_location: "top",
                     theme_advanced_toolbar_align: "left",
 
@@ -46,7 +49,7 @@
                     plugin_ccSimpleUploader_upload_substitute_path: '/Upload/',
 
                     // Example content CSS (should be your site CSS)
-                    content_css: "/Scripts/tiny_mce/themes/advanced/skins/o2k7/content.css",
+                    content_css: style,
 
                     // Style formats 
                     style_formats: [
@@ -57,7 +60,7 @@
                     { title: 'Example 2', inline: 'span', classes: 'example2' },
                     { title: 'Table styles' },
                     { title: 'Table row 1', selector: 'tr', classes: 'tablerow1' }
-                ],
+                    ],
 
                     // Drop lists for link/image/media/template dialogs
                     template_external_list_url: "lists/template_list.js",
@@ -75,7 +78,7 @@
                 });
             }
 
-            loadMce();
+            loadMce('#<%=elm1.ClientID %>');
         });
     </script>
 

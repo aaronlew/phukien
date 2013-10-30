@@ -9,10 +9,12 @@ using GiaPhuc.Data;
 using GiaPhuc.Helper;
 using GiaPhuc.Utility;
 using phukienipadx.Core;
+using phukienipadx.Bl.Models;
+using phukienipadx.Bl;
 
 namespace GiaPhuc.Admin
 {
-    public partial class TopicEntry : System.Web.UI.Page
+    public partial class PageEntry : System.Web.UI.Page
     {
         private int PageID
         {
@@ -33,12 +35,12 @@ namespace GiaPhuc.Admin
                 this.ddlNewsCategory.DataSource = Define.PageTypes;
                 this.ddlNewsCategory.DataBind();
 
-                EZPages page = TopicHelper.GetTopic(PageID);
-                if (null != page)
+                PageInfo post = PostImpl.GetTopic(PageID);
+                if (null != post)
                 {
-                    this.txtTitle.Text = page.PagesTitle;
-                    this.ddlNewsCategory.SelectedIndex = page.ToCChapter;
-                    this.elm1.Value = page.PagesHTMLText.RemoveBadCode();
+                    this.txtTitle.Text = post.Title;
+                    this.ddlNewsCategory.SelectedIndex = post.CategoryId;
+                    this.elm1.Value = post.HtmlContent.RemoveBadCode();
                 }
             }
         }
@@ -47,17 +49,14 @@ namespace GiaPhuc.Admin
         {
             try
             {
-                EZPages ezpage = new EZPages
+                PageInfo post = new PageInfo(PageID, this.elm1.Value.RemoveBadCode())
                 {
-                    PagesID = PageID,
-                    ALtURL = String.Empty,
-                    ALtURLExternal = String.Empty,
-                    PagesTitle = this.txtTitle.Text,
-                    PagesHTMLText = this.elm1.Value.RemoveBadCode(),
-                    ToCChapter = this.ddlNewsCategory.SelectedIndex
+                    Title = this.txtTitle.Text,
+                    HtmlContent = this.elm1.Value.RemoveBadCode(),
+                    CategoryId = this.ddlNewsCategory.SelectedIndex
                 };
 
-                TopicHelper.SaveTopic(ezpage);
+                PostImpl.SavePost(post);
 
                 if (PageID == 0)
                 {

@@ -108,15 +108,15 @@ namespace GiaPhuc.Utility
             }
         }
 
-        public static IList<TopicInfo> Topics
+        public static IList<PageInfo> Topics
         {
             get
             {
                 if (!CacheUtils.Exist("Topics"))
                 {
-                    CacheUtils.Set("Topics", 5, TopicImpl.GetTopics());
+                    CacheUtils.Set("Topics", 5, PostImpl.GetTopics());
                 }
-                return CacheUtils.Get<IList<TopicInfo>>("Topics");
+                return CacheUtils.Get<IList<PageInfo>>("Topics");
             }
         }
 

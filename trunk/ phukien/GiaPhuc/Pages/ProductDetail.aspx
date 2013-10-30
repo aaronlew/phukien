@@ -5,12 +5,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="/static/css/jquery.jqzoom.css" type="text/css" />
     <link rel="stylesheet" href="/static/css/tabify.css" type="text/css" />
-
+    <script src="/Scripts/jquery-migrate-1.2.1.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.jqzoom-core.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.tabify.js" type="text/javascript"></script>
-
     <style type="text/css">
-        .clearfix:after {
+        .clearfix:after
+        {
             clear: both;
             content: ".";
             display: block;
@@ -19,38 +19,43 @@
             line-height: 0;
             visibility: hidden;
         }
-
-        .clearfix {
+        
+        .clearfix
+        {
             display: block;
             zoom: 1;
         }
-
-
-        ul#thumblist {
+        
+        
+        ul#thumblist
+        {
             display: block;
         }
-
-            ul#thumblist li {
-                float: left;
-                margin-right: 2px;
-                list-style: none;
-            }
-
-                ul#thumblist li a {
-                    display: block;
-                    border: 1px solid #CCC;
-                }
-
-                    ul#thumblist li a.zoomThumbActive {
-                        border: 1px solid red;
-                    }
-
-        .jqzoom {
+        
+        ul#thumblist li
+        {
+            float: left;
+            margin-right: 2px;
+            list-style: none;
+        }
+        
+        ul#thumblist li a
+        {
+            display: block;
+            border: 1px solid #CCC;
+        }
+        
+        ul#thumblist li a.zoomThumbActive
+        {
+            border: 1px solid red;
+        }
+        
+        .jqzoom
+        {
             text-decoration: none;
             float: left;
         }
     </style>
-
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -71,7 +76,6 @@
         });
 
     </script>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding: 5px; width: 100%">
@@ -118,8 +122,8 @@
             </div>
         </div>
         <div style="margin-top: 3px">
-            <a href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />' class="backtohome">Trở về trang chủ</a> <a href="#" class="backtotop">Lên
-                đầu trang</a>
+            <a href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />'
+                class="backtohome">Trở về trang chủ</a> <a href="#" class="backtotop">Lên đầu trang</a>
         </div>
     </div>
     <uc:ProductCategory ID="dtlProducts" runat="server" CategoryName="Sản phẩm cùng loại" />

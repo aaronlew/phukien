@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ★ &lt;b&gt;Cửa hàng 1&lt;/b&gt;: 174/47 Thái Phiên, P8, Q11, &lt;b style=&quot;color: blue&quot;&gt;TP.HCM&lt;/b&gt;, ĐT: &lt;b&gt;0903.71.20.70 - 0908.61.21.40&lt;/b&gt;;.
+        ///   Looks up a localized string similar to TPHCM: &lt;b style=&quot;color: rgb(2, 101, 203);&quot;&gt;174/47 Thái Phiên, P8, Q11, ĐT: 0903.71.20.70 - 0908.61.21.40&lt;/b&gt;.
         /// </summary>
         internal static string Address1 {
             get {
@@ -70,7 +70,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ★ &lt;b&gt;Cửa hàng 2&lt;/b&gt;: A2-CN8 - Xuân Phương - Từ Liêm, , &lt;b style=&quot;color: red&quot;&gt;Hà Nội&lt;/b&gt;, ĐT: &lt;b&gt;0904.92.72.56 - 0126.24.88.0.88&lt;/b&gt; (Vui lòng gọi trước khi đến cửa hàng 2).
+        ///   Looks up a localized string similar to Hà Nội: &lt;b style=&quot;color: rgb(2, 101, 203);&quot;&gt;A2-CN8 - Xuân Phương - Từ Liêm, ĐT: 0904.92.72.56 - 0126.24.88.0.88.
         /// </summary>
         internal static string Address2 {
             get {

@@ -112,21 +112,6 @@ first child of the left and right table columns */
     margin: 0px auto 0px auto;
 }
 
-a.cart
-{
-    min-width: 180px;
-    text-transform: uppercase;
-    float: right;
-    line-height: 51px;
-    font-weight: bold;
-    background: url('/static/images/box-cart.gif') no-repeat right top;
-    padding-left: 10px;
-    padding-right: 20px;
-    color: #FFF !important;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 div.title
 {
     display: block;
@@ -171,30 +156,6 @@ div.main div#content
     width: 200px;
     min-height: 200px;
 }
-
-.footer
-{
-    background: #299a0b;
-    border-top: solid #eee 1px;
-    color: #fff;
-    padding: 8px 10px 6px 10px;
-    margin: 0px auto;
-    text-align: justify;
-    line-height: normal;
-    border-radius: 8px;
-}
-
-.footer a
-{
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer a:hover
-{
-    text-decoration: underline;
-}
-
 
 /* TAB MENU   
 ----------------------------------------------------------*/
@@ -947,11 +908,6 @@ table.hotproducts div.product-cell1 .product-image div.overImg a
     display: block;
 }
 
-.wrapper
-{
-    width: 100%;
-    overflow: hidden;
-}
 
 
 /* Page Header */
@@ -962,33 +918,9 @@ div#header .page-header
 div#header .page-header .wrapper .logo
 {
     float: left;
-    padding: 29px 0 17px 0;
+    padding: 15px 0 17px 0;
 }
 
-div#header .page-header .wrapper .search-item
-{
-    margin-top: 20px;
-    background: url('/static/images/search-icon.gif') no-repeat;
-    padding-left: 30px;
-    line-height: 30px;
-    height: 30px;
-}
-
-div#header .page-header .wrapper .search-item input
-{
-    border: 1px solid #BBBBBB;
-    background: url('/static/images/input.gif') repeat-x scroll 0 -89px transparent;
-    padding: 0 0 0 8px;
-    width: 300px;
-    line-height: 28px;
-    font-family: Tahoma, Arial, sans-serif;
-    height: 28px;
-}
-
-div#header .page-header .wrapper .search-item input.water
-{
-    color: gray;
-}
 
 /* Advertise */
 div#header .advertise
@@ -997,7 +929,7 @@ div#header .advertise
     float: left;
     overflow: hidden;
     cursor: pointer;
-    top: 180px;
+    top: 100px;
 }
 
 div#header #advertise-left
@@ -1063,15 +995,11 @@ div#header #topmenu ul li:hover a
 }
 */
 
-#top-menu
-{
-    /* background: #222 url(menu/skins/images/bg_black.png) repeat-x 0 -80px;      box-shadow: 0 4px 6px -4px #ccc;*/
-}
-
 #top-menu #hor-menu
 {
-    width: 970px;
+    overflow: hidden;
     margin: 0 auto;
+    clear: both;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
     -moz-border-radius-topleft: 5px;
@@ -1165,35 +1093,9 @@ table .button
 
 /* Information */
 
-.info
-{
-    border: 1px solid #ededed;
-    background-color: #fff;
-    border-radius: 0 0 6px 6px;
-    list-style: none;
-    padding: 6px 0;
-    margin-bottom: 16px;
-}
-
-ul.info li
-{
-    padding: 3px !important;
-}
-
-ul.info li.seperator
-{
-    border-bottom: dotted 1px rgb(35, 86, 109);
-}
-
-
-.products
-{
-    background-color: #fff;
-}
-
 #footer
 {
-    border-top: 5px solid #006e2e;
+    /* border-top: 5px solid #006e2e; */
     padding: 10px;
 }
 
@@ -1210,8 +1112,8 @@ ul.info li.seperator
 #footer ul li a
 {
     font-weight: bold;
-    font-size: 13pt;
-    color: #006e2e;
+    font-size: 11pt; /* color:  #006e2e; */
+    color: rgb(246, 105, 7);
     text-decoration: none;
 }
 
@@ -1411,15 +1313,16 @@ ul.info li.seperator
 #posts .content .main-pic
 {
     float: left;
-    width: 60%;
+    width: 58%;
 }
 
-#posts .content .main-pic img 
+#posts .content .main-pic img
 {
+    margin-left: 2%;
     width: 96%;
 }
 
-#posts .content ul 
+#posts .content ul
 {
     margin: 5px;
     width: 36%;
@@ -1457,15 +1360,108 @@ ul.info li.seperator
 {
 }
 
-#posts .shadow {
-width: 27px;
-height: 377px;
-float: left;
-top: 0;
-left: 0;
-background: url(/static/images/line_banner.png) no-repeat left top;
+#posts .shadow
+{
+    width: 27px;
+    height: 377px;
+    float: left;
+    top: 0;
+    left: 0;
+    background: url(/static/images/line_banner.png) no-repeat left top;
+}
+
+#posts .content .shadow
+{
+    width: 27px;
+    height: 377px;
+    float: left;
+    top: 0;
+    left: 0;
+    background: url(/static/images/line_banner_black.png) no-repeat left top;
 }
 
 #layout-contain
 {
+    border: 1px solid rgb(247, 105, 7);
+}
+
+.advertise img
+{
+    width: 100%;
+}
+
+
+div#header .page-header .wrapper .search-item
+{
+    margin-top: 50px;
+    padding: 8px;
+    background-color: #ededed;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    height: 30px;
+}
+
+div#header .page-header .wrapper .search-item a.cart
+{
+    min-width: 100px;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div#header .page-header .wrapper .search-item input
+{
+    border: 1px solid #BBBBBB;
+    background: url('/static/images/input.gif') repeat-x scroll 0 -89px transparent;
+    padding: 0 0 0 8px;
+    width: 300px;
+    line-height: 28px;
+    font-family: Tahoma, Arial, sans-serif;
+    height: 28px;
+    -webkit-border-top-left-radius: 100px;
+    -webkit-border-bottom-left-radius: 100px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-bottomleft: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+div#header .page-header .wrapper .search-item input.water
+{
+    color: gray;
+}
+div#header .page-header .wrapper .search-item div
+{
+    float: left;
+}
+
+.search-button a
+{
+    width: 52px;
+    height: 30px;
+    cursor: pointer;
+    display: inline-block;
+    background: url('/static/images/search-icon.gif') no-repeat;
+}
+
+.info h2
+{
+    color: Gray;
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+.info p
+{
+    font-weight: normal;
+}
+
+.advertise 
+{
+    margin-bottom: 10px;
+    border: 1px solid #ededed;
 }

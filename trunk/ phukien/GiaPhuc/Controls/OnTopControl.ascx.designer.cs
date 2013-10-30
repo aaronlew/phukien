@@ -10,7 +10,7 @@
 namespace GiaPhuc.Controls {
     
     
-    public partial class AddressLineControl {
+    public partial class OnTopControl {
         
         /// <summary>
         /// Literal1 control.

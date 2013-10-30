@@ -10,7 +10,7 @@
 namespace GiaPhuc.Admin {
     
     
-    public partial class TopicEntry {
+    public partial class PostEntry {
         
         /// <summary>
         /// txtTitle control.

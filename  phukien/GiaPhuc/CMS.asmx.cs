@@ -52,16 +52,16 @@ namespace GiaPhuc
             return true;
         }
 
-        #region Topic Methods
+        #region Page Methods
         [WebMethod, ScriptMethod]
-        public GridTable<EZPages> LoadTopics(int pageNumber)
+        public GridTable<PageInfo> LoadPages(int pageNumber)
         {
             int totalRecords;
-            var gridTopics = new GridTable<EZPages>
+            var gridTopics = new GridTable<PageInfo>
             {
                 PageNumber = pageNumber,
                 PageSize = Define.PageSize,
-                List = TopicHelper.GetTopics(pageNumber, out totalRecords),
+                List = PostImpl.GetTopics(pageNumber, out totalRecords),
                 TotalRecords = totalRecords
             };
 
@@ -69,7 +69,30 @@ namespace GiaPhuc
         }
 
         [WebMethod, ScriptMethod]
-        public bool DeleteTopic(int id)
+        public bool DeletePage(int id)
+        {
+            return TopicHelper.DeleteTopic(id);
+        }
+        #endregion
+
+        #region Post Methods
+        [WebMethod, ScriptMethod]
+        public GridTable<PageInfo> LoadPosts(int pageNumber)
+        {
+            int totalRecords;
+            var gridTopics = new GridTable<PageInfo>
+            {
+                PageNumber = pageNumber,
+                PageSize = Define.PageSize,
+                List = PostImpl.GetTopics(pageNumber, out totalRecords),
+                TotalRecords = totalRecords
+            };
+
+            return gridTopics;
+        }
+
+        [WebMethod, ScriptMethod]
+        public bool DeletePost(int id)
         {
             return TopicHelper.DeleteTopic(id);
         }

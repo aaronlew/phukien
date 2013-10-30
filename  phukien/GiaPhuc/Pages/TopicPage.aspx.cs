@@ -31,7 +31,7 @@ namespace GiaPhuc.Pages
         {
             if (!IsPostBack)
             {
-                TopicInfo topic = SessionManager.Topics.SingleOrDefault(x => x.TopicId == PageID);
+                PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.PageId == PageID);
                 if (null != topic)
                 {
                     divContent.InnerHtml = topic.HtmlContent.RemoveBadCode();

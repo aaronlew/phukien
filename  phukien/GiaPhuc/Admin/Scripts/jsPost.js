@@ -1,7 +1,7 @@
-﻿var divName = "#topic";
-var templatePath = "/Admin/template/TopicTemplate.htm";
-var serviceLoad = "/CMS.asmx/LoadTopics";
-var serviceDelete = "/CMS.asmx/DeleteTopic";
+﻿var divName = "#post";
+var templatePath = "/Admin/template/PostTemplate.htm";
+var serviceLoad = "/CMS.asmx/LoadPosts";
+var serviceDelete = "/CMS.asmx/DeletePost";
 
 $(document).ready(function () {
 

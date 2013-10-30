@@ -13,6 +13,15 @@ namespace GiaPhuc.Controls {
     public partial class LeftLayout {
         
         /// <summary>
+        /// AdvertiseLeftSide1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.AdvertiseLeftSide AdvertiseLeftSide1;
+        
+        /// <summary>
         /// datDefault control.
         /// </summary>
         /// <remarks>

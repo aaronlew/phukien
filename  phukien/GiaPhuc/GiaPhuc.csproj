@@ -88,24 +88,31 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Pages\CategoryEntry.aspx" />
     <Content Include="Admin\Pages\CategoryManager.aspx" />
+    <Content Include="Admin\Pages\PostEntry.aspx" />
+    <Content Include="Admin\Pages\PostManager.aspx" />
     <Content Include="Admin\Pages\ManufacturerEntry.aspx" />
     <Content Include="Admin\Pages\ManufacturerManager.aspx" />
+    <Content Include="Admin\Scripts\jsPost.js" />
     <Content Include="Admin\Scripts\jsManufacturer.js" />
     <Content Include="Admin\Scripts\jsCategory.js" />
-    <Content Include="Admin\Scripts\jsTopic.js" />
+    <Content Include="Admin\Scripts\jsPage.js" />
     <Content Include="Admin\Scripts\jsProduct.js" />
     <Content Include="Admin\template\CategoryTemplate.htm" />
+    <Content Include="Admin\template\PostTemplate.htm" />
     <Content Include="Admin\template\ManufacturerTemplate.htm" />
     <Content Include="Admin\template\ProductTemplate.htm" />
-    <Content Include="Admin\template\TopicTemplate.htm" />
-    <Content Include="Admin\Pages\TopicManager.aspx" />
-    <Content Include="Admin\Pages\TopicEntry.aspx" />
+    <Content Include="Admin\template\PageTemplate.htm" />
+    <Content Include="Admin\Pages\PageManager.aspx" />
+    <Content Include="Admin\Pages\PageEntry.aspx" />
     <Content Include="BingSiteAuth.xml" />
     <Content Include="CMS.asmx" />
-    <Content Include="Controls\AddressLineControl.ascx" />
+    <Content Include="Controls\AdvertiseLeftSide.ascx" />
+    <Content Include="Controls\LeftMenuControl.ascx" />
+    <Content Include="Controls\OnTopControl.ascx" />
     <Content Include="Controls\AdvertiseControl.ascx" />
     <Content Include="Controls\ContactControl.ascx" />
     <Content Include="Controls\FooterControl.ascx" />
@@ -113,6 +120,7 @@
     <Content Include="Controls\LeftLayout.ascx" />
     <Content Include="Controls\LocationControl.ascx" />
     <Content Include="Controls\HeaderControl.ascx" />
+    <Content Include="Controls\PostFooterControl.ascx" />
     <Content Include="Controls\PostsControl.ascx" />
     <Content Include="Controls\SocialControl.ascx" />
     <Content Include="Controls\TopMenuControl.ascx" />
@@ -120,7 +128,6 @@
     <Content Include="Controls\UCProductCell.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="google5ac0acf9e33b1e0e.html" />
-    <Content Include="Images\flash-demo.jpg" />
     <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.touchSwipe.min.js" />
@@ -134,6 +141,7 @@
     <Content Include="Scripts\slider\helper-plugins\jquery.touchSwipe.min.js" />
     <Content Include="Scripts\slider\helper-plugins\jquery.transit.min.js" />
     <Content Include="Scripts\slider\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="static\css\dropdown-menu.css" />
     <Content Include="static\css\menu\dcmegamenu.css" />
     <Content Include="static\css\menu\dcverticalmegamenu.css" />
     <Content Include="static\css\menu\images\arrow_off.png" />
@@ -165,17 +173,19 @@
     <Content Include="static\css\menu\skins\red.css" />
     <Content Include="static\css\menu\skins\white.css" />
     <Content Include="static\css\slider\slider.css" />
+    <Content Include="static\images\advertise\QCAO 1.jpg" />
+    <Content Include="static\images\advertise\Qcao 2.jpg" />
+    <Content Include="static\images\advertise\Qcao 3.jpg" />
+    <Content Include="static\images\advertise\qcao 5.jpg" />
+    <Content Include="static\images\advertise\qcao 6.jpg" />
     <Content Include="static\images\arrows.gif" />
+    <Content Include="static\images\banner\left-banner.jpg" />
+    <Content Include="static\images\banner\right-banner.jpg" />
     <Content Include="static\images\bg_caidan.jpg" />
     <Content Include="static\images\box-heading.jpg" />
     <Content Include="static\images\button-bg.png" />
     <Content Include="static\images\delete.png" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />
-    <Content Include="Images\banner1.jpg" />
-    <Content Include="Images\banner2.jpg" />
-    <Content Include="Images\banner3.jpg" />
-    <Content Include="Images\bannerleft.gif" />
-    <Content Include="Images\cart.gif" />
     <Content Include="static\images\about\image001.gif" />
     <Content Include="static\images\about\image002.gif" />
     <Content Include="static\images\about\image003.gif" />
@@ -193,30 +203,20 @@
     <Content Include="static\images\goTop.png" />
     <Content Include="static\images\home.png" />
     <Content Include="static\images\hot.gif" />
-    <Content Include="Images\icon_moi.gif" />
     <Content Include="static\images\imgbg.jpg" />
     <Content Include="static\images\input.gif" />
-    <Content Include="Images\itemarrow.gif" />
-    <Content Include="Images\leftmenu.gif" />
-    <Content Include="Images\logo.gif" />
-    <Content Include="Images\menu.gif" />
-    <Content Include="Images\new.gif" />
-    <Content Include="Images\top_back.jpg" />
     <Content Include="Pages\AboutPage.aspx" />
     <Content Include="Pages\ContactPage.aspx" />
     <Content Include="pinduphong.swf" />
-    <Content Include="Images\rightmenu.gif" />
-    <Content Include="Images\searchicon.png" />
     <Content Include="static\images\iPad_5_release_date.jpg" />
     <Content Include="static\images\line_banner.png" />
+    <Content Include="static\images\line_banner_black.png" />
     <Content Include="static\images\loading2.gif" />
+    <Content Include="static\images\logo_X.png" />
     <Content Include="static\images\main-shining.jpg" />
     <Content Include="static\images\nolines_minus.png" />
     <Content Include="static\images\repeat.png" />
     <Content Include="static\images\slide-arrow.gif" />
-    <Content Include="Images\slider\nav-bg.png" />
-    <Content Include="Images\slider\slide-bg.png" />
-    <Content Include="Images\slider\slide-nav.png" />
     <Content Include="Scripts\ddaccordion.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
@@ -225,7 +225,6 @@
     <Content Include="Services\CategoryService.asmx" />
     <Content Include="slides.xml" />
     <Content Include="static\images\spinner.gif" />
-    <Content Include="Images\thead.gif" />
     <Content Include="MJ12_150F160CCAC887085409B2912DE35AD7.txt" />
     <Content Include="Pages\CartPage.aspx" />
     <Content Include="Admin\Pages\MetaEntry.aspx" />
@@ -253,8 +252,6 @@
     <Content Include="static\images\arrow-bg.png" />
     <Content Include="static\images\banner\18215261315520131895753485182.jpg" />
     <Content Include="static\images\banner\18443816620131078274660184.png" />
-    <Content Include="static\images\banner\left-banner.png" />
-    <Content Include="static\images\banner\right-banner.png" />
     <Content Include="static\images\banner\thumbl_980x340_006.png" />
     <Content Include="static\images\banner\thumbl_980x340_007.png" />
     <Content Include="static\images\banner\thumbl_980x340_008.png" />
@@ -268,7 +265,6 @@
     <Content Include="static\images\header_user_info_shadow.gif" />
     <Content Include="static\images\image-background.gif" />
     <Content Include="static\images\list-item-tail.gif" />
-    <Content Include="static\images\logo horizontal.gif" />
     <Content Include="static\images\menu-bg.png" />
     <Content Include="static\images\menu-footer.png" />
     <Content Include="static\images\menu-header.png" />
@@ -1214,6 +1210,13 @@
     <Compile Include="Admin\AdminSite.Master.designer.cs">
       <DependentUpon>AdminSite.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1234,6 +1237,20 @@
     </Compile>
     <Compile Include="Admin\Pages\CategoryManager.aspx.designer.cs">
       <DependentUpon>CategoryManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\PostEntry.aspx.cs">
+      <DependentUpon>PostEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\PostEntry.aspx.designer.cs">
+      <DependentUpon>PostEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pages\PostManager.aspx.cs">
+      <DependentUpon>PostManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pages\PostManager.aspx.designer.cs">
+      <DependentUpon>PostManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Pages\ManufacturerEntry.aspx.cs">
       <DependentUpon>ManufacturerEntry.aspx</DependentUpon>
@@ -1258,19 +1275,19 @@
     <Compile Include="Admin\Pages\ProductManager.aspx.designer.cs">
       <DependentUpon>ProductManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Pages\TopicManager.aspx.cs">
-      <DependentUpon>TopicManager.aspx</DependentUpon>
+    <Compile Include="Admin\Pages\PageManager.aspx.cs">
+      <DependentUpon>PageManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Pages\TopicManager.aspx.designer.cs">
-      <DependentUpon>TopicManager.aspx</DependentUpon>
+    <Compile Include="Admin\Pages\PageManager.aspx.designer.cs">
+      <DependentUpon>PageManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Pages\TopicEntry.aspx.cs">
-      <DependentUpon>TopicEntry.aspx</DependentUpon>
+    <Compile Include="Admin\Pages\PageEntry.aspx.cs">
+      <DependentUpon>PageEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Pages\TopicEntry.aspx.designer.cs">
-      <DependentUpon>TopicEntry.aspx</DependentUpon>
+    <Compile Include="Admin\Pages\PageEntry.aspx.designer.cs">
+      <DependentUpon>PageEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Data\GiaPhucDataExtensions.cs" />
     <Compile Include="App_Data\GiaPhucData.cs" />
@@ -1284,12 +1301,26 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CMSContext.cs" />
-    <Compile Include="Controls\AddressLineControl.ascx.cs">
-      <DependentUpon>AddressLineControl.ascx</DependentUpon>
+    <Compile Include="Controls\AdvertiseLeftSide.ascx.cs">
+      <DependentUpon>AdvertiseLeftSide.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\AddressLineControl.ascx.designer.cs">
-      <DependentUpon>AddressLineControl.ascx</DependentUpon>
+    <Compile Include="Controls\AdvertiseLeftSide.ascx.designer.cs">
+      <DependentUpon>AdvertiseLeftSide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LeftMenuControl.ascx.cs">
+      <DependentUpon>LeftMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LeftMenuControl.ascx.designer.cs">
+      <DependentUpon>LeftMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OnTopControl.ascx.cs">
+      <DependentUpon>OnTopControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\OnTopControl.ascx.designer.cs">
+      <DependentUpon>OnTopControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\AdvertiseControl.ascx.cs">
       <DependentUpon>AdvertiseControl.ascx</DependentUpon>
@@ -1339,6 +1370,13 @@
     </Compile>
     <Compile Include="Controls\HeaderControl.ascx.designer.cs">
       <DependentUpon>HeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostFooterControl.ascx.cs">
+      <DependentUpon>PostFooterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PostFooterControl.ascx.designer.cs">
+      <DependentUpon>PostFooterControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\PostsControl.ascx.cs">
       <DependentUpon>PostsControl.ascx</DependentUpon>
@@ -1483,7 +1521,6 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
     <Folder Include="static\images\products\new\" />
     <Folder Include="static\images\products\thumbs\new\" />
     <Folder Include="third-party\tiny_mce\uploads\" />

@@ -7,6 +7,8 @@ namespace GiaPhuc.Controls
     public partial class UCProductCategory : System.Web.UI.UserControl
     {
         const string GroupSection = "<ul class=\"section group\">{0}</ul>";
+        const int PageSize = 4;
+        const int ItemPerRow = 4;
 
         #region Properties
 
@@ -28,9 +30,9 @@ namespace GiaPhuc.Controls
                     var products = DataSource as System.Collections.Generic.List<phukienipadx.Bl.Models.ProductInfo>;
                     foreach (phukienipadx.Bl.Models.ProductInfo item in products)
                     {
-                        if (itemIndex > 6 && SessionUtils.Get<bool>("AllCategories")) break;
-                        html += GiaPhuc.Helper.ProductHelper.GetProductItemLayout(item.ProductNumber, item.ProductName, item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice, item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
-                        if (itemIndex % 3 == 2 || itemIndex == products.Count - 1)
+                        if (itemIndex > PageSize && SessionUtils.Get<bool>("AllCategories")) break;
+                        html += GiaPhuc.Helper.ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName, item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice, item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
+                        if (itemIndex % ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
                         {
                             pnlLayout.Controls.Add(new LiteralControl(string.Format(GroupSection, html)));
                             html = string.Empty;

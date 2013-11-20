@@ -46,9 +46,9 @@
                             <span data-bind='text: formatCurrency(Price())'></span>
                         </td>
                         <td class="quantity" onmouseover="javascript:enableChange(this, true);" onmouseout="javascript:enableChange(this, false);">
-                            <a href='#' data-bind='click: $parent.minusQty' class="button" style="float: left">-</a>
+                            <a href='#' data-bind='click: $parent.minusQty' class="button" style="float: left"><span>-</span></a>
                             <span data-bind='text: Quantity()'></span><a href='#' data-bind='click: $parent.plusQty'
-                                class="button" style="float: right">+</a>
+                                class="button" style="float: right"><span>+</span></a>
                         </td>
                         <td class='price'>
                             <span data-bind='text: formatCurrency(subtotal())'></span>
@@ -76,7 +76,7 @@
                 Không có sản phẩm nào trong giỏ hàng</div>
             <div class="float-right">
                 <a target="_blank" href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />'
-                    class="button">Tiếp tục mua hàng</a>
+                    class="button"><span>Tiếp tục mua hàng</span></a>
             </div>
             <div class="clear">
             </div>
@@ -244,7 +244,7 @@
                         <td>
                         </td>
                         <td>
-                            <asp:Button ID="sendButton" runat="server" Text="ĐẶT HÀNG" CssClass="button" OnClick="sendButton_Click"
+                            <asp:LinkButton ID="sendButton" runat="server" Text="<span>ĐẶT HÀNG</span>" CssClass="button" OnClick="sendButton_Click"
                                 UseSubmitBehavior="false" />
                         </td>
                     </tr>

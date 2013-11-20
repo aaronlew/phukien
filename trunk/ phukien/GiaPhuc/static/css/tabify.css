@@ -2,7 +2,9 @@
 
 
 /* Style for Usual tabs */
-.usual {
+.usual 
+{
+    margin-top: 20px;
     width: 100%;
 }
 
@@ -18,27 +20,25 @@
 
         .usual ul a {
             display: block;
-            padding: 6px 10px;
+            padding: 12px 20px;
             text-decoration: none!important;
             margin: 1px;
             margin-left: 0;
-            font: 10pt Verdana;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            font-weight: bold;
             color: #FFF;
-            background: #AAA;
+            background: #F76907;
         }
 
             .usual ul a:hover {
                 color: #FFF;
-                background: #AAA;
+                background: #ffa84c;
             }
 
             .usual ul a.selected {
                 margin-bottom: -1px;
-                color: #AAA;
+                color: #F76907;
                 background: snow;
-                border: 1px solid #AAA;
+                border: 1px solid #F76907;
                 border-bottom: 1px solid snow;
                 cursor: default;
             }
@@ -48,13 +48,9 @@
         *padding-top: 3px;
         *margin-top: -15px;
         clear: left;
-        width: 698px;
         background: snow;
         font: 10pt Georgia;
-        border: 1px solid #AAA;
-        border-bottom-left-radius: 5px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border: 1px solid #F76907;
     }
 
         .usual div a {

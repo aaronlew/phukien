@@ -37,10 +37,16 @@ namespace GiaPhuc.Pages
                     this.divProductImages.InnerHtml = productModel.ImagesOfProductHtml;
                     this.divProductInstruction.InnerHtml = productModel.SpecificationHtml;
                     this.hypBuy.NavigateUrl = productModel.ShopCartUrl;
+                    this.linkBuy.NavigateUrl = productModel.ShopCartUrl;
                     // productModel.BuildManufacturer(ManufacturerHelper.GetManufacturers());
                     // this.lblManufacturers.Text = productModel.Manufacturer;
 
-                    dtlProducts.DataSource = ProductImpl.GetProductsInTheSameCategory(productModel.ProductId);
+                    var productInfoList = ProductImpl.GetProductsInTheSameCategory(productModel.CategoryId);
+                    if (productInfoList.Count > 0)
+                    {
+                        dtlProducts.CategoryName = "Có thể bạn quan tâm";
+                        dtlProducts.DataSource = productInfoList;
+                    }
                 }
             }
         }

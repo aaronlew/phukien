@@ -105,8 +105,10 @@ namespace phukienipadx.Bl
             products = (from x in productRep.GetAllproducts()
                         join y in productDescriptionRep.GetAllproducts_descriptions()
                         on x.products_id equals y.products_id
+                        orderby new Guid()
                         where x.master_categories_id == categoryId
-                        select new ProductInfo(x, y)).ToList();
+                        orderby x.products_price descending
+                        select new ProductInfo(x, y)).Take(12).ToList();
 
             return products;
         }

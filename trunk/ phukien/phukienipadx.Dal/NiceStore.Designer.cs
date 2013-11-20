@@ -773,6 +773,30 @@ namespace phukienipadx.Dal
         private global::System.Int16 _categories_status;
         partial void Oncategories_statusChanging(global::System.Int16 value);
         partial void Oncategories_statusChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> home_order
+        {
+            get
+            {
+                return _home_order;
+            }
+            set
+            {
+                Onhome_orderChanging(value);
+                ReportPropertyChanging("home_order");
+                _home_order = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("home_order");
+                Onhome_orderChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _home_order;
+        partial void Onhome_orderChanging(Nullable<global::System.Int32> value);
+        partial void Onhome_orderChanged();
 
         #endregion
 

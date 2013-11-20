@@ -1,6 +1,6 @@
 ﻿var divName = "#category";
 var templatePath = "/Admin/template/CategoryTemplate.htm";
-var serviceLoad = "/CMS.asmx/LoadCategories";
+var serviceLoad = "/CMS.asmx/LoadCategories1";
 var serviceDelete = "/CMS.asmx/DeleteCategory";
 
 $(document).ready(function () {

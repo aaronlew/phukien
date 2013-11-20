@@ -110,20 +110,20 @@ namespace GiaPhuc
         #region Category Methods
 
         [WebMethod, ScriptMethod]
-        public List<CategoryBrief> LoadCategories()
+        public IList<CategoryInfo> LoadCategories()
         {
-            return CategoryHelper.GetCategories().ToList();
+            return CategoryImpl.GetCategories();
         }
 
         [WebMethod, ScriptMethod]
-        public GridTable<CategoryBrief> LoadCategories1(int pageNumber)
+        public GridTable<CategoryInfo> LoadCategories1(int pageNumber)
         {
             const int totalRecords = 0;
-            var gridCategories = new GridTable<CategoryBrief>
+            var gridCategories = new GridTable<CategoryInfo>
             {
                 PageNumber = pageNumber,
                 PageSize = Define.PageSize,
-                List = CategoryHelper.GetCategories(),
+                List = CategoryImpl.GetCategories(),
                 TotalRecords = totalRecords
             };
 

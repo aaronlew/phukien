@@ -7,12 +7,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using phukienipadx.Bl;
+using phukienipadx.Bl.Models;
 
 namespace GiaPhuc.Admin.Pages
 {
     public partial class CategoryEntry : System.Web.UI.Page
     {
-        private int CategoryID
+        private int Id
         {
             get
             {
@@ -28,10 +30,10 @@ namespace GiaPhuc.Admin.Pages
         {
             if (!IsPostBack)
             {
-                CategoryBrief category = CategoryHelper.GetCategory(CategoryID);
+                CategoryInfo category = CategoryImpl.GetCategory(Id);
                 if (null != category)
                 {
-                    this.txtCategoryName.Text = category.CategoryName;
+                    this.txtCategoryName.Text = category.Name;
                 }
             }
         }
@@ -40,16 +42,12 @@ namespace GiaPhuc.Admin.Pages
         {
             try
             {
-                CategoryBrief category = new CategoryBrief
-                {
-                    CategoryID = CategoryID,
-                    CategoryName = this.txtCategoryName.Text,
-                    Deactive = this.chkDeactive.Checked
-                };
+                CategoryInfo category = new CategoryInfo(Id, Id, this.txtCategoryName.Text);
+                //Deactive = this.chkDeactive.Checked
 
-                CategoryHelper.SaveCategory(category);
+                CategoryImpl.Save(category);
 
-                if (CategoryID == 0)
+                if (Id == 0)
                 {
                     Response.Redirect("/Admin/Pages/CategoryEntry.aspx");
                 }

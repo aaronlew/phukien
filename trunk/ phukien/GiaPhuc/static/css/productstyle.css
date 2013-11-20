@@ -237,3 +237,63 @@ ul.info li.seperator
 {
     background-color: #fff;
 }
+
+/* ############ CART ###### */
+table.tproduct
+{
+    border: solid 1px #eee;
+    border-spacing: 1;
+}
+
+table.tproduct thead
+{
+    background: url('/static/images/nav_normal_bg.png') bottom repeat-x #000;
+    text-align: center;
+    line-height: 33px;
+    color: #fff;
+}
+
+table.tproduct thead th
+{
+    font-weight: 600;
+}
+table.tproduct tbody tr:nth-child(2n+1)
+{
+    background-color: #ededed;
+}
+table.tproduct tbody tr td.quantity
+{
+    text-align: center;
+}
+
+table.tproduct tr td.price
+{
+    text-align: right;
+}
+
+table.tproduct tbody tr td.quantity span
+{
+    padding: 0 5px;
+    z-index: -99;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+table.tproduct tbody tr td.quantity a
+{
+    z-index: 99;
+    display: none;
+}
+
+table.tproduct tfoot tr
+{
+    background: url('/static/images/nav_normal_bg.png') bottom repeat-x #000;
+    color: #fff;
+    font-weight: bolder;
+    line-height: 38px;
+}
+
+table.tproduct tfoot tr td.grandtotal
+{
+    text-align: center;
+}

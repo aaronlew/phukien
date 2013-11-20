@@ -36,7 +36,7 @@
                 </asp:ImageMap>--%>
                 <asp:ImageMap ID="ImageMap2" runat="server" ImageUrl="/static/images/logo horizontal.gif"
                     ToolTip="phukienipadx.com" AlternateText="Pin dự phòng" Height="86px" HotSpotMode="Navigate">
-                    <asp:RectangleHotSpot Top="0" Left="0" Right="430" Bottom="86" NavigateUrl="/" />
+                    <asp:RectangleHotSpot Top="0" Left="0" Right="450" Bottom="163" NavigateUrl="/" />
                 </asp:ImageMap>
             </div>
             <div class="float-right">

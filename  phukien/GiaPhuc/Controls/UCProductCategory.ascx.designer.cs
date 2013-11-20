@@ -13,15 +13,6 @@ namespace GiaPhuc.Controls {
     public partial class UCProductCategory {
         
         /// <summary>
-        /// lblCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategory;
-        
-        /// <summary>
         /// pnlLayout control.
         /// </summary>
         /// <remarks>

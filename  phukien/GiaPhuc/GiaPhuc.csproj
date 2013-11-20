@@ -141,6 +141,7 @@
     <Content Include="Scripts\slider\helper-plugins\jquery.touchSwipe.min.js" />
     <Content Include="Scripts\slider\helper-plugins\jquery.transit.min.js" />
     <Content Include="Scripts\slider\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="static\css\AdminSite.css" />
     <Content Include="static\css\dropdown-menu.css" />
     <Content Include="static\css\menu\dcmegamenu.css" />
     <Content Include="static\css\menu\dcverticalmegamenu.css" />
@@ -212,6 +213,7 @@
     <Content Include="static\images\line_banner.png" />
     <Content Include="static\images\line_banner_black.png" />
     <Content Include="static\images\loading2.gif" />
+    <Content Include="static\images\logo horizontal.gif" />
     <Content Include="static\images\logo_X.png" />
     <Content Include="static\images\main-shining.jpg" />
     <Content Include="static\images\nolines_minus.png" />
@@ -272,7 +274,6 @@
     <Content Include="static\images\nav_normal_bg.png" />
     <Content Include="static\images\search-icon.gif" />
     <Content Include="static\images\shopping_cart_webshop.gif" />
-    <Content Include="static\css\ExpressMenu.css" />
     <Content Include="static\css\jquery.jqzoom.css" />
     <Content Include="static\css\tabify.css" />
     <Content Include="static\css\Site.css" />
@@ -1450,6 +1451,7 @@
     <Compile Include="third-party\tiny_mce\plugins\ccSimpleUploader\FileUpload.aspx.designer.cs">
       <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Alert.cs" />
     <Compile Include="Utility\RssFeedItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

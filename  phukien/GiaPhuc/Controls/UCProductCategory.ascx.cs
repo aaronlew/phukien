@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 using GiaPhuc.Utility;
+using System.Text;
 
 namespace GiaPhuc.Controls
 {
@@ -25,32 +26,36 @@ namespace GiaPhuc.Controls
                 if (DataSource != null)
                 {
                     int itemIndex = 0;
-                    pnlLayout.Controls.Add(new LiteralControl("<div class=\"box-categories info\">"));
                     string html = string.Empty;
                     var products = DataSource as System.Collections.Generic.List<phukienipadx.Bl.Models.ProductInfo>;
-                    foreach (phukienipadx.Bl.Models.ProductInfo item in products)
+                    if (products.Count > 0)
                     {
-                        if (itemIndex > PageSize && SessionUtils.Get<bool>("AllCategories")) break;
-                        html += GiaPhuc.Helper.ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName, item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice, item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
-                        if (itemIndex % ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
+                        StringBuilder htmlBuilder = new StringBuilder("<div class='box-heading'>");
+                        htmlBuilder.Append(CategoryName);
+                        htmlBuilder.Append("</div>");
+
+                        htmlBuilder.Append("<div class=\"box-categories info\">");
+                        foreach (phukienipadx.Bl.Models.ProductInfo item in products)
                         {
-                            pnlLayout.Controls.Add(new LiteralControl(string.Format(GroupSection, html)));
-                            html = string.Empty;
+                            if (itemIndex > PageSize && SessionUtils.Get<bool>("AllCategories")) break;
+                            html += GiaPhuc.Helper.ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName, item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice, item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
+                            if (itemIndex % ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
+                            {
+                                htmlBuilder.AppendFormat(GroupSection, html);
+                                html = string.Empty;
+                            }
+                            itemIndex++;
                         }
-                        itemIndex++;
+                        if (itemIndex < products.Count)
+                        {
+                            htmlBuilder.AppendFormat("<div class=\"view-more\"><a target=\"_blank\" href=\"{0}\"><span>>> Xem thêm</span></a></div>", CategoryUrl);
+                        }
+                        htmlBuilder.Append("</div>");
+
+                        pnlLayout.Controls.Add(new LiteralControl(htmlBuilder.ToString()));
                     }
-                    if (itemIndex < products.Count)
-                    {
-                        pnlLayout.Controls.Add(new LiteralControl("<div class=\"view-more\"><a target=\"_blank\" href=\"" + CategoryUrl + "\"><span>>> Xem thêm</span></a></div>"));
-                    }
-                    pnlLayout.Controls.Add(new LiteralControl("</div>"));
                 }
             }
-        }
-
-        public string GetParentCategoryName()
-        {
-            return CategoryName.ToUpper();
         }
     }
 }

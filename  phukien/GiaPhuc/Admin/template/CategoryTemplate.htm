@@ -14,8 +14,8 @@
         <tr class="{#cycle values=['','evenRow']}">
             {#include ROW root=$T.item}
             <td>
-                <a href="/Admin/Pages/CategoryEntry.aspx?ID={$T.item.CategoryID}" class="btnEdit">Edit</a>&nbsp;|&nbsp;<a
-                    href="javascript:void(0)" id="{$T.item.CategoryID}" class="btnDelete">Xóa</a>
+                <a href="/Admin/Pages/CategoryEntry.aspx?ID={$T.item.CategoryId}" class="btnEdit">Edit</a>&nbsp;|&nbsp;<a
+                    href="javascript:void(0)" id="{$T.item.CategoryId}" class="btnDelete">Xóa</a>
             </td>
         </tr>
         {#/for}
@@ -25,6 +25,6 @@
 </table>
 {#/template MAIN} {#template ROW}
 <td align="center">
-    {$T.CategoryName}
+    {$T.Name}
 </td>
 {#/template ROW}

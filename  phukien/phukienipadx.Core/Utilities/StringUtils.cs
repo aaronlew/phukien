@@ -28,10 +28,15 @@ public static class StringUtils
         foreach (string t in keyList)
         {
             string destID = WebConfigurationManager.AppSettings[t].Trim();
-            destAlias = t;
+            //if (destID.StartsWith("."))
+            //{
+            //    destID = destID.Substring(1);
+            //}
+            
             if (destID.ToLower() == destPage.Trim().ToLower())
             {
                 // Processed
+                destAlias = t;
                 break;
             }
         }

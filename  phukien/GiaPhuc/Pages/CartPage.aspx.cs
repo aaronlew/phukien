@@ -85,7 +85,7 @@ namespace GiaPhuc.Pages
             string body = DataHelper.ReadTemplateFile(filePath);
             string orderNumber = Guid.NewGuid().ToString().Replace('-', '/').ToUpper();
             string shippingAddress = this.txtAddress.Text;
-            if (this.ddlProvince.SelectedIndex > 0) shippingAddress += ", [" + this.ddlProvince.SelectedItem.Text +"]";
+            if (this.ddlProvince.SelectedIndex > 0) shippingAddress += ", [" + this.ddlProvince.SelectedItem.Text + "]";
 
             body = body.Replace("[OrderNumber]", orderNumber);
             body = body.Replace("[CustomerName]", this.txtCustomerName.Text);
@@ -120,7 +120,7 @@ namespace GiaPhuc.Pages
 
             SessionManager.Cart.Clear();
 
-            Response.Write("<script>alert('Chúng tôi đã nhận được đơn hàng của quý khách, chúng tôi sẽ liên lạc với quý khách để xác nhận đơn hàng!</script>");
+            Alert.Show("Chúng tôi đã nhận được đơn hàng của quý khách, chúng tôi sẽ liên lạc với quý khách để xác nhận đơn hàng! Cám ơn quý khách!");
             Response.Redirect("/");
         }
 

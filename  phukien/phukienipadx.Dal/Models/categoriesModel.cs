@@ -40,6 +40,7 @@ namespace phukienipadx.Dal.Models
             this._date__added = categories.date_added;
             this._last__modified = categories.last_modified;
             this._categories__status = categories.categories_status;
+            this._home__order = categories.home_order;
             this._originalcategories = categories.DeepClone();
         }
 
@@ -61,6 +62,7 @@ namespace phukienipadx.Dal.Models
             this._categories.date_added = this._date__added;
             this._categories.last_modified = this._last__modified;
             this._categories.categories_status = this._categories__status;
+            this._categories.home_order = this._home__order;
         	return _categories;
         }
         
@@ -74,6 +76,7 @@ namespace phukienipadx.Dal.Models
             this._date__added = this._originalcategories.date_added;
             this._last__modified = this._originalcategories.last_modified;
             this._categories__status = this._originalcategories.categories_status;
+            this._home__order = this._originalcategories.home_order;
         	this.Commit();
         }
         
@@ -87,6 +90,7 @@ namespace phukienipadx.Dal.Models
             this._categories.date_added = this._originalcategories.date_added;
             this._categories.last_modified = this._originalcategories.last_modified;
             this._categories.categories_status = this._originalcategories.categories_status;
+            this._categories.home_order = this._originalcategories.home_order;
         }
         
 
@@ -216,6 +220,20 @@ namespace phukienipadx.Dal.Models
                 {
                     this.IsDirty = true;
                     this._categories__status = value;
+                }
+            }
+        }
+        
+        private Nullable<int> _home__order;
+        public Nullable<int> home_order
+        {
+            get { return this._home__order; }
+            set
+            {
+                if (this._home__order != value)
+                {
+                    this.IsDirty = true;
+                    this._home__order = value;
                 }
             }
         }

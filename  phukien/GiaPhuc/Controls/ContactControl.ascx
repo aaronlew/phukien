@@ -21,7 +21,7 @@
     </div>
     <div class="clear">
     </div>
-    <b style="color: red">HÀ NỘI:</b>
+    <%--<b style="color: red">HÀ NỘI:</b>
     <asp:Literal ID="Literal4" runat="server" Text="<%$Resources:Resources, Address2 %>"></asp:Literal>
     <div>
         <ul style="color: blue; list-style: none">
@@ -32,5 +32,5 @@
                 <img alt="Chat with phukienipadx.com" src="http://opi.yahoo.com/online?u=nanganhbsg&m=g&t=2&l=us" />
             </a></li>
         </ul>
-    </div>
+    </div>--%>
 </div>

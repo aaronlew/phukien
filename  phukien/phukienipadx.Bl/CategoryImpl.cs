@@ -6,6 +6,7 @@ using System.Linq;
 using phukienipadx.Bl.Models;
 using phukienipadx.Core;
 using phukienipadx.Dal.Repository;
+using phukienipadx.Dal;
 
 namespace phukienipadx.Bl
 {
@@ -72,20 +73,6 @@ namespace phukienipadx.Bl
                                 on x.products_id equals y.products_id
                                 select new { x, y };
 
-            //DirectoryInfo dir = new DirectoryInfo(@"F:\Workspace\phukienipadx solution\GiaPhuc\Upload\Thumbs\");
-            //FileInfo[] files = dir.GetFiles();
-
-            //foreach (var file in files)
-            //{
-            //    bool result = queryProducts.Any(x => file.FullName.EndsWith(x.x.products_image, StringComparison.OrdinalIgnoreCase));
-            //    if (result)
-            //    {
-            //        continue;
-            //    }
-
-            //    file.Delete();
-            //}
-
             if (categoryId == 0)
             {
                 return (from item in queryProducts
@@ -93,7 +80,8 @@ namespace phukienipadx.Bl
                             on item.x.master_categories_id equals y.categories_id
                         join z in categoryDescriptionRep.GetAllcategories_descriptions()
                             on item.x.master_categories_id equals z.categories_id
-                        orderby y.sort_order, item.x.products_price descending, item.x.products_model, item.y.products_name 
+                        where y.home_order != null
+                        orderby y.home_order, item.x.products_price descending, item.x.products_model, item.y.products_name
                         group item by z
                             into g
                             select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name)
@@ -172,5 +160,67 @@ namespace phukienipadx.Bl
 
             return categories.ToList();
         }
+
+
+        /// <summary>
+        /// Get a category
+        /// </summary>
+        /// <returns></returns>
+        public static CategoryInfo GetCategory(int id)
+        {
+            var categoryRep = new categoriesRepository();
+            var categoryDescriptionRep = new categories_descriptionsRepository();
+
+            IEnumerable<CategoryInfo> categories = from x in categoryRep.GetAllcategories()
+                                                   join y in categoryDescriptionRep.GetAllcategories_descriptions()
+                                                       on x.categories_id equals y.categories_id
+                                                   where y.language_id == 0
+                                                   select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name) { Active = Convert.ToBoolean(x.categories_status) };
+            return categories.SingleOrDefault();
+        }
+
+        public static bool Save(CategoryInfo categoryInfo)
+        {
+            var categoryRep = new categoriesRepository();
+            var categoryDescriptionRep = new categories_descriptionsRepository();
+
+            try
+            {
+                if (categoryInfo.CategoryId == 0)
+                {
+                    var cate = new phukienipadx.Dal.categories
+                    {
+                        categories_status = Convert.ToSByte(categoryInfo.Active)
+                    };
+                    categoryRep.Addcategories(cate);
+                    categoryRep.Commit();
+
+                    var description = new categories_descriptions
+                    {
+                        categories_id = cate.categories_id,
+                        categories_name = categoryInfo.Name,
+                        language_id = 0
+                    };
+
+                    categoryDescriptionRep.Addcategories_descriptions(description);
+                    categoryDescriptionRep.Commit();
+                }
+                else
+                {
+                    var category = categoryDescriptionRep.GetSinglecategories_descriptions(x => x.categories_id == categoryInfo.CategoryId && x.language_id == 0);
+                    if (category != null) category.categories_name = categoryInfo.Name;
+
+                    categoryDescriptionRep.Commit();
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+
+            return true;
+        }
+
     }
 }

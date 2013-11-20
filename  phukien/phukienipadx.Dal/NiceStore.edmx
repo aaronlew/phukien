@@ -42,6 +42,7 @@
           <Property Name="date_added" Type="datetime2" Precision="0" />
           <Property Name="last_modified" Type="datetime2" Precision="0" />
           <Property Name="categories_status" Type="smallint" Nullable="false" />
+          <Property Name="home_order" Type="int" />
         </EntityType>
         <EntityType Name="categories_description">
           <Key>
@@ -297,6 +298,7 @@
           <Property Name="date_added" Type="DateTime" />
           <Property Name="last_modified" Type="DateTime" />
           <Property Name="categories_status" Type="Int16" Nullable="false" />
+          <Property Type="Int32" Name="home_order" />
         </EntityType>
         <EntityType Name="categories_descriptions">
           <Key>
@@ -540,6 +542,7 @@
           <EntitySetMapping Name="categories">
             <EntityTypeMapping TypeName="phukienipadxModel.categories">
               <MappingFragment StoreEntitySet="categories">
+                <ScalarProperty Name="home_order" ColumnName="home_order" />
                 <ScalarProperty Name="categories_id" ColumnName="categories_id" />
                 <ScalarProperty Name="categories_image" ColumnName="categories_image" />
                 <ScalarProperty Name="parent_id" ColumnName="parent_id" />

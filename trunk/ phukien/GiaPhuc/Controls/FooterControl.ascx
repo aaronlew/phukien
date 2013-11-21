@@ -24,7 +24,20 @@
                     } 
                 %>
             </ul>
-            
+            <ul style="font-size: 10pt; color: #999;">
+                <li class="center">Online:
+                    <%= Application["OnlineUsers"] %></li>
+                <li><span id="visitorCount"></span>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $.get('/VisitorCounter.ashx', function (data) {
+                                $('#visitorCount').html(data);
+                            });
+                        });
+
+                    </script>
+                </li>
+            </ul>
         </div>
         <div class="col span_3_of_4">
             <%

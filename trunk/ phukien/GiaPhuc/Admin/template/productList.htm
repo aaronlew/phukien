@@ -1,0 +1,60 @@
+﻿{#template MAIN}
+<table id="grid" cellpadding="6" cellspacing="0" class="grid" border="0">
+    <thead>
+        <tr>
+            <th colspan="6">
+                Product List
+            </th>
+        </tr>
+        <tr>
+            <th>
+                STT
+            </th>
+            <th>
+                #
+            </th>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                <input type="checkbox" id="allChoice" />
+            </th>
+            <th class="crud">
+                <a class="btnNew" href="ProductEntry.aspx">Tạo mới</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {#foreach $T.List as item}
+        <tr class="{#cycle values=['','evenRow']}">
+            <td align="center">
+                {$T.item$index + 1 + ($T.PageNumber - 1) * $T.PageSize}
+            </td>
+            {#include ROW root=$T.item}
+            <td>
+                <input type="checkbox" class="choice" />
+            </td>
+            <td class="crud">
+                <a href="/Pages/ProductDetail.aspx?ID={$T.item.ProductId}" class="btnEdit">View</a>&nbsp;|&nbsp;<a
+                    href="ProductEntry.aspx?id={$T.item.ProductId}" class="btnEdit">Edit</a>
+            </td>
+        </tr>
+        {#/for}
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+{#/template MAIN} {#template ROW}
+<td>
+    {$T.ProductNumber}
+</td>
+<td>
+    {$T.ProductName}
+</td>
+<td class="accounting">
+    
+</td>
+{#/template ROW}

@@ -110,7 +110,7 @@
         </tr>
     </table>
     <div class="clear button">
-        <asp:HyperLink ID="lnkBackToList" NavigateUrl="/Admin/Pages/TopicManager.aspx" runat="server"><span>Back to Home</span></asp:HyperLink>
+        <asp:HyperLink ID="lnkBackToList" NavigateUrl="/Admin/Pages/PostManager.aspx" runat="server"><span>Back to Home</span></asp:HyperLink>
         <asp:LinkButton ID="lnkSave" runat="server" OnClick="lnkSave_Click"><span>Save</span></asp:LinkButton>
     </div>
 </asp:Content>

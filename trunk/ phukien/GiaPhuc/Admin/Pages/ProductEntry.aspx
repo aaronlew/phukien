@@ -39,8 +39,8 @@
                     plugins: "ccSimpleUploader,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
 
                     // Theme options
-//                    theme_advanced_buttons1: "emotions,ccSimpleUploader,image",
-//                    theme_advanced_buttons2: '',
+                    //                    theme_advanced_buttons1: "emotions,ccSimpleUploader,image",
+                    //                    theme_advanced_buttons2: '',
                     theme_advanced_buttons3: "emotions,ccSimpleUploader,image",
                     theme_advanced_buttons4: '',
                     theme_advanced_toolbar_location: "top",
@@ -149,10 +149,17 @@
                 <li>
                     <asp:CheckBox ID="chkIsSpecial" runat="server" Text="Sản phẩm bán chạy"></asp:CheckBox></li>
                 <li>
-                    <asp:CheckBox ID="chkIsDiscount" runat="server" Text="Sản phẩm giảm giá" onclick="changeDiscountPriceStatus($(this).is(':checked'));"></asp:CheckBox></li>
+                    <asp:CheckBox ID="chkIsDiscount" runat="server" Text="Sản phẩm giảm giá" onclick="changeDiscountPriceStatus($(this).is(':checked'));">
+                    </asp:CheckBox></li>
                 <li>
                     <asp:CheckBox ID="chkActive" runat="server" Text="Kích hoạt"></asp:CheckBox></li>
             </ul>
+        </div>
+        <div class="clear">
+            <div class="label" style="background-color: OrangeRed; color: White; font-weight: bold;">
+                Home chuyên mục:
+            </div>
+            <asp:DropDownList ID="ddlHomeCategories" runat="server" />
         </div>
         <div class="clear" id="discount">
             <div class="label">

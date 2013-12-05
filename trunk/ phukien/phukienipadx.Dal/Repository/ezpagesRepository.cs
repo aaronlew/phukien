@@ -27,6 +27,7 @@ namespace phukienipadx.Dal.Repository
         #region variable define
 
         IUnitOfWork unitOfWork;
+        public IUnitOfWork UOW { get { return unitOfWork; } }
 
         #endregion
 
@@ -49,6 +50,11 @@ namespace phukienipadx.Dal.Repository
 
         #region Basic C.R.U.D. operations
 
+        // Query ezpages
+        public IQueryable<ezpages> Queryezpages(Expression<Func<ezpages, bool>> expression)
+        {
+        	return unitOfWork.GetQuery<ezpages>(expression);
+        }
         // List of all ezpages 
         public IList<ezpages> GetAllezpages()
         {

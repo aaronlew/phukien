@@ -58,7 +58,44 @@ namespace phukienipadx.Bl.Models
             DisplayPrice = IsCalledPrice ? "Call" : string.Format("{0:n0}đ", Price);
         }
 
+        public ProductInfo(product product)
+        {
+            CategoryId = product.master_categories_id;
+            ManufacturerId = product.manufacturers_id;
+            ProductId = product.products_id;
+            ProductNumber = product.products_model;
+            ImageUrl = product.products_image;
+
+            DiscountPrice = product.products_price_sorter;
+            Price = product.products_price;
+            IsCalledPrice = Convert.ToBoolean(product.product_is_call);
+            IsSpecItem = Convert.ToBoolean(product.product_is_always_free_shipping);
+            IsDiscountItem = Convert.ToBoolean(product.products_discount_type);
+            IsActive = Convert.ToBoolean(product.products_status);
+
+            DisplayDiscountPrice = string.Format("{0:n0}đ", DiscountPrice);
+            DisplayPrice = IsCalledPrice ? "Call" : string.Format("{0:n0}đ", Price);
+        }
+
         public ProductInfo(products product, products_descriptions description)
+            : this(product)
+        {
+            ProductName = description.products_name;
+            SpecificationHtml = description.products_description1.RemoveBadCode();
+            ImagesOfProductHtml = description.products_images.RemoveBadCode();
+            DetailsUrl = string.Format(DetailLink, product.products_id).ParseSimpleUrl(description.products_name);
+            ShopCartUrl = string.Format(CartLink, product.products_id).ParseSimpleUrl(description.products_name);
+
+            ImageOriginalUrl = product.products_image.RemoveBadCode();
+            if (ImageOriginalUrl != null)
+            {
+                ImageOriginalUrl = ImageOriginalUrl.Substring(ImageOriginalUrl.LastIndexOf('/') + 1);
+                ImageUrl = Path.Combine(Define.UploadFolder, ImageOriginalUrl);
+                ThumbsUrl = Path.Combine(Define.ThumbsFolder, ImageOriginalUrl);
+            }
+        }
+
+        public ProductInfo(product product, products_description description)
             : this(product)
         {
             ProductName = description.products_name;

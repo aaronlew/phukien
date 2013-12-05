@@ -30,9 +30,9 @@ namespace GiaPhuc.Controls
                     var products = DataSource as System.Collections.Generic.List<phukienipadx.Bl.Models.ProductInfo>;
                     if (products.Count > 0)
                     {
-                        StringBuilder htmlBuilder = new StringBuilder("<div class='box-heading'>");
+                        StringBuilder htmlBuilder = new StringBuilder("<h2 class='box-heading'>");
                         htmlBuilder.Append(CategoryName);
-                        htmlBuilder.Append("</div>");
+                        htmlBuilder.Append("</h2>");
 
                         htmlBuilder.Append("<div class=\"box-categories info\">");
                         foreach (phukienipadx.Bl.Models.ProductInfo item in products)

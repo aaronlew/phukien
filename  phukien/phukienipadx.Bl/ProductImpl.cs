@@ -58,6 +58,45 @@ namespace phukienipadx.Bl
                  select new ProductInfo(x, y)).ToList();
         }
 
+        public static IList<ProductInfo> GetProductsPaging(string status, string keyword, int? pageNumber, int? pageSize, out int totalRecords, out int countPosted, out int countDeleted)
+        {
+            totalRecords = 0;
+            countPosted = 0;
+            countDeleted = 0;
+
+            using (var db = new phukienipadxContext())
+            {
+
+                IQueryable<product> query = (from x in db.products select x);
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    var categoriesId = db.categories_descriptions.Where(x => x.categories_name.Contains(keyword)).Select(x => x.categories_id);
+                    var productsId = db.products_to_categories.Where(x => categoriesId.Any(y => y == x.categories_id)).Select(x => x.products_id).ToList();
+                    query = query.Where(x => productsId.Contains(x.products_id) || x.products_model.Contains(keyword));
+                }
+                switch (status)
+                {
+                    case "posted":
+                        query = query.Where(x => x.products_status == 1);
+                        break;
+                    case "deleted":
+                        query = query.Where(x => x.products_status != 1);
+                        break;
+                }
+
+                totalRecords = query.Count();
+                query = query.OrderBy(x => x.products_model);
+                if (pageNumber.HasValue && pageSize.HasValue)
+                    query = query.PageIQuery(pageNumber.Value, pageSize.Value);
+
+                return (from x in query
+                        join y in db.products_descriptions
+                     on x.products_id equals y.products_id
+                        select new ProductInfo(x, y)).ToList();
+            }
+        }
+
         public static IList<ProductInfo> GetProductsByCategory(int categoryId)
         {
             var productRep = new productsRepository();
@@ -133,7 +172,7 @@ namespace phukienipadx.Bl
 
                     // Delete product item
                     productRep.Deleteproducts(product);
-                
+
                     productDescriptionRep.Commit();
                     productToCategoryRep.Commit();
                     productRep.Commit();

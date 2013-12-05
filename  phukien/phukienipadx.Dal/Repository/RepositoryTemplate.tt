@@ -118,6 +118,7 @@ namespace <#=
         this.WriteLine(string.Empty);
 #>
 IUnitOfWork unitOfWork;
+public IUnitOfWork UOW { get { return unitOfWork; } }
 <#+
         PopIndent();
         region.End();
@@ -146,6 +147,11 @@ public <#=        code.Escape(entity.Name + "Repository")#>(IUnitOfWork _unitOfW
         PushIndent(CodeRegion.GetIndent(2));
         this.WriteLine(string.Empty);
 #>
+// Query <#=        code.Escape(entity.Name)#>
+public IQueryable<<#=        code.Escape(entity.Name)#>> Query<#=        code.Escape(entity.Name)#>(Expression<Func<<#=        code.Escape(entity.Name)#>, bool>> expression)
+{
+	return unitOfWork.GetQuery<<#=        code.Escape(entity.Name)#>>(expression);
+}
 // List of all <#=        code.Escape(entity.Name)#> 
 public IList<<#=        code.Escape(entity.Name)#>> GetAll<#=        code.Escape(entity.Name)#>()
 {

@@ -19,9 +19,9 @@ namespace GiaPhuc.Admin.Pages
         {
             get
             {
-                if (null != Request["ID"])
+                if (null != Request["id"])
                 {
-                    return int.Parse(Request["ID"]);
+                    return int.Parse(Request["id"]);
                 }
                 return 0;
             }
@@ -45,18 +45,13 @@ namespace GiaPhuc.Admin.Pages
                 {
                     LoadCategories(product.CategoryIds);
 
+                    this.ddlHomeCategories.SelectedValue = product.CategoryId.ToString(CultureInfo.InvariantCulture);
+
                     this.txtProductCode.Text = product.ProductNumber;
                     this.txtDiscountPrice.Text = product.DiscountPrice.ToString("#,##0.##");
                     this.txtPrice.Text = product.Price.ToString("#,##0.##");
                     this.imgProduct.ImageUrl = product.ImageUrl;
                     this.imgProduct.AlternateText = product.ImageOriginalUrl;
-                    //if(!string.IsNullOrEmpty(product.ImagesOfProductHtml))
-                    //{
-                    //    string[] imageUrls = product.ImagesOfProductHtml.Split(';');
-                    //    this.imgProduct1.ImageUrl = imageUrls[0];
-                    //    if (imageUrls.Length > 1) this.imgProduct2.ImageUrl = imageUrls[1];
-                    //    if (imageUrls.Length > 2) this.imgProduct3.ImageUrl = imageUrls[2];
-                    //}
 
                     this.chkIsCall.Checked = product.IsCalledPrice;
                     this.chkActive.Checked = product.IsActive;
@@ -132,6 +127,7 @@ namespace GiaPhuc.Admin.Pages
                                            SpecificationHtml = this.txtProducts_Description.Text,
                                            ImagesOfProductHtml = this.txtProducts_Images.Text,
                                            ManufacturerId = 0,
+                                           CategoryId = int.Parse(this.ddlHomeCategories.SelectedValue),
                                            CategoryIds = new List<int>()
                                        };
 
@@ -215,7 +211,13 @@ namespace GiaPhuc.Admin.Pages
 
         private void LoadCategories(IList<int> selectedCategoryIds = null)
         {
-            foreach (var cate in CategoryImpl.GetCategories())
+            var cates = CategoryImpl.GetCategories();
+            ddlHomeCategories.DataSource = cates;
+            ddlHomeCategories.DataTextField = "Name";
+            ddlHomeCategories.DataValueField = "CategoryId";
+            ddlHomeCategories.DataBind();
+
+            foreach (var cate in cates)
             {
                 var listItem = new ListItem(cate.Name, cate.CategoryId.ToString(CultureInfo.InvariantCulture));
                 listItem.Attributes.Add("style",

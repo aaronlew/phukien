@@ -27,6 +27,7 @@ namespace phukienipadx.Dal.Repository
         #region variable define
 
         IUnitOfWork unitOfWork;
+        public IUnitOfWork UOW { get { return unitOfWork; } }
 
         #endregion
 
@@ -49,6 +50,11 @@ namespace phukienipadx.Dal.Repository
 
         #region Basic C.R.U.D. operations
 
+        // Query orders_status_history
+        public IQueryable<orders_status_history> Queryorders_status_history(Expression<Func<orders_status_history, bool>> expression)
+        {
+        	return unitOfWork.GetQuery<orders_status_history>(expression);
+        }
         // List of all orders_status_history 
         public IList<orders_status_history> GetAllorders_status_history()
         {

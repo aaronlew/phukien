@@ -39,10 +39,11 @@
       <siteMapNode url="./bao-da-apple.html" title="BAO DA APPLE"  description="BAO DA APPLE" >
         <siteMapNode url="/trang-chu/CategoryID/3/Bao-Da-iPad.html" title="IPAD"  description="IPAD" >
           <siteMapNode url="/trang-chu/CategoryID/38/Bao-da-Ipad-Air-Ipad-5.html" title="Ipad Air (Ipad 5)"  description="Ipad Air (Ipad 5)" />
-          <siteMapNode url="/trang-chu/CategoryID/17/Bao-Da-iPad-4.html" title="Ipad 4"  description="Ipad 4" />
-          <siteMapNode url="/trang-chu/CategoryID/18/Bao-Da-iPad-3-New-iPad.html" title="Ipad 3 / 2"  description="Ipad 3 / 2" />
-          <siteMapNode url="/trang-chu/CategoryID/19/Bao-Da-iPad-2.html" title="Ipad mini 2"  description="Ipad mini 2" />
+          <siteMapNode url="/trang-chu/CategoryID/40/Bao-Da-iPad-Retina.html" title="Ipad Retina"  description="Ipad Retina" />
           <siteMapNode url="/trang-chu/CategoryID/16/Bao-Da-iPad-Mini.html" title="Ipad mini"  description="Ipad mini" />
+          <siteMapNode url="/trang-chu/CategoryID/17/Bao-Da-iPad-4.html" title="Ipad 4"  description="Ipad 4" />
+          <siteMapNode url="/trang-chu/CategoryID/18/Bao-Da-iPad-3-New-iPad.html" title="Ipad 3"  description="Ipad 3" />
+          <siteMapNode url="/trang-chu/CategoryID/19/Bao-Da-iPad-2.html" title="Ipad 2"  description="Ipad 2" />
           <siteMapNode url="/trang-chu/CategoryID/20/Bao-Da-iPad-1.html" title="Ipad 1" description="Ipad 1" />
         </siteMapNode>
         <siteMapNode url="/trang-chu/CategoryID/5/Op-Lung-Bao-Da-iPhone.html" title="IPHONE"  description="IPHONE" >

@@ -75,7 +75,7 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a target="_blank" href="/Admin/Login.aspx" id="HeadLoginStatus" runat="server">Log
+                        [ <a href="/Admin/Login.aspx" id="HeadLoginStatus" runat="server">Log
                             In</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
@@ -91,24 +91,24 @@
             <div class="clear hideSkiplink">
                 <ul class="menu">
                     <li><a target="_blank" href="/"><span>Home</span></a></li>
-                    <li><a target="_blank" href="/"><span>Meta & Content</span></a>
+                    <li><a href="/"><span>Meta & Content</span></a>
                         <ul class="children">
-                            <li><a target="_blank" href="/Admin/Pages/MetaEntry.aspx">Meta</a></li>
-                            <li><a target="_blank" href="/Admin/Pages/PageManager.aspx">Trang</a></li>
-                            <li><a target="_blank" href="/Admin/Pages/PostManager.aspx">Bài viết</a></li>
+                            <li><a href="/Admin/Pages/MetaEntry.aspx">Meta</a></li>
+                            <li><a href="/Admin/Pages/PageManager.aspx">Trang</a></li>
+                            <li><a href="/Admin/Pages/PostManager.aspx">Bài viết</a></li>
                         </ul>
                     </li>
-                    <li><a target="_blank" href="#"><span>Product</span></a>
+                    <li><a href="#"><span>Product</span></a>
                         <ul class="children">
-                            <li><a target="_blank" href="/Admin/Pages/CategoryManager.aspx">Nhóm sản phẩm</a></li>
-                            <li><a target="_blank" href="/Admin/Pages/ManufacturerManager.aspx">Manufacturer</a></li>
-                            <li><a target="_blank" href="/Admin/Pages/ProductManager.aspx">Sản phẩm</a></li>
+                            <li><a href="/Admin/Pages/CategoryManager.aspx">Nhóm sản phẩm</a></li>
+                            <li><a href="/Admin/Pages/ManufacturerManager.aspx">Manufacturer</a></li>
+                            <li><a href="/Admin/Pages/ProductManager.aspx">Sản phẩm</a></li>
                         </ul>
                     </li>
-                    <li><a target="_blank" href="/"><span>Order</span></a>
+                    <li><a href="/"><span>Order</span></a>
                         <ul class="children">
-                            <li><a target="_blank" href="#">Khách hàng</a></li>
-                            <li><a target="_blank" href="/Admin/Pages/ProductManager.aspx">Đơn hàng</a></li>
+                            <li><a href="#">Khách hàng</a></li>
+                            <li><a href="/Admin/Pages/ProductManager.aspx">Đơn hàng</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -8,7 +8,7 @@
     <script src="/Admin/Scripts/jsPost.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <a target="_blank" href="PostEntry.aspx">Tạo mới</a>
+    <a href="PostEntry.aspx">Tạo mới</a>
     <div id="topic">
     </div>
     <div id="black" style="margin: auto;">

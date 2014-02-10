@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GiaPhuc.Controls {
+namespace GiaPhuc.Pages {
     
     
-    public partial class LeftLayout {
+    public partial class CategoryPage {
         
         /// <summary>
-        /// AdvertiseLeftSide1 control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GiaPhuc.Controls.AdvertiseLeftSide AdvertiseLeftSide1;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

@@ -48,7 +48,7 @@ namespace GiaPhuc.Controls
                         }
                         if (itemIndex < products.Count)
                         {
-                            htmlBuilder.AppendFormat("<div class=\"view-more\"><a target=\"_blank\" href=\"{0}\"><span>>> Xem thêm</span></a></div>", CategoryUrl);
+                            htmlBuilder.AppendFormat("<div class=\"view-more\"><a href=\"{0}\"><span>>> Xem thêm</span></a></div>", CategoryUrl);
                         }
                         htmlBuilder.Append("</div>");
 

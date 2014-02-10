@@ -125,9 +125,19 @@
     <Content Include="Controls\TopMenuControl.ascx" />
     <Content Include="Controls\UCProductCategory.ascx" />
     <Content Include="Controls\UCProductCell.ascx" />
+    <Content Include="errors\404.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
+    <Content Include="Images\highlight-products\image0.jpg" />
+    <Content Include="Images\highlight-products\image1.jpg" />
+    <Content Include="Images\highlight-products\image2.jpg" />
+    <Content Include="Images\highlight-products\image3.jpg" />
+    <Content Include="Images\highlight-products\image4.jpg" />
+    <Content Include="Images\highlight-products\image5.jpg" />
+    <Content Include="Pages\CategoryPage.aspx" />
+    <Content Include="Pages\ProductPage.aspx" />
+    <Content Include="Scripts\kenburns.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.touchSwipe.min.js" />
@@ -136,6 +146,7 @@
     <Content Include="Scripts\jquery-scrolltofixed-min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.ui.timepicker.js" />
+    <Content Include="Scripts\kenburns.js" />
     <Content Include="Scripts\menu\jquery.dcmegamenu.1.3.3.min.js" />
     <Content Include="Scripts\menu\jquery.dcverticalmegamenu.1.3.js" />
     <Content Include="Scripts\menu\jquery.hoverIntent.minified.js" />
@@ -149,6 +160,7 @@
     <Content Include="Admin\Scripts\vm\handler.js" />
     <Content Include="Admin\Scripts\vm\product-vm.js" />
     <Content Include="static\css\AdminSite.css" />
+    <Content Include="static\css\christmas.css" />
     <Content Include="static\css\dropdown-menu.css" />
     <Content Include="static\css\menu\dcmegamenu.css" />
     <Content Include="static\css\menu\dcverticalmegamenu.css" />
@@ -180,6 +192,7 @@
     <Content Include="static\css\menu\skins\orange.css" />
     <Content Include="static\css\menu\skins\red.css" />
     <Content Include="static\css\menu\skins\white.css" />
+    <Content Include="static\css\site.min.css" />
     <Content Include="static\css\slider\slider.css" />
     <Content Include="static\css\tabs.css" />
     <Content Include="static\images\advertise\QCAO 1.jpg" />
@@ -190,6 +203,7 @@
     <Content Include="static\images\arrows.gif" />
     <Content Include="static\images\banner\left-banner.jpg" />
     <Content Include="static\images\banner\right-banner.jpg" />
+    <Content Include="static\images\bg33.jpg" />
     <Content Include="static\images\bg_caidan.jpg" />
     <Content Include="static\images\box-heading.jpg" />
     <Content Include="static\images\button-bg.png" />
@@ -1429,6 +1443,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="errors\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errors\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Handler\MyService.asmx.cs">
       <DependentUpon>MyService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1437,7 +1458,13 @@
     <Compile Include="Helper\CategoryHelper.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helper\CustomRouteHandler.cs" />
+    <Compile Include="Helper\DirectCast.cs" />
+    <Compile Include="Helper\HelperCache.cs" />
+    <Compile Include="Helper\IsNumeric.cs" />
+    <Compile Include="Helper\ParseTo_T.cs" />
     <Compile Include="Helper\ProductHelper.cs" />
+    <Compile Include="Helper\UrlRouting.cs" />
     <Compile Include="Pages\AboutPage.aspx.cs">
       <DependentUpon>AboutPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1445,12 +1472,29 @@
     <Compile Include="Pages\AboutPage.aspx.designer.cs">
       <DependentUpon>AboutPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CategoryPage.aspx.cs">
+      <DependentUpon>CategoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoryPage.aspx.designer.cs">
+      <DependentUpon>CategoryPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ContactPage.aspx.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ContactPage.aspx.designer.cs">
       <DependentUpon>ContactPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ParentPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Services\CategoryService.asmx.cs">
       <DependentUpon>CategoryService.asmx</DependentUpon>

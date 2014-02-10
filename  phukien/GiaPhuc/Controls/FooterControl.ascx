@@ -10,6 +10,7 @@
                     .SelectMany(e => e.Elements()).Select(nd => new
                                 {
                                     title = nd.Attribute("title").Value,
+                                    description = nd.Attribute("description").Value,
                                     url = nd.Attribute("url").Value
                                 });
             %>
@@ -18,7 +19,7 @@
                     foreach (var v in urlDescList)
                     {
                 %>
-                <li><a target="_blank" href="<%=v.url.ParseSimpleUrl(v.title) %>"><span>
+                <li><a href="/<%=v.description %>"><span>
                     <%=v.title %></span></a></li>
                 <%
                     } 
@@ -49,7 +50,7 @@
             %>
             <ul class="section group">
                 <% } %>
-                <li class="col span_1_of_3"><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
+                <li class="col span_1_of_3"><a href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
                     title="<%=item.Name %>">
                     <%= item.Name %></a>
                     <%
@@ -60,7 +61,7 @@
                         foreach (phukienipadx.Bl.Models.CategoryInfo subItem in item.Categories)
                         {
                         %>
-                        <li><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
+                        <li><a href="<%= ("/nhom-hang/" + subItem.Name) %>"
                             title="<%=subItem.Name %>">
                             <%= subItem.Name %></a></li>
                         <%

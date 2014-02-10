@@ -31,7 +31,24 @@ namespace GiaPhuc.Pages
         {
             if (!IsPostBack)
             {
-                PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.PageId == PageID);
+                var id = PageID;
+                if (Request.Url.AbsolutePath.EndsWith("mua-hang"))
+                {
+                    id = 9;
+                }
+                else if (Request.Url.AbsolutePath.EndsWith("su-dung"))
+                {
+                    id = 10;
+                }
+                else if (Request.Url.AbsolutePath.EndsWith("bao-hanh"))
+                {
+                    id = 6;
+                }
+                else if (Request.Url.AbsolutePath.EndsWith("doi-tac"))
+                {
+                    id = 8;
+                }
+                PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.PageId == id);
                 if (null != topic)
                 {
                     divContent.InnerHtml = topic.HtmlContent.RemoveBadCode();

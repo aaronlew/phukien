@@ -138,10 +138,10 @@ namespace GiaPhuc.Admin.Pages
                         int categoryId = int.Parse(item.Value);
                         productModel.CategoryIds.Add(categoryId);
 
-                        if (SessionManager.Categories.Any(x => x.CategoryId == categoryId)) // root
-                        {
-                            productModel.CategoryId = categoryId;
-                        }
+                        //if (SessionManager.Categories.Any(x => x.CategoryId == categoryId)) // root
+                        //{
+                        //    productModel.CategoryId = categoryId;
+                        //}
                     }
                 }
 

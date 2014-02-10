@@ -75,7 +75,7 @@
             <div class="clear" data-bind="visible: lines().length == 0">
                 Không có sản phẩm nào trong giỏ hàng</div>
             <div class="float-right">
-                <a target="_blank" href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />'
+                <a href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />'
                     class="button"><span>Tiếp tục mua hàng</span></a>
             </div>
             <div class="clear">

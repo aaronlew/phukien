@@ -3,7 +3,6 @@
 <script type="text/javascript">
 
     function hoverMenu() {
-        //初始化
         var end_num = 4;
         var array_num = $(".navItem").size();
         $(".mainlist").css("position", "static");
@@ -14,14 +13,12 @@
 
         $(this).addClass("show_back");
 
-        //计算尺寸
         var indexs = $(".navItem").index($(this));
         var show_box_height = $(this).next().height() + $(".right-tr").height() + $(".right-br").height();
 
         var li_height = $("#litb-nav li").height();
         var li_height_total = (indexs + 1) * (li_height + 1);
 
-        //判断并做出改变
         if ((li_height_total + li_height + 1) > show_box_height) {
             $(this).parent().css("position", "relative");
             if (indexs > array_num - end_num) {
@@ -36,7 +33,6 @@
 
     function hoverMenu1() {
 
-        //初始化
         var end_num = 4;
         var array_num = $(".navItem").size();
         $(".mainlist").css("position", "static");
@@ -47,14 +43,12 @@
 
         $(this).addClass("show_back");
 
-        //计算尺寸
         var indexs = $(".navItem").index($(this));
         var show_box_height = $(this).next().height() + $(".right-tr").height() + $(".right-br").height();
 
         var li_height = $("#litb-nav li").height();
         var li_height_total = (indexs + 1) * (li_height + 1);
 
-        //判断并做出改变
         if ((li_height_total + li_height + 1) > show_box_height) {
             $(this).parent().css("position", "relative");
             if (indexs > array_num - end_num) {
@@ -120,7 +114,7 @@
                 {
             %>
             <li class="<%=(first ? "first" : string.Empty) %> mainlist" style="position: static;">
-                <a target="_blank" class="navItem" href="<%=v.url %>" title="<%=v.title %>">
+                <a class="navItem" href="<%=v.url %>" title="<%=v.title %>">
                     <%=v.title %></a>
                 <%
                     if (first) first = false;
@@ -140,7 +134,7 @@
                         foreach (var subItem in ndChild)
                         {
                         %>
-                        <dt><a target="_blank" href="<%=subItem.url %>" title="<%=subItem.title %>">
+                        <dt><a href="<%=subItem.url %>" title="<%=subItem.title %>">
                             <%= subItem.title %></a></dt>
                         <%
                             if (subItem.children != null && subItem.children.Count() > 0)
@@ -155,7 +149,7 @@
                                 {
                         %>
                         <dd>
-                            <a target="_blank" href="<%=subOfSubItem.url %>" title="<%=subOfSubItem.title %>">
+                            <a href="<%=subOfSubItem.url %>" title="<%=subOfSubItem.title %>">
                                 <%= subOfSubItem.title %></a></dd>
                         <%
                                 }
@@ -168,39 +162,6 @@
             <%
                 } 
             %>
-            <%--<%
-                bool first = true;
-                foreach (CategoryInfo item in SessionManager.Categories)
-                {
-            %>
-            <li class="<%=(first ? "first" : string.Empty) %> mainlist" style="position: static;">
-                <a target="_blank" class="navItem" href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
-                    title="<%=item.Name %>">
-                    <%= item.Name %></a>
-                <%
-                    if (first) first = false;
-                    if (item.Categories != null && item.Categories.Count > 0)
-                    {%>
-                <div class="sub-nav-container">
-                    <dl>
-                        <%
-                        int i = 0;
-                        foreach (CategoryInfo subItem in item.Categories)
-                        {
-                        %>
-                        <dt><a target="_blank" href="<%= ("/Default.aspx?CategoryID=" + subItem.CategoryId).ParseSimpleUrl(subItem.Name) %>"
-                            title="<%=subItem.Name %>">
-                            <%= subItem.Name %></a></dt>
-                        <%
-                            i++;
-                        }%>
-                    </dl>
-                </div>
-                <% } %>
-            </li>
-            <%
-                }
-            %>--%>
         </ul>
     </div>
 </div>

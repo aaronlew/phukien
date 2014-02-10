@@ -11,8 +11,6 @@ namespace GiaPhuc
     public partial class Default : System.Web.UI.Page
     {
         private string Keyword { get { return (Request["keyword"] ?? string.Empty).ToLower(); } }
-        private int CategoryId { get { return Convert.ToInt32(Request["CategoryID"]); } }
-        private int ManufacturerId { get { return Convert.ToInt32(Request["ManufacturerID"]); } }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,13 +63,12 @@ namespace GiaPhuc
             if (string.Empty != Keyword)
             {
                 categories = CategoryImpl.GetAllProductInCategory(Keyword);
-                SessionUtils.Set("AllCategories", false);
             }
-            else if (0 != CategoryId)
-            {
-                categories = CategoryImpl.GetAllProductInCategory(CategoryId);
-                SessionUtils.Set("AllCategories", false);
-            }
+            //else if (0 != CategoryId)
+            //{
+            //    categories = CategoryImpl.GetAllProductInCategory(CategoryId);
+            //    SessionUtils.Set("AllCategories", false);
+            //}
             else
             {
                 categories = SessionManager.AllCategories;

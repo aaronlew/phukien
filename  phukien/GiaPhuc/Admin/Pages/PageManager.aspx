@@ -12,7 +12,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <a target="_blank" href="PageEntry.aspx">Tạo mới</a>
+    <a href="PageEntry.aspx">Tạo mới</a>
     <div id="page">
     </div>
     <div id="black" style="margin: auto;">

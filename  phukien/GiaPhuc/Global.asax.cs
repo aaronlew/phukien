@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Configuration;
+using GiaPhuc.Helper;
 
 namespace GiaPhuc
 {
@@ -34,47 +35,49 @@ namespace GiaPhuc
 
             // Code that runs on application startup
             Application["OnlineUsers"] = 0;
+
+            UrlRouting.Initialize();
         }
 
-        private void Application_BeginRequest(object sender, EventArgs e)
-        {
-            //Get the current http context
-            HttpContext inRequest = HttpContext.Current;
+        //private void Application_BeginRequest(object sender, EventArgs e)
+        //{
+        //    //Get the current http context
+        //    HttpContext inRequest = HttpContext.Current;
 
-            //Get the current path
-            string oldPath = inRequest.Request.Path.ToLower();
+        //    //Get the current path
+        //    string oldPath = inRequest.Request.Path.ToLower();
 
-            string[] urls = inRequest.Request.RawUrl.TrimStart('/').Split('/');
+        //    string[] urls = inRequest.Request.RawUrl.TrimStart('/').Split('/');
 
-            //Check the path whether it is a contextual path
-            if (oldPath.EndsWith(".html")
-                || (oldPath.EndsWith(".aspx") && urls.Length > 3))
-            {
-                string path = urls[0];
+        //    //Check the path whether it is a contextual path
+        //    if (oldPath.EndsWith(".html")
+        //        || (oldPath.EndsWith(".aspx") && urls.Length > 3))
+        //    {
+        //        string path = urls[0];
 
-                path = "/" + path + "/";
+        //        path = "/" + path + "/";
 
-                string newPath = WebConfigurationManager.AppSettings[path];
+        //        string newPath = WebConfigurationManager.AppSettings[path];
 
-                if (null != newPath)
-                {
-                    var stringBuilder = new StringBuilder();
-                    for (int i = 1; i < urls.Length - 1; i += 2)
-                    {
-                        if (i > 1)
-                        {
-                            stringBuilder.Append("&");
-                        }
-                        stringBuilder.Append(urls[i]);
-                        stringBuilder.Append("=");
-                        stringBuilder.Append(urls[i + 1]);
-                    }
+        //        if (null != newPath)
+        //        {
+        //            var stringBuilder = new StringBuilder();
+        //            for (int i = 1; i < urls.Length - 1; i += 2)
+        //            {
+        //                if (i > 1)
+        //                {
+        //                    stringBuilder.Append("&");
+        //                }
+        //                stringBuilder.Append(urls[i]);
+        //                stringBuilder.Append("=");
+        //                stringBuilder.Append(urls[i + 1]);
+        //            }
 
-                    //Rewrite the path with the actual path
-                    inRequest.RewritePath(newPath.TrimStart('.'), string.Empty, stringBuilder.ToString());
-                }
-            }
-        }
+        //            //Rewrite the path with the actual path
+        //            inRequest.RewritePath(newPath.TrimStart('.'), string.Empty, stringBuilder.ToString());
+        //        }
+        //    }
+        //}
 
         private void Application_End(object sender, EventArgs e)
         {

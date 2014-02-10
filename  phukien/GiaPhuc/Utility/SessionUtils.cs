@@ -5,6 +5,7 @@ using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
 using System;
 using System.Web.Caching;
+using MichaelKappel.Net.CSharp;
 
 namespace GiaPhuc.Utility
 {
@@ -41,46 +42,6 @@ namespace GiaPhuc.Utility
         #endregion
     }
 
-    public class CacheUtils
-    {
-        #region Common Methods
-        public static T Get<T>(string key)
-        {
-            if (Exist(key))
-                return (T)HttpContext.Current.Cache[key];
-            return default(T);
-        }
-
-        public static void Set<T>(string key, T val)
-        {
-            HttpContext.Current.Cache[key] = val;
-        }
-
-        public static void Set<T>(string key, int cacheMinutes, T val)
-        {
-            HttpContext.Current.Cache.Add(key, val, null, DateTime.Now.AddMinutes(cacheMinutes), Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
-        }
-
-        public static void Clear(string key)
-        {
-            HttpContext.Current.Cache.Remove(key);
-        }
-
-        /// <summary>
-        /// Clear all
-        /// </summary>
-        public static void Clear()
-        {
-
-        }
-
-        public static bool Exist(string key)
-        {
-            return HttpContext.Current.Cache[key] != null;
-        }
-        #endregion
-    }
-
     public class SessionManager
     {
         public static IDictionary<int, ShopCart> Cart
@@ -96,63 +57,102 @@ namespace GiaPhuc.Utility
             set { SessionUtils.Set("Cart", value); }
         }
 
+        const string CategoriesConstant = "Categories";
         public static IList<CategoryInfo> Categories
         {
             get
             {
-                if (!CacheUtils.Exist("Categories"))
-                {
-                    CacheUtils.Set("Categories", 2, CategoryImpl.GetHierarchyCategories());
-                }
-                return CacheUtils.Get<IList<CategoryInfo>>("Categories");
+                IList<CategoryInfo> categories = HelperCache.Get<IList<CategoryInfo>>(CategoriesConstant);
+                if (categories == null)
+                    lock (obj)
+                    {
+                        if (categories == null)
+                        {
+                            categories = CategoryImpl.GetHierarchyCategories();
+                            HelperCache.Add(CategoriesConstant, categories, HelperCache.CachingTime.ShortTermSliding);
+                        }
+                    }
+                return categories;
             }
         }
 
+        const string TopicsConstant = "Topics";
         public static IList<PageInfo> Topics
         {
             get
             {
-                if (!CacheUtils.Exist("Topics"))
-                {
-                    CacheUtils.Set("Topics", 5, PostImpl.GetTopics());
-                }
-                return CacheUtils.Get<IList<PageInfo>>("Topics");
+                IList<PageInfo> pages = HelperCache.Get<IList<PageInfo>>(TopicsConstant);
+                if (pages == null)
+                    lock (obj)
+                    {
+                        if (pages == null)
+                        {
+                            pages = PostImpl.GetTopics();
+                            HelperCache.Add(TopicsConstant, pages, HelperCache.CachingTime.ShortTermSliding);
+                        }
+                    }
+                return pages;
             }
         }
+
+        static object obj = new object();
+        const string AllCategoriesConstant = "AllCategories";
 
         public static IList<CategoryInfo> AllCategories
         {
             get
             {
-                if (!CacheUtils.Exist("AllCategories"))
-                {
-                    CacheUtils.Set("AllCategories", 2, CategoryImpl.GetAllProductInCategory());
-                }
-                return CacheUtils.Get<IList<CategoryInfo>>("AllCategories");
+                IList<CategoryInfo> categories = HelperCache.Get<IList<CategoryInfo>>(AllCategoriesConstant);
+                if (categories == null)
+                    lock (obj)
+                    {
+                        if (categories == null)
+                        {
+                            categories = CategoryImpl.GetAllProductInCategory();
+                            HelperCache.Add(AllCategoriesConstant, categories, HelperCache.CachingTime.LongTermSliding);
+                        }
+                    }
+                return categories;
             }
         }
+
+        const string SpecProductsConstant = "SpecProducts";
 
         public static IList<ProductInfo> SpecProducts
         {
             get
             {
-                if (!CacheUtils.Exist("SpecProducts"))
-                {
-                    CacheUtils.Set("SpecProducts", ProductImpl.GetAllSpecProducts());
-                }
-                return CacheUtils.Get<IList<ProductInfo>>("SpecProducts");
+                IList<ProductInfo> products = HelperCache.Get<IList<ProductInfo>>(SpecProductsConstant);
+                if (products == null)
+                    lock (obj)
+                    {
+                        if (products == null)
+                        {
+                            products = ProductImpl.GetAllSpecProducts();
+                            HelperCache.Add(SpecProductsConstant, products, HelperCache.CachingTime.LongTermSliding);
+                        }
+                    }
+                return products;
             }
         }
+
+        const string DiscountProductsConstant = "DiscountProducts";
 
         public static IList<ProductInfo> DiscountProducts
         {
             get
             {
-                if (!CacheUtils.Exist("DiscountProducts"))
-                {
-                    CacheUtils.Set("DiscountProducts", ProductImpl.GetAllDiscountProducts());
-                }
-                return CacheUtils.Get<IList<ProductInfo>>("DiscountProducts");
+                IList<ProductInfo> products = HelperCache.Get<IList<ProductInfo>>(DiscountProductsConstant);
+                if (products == null)
+                    lock (obj)
+                    {
+                        if (products == null)
+                        {
+                            products = ProductImpl.GetAllDiscountProducts();
+                            HelperCache.Add(DiscountProductsConstant, products, HelperCache.CachingTime.LongTermSliding);
+                        }
+                    }
+                return products;
             }
         }
     }

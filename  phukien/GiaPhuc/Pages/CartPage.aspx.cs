@@ -101,7 +101,7 @@ namespace GiaPhuc.Pages
             foreach (var item in SessionManager.Cart.Values)
             {
                 detailBody.Append("<tr>");
-                detailBody.AppendFormat("<td><a href=\"http://phukienipadx.com/{0}\" target=\"_blank\" title=\"{1}\">{1}</a></td>", item.ProductUrl, item.ProductName);
+                detailBody.AppendFormat("<td><a href=\"http://phukienipadx.com/{0}\" title=\"{1}\">{1}</a></td>", item.ProductUrl, item.ProductName);
                 detailBody.AppendFormat("<td align=\"right\">{0:#,##0}</td>", item.Price);
                 detailBody.AppendFormat("<td align=\"center\">{0:#,##0}</td>", item.Quantity);
                 detailBody.AppendFormat("<td align=\"right\">{0:#,##0}</td>", item.Price * (decimal)item.Quantity);

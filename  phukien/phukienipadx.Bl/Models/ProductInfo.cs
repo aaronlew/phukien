@@ -8,7 +8,7 @@ namespace phukienipadx.Bl.Models
 {
     public class ProductInfo
     {
-        const string DetailLink = "/Pages/ProductDetail.aspx?ID={0}";
+        const string DetailLink = "/san-pham/{0}";
         const string CartLink = "/Pages/CartPage.aspx?ProductID={0}";
 
         public int ProductId { get; set; }
@@ -83,7 +83,7 @@ namespace phukienipadx.Bl.Models
             ProductName = description.products_name;
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
-            DetailsUrl = string.Format(DetailLink, product.products_id).ParseSimpleUrl(description.products_name);
+            DetailsUrl = string.Format(DetailLink, description.products_url);
             ShopCartUrl = string.Format(CartLink, product.products_id).ParseSimpleUrl(description.products_name);
 
             ImageOriginalUrl = product.products_image.RemoveBadCode();
@@ -101,7 +101,7 @@ namespace phukienipadx.Bl.Models
             ProductName = description.products_name;
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
-            DetailsUrl = string.Format(DetailLink, product.products_id).ParseSimpleUrl(description.products_name);
+            DetailsUrl = string.Format(DetailLink, description.products_url);
             ShopCartUrl = string.Format(CartLink, product.products_id).ParseSimpleUrl(description.products_name);
 
             ImageOriginalUrl = product.products_image.RemoveBadCode();

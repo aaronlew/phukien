@@ -132,6 +132,38 @@ namespace phukienipadx.Bl
             return null;
         }
 
+        public static string GetProductUrl(int id)
+        {
+            var productDescriptionRep = new products_descriptionsRepository();
+            var description =
+                productDescriptionRep.GetSingleproducts_descriptions(
+                    x => x.products_id == id && x.language_id == 0);
+            if (description != null) return description.products_url;
+
+            return null;
+        }
+
+        public static ProductInfo GetProductDetails(string url)
+        {
+            var productDescriptionRep = new products_descriptionsRepository();
+            var description =
+                productDescriptionRep.GetSingleproducts_descriptions(
+                    x => x.products_url == url && x.language_id == 0);
+
+            if (description != null)
+            {
+                var productRep = new productsRepository();
+                var productToCategoryRep = new products_to_categoriesRepository();
+
+                var product = productRep.GetSingleproducts(x => x.products_id == description.products_id);
+                var productToCategories = productToCategoryRep.Findproducts_to_categories(
+                    x => x.products_id == description.products_id).Select(x => x.categories_id);
+
+                return new ProductInfo(product, description) { CategoryIds = productToCategories.ToList() };
+            }
+
+            return null;
+        }
 
         public static IList<ProductInfo> GetProductsInTheSameCategory(int categoryId)
         {

@@ -9,7 +9,7 @@ namespace phukienipadx.Bl.Models
             this.ParentId = parentId;
             this.CategoryId = categoryId;
             this.Name = name;
-            this.Url = ("/Default.aspx?CategoryID=" + CategoryId).ParseSimpleUrl(Name);
+            this.Url = "/nhom-hang/" + name;
         }
 
         public bool Active { get; set; }

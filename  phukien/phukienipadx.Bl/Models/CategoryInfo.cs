@@ -4,12 +4,12 @@ namespace phukienipadx.Bl.Models
 {
     public class CategoryInfo
     {
-        public CategoryInfo(int parentId, int categoryId, string name)
+        public CategoryInfo(int parentId, int categoryId, string name, string url)
         {
             this.ParentId = parentId;
             this.CategoryId = categoryId;
             this.Name = name;
-            this.Url = "/nhom-hang/" + name;
+            this.Url = "/nhom-hang/" + url;
         }
 
         public bool Active { get; set; }

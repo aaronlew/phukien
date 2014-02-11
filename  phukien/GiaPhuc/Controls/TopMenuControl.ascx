@@ -13,7 +13,7 @@
                         });
     %>
     <ul id="hor-menu" class="mega-menu wrapper">
-        <li><a href="/">Trang chủ</a></li>
+        <li><a href="/">Home</a></li>
         <%
             foreach (var v in urlDescList)
             {

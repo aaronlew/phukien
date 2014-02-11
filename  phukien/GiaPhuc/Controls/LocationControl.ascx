@@ -54,5 +54,5 @@
     window.onload = markicons; 
 
 </script>
-<div id="map" style="width: 100%; height: 200px; margin-top: 5px;">
+<div id="map" style="width: 100%; height: 500px; margin-top: 5px;">
 </div>

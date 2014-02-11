@@ -4,9 +4,8 @@
     <div class="onTop wrapper">
         <div id="divAddress">
             <p class="add1">
-                <asp:Literal ID="Literal1" runat="server" Text="<%$Resources:Resources, Address1 %>" /></p>
-            <%--<p class="add2" style="display: none">
-                <asp:Literal ID="Literal2" runat="server" Text="<%$Resources:Resources, Address2 %>" /></p>--%>
+                <asp:Literal ID="Literal1" runat="server" Text="<%$Resources:Resources, Address1 %>" /> <a href="/lien-he" style="color: Red;">Bản đồ</a> </p>
+
         </div>
         <div id='cssmenu'>
             <ul>

@@ -50,8 +50,7 @@
             %>
             <ul class="section group">
                 <% } %>
-                <li class="col span_1_of_3"><a href="<%= ("/Default.aspx?CategoryID=" + item.CategoryId).ParseSimpleUrl(item.Name) %>"
-                    title="<%=item.Name %>">
+                <li class="col span_1_of_3"><a href="<%= (item.Url) %>" title="<%=item.Name %>">
                     <%= item.Name %></a>
                     <%
                     if (item.Categories != null && item.Categories.Count > 0)
@@ -61,8 +60,7 @@
                         foreach (phukienipadx.Bl.Models.CategoryInfo subItem in item.Categories)
                         {
                         %>
-                        <li><a href="<%= ("/nhom-hang/" + subItem.Name) %>"
-                            title="<%=subItem.Name %>">
+                        <li><a href="<%= (subItem.Url) %>" title="<%=subItem.Name %>">
                             <%= subItem.Name %></a></li>
                         <%
                         }%>

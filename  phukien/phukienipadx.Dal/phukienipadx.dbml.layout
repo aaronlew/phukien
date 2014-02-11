@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="phukienipadx">
+  <DataContextMoniker Name="/phukienipadxDataContext" />
+  <nestedChildShapes>
+    <classShape Id="00e34821-4a4d-4da3-b3c8-3ea2b3737d7e" absoluteBounds="0.75, 0.75, 2, 7.5399397786458326">
+      <DataClassMoniker Name="/phukienipadxDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a874396c-6caf-45a0-a01c-3fdaee9dd3c3" absoluteBounds="0.765, 1.21, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="997a17d6-dd82-4d37-a714-ea89412c30fb" absoluteBounds="3.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/phukienipadxDataContext/products_description" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe553175-bd40-4f02-bc96-2a9cf4228bf1" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85646c26-e85f-4c48-b892-d0ebce8adc24" absoluteBounds="3.625, 3.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/phukienipadxDataContext/products_to_category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82c24999-a5f8-4dab-8f76-46781d64f1e3" absoluteBounds="3.6399999999999997, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8d7adff-9fc0-4320-92a9-d35e01b2ec2a" absoluteBounds="6.375, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/phukienipadxDataContext/category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba7082e9-7589-4583-bb3a-958f65e19832" absoluteBounds="6.39, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccd9416c-5577-4246-8df5-cb5a18cbaf3c" absoluteBounds="3.625, 6.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/phukienipadxDataContext/categories_description" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b1f2366-9769-46c1-9085-c1d757421b30" absoluteBounds="3.64, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

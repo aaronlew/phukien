@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using GiaPhuc.Pages;
 using GiaPhuc.Utility;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
@@ -8,9 +8,17 @@ using TNO.Education.Helpers;
 
 namespace GiaPhuc
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : ParentPage
     {
-        private string Keyword { get { return (Request["keyword"] ?? string.Empty).ToLower(); } }
+        //private string Keyword { get { return (Request["keyword"] ?? string.Empty).ToLower(); } }
+
+        private string Keyword
+        {
+            get
+            {
+                return (RouteValue("keyword") ?? string.Empty).ToString().ToLower();
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,11 +72,6 @@ namespace GiaPhuc
             {
                 categories = CategoryImpl.GetAllProductInCategory(Keyword);
             }
-            //else if (0 != CategoryId)
-            //{
-            //    categories = CategoryImpl.GetAllProductInCategory(CategoryId);
-            //    SessionUtils.Set("AllCategories", false);
-            //}
             else
             {
                 categories = SessionManager.AllCategories;

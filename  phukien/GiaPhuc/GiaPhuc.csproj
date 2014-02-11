@@ -137,6 +137,8 @@
     <Content Include="Images\highlight-products\image5.jpg" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
+    <Content Include="Scripts\ipadx.min.js" />
+    <Content Include="Scripts\ipadx.js" />
     <Content Include="Scripts\kenburns.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
@@ -302,6 +304,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="static\css\smartpaginator.css" />
+    <Content Include="static\images\logo.png" />
     <Content Include="static\response\1024.css" />
     <Content Include="static\response\10cols.css" />
     <Content Include="static\response\11cols.css" />

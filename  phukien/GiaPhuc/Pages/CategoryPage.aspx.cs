@@ -15,7 +15,7 @@ namespace GiaPhuc.Pages
         const int PageSize = 10;
 
         // Old ID
-        public string ID
+        private string ID
         {
             get
             {
@@ -25,11 +25,13 @@ namespace GiaPhuc.Pages
             }
         }
 
-        public string Url
+        private string Url
         {
             get
             {
-                return RouteValue("url").ToString();
+                var val = RouteValue("url");
+                if (val == null) return null;
+                return val.ToString();
             }
         }
         #endregion
@@ -41,7 +43,7 @@ namespace GiaPhuc.Pages
                 if (ID != null)
                 {
                     Response.Status = "301 Moved Permanently";
-                    Response.AddHeader("Location", "/nhom-hang/" + CategoryImpl.GetCategory(int.Parse(ID)).Name);
+                    Response.AddHeader("Location", CategoryImpl.GetCategory(int.Parse(ID)).Url);
                     Response.End();
                 }
 

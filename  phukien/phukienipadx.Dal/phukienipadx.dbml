@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="phukienipadx_com" Class="phukienipadxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=123.30.185.47;Initial Catalog=phukienipadx_com;Persist Security Info=True;User ID=phukienipadx" SettingsObjectName="phukienipadx.Dal.Properties.Settings" SettingsPropertyName="phukienipadx_comConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.products" Member="products">
+    <Type Name="product">
+      <Column Name="products_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="products_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="products_quantity" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_model" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="products_image" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="products_price" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="products_virtual" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_date_added" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="products_last_modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="products_date_available" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="products_weight" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_tax_class_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="manufacturers_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="products_ordered" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_quantity_order_min" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_quantity_order_units" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_priced_by_attribute" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_is_free" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_is_call" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_quantity_mixed" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="product_is_always_free_shipping" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_qty_box_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_quantity_order_max" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="products_sort_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="products_discount_type" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_discount_type_from" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="products_price_sorter" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="master_categories_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="products_mixed_discount_quantity" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="metatags_title_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="metatags_products_name_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="metatags_model_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="metatags_price_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="metatags_title_tagline_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.products_description" Member="products_descriptions">
+    <Type Name="products_description">
+      <Column Name="products_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="language_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="products_name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="products_images" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="products_description" Member="products_description1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="products_url" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="products_viewed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.products_to_categories" Member="products_to_categories">
+    <Type Name="products_to_category">
+      <Column Name="products_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.categories" Member="categories">
+    <Type Name="category">
+      <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="categories_image" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="parent_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sort_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_added" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="last_modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="categories_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="home_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.categories_description" Member="categories_descriptions">
+    <Type Name="categories_description">
+      <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="language_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="categories_name" Type="System.String" DbType="NVarChar(62) NOT NULL" CanBeNull="false" />
+      <Column Name="categories_description" Member="categories_description1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="categories_url" Type="System.String" DbType="NVarChar(62)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

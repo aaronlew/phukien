@@ -42,7 +42,7 @@ namespace GiaPhuc.Admin.Pages
         {
             try
             {
-                CategoryInfo category = new CategoryInfo(Id, Id, this.txtCategoryName.Text);
+                CategoryInfo category = new CategoryInfo(Id, Id, this.txtCategoryName.Text, StringUtils.GetGoodUrl(this.txtCategoryName.Text));
                 //Deactive = this.chkDeactive.Checked
 
                 CategoryImpl.Save(category);

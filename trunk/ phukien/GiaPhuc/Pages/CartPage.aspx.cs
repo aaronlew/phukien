@@ -14,14 +14,30 @@ using System.Text;
 
 namespace GiaPhuc.Pages
 {
-    public partial class CartPage : Page
+    public partial class CartPage : ParentPage
     {
         #region Properties
 
-        private string ProductID
+        // Old ID
+        public string ID
         {
-            get { return Request["ProductID"]; }
+            get
+            {
+                var val = RouteValue("id");
+                if (val == null) return null;
+                return val.ToString();
+            }
         }
+
+        public string Url
+        {
+            get
+            {
+                var val = RouteValue("url");
+                if (val == null) return null;
+                return val.ToString();
+            }
+        } 
 
         #endregion
 
@@ -31,19 +47,24 @@ namespace GiaPhuc.Pages
         {
             if (!IsPostBack)
             {
+                if (ID != null)
+                {
+                    Response.Status = "301 Moved Permanently";
+                    Response.AddHeader("Location", "/gio-hang/" + ProductImpl.GetProductUrl(int.Parse(ID)));
+                    Response.End();
+                }
+
                 Title = "CỬA HÀNG TINH TẾ (NICE STORE) - PHỤ KIỆN IPAD - GIỎ HÀNG";
 
-                if (!string.IsNullOrEmpty(ProductID))
+                if (!string.IsNullOrEmpty(Url))
                 {
-                    int key = int.Parse(ProductID);
+                    ProductInfo product = ProductImpl.GetProductDetails(Url);
 
-                    if (!SessionManager.Cart.ContainsKey(key))
+                    if (!SessionManager.Cart.ContainsKey(product.ProductId))
                     {
-                        ProductInfo product = ProductImpl.GetProductDetails(key);
-
-                        SessionManager.Cart.Add(key, new ShopCart
+                        SessionManager.Cart.Add(product.ProductId, new ShopCart
                                                        {
-                                                           ProductId = key,
+                                                           ProductId = product.ProductId,
                                                            ProductUrl = product.DetailsUrl,
                                                            ProductNumber = product.ProductNumber,
                                                            ProductName = product.ProductName,
@@ -54,31 +75,17 @@ namespace GiaPhuc.Pages
                     }
                     else
                     {
-                        SessionManager.Cart[key].Quantity++;
+                        SessionManager.Cart[product.ProductId].Quantity++;
                     }
 
                     // Back to home page
-                    Response.Redirect("/Pages/CartPage.aspx");
+                    Response.Redirect("/gio-hang");
                 }
             }
         }
 
         protected void sendButton_Click(object sender, EventArgs e)
         {
-            //using (var sw = new StringWriter())
-            //{
-            //    GridView grid = new GridView();
-            //    grid.DataSource = SessionManager.Cart.Values;
-            //    grid.DataBind();
-
-            //    var w = new HtmlTextWriter(sw);
-            //    var form = new HtmlForm();
-            //    form.Controls.Add(grid);
-            //    form.Controls.Add(cartDiv);
-            //    Controls.Add(form);
-            //    form.RenderControl(w);
-
-            //    string s = sw.GetStringBuilder().ToString();
 
             string filename = "template/shopcarttemplate.htm";
             string filePath = HttpContext.Current.Server.MapPath(HttpContext.Current.Request.ApplicationPath.Replace("/", "\\")) + "\\" + filename;

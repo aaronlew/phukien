@@ -25,7 +25,7 @@ namespace phukienipadx.Bl
                             on x.categories_id equals y.categories_id
                         where x.categories_id > 0
                         orderby x.sort_order
-                        select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name);
+                        select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url);
 
             var allCategories = query as List<CategoryInfo> ?? query.ToList();
             IEnumerable<CategoryInfo> mainCategories = allCategories.Where(x => x.ParentId == 0);
@@ -85,7 +85,7 @@ namespace phukienipadx.Bl
                         orderby y.home_order, item.x.products_price descending, item.x.products_model, item.y.products_name
                         group item by z
                             into g
-                            select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name)
+                            select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
                             {
                                 Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
                             }).ToList();
@@ -97,7 +97,7 @@ namespace phukienipadx.Bl
             // Get product list by the category Id
             return new List<CategoryInfo>
                        {
-                           new CategoryInfo(0, categoryId, categoryDescription.categories_name)
+                           new CategoryInfo(0, categoryId, categoryDescription.categories_name, categoryDescription.categories_url)
                                {
                                    Products = (from item in queryProducts
                                                join z in
@@ -134,13 +134,13 @@ namespace phukienipadx.Bl
             }
 
             var categoryDescription =
-                categoryDescriptionRep.GetSinglecategories_descriptions(x => x.categories_name == categoriesUrl
+                categoryDescriptionRep.GetSinglecategories_descriptions(x => x.categories_url == categoriesUrl
                                                                              && x.language_id == 0);
 
             // Get product list by the category Id
             return new List<CategoryInfo>
                        {
-                           new CategoryInfo(0, categoryDescription.categories_id, categoryDescription.categories_description1)
+                           new CategoryInfo(0, categoryDescription.categories_id, categoryDescription.categories_description1, categoryDescription.categories_url)
                                {
                                    Products = (from item in queryProducts
                                                join z in
@@ -179,7 +179,7 @@ namespace phukienipadx.Bl
                     || (z.categories_name.ToLower().Contains(keyword) && z.language_id == 0)
                     group item by z
                         into g
-                        select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name)
+                        select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
                         {
                             Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
                         }).ToList();
@@ -200,7 +200,7 @@ namespace phukienipadx.Bl
                                                        on x.categories_id equals y.categories_id
                                                    where y.language_id == 0
                                                    orderby (x.parent_id == 0 ? x.categories_id : x.parent_id), x.sort_order
-                                                   select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name) { Active = Convert.ToBoolean(x.categories_status) };
+                                                   select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url) { Active = Convert.ToBoolean(x.categories_status) };
 
             return categories.ToList();
         }
@@ -219,7 +219,7 @@ namespace phukienipadx.Bl
                                                    join y in categoryDescriptionRep.GetAllcategories_descriptions()
                                                        on x.categories_id equals y.categories_id
                                                    where y.language_id == 0 && x.categories_id == id
-                                                   select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name) { Active = Convert.ToBoolean(x.categories_status) };
+                                                   select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url) { Active = Convert.ToBoolean(x.categories_status) };
             return categories.SingleOrDefault();
         }
 

@@ -13,42 +13,59 @@ using phukienipadx.Bl.Models;
 
 namespace GiaPhuc.Pages
 {
-    public partial class TopicPage : System.Web.UI.Page
+    public partial class TopicPage : ParentPage
     {
-        private int PageID
+        // Old ID
+        public string ID
         {
             get
             {
-                if (null != Request["ID"])
-                {
-                    return int.Parse(Request["ID"]);
-                }
-                return 0;
+                var val = RouteValue("id");
+                if (val == null) return null;
+                return val.ToString();
             }
         }
+
+        public string Url
+        {
+            get
+            {
+                var val = RouteValue("url");
+                if (val == null) return null;
+                return val.ToString();
+            }
+        } 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                var id = PageID;
+                if (ID != null)
+                {
+                    var post = SessionManager.Topics.SingleOrDefault(x => x.PageId == int.Parse(ID));
+                    Response.Status = "301 Moved Permanently";
+                    Response.AddHeader("Location", "/bai-viet/" + post.Url);
+                    Response.End();
+                }
+
+                var url = Url;
                 if (Request.Url.AbsolutePath.EndsWith("mua-hang"))
                 {
-                    id = 9;
+                    url = "huong-dan-mua-hang";
                 }
                 else if (Request.Url.AbsolutePath.EndsWith("su-dung"))
                 {
-                    id = 10;
+                    url = "quy-dinh-bao-hanh";
                 }
                 else if (Request.Url.AbsolutePath.EndsWith("bao-hanh"))
                 {
-                    id = 6;
+                    url = "quy-dinh-bao-hanh";
                 }
                 else if (Request.Url.AbsolutePath.EndsWith("doi-tac"))
                 {
-                    id = 8;
+                    url = "tim-doi-tac";
                 }
-                PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.PageId == id);
+                PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.Url == url);
                 if (null != topic)
                 {
                     divContent.InnerHtml = topic.HtmlContent.RemoveBadCode();

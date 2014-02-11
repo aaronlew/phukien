@@ -6,12 +6,14 @@ namespace phukienipadx.Bl.Models
         public int PageId { get; set; }
         public string Title { get; set; }
         public string HtmlContent { get; set; }
+        public string Url { get; set; }
         public int CategoryId { get; set; }
 
-        public PageInfo(int pageId, string htmlContent)
+        public PageInfo(int pageId, string htmlContent, string url)
         {
             this.PageId = pageId;
             this.HtmlContent = htmlContent;
+            this.Url = url;
         }
     }
 }

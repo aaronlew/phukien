@@ -49,7 +49,8 @@ namespace GiaPhuc.Admin
         {
             try
             {
-                PageInfo post = new PageInfo(PageID, this.elm1.Value.RemoveBadCode())
+                var title = this.elm1.Value.RemoveBadCode();
+                PageInfo post = new PageInfo(PageID, title, StringUtils.GetGoodUrl(title))
                 {
                     Title = this.txtTitle.Text,
                     HtmlContent = this.elm1.Value.RemoveBadCode(),

@@ -13,7 +13,7 @@ namespace GiaPhuc.Pages
 
         protected object RouteValue(string key)
         {
-            if (requestContext.RouteData.Values.ContainsKey(key))
+            if (requestContext != null && requestContext.RouteData.Values.ContainsKey(key))
                 return requestContext.RouteData.Values[key];
             else
                 return null;

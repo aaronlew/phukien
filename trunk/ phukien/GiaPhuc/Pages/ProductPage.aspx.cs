@@ -24,7 +24,9 @@ namespace GiaPhuc.Pages
         {
             get
             {
-                return RouteValue("url").ToString();
+                var val = RouteValue("url");
+                if (val == null) return null;
+                return val.ToString();
             }
         } 
         #endregion

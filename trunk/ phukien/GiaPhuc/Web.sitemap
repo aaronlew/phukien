@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode>
-    <siteMapNode url="./" title="Trang chủ"  description="Trang chủ" resourceKey="Home">
+    <siteMapNode url="./" title="Home"  description="Trang chủ" resourceKey="Home">
       <siteMapNode url="./pages/aboutpage.aspx" title="Giới thiệu"  description="gioi-thieu" />
       <siteMapNode url="./pages/topicpage.aspx?ID=9" title="Hướng dẫn mua hàng"  description="mua-hang" />
       <siteMapNode url="./pages/topicpage.aspx?ID=10" title="Hướng dẫn sử dụng"  description="su-dung" />
@@ -10,9 +10,9 @@
       <siteMapNode url="./pages/contactpage.aspx" title="Liên hệ"  description="lien-he" />
     </siteMapNode>
     <siteMapNode url="./post.aspx" title="Bài viết"  description="Bài viết" resourceKey="Post">
-      <siteMapNode url="./pages/topicpage.aspx?ID=1" title="CAM KẾT PIN YOOBAO CHÍNH HẢNG"  description="http://phukienipadx.com/Upload/Thumbs/YB-000-131012101908.jpg" />
-      <siteMapNode url="./pages/topicpage.aspx?ID=2" title="SẢN PHẨM CAM KẾT CHECK KIỂM TRA VỚI MỌI HÌNH THỨC"  description="http://phukienipadx.com/Upload/Thumbs/YB-001-131016112319.jpg" />
-      <siteMapNode url="./pages/topicpage.aspx?ID=3" title="Cách phân biệt Pin dự phòng cao cấp hiệu Yoobao HÀNG THẬT VÀ HÀNG GIẢ"  description="http://phukienipadx.com/Upload/Thumbs/YB-002-131016015310.jpg" />
+      <siteMapNode url="./pages/topicpage.aspx?ID=20" title="CAM KẾT PIN YOOBAO CHÍNH HẢNG"  description="http://phukienipadx.com/Upload/Thumbs/YB-000-131012101908.jpg" />
+      <siteMapNode url="./pages/topicpage.aspx?ID=27" title="SẢN PHẨM CAM KẾT CHECK KIỂM TRA VỚI MỌI HÌNH THỨC"  description="http://phukienipadx.com/Upload/Thumbs/YB-001-131016112319.jpg" />
+      <siteMapNode url="./pages/topicpage.aspx?ID=24" title="Cách phân biệt Pin dự phòng cao cấp hiệu Yoobao HÀNG THẬT VÀ HÀNG GIẢ"  description="http://phukienipadx.com/Upload/Thumbs/YB-002-131016015310.jpg" />
     </siteMapNode>
     <siteMapNode url="./pages/main-menu.aspx" title="Menu chính"  description="Menu chính" resourceKey="MainMenu">
       <siteMapNode url="./index.html" title="Pin dự phòng cao cấp"  description="Pin dự phòng cao cấp" >
@@ -22,24 +22,14 @@
 	  </siteMapNode>
       <siteMapNode url="./ban-phim-bluetooth.html" title="Bàn phím Bluetooth"  description="Bàn phím Bluetooth" >
         <siteMapNode url="/trang-chu/CategoryID/2/Ban-Phim-Bluetooth.html" title="IPAD"  description="IPAD" >
-          <!--<siteMapNode url="./index211.html" title="Ipad Air (Ipad 5)"  description="Ipad Air (Ipad 5)" />-->
           <siteMapNode url="/trang-chu/CategoryID/41/Ban-phim-iPad-Air-iPad-5.html" title="Ipad Air (iPad 5)"  description="Ipad Air (iPad 5)" />
           <siteMapNode url="/trang-chu/CategoryID/13/Ban-Phim-iPad-4-3-2-1.html" title="Ipad 4 / 3 / 2 / 1"  description="Ipad 4 / 3 / 2 / 1" />
-          <!--<siteMapNode url="./index213.html" title="Ipad mini 2"  description="Ipad mini 2" />-->
           <siteMapNode url="/trang-chu/CategoryID/14/Ban-Phim-iPad-Mini.html" title="Ipad mini / Ipad retina (mini 2)"  description="Ipad mini" />
-          <!--<siteMapNode url="./index215.html" title="Ipad 1"  description="Ipad 1" />-->
         </siteMapNode>
         <siteMapNode url="/trang-chu/CategoryID/15/Ban-Phim-Samsung.html" title="SAMSUNG"  description="IPAD" >
           <siteMapNode url="/trang-chu/CategoryID/42/Ban-phim-note-101-2014-P600P601.html" title="Galaxy Note 10.1 2014 P600/P601"  description="Galaxy Note 10.1 2014 P600/P601" />
           <siteMapNode url="/trang-chu/CategoryID/43/Ban-phim-Tab-3-80-T310-T311.html" title="Bàn phím Tab 3 8.0 T310 / T311"  description="Bàn phím Tab 3 8.0 T310 / T311" />
           <siteMapNode url="/trang-chu/CategoryID/44/Ban-phim-Tab-2-70-P3100-P6200.html" title="Bàn phím Tab 2 7.0 P3100 / P6200"  description="Bàn phím Tab 2 7.0 P3100 / P6200" />
-          <!--<siteMapNode url="./index411.html" title="Galaxy Tab 3 10.1 P5200"  description="Galaxy Tab 3 10.1 P5200" />
-          <siteMapNode url="./index412.html" title="Galaxy Tab 3 8.0 T3100"  description="Galaxy Tab 3 8.0 T3100" />
-          <siteMapNode url="./index413.html" title="Galaxy Tab 3 7.0 T2100 / T211 / P3200"  description="Galaxy Tab 3 7.0 T2100 / T211 / P3200" />
-          <siteMapNode url="./index414.html" title="Galaxy Tab 2 10.1 P5100/P7500"  description="Galaxy Tab 2 10.1 P5100/P7500" />
-          <siteMapNode url="./index415.html" title="Galaxy Tab 2 7.0 P3100/P6200"  description="Galaxy Tab 2 7.0 P3100/P6200" />
-          <siteMapNode url="./index416.html" title="Galaxy Note 2 10.1 N8000"  description="Galaxy Note 2 10.1 N8000" />
-          <siteMapNode url="./index417.html" title="Galaxy Note 8.0 N5100"  description="Galaxy Note 8.0 N5100" />-->
         </siteMapNode>
       </siteMapNode>
       <siteMapNode url="./bao-da-apple.html" title="BAO DA APPLE"  description="BAO DA APPLE" >

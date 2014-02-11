@@ -935,6 +935,30 @@ namespace phukienipadx.Dal
         private global::System.String _categories_description1;
         partial void Oncategories_description1Changing(global::System.String value);
         partial void Oncategories_description1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String categories_url
+        {
+            get
+            {
+                return _categories_url;
+            }
+            set
+            {
+                Oncategories_urlChanging(value);
+                ReportPropertyChanging("categories_url");
+                _categories_url = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("categories_url");
+                Oncategories_urlChanged();
+            }
+        }
+        private global::System.String _categories_url;
+        partial void Oncategories_urlChanging(global::System.String value);
+        partial void Oncategories_urlChanged();
 
         #endregion
 

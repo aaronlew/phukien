@@ -51,8 +51,9 @@
           </Key>
           <Property Name="categories_id" Type="int" Nullable="false" />
           <Property Name="language_id" Type="int" Nullable="false" />
-          <Property Name="categories_name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="categories_name" Type="nvarchar" Nullable="false" MaxLength="62" />
           <Property Name="categories_description" Type="nvarchar(max)" />
+          <Property Name="categories_url" Type="nvarchar" MaxLength="62" />
         </EntityType>
         <EntityType Name="ezpages">
           <Key>
@@ -309,6 +310,7 @@
           <Property Name="language_id" Type="Int32" Nullable="false" />
           <Property Name="categories_name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
           <Property Name="categories_description1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="categories_url" MaxLength="62" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ezpages">
           <Key>
@@ -556,6 +558,7 @@
           <EntitySetMapping Name="categories_descriptions">
             <EntityTypeMapping TypeName="phukienipadxModel.categories_descriptions">
               <MappingFragment StoreEntitySet="categories_description">
+                <ScalarProperty Name="categories_url" ColumnName="categories_url" />
                 <ScalarProperty Name="categories_id" ColumnName="categories_id" />
                 <ScalarProperty Name="language_id" ColumnName="language_id" />
                 <ScalarProperty Name="categories_name" ColumnName="categories_name" />
@@ -808,7 +811,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>

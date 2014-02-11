@@ -37,6 +37,7 @@ namespace phukienipadx.Dal.Models
             this._language__id = categories_descriptions.language_id;
             this._categories__name = categories_descriptions.categories_name;
             this._categories__description_1 = categories_descriptions.categories_description1;
+            this._categories__url = categories_descriptions.categories_url;
             this._originalcategories_descriptions = categories_descriptions.DeepClone();
         }
 
@@ -55,6 +56,7 @@ namespace phukienipadx.Dal.Models
             this._categories__descriptions.language_id = this._language__id;
             this._categories__descriptions.categories_name = this._categories__name;
             this._categories__descriptions.categories_description1 = this._categories__description_1;
+            this._categories__descriptions.categories_url = this._categories__url;
         	return _categories__descriptions;
         }
         
@@ -65,6 +67,7 @@ namespace phukienipadx.Dal.Models
             this._language__id = this._originalcategories_descriptions.language_id;
             this._categories__name = this._originalcategories_descriptions.categories_name;
             this._categories__description_1 = this._originalcategories_descriptions.categories_description1;
+            this._categories__url = this._originalcategories_descriptions.categories_url;
         	this.Commit();
         }
         
@@ -75,6 +78,7 @@ namespace phukienipadx.Dal.Models
             this._categories__descriptions.language_id = this._originalcategories_descriptions.language_id;
             this._categories__descriptions.categories_name = this._originalcategories_descriptions.categories_name;
             this._categories__descriptions.categories_description1 = this._originalcategories_descriptions.categories_description1;
+            this._categories__descriptions.categories_url = this._originalcategories_descriptions.categories_url;
         }
         
 
@@ -162,6 +166,20 @@ namespace phukienipadx.Dal.Models
                 {
                     this.IsDirty = true;
                     this._categories__description_1 = value;
+                }
+            }
+        }
+        
+        private string _categories__url;
+        public string categories_url
+        {
+            get { return this._categories__url; }
+            set
+            {
+                if (this._categories__url != value)
+                {
+                    this.IsDirty = true;
+                    this._categories__url = value;
                 }
             }
         }

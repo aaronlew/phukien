@@ -9,7 +9,7 @@ namespace phukienipadx.Bl.Models
     public class ProductInfo
     {
         const string DetailLink = "/san-pham/{0}";
-        const string CartLink = "/Pages/CartPage.aspx?ProductID={0}";
+        const string CartLink = "/gio-hang/{0}";
 
         public int ProductId { get; set; }
         public int CategoryId { get; set; }
@@ -84,7 +84,7 @@ namespace phukienipadx.Bl.Models
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
             DetailsUrl = string.Format(DetailLink, description.products_url);
-            ShopCartUrl = string.Format(CartLink, product.products_id).ParseSimpleUrl(description.products_name);
+            ShopCartUrl = string.Format(CartLink, description.products_url);
 
             ImageOriginalUrl = product.products_image.RemoveBadCode();
             if (ImageOriginalUrl != null)

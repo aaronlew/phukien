@@ -16,7 +16,7 @@ namespace phukienipadx.Bl
             var pages = pageRep.GetAllezpages();
             if (pages != null)
             {
-                return pages.Select(x => new PageInfo(x.pages_id, x.pages_html_text) { Title = x.pages_title }).ToList();
+                return pages.Select(x => new PageInfo(x.pages_id, x.pages_html_text, x.alt_url) { Title = x.pages_title }).ToList();
             }
 
             return new List<PageInfo>();
@@ -30,7 +30,7 @@ namespace phukienipadx.Bl
             if (pages != null)
             {
                 totalRecords = pages.Count();
-                return pages.OrderBy(x => x.pages_id).Skip((pageNumber - 1) * Define.PageSize).Take(Define.PageSize).Select(x => new PageInfo(x.pages_id, x.pages_html_text) { Title = x.pages_title }).ToList();
+                return pages.OrderBy(x => x.pages_id).Skip((pageNumber - 1) * Define.PageSize).Take(Define.PageSize).Select(x => new PageInfo(x.pages_id, x.pages_html_text, x.alt_url) { Title = x.pages_title }).ToList();
             }
             else
             {
@@ -46,7 +46,7 @@ namespace phukienipadx.Bl
             var page = pageRep.GetSingleezpages(x => x.pages_id == pageId && x.languages_id == 0);
             if (page != null)
             {
-                return new PageInfo(page.pages_id, page.pages_html_text) { Title = page.pages_title, CategoryId = page.toc_chapter };
+                return new PageInfo(page.pages_id, page.pages_html_text, page.alt_url) { Title = page.pages_title, CategoryId = page.toc_chapter };
             }
 
             return null;
@@ -70,7 +70,8 @@ namespace phukienipadx.Bl
                 {
                     pages_title = post.Title,
                     pages_html_text = post.HtmlContent,
-                    toc_chapter = post.CategoryId
+                    toc_chapter = post.CategoryId,
+                    alt_url = post.Url
                 });
             }
             else

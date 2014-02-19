@@ -61,11 +61,11 @@ namespace GiaPhuc.Admin
 
                 if (PageID == 0)
                 {
-                    Response.Redirect("/Admin/Pages/TopicEntry.aspx");
+                    Response.Redirect("/Admin/Pages/PostEntry.aspx");
                 }
                 else
                 {
-                    Response.Redirect("/Admin/Pages/TopicManager.aspx");
+                    Response.Redirect("/Admin/Pages/PostManager.aspx");
                 }
             }
             catch

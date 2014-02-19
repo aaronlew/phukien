@@ -23,27 +23,27 @@
     <%--. Giao hàng tận nơi, giá tốt nhất. ĐT: 0903.71.20.70 (Mr.Đạt)--%>
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
-    <link href="/static/css/dropdown-menu.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/dropdown-menu.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/site.min.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/christmas.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/productstyle.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/1024.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/10cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/11cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/12cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/2cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/3cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/480.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/4cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/5cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/6cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/768.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/7cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/8cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/9cols.css" rel="stylesheet" type="text/css" />
-    <link href="/static/response/col.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/menu/skins/black.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/slider/slider.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/christmas.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/productstyle.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/1024.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/10cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/11cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/12cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/2cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/3cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/480.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/4cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/5cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/6cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/768.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/7cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/8cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/9cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/col.min.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/menu/skins/black.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/slider/slider.min.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
     <script src="/Scripts/jquery-scrolltofixed-min.js" type="text/javascript"></script>
     <script src="/Scripts/menu/jquery.hoverIntent.minified.js" type="text/javascript"></script>

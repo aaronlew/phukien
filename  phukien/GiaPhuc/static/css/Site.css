@@ -69,14 +69,14 @@ div.clear
 
 h1, h2, h3, h4, h5, h6
 {
-    font-size: 1.5em;
-    color: #666666;
+    font-size: 1.1em;
+    /*color: #666666;*/
     margin-bottom: 0px;
 }
 
 h1
 {
-    font-size: 1.6em;
+    font-size: 1.1em;
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
@@ -89,17 +89,17 @@ h2
 
 h3
 {
-    font-size: 1.2em;
+    font-size: 0.9em;
 }
 
 h4
 {
-    font-size: 1.1em;
+    font-size: 0.8em;
 }
 
 h5, h6
 {
-    font-size: 1em;
+    font-size: 0.6em;
 }
 
 /* this rule styles <h1> and <h2> tags that are the 

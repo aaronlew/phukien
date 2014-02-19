@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PostFooterControl.ascx.cs"
     Inherits="GiaPhuc.Controls.PostFooterControl" %>
 <div class="box-heading">
-    <asp:Label ID="lblPostFooter" runat="server" Text="Tại sao mua hàng chỗ chúng tôi?"></asp:Label>
+    <h1><asp:Label ID="lblPostFooter" runat="server" Text="Tại sao mua hàng chỗ chúng tôi?"></asp:Label></h1>
 </div>
 <div class="info post" style="color: Black; padding: 8px;">
     <div class="section group">

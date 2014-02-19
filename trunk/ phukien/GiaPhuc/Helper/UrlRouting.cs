@@ -32,6 +32,7 @@ namespace GiaPhuc.Helper
             routes.Add("ignoreUtility", new Route("__utility/{*pathInfo}", new StopRoutingHandler()));
             routes.Add("ignoreFiles", new Route("files/{*pathInfo}", new StopRoutingHandler()));
 
+            routes.Add("MyHome", new Route("trang-chu", new CustomRouteHandler("~/Default.aspx")));
             routes.Add("About", new Route("gioi-thieu", new CustomRouteHandler("~/Pages/AboutPage.aspx")));
             routes.Add("Contact", new Route("lien-he", new CustomRouteHandler("~/Pages/ContactPage.aspx")));
             routes.Add("News", new Route("tin-tuc", new CustomRouteHandler("~/Pages/NewsPage.aspx")));

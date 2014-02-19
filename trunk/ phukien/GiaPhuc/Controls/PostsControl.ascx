@@ -26,7 +26,7 @@
                 foreach (var v in urlDescList)
                 {
             %>
-            <li><a target="_blank" href="<%=v.url.ParseSimpleUrl(v.title) %>">
+            <li><a href="<%=v.url %>">
                 <img src="<%=v.description %>" alt="<%=v.title %>" title="<%=v.title %>" />
                 <span>
                     <%=v.title %></span></a></li>

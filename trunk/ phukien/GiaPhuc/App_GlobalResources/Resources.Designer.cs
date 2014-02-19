@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TPHCM: &lt;b style=&quot;color: rgb(2, 101, 203);&quot;&gt;174/47 Thái Phiên, P8, Q11, ĐT: 0903.71.20.70 - 0908.61.21.40 - 0969.10.71.10&lt;/b&gt;.
+        ///   Looks up a localized string similar to TPHCM: &lt;b style=&quot;color: rgb(2, 101, 203);&quot;&gt;174/47 Thái Phiên, P8, Q11. &lt;a href=&quot;/lien-he&quot; style=&quot;color: Red;&quot;&gt;Bản đồ&lt;/a&gt; ĐT: 0903.71.20.70 - 0908.61.21.40 - 0969.10.71.10&lt;/b&gt;.
         /// </summary>
         internal static string Address1 {
             get {

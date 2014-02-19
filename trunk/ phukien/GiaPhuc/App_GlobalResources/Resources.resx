@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Address1" xml:space="preserve">
-    <value>TPHCM: &lt;b style="color: rgb(2, 101, 203);"&gt;174/47 Thái Phiên, P8, Q11, ĐT: 0903.71.20.70 - 0908.61.21.40 - 0969.10.71.10&lt;/b&gt;</value>
+    <value>TPHCM: &lt;b style="color: rgb(2, 101, 203);"&gt;174/47 Thái Phiên, P8, Q11. &lt;a href="/lien-he" style="color: Red;"&gt;Bản đồ&lt;/a&gt; ĐT: 0903.71.20.70 - 0908.61.21.40 - 0969.10.71.10&lt;/b&gt;</value>
   </data>
   <data name="Address2" xml:space="preserve">
     <value>Hà Nội: &lt;b style="color: rgb(2, 101, 203);"&gt;A2-CN8 - Xuân Phương - Từ Liêm, ĐT: 0904.92.72.56 - 0126.24.88.0.88</value>

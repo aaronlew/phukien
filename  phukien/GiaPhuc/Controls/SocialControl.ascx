@@ -29,7 +29,7 @@
         <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://phukienipadx.com"
             data-via="phukienipadx" data-size="large">Tweet</a> </li>
         <li>
-            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fphukienipadx.com%2F&amp;width&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=65"
+            <iframe src="http//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fphukienipadx.com%2F&amp;width&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=65"
                 scrolling="no" frameborder="0" style="border: none; overflow: hidden; height: 65px;"
                 allowtransparency="true"></iframe>
         </li>

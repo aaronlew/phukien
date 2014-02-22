@@ -55,7 +55,7 @@ namespace GiaPhuc.Pages
                 }
                 else if (Request.Url.AbsolutePath.EndsWith("su-dung"))
                 {
-                    url = "quy-dinh-bao-hanh";
+                    url = "huong-dan-su-dung";
                 }
                 else if (Request.Url.AbsolutePath.EndsWith("bao-hanh"))
                 {

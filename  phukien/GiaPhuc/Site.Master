@@ -18,8 +18,8 @@
     <meta name="Language" content="vietnamese" />
     <meta http-equiv="Content-Language" content="vi" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="bao da, bao da ipad, bao da ipad air, retina, bao da samsung, ban phim ipad, ban phim samsung, baoda galaxy, pin du phong, pin yoobao, phukienipadx" />
     <meta name="description" content="Bao da, bao da ipad, bao da ipad air, retina, pin dự phòng, pin yoobao, phụ kiện iPad, bàn phím Bluetooth, ốp lưng iPhone; giao hàng tận nơi, giá tốt nhất" />
+    <meta name="keywords" content="bao da, bao da ipad, bao da ipad air, retina, bao da samsung, ban phim ipad, ban phim samsung, baoda galaxy, pin du phong, pin yoobao, phu kien, ipad" />
     <%--. Giao hàng tận nơi, giá tốt nhất. ĐT: 0903.71.20.70 (Mr.Đạt)--%>
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
@@ -52,7 +52,7 @@
     <script src="/Scripts/kenburns.min.js" type="text/javascript"></script>
     <script src="/Scripts/ipadx.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-        
+
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
@@ -68,7 +68,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server" submitdisabledcontrols="true">
+    <form name="form1" runat="server" submitdisabledcontrols="true">
     <uc:OnTop ID="OnTop1" runat="server"></uc:OnTop>
     <div id="header">
         <uc:Header ID="PageHeader1" runat="server"></uc:Header>

@@ -49,7 +49,7 @@ public static class StringUtils
 
     public static string GetGoodUrl(string badUrl)
     {
-        return badUrl.RemoveMarks().RemoveSpecialCharacters();
+        return badUrl.RemoveMarks().RemoveSpecialCharacters().ToLower();
     }
 
     static public string RemoveBadCode(this string input)

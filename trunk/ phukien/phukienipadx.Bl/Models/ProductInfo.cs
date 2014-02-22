@@ -140,7 +140,8 @@ namespace phukienipadx.Bl.Models
                               {
                                   products_name = ProductName,
                                   products_description1 = SpecificationHtml,
-                                  products_images = ImagesOfProductHtml
+                                  products_images = ImagesOfProductHtml,
+                                  products_url = DetailsUrl
                               };
         }
 
@@ -166,6 +167,7 @@ namespace phukienipadx.Bl.Models
             description.products_name = ProductName;
             description.products_description1 = SpecificationHtml;
             description.products_images = ImagesOfProductHtml;
+            description.products_url = DetailsUrl;
         }
     }
 }

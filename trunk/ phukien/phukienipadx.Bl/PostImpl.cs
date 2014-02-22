@@ -71,7 +71,8 @@ namespace phukienipadx.Bl
                     pages_title = post.Title,
                     pages_html_text = post.HtmlContent,
                     toc_chapter = post.CategoryId,
-                    alt_url = post.Url
+                    alt_url = post.Url,
+                    alt_url_external = post.Url
                 });
             }
             else
@@ -84,6 +85,7 @@ namespace phukienipadx.Bl
                     page.toc_chapter = post.CategoryId;
                 }
             }
+            pageRep.Commit();
 
 
             return true;

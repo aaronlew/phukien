@@ -119,6 +119,7 @@ namespace GiaPhuc.Admin.Pages
                                            ProductNumber = this.txtProductCode.Text,
                                            DiscountPrice = discountPrice,
                                            Price = price,
+                                           DetailsUrl = StringUtils.GetGoodUrl(this.txtProductName.Text),
                                            IsCalledPrice = this.chkIsCall.Checked,
                                            IsActive = this.chkActive.Checked,
                                            IsSpecItem = this.chkIsSpecial.Checked,

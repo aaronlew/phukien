@@ -49,11 +49,10 @@ namespace GiaPhuc.Admin
         {
             try
             {
-                var title = this.elm1.Value.RemoveBadCode();
-                PageInfo post = new PageInfo(PageID, title, StringUtils.GetGoodUrl(title))
+                var content = this.elm1.Value.RemoveBadCode();
+                PageInfo post = new PageInfo(PageID, content, StringUtils.GetGoodUrl(this.txtTitle.Text))
                 {
                     Title = this.txtTitle.Text,
-                    HtmlContent = this.elm1.Value.RemoveBadCode(),
                     CategoryId = this.ddlNewsCategory.SelectedIndex
                 };
 

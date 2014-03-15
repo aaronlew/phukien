@@ -5,22 +5,6 @@ var serviceDelete = "/CMS.asmx/DeletePage";
 
 $(document).ready(function () {
 
-    // Settings object that controls default parameters for library methods:
-//    accounting.settings = {
-//        currency: {
-//            symbol: "đ",   // default currency symbol is '$'
-//            format: "%v %s", // controls output: %s = symbol, %v = value/number (can be object: see below)
-//            decimal: ".",  // decimal point separator
-//            thousand: ",",  // thousands separator
-//            precision: 0   // decimal places
-//        },
-//        number: {
-//            precision: 0,  // default precision on numbers is 0
-//            thousand: ",",
-//            decimal: "."
-//        }
-//    }
-
     function waiting(tag) {
         tag.empty().html('<center><img src="/static/Images/spinner.gif" alt="spinner" style="margin: auto; padding: 0; height: auto;" /><p>If the data are loaded too long, please press F5 to reload your browser.</p><center>');
     }

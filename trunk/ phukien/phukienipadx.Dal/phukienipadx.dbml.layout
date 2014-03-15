@@ -32,5 +32,11 @@
         <elementListCompartment Id="7b1f2366-9769-46c1-9085-c1d757421b30" absoluteBounds="3.64, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="5e6f9513-6d3f-4da1-983a-64c8ed3b2ae6" absoluteBounds="6.5, 3.625, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/phukienipadxDataContext/ezpage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15c88c7c-8a2d-4912-9d15-9d940cf24b6b" absoluteBounds="6.515, 4.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

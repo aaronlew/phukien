@@ -9,6 +9,11 @@ namespace phukienipadx.Bl.Models
         public string Url { get; set; }
         public int CategoryId { get; set; }
 
+        public PageInfo()
+        {
+
+        }
+
         public PageInfo(int pageId, string htmlContent, string url)
         {
             this.PageId = pageId;

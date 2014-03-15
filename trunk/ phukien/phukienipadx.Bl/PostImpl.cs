@@ -22,33 +22,34 @@ namespace phukienipadx.Bl
             return new List<PageInfo>();
         }
 
-        public static IList<PageInfo> GetTopics(int pageNumber, out int totalRecords)
+        public static IList<PageInfo> GetPages(int pageNumber, out int totalRecords)
         {
-            var pageRep = new ezpagesRepository();
+            using (var db = new phukienipadxContext())
+            {
+                IQueryable<ezpage> query = (from x in db.ezpages select x);
 
-            var pages = pageRep.GetAllezpages();
-            if (pages != null)
-            {
-                totalRecords = pages.Count();
-                return pages.OrderBy(x => x.pages_id).Skip((pageNumber - 1) * Define.PageSize).Take(Define.PageSize).Select(x => new PageInfo(x.pages_id, x.pages_html_text, x.alt_url) { Title = x.pages_title }).ToList();
-            }
-            else
-            {
-                totalRecords = 0;
-                return new List<PageInfo>();
+                totalRecords = query.Count();
+                if (totalRecords > 0)
+                {
+                    return query.OrderBy(x => x.pages_id).Skip((pageNumber - 1) * Define.PageSize).Take(Define.PageSize).Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title }).ToList();
+                }
+                else
+                {
+                    return new List<PageInfo>();
+                }
             }
         }
 
-        public static PageInfo GetTopic(int pageId)
+        public static PageInfo GetPage(int pageId)
         {
-            var pageRep = new ezpagesRepository();
-
-            var page = pageRep.GetSingleezpages(x => x.pages_id == pageId && x.languages_id == 0);
-            if (page != null)
+            using (var db = new phukienipadxContext())
             {
-                return new PageInfo(page.pages_id, page.pages_html_text, page.alt_url) { Title = page.pages_title, CategoryId = page.toc_chapter };
+                var page = db.ezpages.SingleOrDefault(x => x.pages_id == pageId && x.languages_id == 0);
+                if (page != null)
+                {
+                    return new PageInfo(page.pages_id, page.pages_html_text, page.alt_url) { Title = page.pages_title, CategoryId = page.toc_chapter };
+                }
             }
-
             return null;
         }
 

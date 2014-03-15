@@ -77,4 +77,25 @@
       <Column Name="categories_url" Type="System.String" DbType="NVarChar(62)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ezpages" Member="ezpages">
+    <Type Name="ezpage">
+      <Column Name="pages_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="languages_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pages_title" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="alt_url" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="alt_url_external" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="pages_html_text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="status_header" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_sidebox" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_footer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_toc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="header_sort_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sidebox_sort_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="footer_sort_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="toc_sort_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="page_open_new_window" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="page_is_ssl" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="toc_chapter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

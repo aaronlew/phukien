@@ -35,7 +35,7 @@ namespace GiaPhuc.Admin
                 this.ddlNewsCategory.DataSource = Define.PageTypes;
                 this.ddlNewsCategory.DataBind();
 
-                PageInfo post = PostImpl.GetTopic(PageID);
+                PageInfo post = PostImpl.GetPage(PageID);
                 if (null != post)
                 {
                     this.txtTitle.Text = post.Title;

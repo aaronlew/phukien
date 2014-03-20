@@ -13,10 +13,10 @@ namespace phukienipadx.Bl
         {
             var pageRep = new ezpagesRepository();
 
-            var pages = pageRep.Queryezpages(x => x.toc_chapter == cateId).Take(12);
+            var pages = pageRep.Queryezpages(x => x.toc_chapter == cateId && x.toc_sort_order > 0).OrderBy(x => x.toc_sort_order).Take(12);
             if (pages != null)
             {
-                return pages.Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title }).ToList();
+                return pages.Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title, Image_Roll = x.alt_url_external }).ToList();
             }
 
             return new List<PageInfo>();
@@ -71,6 +71,7 @@ namespace phukienipadx.Bl
             var pageRep = new ezpagesRepository();
             var post = pageRep.GetSingleezpages(x => x.pages_id == id);
             pageRep.Deleteezpages(post);
+            pageRep.Commit();
             return true;
         }
 

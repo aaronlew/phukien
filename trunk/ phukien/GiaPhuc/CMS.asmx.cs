@@ -71,7 +71,7 @@ namespace GiaPhuc
         [WebMethod, ScriptMethod]
         public bool DeletePage(int id)
         {
-            return TopicHelper.DeleteTopic(id);
+            return PostImpl.DeleteTopic(id);
         }
         #endregion
 
@@ -94,7 +94,7 @@ namespace GiaPhuc
         [WebMethod, ScriptMethod]
         public bool DeletePost(int id)
         {
-            return TopicHelper.DeleteTopic(id);
+            return PostImpl.DeleteTopic(id);
         }
         #endregion
 

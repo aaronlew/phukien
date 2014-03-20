@@ -7,7 +7,7 @@ body
     color: #333;
     font-size: 10pt;
     font-family: "Helvetica Neue" , "Helvetica" , Arial, sans-serif; /*font-size: 10pt;*/
-    background: url(/static/images/imgbg.jpg);
+    background: url(/static/images/bg_header.gif);
 }
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td
 {
@@ -25,6 +25,13 @@ ul
     max-width: 970px;
     margin: 0 auto;
     text-align: left;
+}
+
+#layout-contain 
+{
+    -webkit-box-shadow: 0px 0px 18px -1px rgba(255, 166, 114, 0.75);
+-moz-box-shadow:    0px 0px 18px -1px rgba(255, 166, 114, 0.75);
+box-shadow:         0px 0px 18px -1px rgba(255, 166, 114, 0.75);
 }
 
 a:link, a:visited
@@ -858,6 +865,7 @@ table.hotproducts div.product-cell1 .product-image div.overImg a
 /* Page Header */
 div#header .page-header
 {
+    overflow: hidden;
 }
 
 div#header .page-header .wrapper .logo
@@ -1336,6 +1344,12 @@ table .button
     width: 100%;
 }
 
+div#header 
+{
+    position: relative;
+    margin: 0 auto;
+    width: 970px;
+}
 
 div#header .page-header .wrapper .search-item
 {
@@ -1411,6 +1425,12 @@ div#header .page-header .wrapper .search-item div
     height: 38px;
     overflow: hidden;
 }
+.float-top
+{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
 .onTop
 {
     height: 38px;
@@ -1434,4 +1454,64 @@ div#header .page-header .wrapper .search-item div
 #cssmenu
 {
     float: right;
+}
+
+#kenburns-slideshow
+{
+    position: relative;
+    float: left;
+    width: 400px;
+    height: 375px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/*  The plugin wraps the images in div.kb-slide. This
+allows me to run separate animations simultaneously. */
+.kb-slide
+{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+
+/* I used position relative here because IE8
+didnt like the opacity when the img was set to absolute*
+translate3d(000) kicks them into HW acceleration, and 
+backface-visibility gives some performance boosts.*/
+.kb-slide img
+{
+    position: relative;
+    -webkit-transform: translate3d(0,0,0) -moz-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+#top-menu 
+{
+    background: #01b2e2; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxYjJlMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDcwYzciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #01b2e2 0%, #0070c7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#01b2e2), color-stop(100%,#0070c7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #01b2e2 0%,#0070c7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #01b2e2 0%,#0070c7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #01b2e2 0%,#0070c7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #01b2e2 0%,#0070c7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2e2', endColorstr='#0070c7',GradientType=0 ); /* IE6-8 */
+
+}
+
+#top-menu.black ul.mega-menu 
+{
+    background: transparent url('/static/images/bg-menu.png') no-repeat center right;
+    border: 0;
+}
+
+#top-menu.black ul.mega-menu li a 
+{
+    padding: 12px 18px;
+    text-shadow: none;
+    border-right: 1px solid #008bd2;
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
+using System.Web.Caching;
 
 public static class LinqExtension
 {
@@ -61,31 +62,31 @@ public static class LinqExtension
     {
         return source.Skip((page - 1) * pageSize).Take(pageSize).ToList();
     }
-    //public static List<T> LinqCache<T>(this IQueryable<T> query, Table<T> table, string CacheKey) where T : class
-    //{
-    //    string tableName = table.Context.Mapping.GetTable(typeof(T)).TableName;
-    //    List<T> result = HttpContext.Current.Cache[CacheKey] as List<T>;
-    //    if (result == null)
-    //    {
-    //        using (SqlConnection cn = new SqlConnection(table.Context.Connection.ConnectionString))
-    //        {
-    //            cn.Open();
-    //            SqlCommand cmd = new SqlCommand(table.Context.GetCommand(query).CommandText, cn);
-    //            cmd.Notification = null;
-    //            cmd.NotificationAutoEnlist = true;
-    //            SqlCacheDependencyAdmin.EnableNotifications(table.Context.Connection.ConnectionString);
-    //            if (!SqlCacheDependencyAdmin.GetTablesEnabledForNotifications(table.Context.Connection.ConnectionString).Contains(tableName))
-    //            {
-    //                SqlCacheDependencyAdmin.EnableTableForNotifications(table.Context.Connection.ConnectionString, tableName);
-    //            }
-    //            SqlCacheDependency dependency = new SqlCacheDependency(cmd);
-    //            cmd.ExecuteNonQuery();
-    //            result = query.ToList();
-    //            HttpContext.Current.Cache.Insert(tableName, CacheKey, dependency);
-    //        }
-    //    }
-    //    return result;
-    //}
+    public static List<T> LinqCache<T>(this IQueryable<T> query, Table<T> table, string CacheKey) where T : class
+    {
+        string tableName = table.Context.Mapping.GetTable(typeof(T)).TableName;
+        List<T> result = HttpContext.Current.Cache[CacheKey] as List<T>;
+        if (result == null)
+        {
+            using (SqlConnection cn = new SqlConnection(table.Context.Connection.ConnectionString))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(table.Context.GetCommand(query).CommandText, cn);
+                cmd.Notification = null;
+                cmd.NotificationAutoEnlist = true;
+                SqlCacheDependencyAdmin.EnableNotifications(table.Context.Connection.ConnectionString);
+                if (!SqlCacheDependencyAdmin.GetTablesEnabledForNotifications(table.Context.Connection.ConnectionString).Contains(tableName))
+                {
+                    SqlCacheDependencyAdmin.EnableTableForNotifications(table.Context.Connection.ConnectionString, tableName);
+                }
+                SqlCacheDependency dependency = new SqlCacheDependency(cmd);
+                cmd.ExecuteNonQuery();
+                result = query.ToList();
+                HttpContext.Current.Cache.Insert(tableName, CacheKey, dependency);
+            }
+        }
+        return result;
+    }
 
     // Condition
 

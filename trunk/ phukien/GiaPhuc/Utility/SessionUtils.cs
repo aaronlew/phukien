@@ -87,7 +87,7 @@ namespace GiaPhuc.Utility
                     {
                         if (pages == null)
                         {
-                            pages = PostImpl.GetTopics();
+                            pages = PostImpl.GetPages();
                             HelperCache.Add(TopicsConstant, pages, HelperCache.CachingTime.ShortTermSliding);
                         }
                     }

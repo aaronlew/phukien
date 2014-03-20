@@ -5,8 +5,10 @@ namespace phukienipadx.Bl.Models
     {
         public int PageId { get; set; }
         public string Title { get; set; }
+        public string Sapo { get; set; }
         public string HtmlContent { get; set; }
         public string Url { get; set; }
+        public string Image_Roll { get; set; }
         public int CategoryId { get; set; }
 
         public PageInfo()

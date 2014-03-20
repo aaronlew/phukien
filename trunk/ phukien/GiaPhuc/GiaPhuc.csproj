@@ -110,6 +110,7 @@
     <Content Include="BingSiteAuth.xml" />
     <Content Include="CMS.asmx" />
     <Content Include="Controls\AdvertiseLeftSide.ascx" />
+    <Content Include="Controls\ArticleLayout.ascx" />
     <Content Include="Controls\LeftMenuControl.ascx" />
     <Content Include="Controls\OnTopControl.ascx" />
     <Content Include="Controls\AdvertiseControl.ascx" />
@@ -1353,6 +1354,13 @@
     </Compile>
     <Compile Include="Controls\AdvertiseLeftSide.ascx.designer.cs">
       <DependentUpon>AdvertiseLeftSide.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ArticleLayout.ascx.cs">
+      <DependentUpon>ArticleLayout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ArticleLayout.ascx.designer.cs">
+      <DependentUpon>ArticleLayout.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\LeftMenuControl.ascx.cs">
       <DependentUpon>LeftMenuControl.ascx</DependentUpon>

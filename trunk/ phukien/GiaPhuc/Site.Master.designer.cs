@@ -58,13 +58,13 @@ namespace GiaPhuc {
         protected global::System.Web.UI.WebControls.PlaceHolder pnlMenu;
         
         /// <summary>
-        /// pnlPost control.
+        /// TopContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder pnlPost;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder TopContent;
         
         /// <summary>
         /// pnlMenu1 control.

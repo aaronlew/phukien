@@ -17,6 +17,13 @@ namespace GiaPhuc.Controls
 
         }
 
+        protected override void CreateChildControls()
+        {
+            this.Controls.Add(new LiteralControl(LayoutSlide()));
+            
+            base.CreateChildControls();
+        }
+
         protected string LayoutSlide()
         {
             try

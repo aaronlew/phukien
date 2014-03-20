@@ -3,6 +3,8 @@
     
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <script type="text/javascript" src="/Scripts/jquery.cycle2.min.js" />
+    <script type="text/javascript" src="/Scripts/jquery.cycle2.carousel.min.js" />
     <script type="text/javascript">
         $(document).ready(function () {
             $('#siteMapPath').hide();

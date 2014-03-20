@@ -215,8 +215,10 @@
     <Content Include="static\images\arrows.gif" />
     <Content Include="static\images\banner\left-banner.jpg" />
     <Content Include="static\images\banner\right-banner.jpg" />
+    <Content Include="static\images\bg-menu.png" />
     <Content Include="static\images\bg33.jpg" />
     <Content Include="static\images\bg_caidan.jpg" />
+    <Content Include="static\images\bg_header.gif" />
     <Content Include="static\images\box-heading.jpg" />
     <Content Include="static\images\button-bg.png" />
     <Content Include="static\images\delete.png" />
@@ -1243,6 +1245,9 @@
     <Content Include="thumbs\t_0001.jpg" />
     <Content Include="thumbs\t_0002.jpg" />
     <Content Include="thumbs\t_0003.jpg" />
+    <Content Include="Upload\Articles\201403\loi-icloud.jpg" />
+    <Content Include="Upload\Articles\201403\phu-kien-ipad.jpg" />
+    <Content Include="Upload\Articles\201403\power-bank.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1619,7 +1624,6 @@
     <Folder Include="static\images\products\new\" />
     <Folder Include="static\images\products\thumbs\new\" />
     <Folder Include="third-party\tiny_mce\uploads\" />
-    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\phukienipadx.Bl\phukienipadx.Bl.csproj">

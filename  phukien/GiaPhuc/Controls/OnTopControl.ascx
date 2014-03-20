@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OnTopControl.ascx.cs"
     Inherits="GiaPhuc.Controls.OnTopControl" %>
-<div style="position: fixed; width: 100%">
+<div class="float-top">
     <div class="onTop wrapper">
         <div id="divAddress">
             <p class="add1">

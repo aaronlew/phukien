@@ -13,7 +13,7 @@
                         });
     %>
     <ul id="hor-menu" class="mega-menu wrapper">
-        <li><a href="/">Home</a></li>
+        <li><a href="/"><%= this.Request.Url.Host %></a></li>
         <%
             foreach (var v in urlDescList)
             {

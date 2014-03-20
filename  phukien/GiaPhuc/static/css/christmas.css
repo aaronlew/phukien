@@ -6,35 +6,3 @@
     background-attachment: fixed;
     min-height: 1299px;
 }
-
-#kenburns-slideshow
-{
-    position: relative;
-    float: left;
-    width: 400px;
-    height: 375px;
-    z-index: 1;
-    overflow: hidden;
-}
-
-/*  The plugin wraps the images in div.kb-slide. This
-allows me to run separate animations simultaneously. */
-.kb-slide
-{
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-}
-
-
-/* I used position relative here because IE8
-didnt like the opacity when the img was set to absolute*
-translate3d(000) kicks them into HW acceleration, and 
-backface-visibility gives some performance boosts.*/
-.kb-slide img
-{
-    position: relative;
-    -webkit-transform: translate3d(0,0,0) -moz-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-}

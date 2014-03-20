@@ -4,9 +4,11 @@
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/ArticleLayout.ascx" TagName="ArticleLayout" TagPrefix="uc" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <script type="text/javascript" src="/Scripts/jquery.cycle2.min.js" />
-    <script type="text/javascript" src="/Scripts/jquery.cycle2.carousel.min.js" />
+    <script type="text/javascript" src="/Scripts/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.cycle2.carousel.min.js"></script>
+    <script type="text/javascript">        $.fn.cycle.defaults.autoSelector = '.articles';</script>
     <script type="text/javascript" src="/Scripts/kenburns.min.js"></script>
+    <script type="text/javascript" src="/Scripts/ipadx.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#siteMapPath').hide();
@@ -15,6 +17,8 @@
 </asp:Content>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="TopContent">
     <asp:PlaceHolder ID="pnlPost" runat="server"></asp:PlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ArticleContent">
     <div id="articles">
         <uc:ArticleLayout ID="articleLayout" runat="server" />
     </div>

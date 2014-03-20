@@ -42,8 +42,7 @@
 	    		"/images/highlight-products/image1.jpg",
 	    		"/images/highlight-products/image2.jpg",
 	    		"/images/highlight-products/image3.jpg",
-	    		"/images/highlight-products/image4.jpg",
-	    		"/images/highlight-products/image5.jpg"
+	    		"/images/highlight-products/image4.jpg"
 	    	    ],
         scale: 0.75,
         duration: 8000,

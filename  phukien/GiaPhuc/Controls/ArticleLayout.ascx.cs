@@ -20,7 +20,7 @@ namespace GiaPhuc.Controls
         protected override void CreateChildControls()
         {
             this.Controls.Add(new LiteralControl(LayoutSlide()));
-            
+
             base.CreateChildControls();
         }
 
@@ -32,27 +32,27 @@ namespace GiaPhuc.Controls
 
                 if (items.Count > 0)
                 {
-                    StringBuilder html = new StringBuilder("<div class='articles' data-cycle-auto-height='3:1' data-cycle-fx='carousel' data-cycle-timeout='3000' data-cycle-timeout='0' data-cycle-carousel-visible='3' data-cycle-slides='> div' data-cycle-next='#next' data-cycle-prev='#prev' data-cycle-pager='#pager'>");
-
+                    StringBuilder html = new StringBuilder("<div class='coffee-title'/><div class='tit'><h2>CAFE - TIN TỨC</h2></div>");
+                    html.Append("<div class='cycle-pager' id='pager'></div>")
+                        .Append("</div>")
+                        .Append("<div class='articles' data-cycle-fx='carousel' data-cycle-timeout='0' data-cycle-carousel-visible='3' data-cycle-slides='> div' data-cycle-next='#next' data-cycle-prev='#prev' data-cycle-pager='#pager'>");
                     for (int i = 0; i < items.Count; i++)
                     {
                         html.Append("<div class='item'>");
                         html.Append("<div class='img'>");
-                        html.AppendFormat("<a href='/san-pham/{0}' class='overlay'><img src='{1}' /></a>", items[i].Url, items[i].Image_Roll);
+                        html.AppendFormat("<a href='/bai-viet/{0}' class='overlay'><img src='{1}' /></a>", items[i].Url, items[i].Image_Roll);
                         html.Append("</div>");
                         html.Append("<div class='desc'>");
-                        html.AppendFormat("<div class='tit'><h2>{0}</h2></div>", items[i].Title);
+                        html.AppendFormat("<span class='tit'><a href='/bai-viet/{0}'><h2>{1}</h2></a></span>", items[i].Url, items[i].Title);
                         html.AppendFormat("<div class='sapo'><span>{0}</span></div>", items[i].Sapo);
                         html.Append("</div>");
                         html.Append("</div>");
                     }
 
-                    html.Append("</div>");
-                    html.Append("<div class='center'>");
-                    html.Append("<a href='#' id='prev' class='nav'></a><a href='#' id='next' class='nav'></a>");
-                    html.Append("</div>");
-                    html.Append("<div class='cycle-pager' id='pager'>");
-                    html.Append("</div>");
+                    html.Append("</div>")
+                        .Append("<div class='center'>")
+                        .Append("<a href='#' id='prev' class='nav'><div class='arrow-conceal'></div></a><a href='#' id='next' class='nav'><div class='arrow-conceal'></div></a>")
+                        .Append("</div>");
 
                     return html.ToString();
                 }

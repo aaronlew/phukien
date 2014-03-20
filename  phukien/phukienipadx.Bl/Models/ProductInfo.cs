@@ -102,7 +102,7 @@ namespace phukienipadx.Bl.Models
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
             DetailsUrl = string.Format(DetailLink, description.products_url);
-            ShopCartUrl = string.Format(CartLink, product.products_id).ParseSimpleUrl(description.products_name);
+            ShopCartUrl = string.Format(CartLink, description.products_url);
 
             ImageOriginalUrl = product.products_image.RemoveBadCode();
             if (ImageOriginalUrl != null)

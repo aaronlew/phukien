@@ -145,21 +145,20 @@ namespace phukienipadx.Bl
 
         public static ProductInfo GetProductDetails(string url)
         {
-            var productDescriptionRep = new products_descriptionsRepository();
-            var description =
-                productDescriptionRep.GetSingleproducts_descriptions(
-                    x => x.products_url == url && x.language_id == 0);
-
-            if (description != null)
+            using (var db = new phukienipadxContext())
             {
-                var productRep = new productsRepository();
-                var productToCategoryRep = new products_to_categoriesRepository();
+                var description =
+                    db.products_descriptions.FirstOrDefault(
+                        x => x.products_url == url && x.language_id == 0);
 
-                var product = productRep.GetSingleproducts(x => x.products_id == description.products_id);
-                var productToCategories = productToCategoryRep.Findproducts_to_categories(
-                    x => x.products_id == description.products_id).Select(x => x.categories_id);
+                if (description != null)
+                {
+                    var product = db.products.SingleOrDefault(x => x.products_id == description.products_id);
+                    var productToCategories = db.products_to_categories.Where(
+                        x => x.products_id == description.products_id).Select(x => x.categories_id);
 
-                return new ProductInfo(product, description) { CategoryIds = productToCategories.ToList() };
+                    return new ProductInfo(product, description) { CategoryIds = productToCategories.ToList() };
+                }
             }
 
             return null;
@@ -169,17 +168,18 @@ namespace phukienipadx.Bl
         {
             IList<ProductInfo> products = null;
 
-            var productRep = new productsRepository();
-            var productDescriptionRep = new products_descriptionsRepository();
+            using (var db = new phukienipadxContext())
+            {
 
-            // Load the product in the same category
-            products = (from x in productRep.GetAllproducts()
-                        join y in productDescriptionRep.GetAllproducts_descriptions()
-                        on x.products_id equals y.products_id
-                        orderby new Guid()
-                        where x.master_categories_id == categoryId
-                        orderby x.products_price descending
-                        select new ProductInfo(x, y)).Take(12).ToList();
+                // Load the product in the same category
+                products = (from x in db.products
+                            join y in db.products_descriptions
+                            on x.products_id equals y.products_id
+                            orderby new Guid()
+                            where x.master_categories_id == categoryId
+                            orderby x.products_price descending
+                            select new ProductInfo(x, y)).Take(12).ToList();
+            }
 
             return products;
         }

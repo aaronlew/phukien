@@ -49,6 +49,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Encryption.cs" />
+    <Compile Include="Utilities\LinqExtension.cs" />
     <Compile Include="Utilities\MathUtils.cs" />
     <Compile Include="Utilities\Security.cs" />
     <Compile Include="Utilities\SerializerUtils.cs" />

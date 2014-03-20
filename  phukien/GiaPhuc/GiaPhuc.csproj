@@ -140,6 +140,10 @@
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Scripts\ipadx.min.js" />
     <Content Include="Scripts\ipadx.js" />
+    <Content Include="Scripts\jquery.cycle2.carousel.js" />
+    <Content Include="Scripts\jquery.cycle2.carousel.min.js" />
+    <Content Include="Scripts\jquery.cycle2.js" />
+    <Content Include="Scripts\jquery.cycle2.min.js" />
     <Content Include="Scripts\kenburns.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\helper-plugins\jquery.mousewheel.min.js" />
@@ -1630,6 +1634,7 @@
   <ItemGroup>
     <Content Include="VisitorCounter.ashx" />
     <Content Include="Admin\Web.config" />
+    <None Include="Scripts\jquery.cycle2.js.map" />
     <None Include="static\Fonts\ANTON.ttf" />
     <None Include="third-party\jtable\themes\basic\jtable_basic.less" />
     <None Include="third-party\jtable\themes\jqueryui\jtable_jqueryui.less" />

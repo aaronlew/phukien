@@ -13,6 +13,24 @@ namespace GiaPhuc {
     public partial class Default {
         
         /// <summary>
+        /// pnlPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder pnlPost;
+        
+        /// <summary>
+        /// articleLayout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.ArticleLayout articleLayout;
+        
+        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>

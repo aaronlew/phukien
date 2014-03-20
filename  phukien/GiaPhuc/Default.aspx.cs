@@ -5,6 +5,7 @@ using GiaPhuc.Utility;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
 using TNO.Education.Helpers;
+using GiaPhuc.Controls;
 
 namespace GiaPhuc
 {
@@ -25,6 +26,8 @@ namespace GiaPhuc
             if (!IsPostBack || Keyword != string.Empty)
             {
                 LoadProducts();
+                PostsControl postsControl = LoadControl("~/Controls/PostsControl.ascx") as PostsControl;
+                this.pnlPost.Controls.Add(postsControl);
             }
         }
 

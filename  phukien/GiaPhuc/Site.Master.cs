@@ -41,8 +41,6 @@ namespace GiaPhuc
                 {
                     LeftMenuControl leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
                     this.pnlMenu.Controls.Add(leftMenuControl);
-                    PostsControl postsControl = LoadControl("~/Controls/PostsControl.ascx") as PostsControl;
-                    this.pnlPost.Controls.Add(postsControl);
                 }
                 else
                 {

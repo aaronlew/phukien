@@ -9,7 +9,20 @@ namespace phukienipadx.Bl
 {
     public class PostImpl
     {
-        public static IList<PageInfo> GetTopics()
+        public static IList<PageInfo> GetPages(int cateId)
+        {
+            var pageRep = new ezpagesRepository();
+
+            var pages = pageRep.Queryezpages(x => x.toc_chapter == cateId).Take(12);
+            if (pages != null)
+            {
+                return pages.Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title }).ToList();
+            }
+
+            return new List<PageInfo>();
+        }
+
+        public static IList<PageInfo> GetPages()
         {
             var pageRep = new ezpagesRepository();
 
@@ -22,7 +35,7 @@ namespace phukienipadx.Bl
             return new List<PageInfo>();
         }
 
-        public static IList<PageInfo> GetPages(int pageNumber, out int totalRecords)
+        public static IList<PageInfo> PagingPages(int pageNumber, out int totalRecords)
         {
             using (var db = new phukienipadxContext())
             {

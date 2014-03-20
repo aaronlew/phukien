@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "phukienipadx.Bl", "..\phuki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizeImage", "..\ResizeImage\ResizeImage.csproj", "{03590F09-FB29-40CB-AD7D-E1D8A11EBFE8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F4EDCA86-AC39-41ED-A9BD-7367300B4A69}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 6
@@ -94,5 +96,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1446AD0D-E9E8-4AB6-85C5-00641625C21C} = {F4EDCA86-AC39-41ED-A9BD-7367300B4A69}
+		{BA9A3D15-84B6-4E9F-AF90-42A6550DB5D7} = {F4EDCA86-AC39-41ED-A9BD-7367300B4A69}
+		{43CD2C73-D33C-4DF3-AA1D-D0C100D9518D} = {F4EDCA86-AC39-41ED-A9BD-7367300B4A69}
+		{03590F09-FB29-40CB-AD7D-E1D8A11EBFE8} = {F4EDCA86-AC39-41ED-A9BD-7367300B4A69}
 	EndGlobalSection
 EndGlobal

@@ -61,7 +61,7 @@ namespace GiaPhuc
             {
                 PageNumber = pageNumber,
                 PageSize = Define.PageSize,
-                List = PostImpl.GetPages(pageNumber, out totalRecords),
+                List = PostImpl.PagingPages(pageNumber, out totalRecords),
                 TotalRecords = totalRecords
             };
 
@@ -84,7 +84,7 @@ namespace GiaPhuc
             {
                 PageNumber = pageNumber,
                 PageSize = Define.PageSize,
-                List = PostImpl.GetPages(pageNumber, out totalRecords),
+                List = PostImpl.PagingPages(pageNumber, out totalRecords),
                 TotalRecords = totalRecords
             };
 

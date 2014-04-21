@@ -1515,3 +1515,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2e2', end
     text-shadow: none;
     border-right: 1px solid #008bd2;
 }
+#tab1 img, #tab2 img 
+{
+    width: 99%;
+}

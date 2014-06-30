@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using GiaPhuc.Data;
-using GiaPhuc.Helper;
 using GiaPhuc.Utility;
-using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
 
 namespace GiaPhuc.Pages
@@ -16,11 +8,11 @@ namespace GiaPhuc.Pages
     public partial class TopicPage : ParentPage
     {
         // Old ID
-        public string ID
+        public new string ID
         {
             get
             {
-                var val = RouteValue("id");
+                object val = RouteValue("id");
                 if (val == null) return null;
                 return val.ToString();
             }
@@ -30,11 +22,11 @@ namespace GiaPhuc.Pages
         {
             get
             {
-                var val = RouteValue("url");
+                object val = RouteValue("url");
                 if (val == null) return null;
                 return val.ToString();
             }
-        } 
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,13 +34,13 @@ namespace GiaPhuc.Pages
             {
                 if (ID != null)
                 {
-                    var post = SessionManager.Topics.SingleOrDefault(x => x.PageId == int.Parse(ID));
+                    PageInfo post = SessionManager.Topics.SingleOrDefault(x => x.PageId == int.Parse(ID));
                     Response.Status = "301 Moved Permanently";
-                    Response.AddHeader("Location", "/bai-viet/" + post.Url);
+                    if (post != null) Response.AddHeader("Location", "/bai-viet/" + post.Url);
                     Response.End();
                 }
 
-                var url = Url;
+                string url = Url;
                 if (Request.Url.AbsolutePath.EndsWith("mua-hang"))
                 {
                     url = "huong-dan-mua-hang";
@@ -69,7 +61,7 @@ namespace GiaPhuc.Pages
                 if (null != topic)
                 {
                     divContent.InnerHtml = topic.HtmlContent.RemoveBadCode();
-                    this.Title = String.Concat("Bao da iPad - phukienipadx.com - ", topic.Title);
+                    Title = String.Concat("Bao da iPad - phukienipadx.com - ", topic.Title);
                 }
             }
         }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  This file contains basic settings needed for most web apps.
+  For full Combres settings (with explanation), refer to the sample definition file: combres_full_with_annotation.xml
+  Also, refer to Combres' documentation: http://combres.codeplex.com/documentation	
+-->
+<combres xmlns='urn:combres'>
+  <filters>
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
+  </filters>
+  <resourceSets url="~/combres.axd"
+                defaultDuration="30"
+                defaultVersion="auto"
+                defaultDebugEnabled="false"
+                defaultIgnorePipelineWhenDebug="true"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="60">
+    <resourceSet name="siteCss" type="css">
+      <resource path="~/static/css/dropdown-menu.min.css" />
+      <resource path="~/static/css/site.min.css"/>
+      <resource path="~/static/css/productstyle.min.css" />
+      <resource path="~/static/response/1024.min.css"  />
+      <resource path="~/static/response/10cols.min.css" />
+      <resource path="~/static/response/11cols.min.css" />
+      <resource path="~/static/response/12cols.min.css" />
+      <resource path="~/static/response/2cols.min.css"  />
+      <resource path="~/static/response/3cols.min.css" />
+      <resource path="~/static/response/480.min.css"  />
+      <resource path="~/static/response/4cols.min.css" />
+      <resource path="~/static/response/5cols.min.css"  />
+      <resource path="~/static/response/6cols.min.css" />
+      <resource path="~/static/response/768.min.css"  />
+      <resource path="~/static/response/7cols.min.css" />
+      <resource path="~/static/response/8cols.min.css"  />
+      <resource path="~/static/response/9cols.min.css" />
+      <resource path="~/static/response/col.min.css" />
+      <resource path="~/static/css/menu/skins/black.min.css" />
+      <resource path="~/static/css/slider/slider.min.css" />
+    </resourceSet>
+    <resourceSet name="productCss" type="css">
+      <resource path="~/static/css/jquery.jqzoom.css" />
+      <resource path="~/static/css/tabify.css"/>
+      <resource path="~/static/css/product.css" />
+    </resourceSet>
+    <resourceSet name="siteJs" type="js">
+      <resource path="~/scripts/jquery-1.9.0.min.js" />
+      <resource path="~/scripts/jquery-scrolltofixed-min.js" />
+      <resource path="~/scripts/menu/jquery.lazy.min.js" />
+      <resource path="~/scripts/menu/jquery.hoverIntent.minified.js" />
+      <resource path="~/scripts/menu/jquery.dcmegamenu.1.3.3.min.js" />
+    </resourceSet>
+    <resourceSet name="defaultJs" type="js">
+      <resource path="~/scripts/jquery.cycle2.min.js" />
+      <resource path="~/scripts/jquery.cycle2.carousel.min.js" />
+      <resource path="~/scripts/kenburns.min.js" />
+      <resource path="~/scripts/ipadx.js" />
+    </resourceSet>
+    <resourceSet name="productJs" type="js">
+      <resource path="~/scripts/jquery-migrate-1.2.1.js" />
+      <resource path="~/scripts/jquery.jqzoom-core.js" />
+      <resource path="~/scripts/jquery.tabify.js" />
+      <resource path="~/scripts/page/product.js" />
+    </resourceSet>
+    <resourceSet name="cartJs" type="js">
+      <resource path="~/scripts/knockout-2.2.1.js" />
+    </resourceSet>
+  </resourceSets>
+</combres>

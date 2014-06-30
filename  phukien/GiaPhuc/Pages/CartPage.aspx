@@ -2,7 +2,7 @@
     EnableEventValidation="false" CodeBehind="CartPage.aspx.cs" Inherits="GiaPhuc.Pages.CartPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script src="/Scripts/knockout-2.2.1.js" type="text/javascript"></script>
+    <%= WebExtensions.CombresLink("cartJs") %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="cartDiv">
@@ -273,13 +273,13 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     async: false,
-                    success: function (data) {
+                    success: function () {
                         if (up) {
                             var qty = line.Quantity() + 1;
                             line.Quantity(qty);
                         }
                         else {
-                            var qty = line.Quantity() - 1;
+                            qty = line.Quantity() - 1;
                             line.Quantity(qty);
                         }
                     }
@@ -293,7 +293,7 @@
 
         $(document).ready(function () {
 
-            var ShopCart = function () {
+            var shopCart = function () {
                 var self = this;
                 self.ProductId = ko.observable(0);
                 self.ProductNumber = ko.observable('#');
@@ -306,7 +306,7 @@
                 });
             };
 
-            var Cart = function () {
+            var cart = function () {
                 // Stores an array of lines, and from these, can work out the grandTotal
                 var self = this;
 
@@ -323,7 +323,7 @@
                         self.lines = ko.observableArray([]); // Put one line in by default
 
                         $.each(data.d, function () {
-                            var item = new ShopCart();
+                            var item = new shopCart();
                             item.ProductId(this.ProductId);
                             item.ProductNumber(this.ProductNumber);
                             item.ImagePath(this.ImagePath);
@@ -373,7 +373,7 @@
                 };
             };
 
-            ko.applyBindings(new Cart());
+            ko.applyBindings(new cart());
         });
     </script>
 </asp:Content>

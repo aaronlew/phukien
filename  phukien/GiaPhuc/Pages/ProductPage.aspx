@@ -3,79 +3,8 @@
 
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="/static/css/jquery.jqzoom.css" type="text/css" />
-    <link rel="stylesheet" href="/static/css/tabify.css" type="text/css" />
-    <script src="/Scripts/jquery-migrate-1.2.1.js" type="text/javascript"></script>
-    <script src="/Scripts/jquery.jqzoom-core.js" type="text/javascript"></script>
-    <script src="/Scripts/jquery.tabify.js" type="text/javascript"></script>
-    <style type="text/css">
-        .clearfix:after
-        {
-            clear: both;
-            content: ".";
-            display: block;
-            font-size: 0;
-            height: 0;
-            line-height: 0;
-            visibility: hidden;
-        }
-        
-        .clearfix
-        {
-            display: block;
-            zoom: 1;
-        }
-        
-        
-        ul#thumblist
-        {
-            display: block;
-        }
-        
-        ul#thumblist li
-        {
-            float: left;
-            margin-right: 2px;
-            list-style: none;
-        }
-        
-        ul#thumblist li a
-        {
-            display: block;
-            border: 1px solid #CCC;
-        }
-        
-        ul#thumblist li a.zoomThumbActive
-        {
-            border: 1px solid red;
-        }
-        
-        .jqzoom
-        {
-            text-decoration: none;
-            float: left;
-        }
-    </style>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            $('.jqzoom').jqzoom({
-                zoomType: 'standard',
-                lens: true,
-                preloadImages: false,
-                alwaysOn: false
-            });
-
-            $("#usual1 ul").idTabs();
-
-            $('img').each(function () {
-                if (this.offsetWidth > 620) {
-                    $(this).width(620);
-                }
-            });
-        });
-
-    </script>
+    <%= WebExtensions.CombresLink("productCss") %>  
+    <%= WebExtensions.CombresLink("productJs") %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding: 5px; width: 100%">

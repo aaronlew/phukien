@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using phukienipadx.Bl;
 using GiaPhuc.Utility;
+using phukienipadx.Bl;
+using phukienipadx.Bl.Models;
 
 namespace GiaPhuc.Pages
 {
     public partial class CategoryPage : ParentPage
     {
         #region Constant & Properties
-        const int PageSize = 10;
 
         // Old ID
-        private string ID
+        private new string ID
         {
             get
             {
-                var val = RouteValue("id");
-                if(val == null) return null;
+                object val = RouteValue("id");
+                if (val == null) return null;
                 return val.ToString();
             }
         }
@@ -29,11 +25,12 @@ namespace GiaPhuc.Pages
         {
             get
             {
-                var val = RouteValue("url");
+                object val = RouteValue("url");
                 if (val == null) return null;
                 return val.ToString();
             }
         }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -47,10 +44,10 @@ namespace GiaPhuc.Pages
                     Response.End();
                 }
 
-                var categories = CategoryImpl.GetProducts(Url);
+                IList<CategoryInfo> categories = CategoryImpl.GetProducts(Url);
                 SessionUtils.Set("AllCategories", false);
-                this.Repeater1.DataSource = categories;
-                this.Repeater1.DataBind();
+                Repeater1.DataSource = categories;
+                Repeater1.DataBind();
             }
         }
     }

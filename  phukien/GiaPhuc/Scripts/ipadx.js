@@ -56,8 +56,11 @@
 
     });
 
+    $('#siteMapPath').hide();
 });
 
-function formatText(index, panel) {
+$.fn.cycle.defaults.autoSelector = '.articles';
+
+function formatText(index) {
     return index + "";
 }

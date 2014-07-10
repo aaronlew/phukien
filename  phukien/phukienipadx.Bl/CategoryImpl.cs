@@ -171,7 +171,6 @@ namespace phukienipadx.Bl
                         join z in db.categories_descriptions
                             on item.x.master_categories_id equals z.categories_id
                         where item.y.products_name.ToLower().Contains(keyword)
-                        || item.x.products_price.ToString(CultureInfo.InvariantCulture).Contains(keyword)
                         || (z.categories_name.ToLower().Contains(keyword) && z.language_id == 0)
                         group item by z
                             into g

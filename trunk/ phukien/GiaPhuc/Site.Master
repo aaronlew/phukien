@@ -19,15 +19,38 @@
     <%--. Giao hàng tận nơi, giá tốt nhất. ĐT: 0903.71.20.70 (Mr.Đạt)--%>
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
-    <%= WebExtensions.CombresLink("siteCss") %>  
-    <%= WebExtensions.CombresLink("siteJs") %>
+    <link href="/static/css/dropdown-menu.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/site.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/productstyle.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/1024.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/10cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/11cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/12cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/2cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/3cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/480.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/4cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/5cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/6cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/768.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/7cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/8cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/9cols.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/response/col.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/menu/skins/black.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/slider/slider.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="/scripts/menu/jquery.hoverIntent.minified.js"></script>
+    <script type="text/javascript" src="/scripts/menu/jquery.dcmegamenu.1.3.3.min.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
 
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments);
+                (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
         		  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
             m.parentNode.insertBefore(a, m);

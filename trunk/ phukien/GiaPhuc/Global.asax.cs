@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using System.Text;
 using System.Web;
-using System.Web.Configuration;
 using GiaPhuc.Helper;
 
 namespace GiaPhuc
@@ -21,10 +19,7 @@ namespace GiaPhuc
                 {
                     return string.Empty;
                 }
-                else
-                {
-                    return attributes[0].Company;
-                }
+                return attributes[0].Company;
             }
         }
 

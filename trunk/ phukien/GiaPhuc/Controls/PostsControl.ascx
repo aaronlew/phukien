@@ -27,7 +27,7 @@
                 {
             %>
             <li><a href="<%=v.url %>">
-                <img src="<%=v.description %>" alt="<%=v.title %>" title="<%=v.title %>" />
+                <img data-src="<%=v.description %>" src="/Images/ajax-loader.gif" alt="<%=v.title %>" title="<%=v.title %>" />
                 <span>
                     <%=v.title %></span></a></li>
             <%

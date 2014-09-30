@@ -6,8 +6,8 @@ body
     line-height: 18px;
     color: #333;
     font-size: 10pt;
-    font-family: "Helvetica Neue" , "Helvetica" , Arial, sans-serif; /*font-size: 10pt;*/
-    background: url(/static/images/bg_header.gif);
+    font-family: Arial, "Helvetica Neue" , "Helvetica" , sans-serif; /*font-size: 10pt;*/
+    /*background: url(/static/images/bg_header.gif);*/
 }
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td
 {
@@ -1046,38 +1046,6 @@ table .button
 
 /* Information */
 
-#footer
-{
-    /* border-top: 5px solid #006e2e; */
-    padding: 10px;
-}
-
-#footer ul li
-{
-    margin-top: 16px;
-}
-
-#footer ul li ul li
-{
-    margin-top: 6px;
-}
-
-#footer ul li a
-{
-    font-weight: bold;
-    font-size: 11pt; /* color:  #006e2e; */
-    color: rgb(246, 105, 7);
-    text-decoration: none;
-}
-
-#footer ul li ul li a
-{
-    margin-left: 10px;
-    font-size: 9pt;
-    color: #333;
-    text-decoration: none;
-}
-
 .fb_iframe_widget span
 {
     width: 220px !important;
@@ -1518,4 +1486,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2e2', end
 #tab1 img, #tab2 img 
 {
     width: 99%;
+}
+
+
+#footer
+{
+    /* border-top: 5px solid #006e2e; */
+    padding: 10px;
+}
+
+#footer ul li
+{
+    margin-top: 16px;
+}
+
+#footer ul li ul li
+{
+    margin-top: 6px;
+}
+
+#footer ul li a
+{
+    font-size: 11pt; /* color:  #006e2e; */
+    color: #008bd2;
+    text-decoration: none;
+}
+
+#footer ul li ul li a
+{
+    margin-left: 10px;
+    font-size: 9pt;
+    color: #333;
+    text-decoration: none;
+}
+
+#footer li.title 
+{
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #dedede;
 }

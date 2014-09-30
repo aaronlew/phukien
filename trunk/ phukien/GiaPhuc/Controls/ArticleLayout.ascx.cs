@@ -40,7 +40,7 @@ namespace GiaPhuc.Controls
                     {
                         html.Append("<div class='item'>");
                         html.Append("<div class='img'>");
-                        html.AppendFormat("<a href='/bai-viet/{0}' class='overlay'><img src='{1}' /></a>", items[i].Url, items[i].Image_Roll);
+                        html.AppendFormat("<a href='/bai-viet/{0}' class='overlay'><img data-src='{1}' src='/Images/ajax-loader.gif' alt='tin tuc tinh te' /></a>", items[i].Url, items[i].Image_Roll);
                         html.Append("</div>");
                         html.Append("<div class='desc'>");
                         html.AppendFormat("<span class='tit'><a href='/bai-viet/{0}'><h2>{1}</h2></a></span>", items[i].Url, items[i].Title);

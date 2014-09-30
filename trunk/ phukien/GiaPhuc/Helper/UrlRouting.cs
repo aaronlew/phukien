@@ -40,6 +40,7 @@ namespace GiaPhuc.Helper
             routes.Add("Manual", new Route("su-dung", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Warranty", new Route("bao-hanh", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Partner", new Route("doi-tac", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
+            routes.Add("Private", new Route("bao-mat", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Error404", new Route("loi-404", new CustomRouteHandler("~/errors/404.aspx")));
             routes.Add("Admin", new Route("quantri", new CustomRouteHandler("~/Admin/Default.aspx")));
 
@@ -75,10 +76,9 @@ namespace GiaPhuc.Helper
         public static void AddRoute(Route route)
         {
             // Ensure route does not already exist
-            foreach (Route r in RouteTable.Routes)
+            if (RouteTable.Routes.Cast<Route>().Any(r => r.Url == route.Url))
             {
-                if (r.Url == route.Url)
-                    return;
+                return;
             }
 
             RouteTable.Routes.Add(route);

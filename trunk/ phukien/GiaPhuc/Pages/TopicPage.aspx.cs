@@ -58,11 +58,15 @@ namespace GiaPhuc.Pages
                 {
                     url = "tim-doi-tac";
                 }
+                else if (Request.Url.AbsolutePath.EndsWith("bao-mat"))
+                {
+                    url = "chinh-sach-bao-mat";
+                }
                 PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.Url == url);
                 if (null != topic)
                 {
                     divContent.InnerHtml = topic.HtmlContent.RemoveBadCode();
-                    Title = String.Concat("Bao da iPad - phukienipadx.com - ", topic.Title);
+                    Title = string.Concat(topic.Title, " - phukienipadx.com");
                 }
             }
         }

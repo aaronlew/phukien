@@ -20,8 +20,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
     <link href="/static/css/dropdown-menu.min.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/site.min.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/productstyle.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/productstyle.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/1024.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/10cols.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/11cols.min.css" rel="stylesheet" type="text/css" />

@@ -1,8 +1,18 @@
-﻿
-namespace phukienipadx.Bl.Models
+﻿namespace phukienipadx.Bl.Models
 {
     public class PageInfo
     {
+        public PageInfo()
+        {
+        }
+
+        public PageInfo(int pageId, string htmlContent, string url)
+        {
+            PageId = pageId;
+            HtmlContent = htmlContent;
+            Url = url;
+        }
+
         public int PageId { get; set; }
         public string Title { get; set; }
         public string Sapo { get; set; }
@@ -10,17 +20,5 @@ namespace phukienipadx.Bl.Models
         public string Url { get; set; }
         public string Image_Roll { get; set; }
         public int CategoryId { get; set; }
-
-        public PageInfo()
-        {
-
-        }
-
-        public PageInfo(int pageId, string htmlContent, string url)
-        {
-            this.PageId = pageId;
-            this.HtmlContent = htmlContent;
-            this.Url = url;
-        }
     }
 }

@@ -14,12 +14,7 @@ namespace phukienipadx.Bl
             var pageRep = new ezpagesRepository();
 
             var pages = pageRep.Queryezpages(x => x.toc_chapter == cateId && x.toc_sort_order > 0).OrderBy(x => x.toc_sort_order).Take(12);
-            if (pages != null)
-            {
-                return pages.Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title, Image_Roll = x.alt_url_external }).ToList();
-            }
-
-            return new List<PageInfo>();
+            return pages.Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title, Image_Roll = x.alt_url_external }).ToList();
         }
 
         public static IList<PageInfo> GetPages()
@@ -46,10 +41,7 @@ namespace phukienipadx.Bl
                 {
                     return query.OrderBy(x => x.pages_id).Skip((pageNumber - 1) * Define.PageSize).Take(Define.PageSize).Select(x => new PageInfo { PageId = x.pages_id, Url = x.alt_url, Title = x.pages_title }).ToList();
                 }
-                else
-                {
-                    return new List<PageInfo>();
-                }
+                return new List<PageInfo>();
             }
         }
 

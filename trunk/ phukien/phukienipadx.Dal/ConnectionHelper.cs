@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 
 namespace phukienipadx.Dal
@@ -23,10 +22,6 @@ namespace phukienipadx.Dal
             catch (SqlException)
             {
                 //throw;
-            }
-            catch (Exception)
-            {
-                throw;
             }
             return result;
         }

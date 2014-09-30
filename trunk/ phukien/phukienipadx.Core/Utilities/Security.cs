@@ -14,8 +14,7 @@ namespace phukienipadx.Core.Utilities
             string password2 = String.IsNullOrEmpty(Password2) ? "Salt" : Password2;
             return Encryption.Encrypt(
                 value, Password1,
-                password2,
-                "SHA1", 2,
+                password2, 2,
                 Charlong, KeySize);
         }
 
@@ -24,8 +23,7 @@ namespace phukienipadx.Core.Utilities
             string password2 = String.IsNullOrEmpty(Password2) ? "Salt" : Password2;
             return Encryption.Decrypt(
                 value, Password1,
-                password2,
-                "SHA1", 2,
+                password2, 2,
                 Charlong, KeySize);
         }
     }

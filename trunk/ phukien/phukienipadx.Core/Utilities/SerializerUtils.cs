@@ -1,29 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Serialization;
 using System.IO;
-using System.Xml;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 public static class SerializerUtils
 {
-
     #region Serializer Object
 
     /// <summary>
-    /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="obj"></param>
     /// <returns></returns>
     public static string SerializeObj<T>(this T obj)
     {
-        XmlSerializer serializer = new XmlSerializer(obj.GetType());
-        using (StringWriter writer = new StringWriter())
+        var serializer = new XmlSerializer(obj.GetType());
+        using (var writer = new StringWriter())
         {
             serializer.Serialize(writer, obj);
 
@@ -33,10 +29,10 @@ public static class SerializerUtils
 
     public static void DeserializeObj<T>(this T obj, string xml) where T : class
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(T));
-        using (StringReader reader = new StringReader(xml))
+        var serializer = new XmlSerializer(typeof (T));
+        using (var reader = new StringReader(xml))
         {
-            var temp = (T)serializer.Deserialize(reader);
+            var temp = (T) serializer.Deserialize(reader);
             if (null == temp)
                 temp = default(T);
             else
@@ -53,7 +49,7 @@ public static class SerializerUtils
 
     public static void Serialize<T>(this T obj, string filelocation)
     {
-        XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+        var xmlSerializer = new XmlSerializer(typeof (T));
         using (TextWriter textWriter = new StreamWriter(filelocation))
         {
             xmlSerializer.Serialize(textWriter, obj);
@@ -64,10 +60,10 @@ public static class SerializerUtils
     {
         try
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            var xmlSerializer = new XmlSerializer(typeof (T));
             using (TextReader textReader = new StreamReader(filelocation))
             {
-                var temp = (T)xmlSerializer.Deserialize(textReader);
+                var temp = (T) xmlSerializer.Deserialize(textReader);
                 if (null == temp)
                     temp = default(T);
                 else
@@ -87,33 +83,32 @@ public static class SerializerUtils
 
     #region Clone and Copy Dynamic Object
 
-    static bool IsGenericEnumerable(Type T)
+    private static bool IsGenericEnumerable(Type T)
     {
-        var genArgs = T.GetGenericArguments();
+        Type[] genArgs = T.GetGenericArguments();
         if (genArgs.Length == 1 &&
-            typeof(IEnumerable<>).MakeGenericType(genArgs).IsAssignableFrom(T)
-        )
+            typeof (IEnumerable<>).MakeGenericType(genArgs).IsAssignableFrom(T)
+            )
             return true;
-        else
-            return T.BaseType != null && IsGenericEnumerable(T.BaseType);
+        return T.BaseType != null && IsGenericEnumerable(T.BaseType);
     }
 
     /// Code : http://stackoverflow.com/questions/78536/cloning-objects-in-c-sharp
     /// <summary>
-    /// Perform a deep Clone of the object.
+    ///     Perform a deep Clone of the object.
     /// </summary>
     /// <typeparam name="T">The type of object being copied.</typeparam>
     /// <param name="source">The object instance to copy.</param>
     /// <returns>The copied object.</returns>
     public static T Clone<T>(this T source)
     {
-        if (!typeof(T).IsSerializable)
+        if (!typeof (T).IsSerializable)
         {
             throw new ArgumentException("The type must be serializable.", "source");
         }
 
         // Don't serialize a null object, simply return the default for that object
-        if (Object.ReferenceEquals(source, null))
+        if (ReferenceEquals(source, null))
         {
             return default(T);
         }
@@ -124,58 +119,58 @@ public static class SerializerUtils
         {
             formatter.Serialize(stream, source);
             stream.Seek(0, SeekOrigin.Begin);
-            return (T)formatter.Deserialize(stream);
+            return (T) formatter.Deserialize(stream);
         }
     }
 
     public static T DeepClone<T>(this T obj)
     {
-        T objResult = default(T);
+        T objResult;
         using (var ms = new MemoryStream())
         {
             var bf = new BinaryFormatter();
             bf.Serialize(ms, obj);
 
             ms.Position = 0;
-            objResult = (T)bf.Deserialize(ms);
+            objResult = (T) bf.Deserialize(ms);
         }
         return objResult;
     }
 
     /// Code : http://stackoverflow.com/questions/78536/cloning-objects-in-c-sharp
     /// <summary>
-    /// Perform a deep Clone of the object list.
+    ///     Perform a deep Clone of the object list.
     /// </summary>
-    /// <typeparam name="T">The type of object being copied.</typeparam>
-    /// <param name="source">The object instance to copy.</param>
     /// <returns>The copied object.</returns>
     public static IEnumerable<T> CloneList<T>(this IEnumerable<T> list)
     {
         return list.Select(item => item.Clone());
     }
 
-    /// Code : http://stackoverflow.com/questions/78536/cloning-objects-in-c-sharp   
+    /// Code : http://stackoverflow.com/questions/78536/cloning-objects-in-c-sharp
     /// <summary>
-    /// Copy the source object to the target object.
+    ///     Copy the source object to the target object.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="source"></param>
     /// <param name="target"></param>
-    static public void CopyTo<T>(this T source, T target)
+    public static void CopyTo<T>(this T source, T target)
     {
         // grab the type and create a new instance of that type
         Type sourceType = source.GetType();
         if (null == target) target = Activator.CreateInstance<T>();
 
         // grab the properties
-        PropertyInfo[] pis = sourceType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        PropertyInfo[] pis =
+            sourceType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
         // iterate over the properties and if it has a 'set' method assign it from the source TO the target
         foreach (PropertyInfo item in pis)
         {
             if (item.CanWrite)
             {
-                if (item.PropertyType.IsValueType || item.PropertyType.IsEnum || item.PropertyType.Equals(typeof(System.String)))
+                if (item.PropertyType.IsValueType || item.PropertyType.IsEnum ||
+                    item.PropertyType == typeof (string))
                 {
                     // value types can simply be 'set'
                     item.SetValue(target, item.GetValue(source, null), null);
@@ -196,7 +191,6 @@ public static class SerializerUtils
 
                         //PermissionTypes per = (PermissionTypes)9;
                         //bool canRead = per.Has(PermissionTypes.Read);
-
                     }
                 }
             }
@@ -204,5 +198,4 @@ public static class SerializerUtils
     }
 
     #endregion
-
 }

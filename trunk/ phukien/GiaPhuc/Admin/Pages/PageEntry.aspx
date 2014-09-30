@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminSite.Master" AutoEventWireup="true"
-    CodeBehind="PageEntry.aspx.cs" Inherits="GiaPhuc.Admin.PageEntry" %>
+    CodeBehind="PageEntry.aspx.cs" Inherits="GiaPhuc.Admin.Pages.PageEntry" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="/third-party/tiny_mce/themes/advanced/skins/default/ui.css" rel="Stylesheet"

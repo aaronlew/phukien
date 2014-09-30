@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GiaPhuc.Admin {
+namespace GiaPhuc.Admin.Pages {
     
     
     public partial class PageEntry {

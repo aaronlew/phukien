@@ -15,115 +15,94 @@ namespace phukienipadx.Core.Utilities
         /// <summary>
         /// Encrypts a string
         /// </summary>
-        /// <param name="PlainText">Text to be encrypted</param>
-        /// <param name="Password">Password to encrypt with</param>
-        /// <param name="Salt">Salt to encrypt with</param>
-        /// <param name="HashAlgorithm">Can be either SHA1 or MD5</param>
-        /// <param name="PasswordIterations">Number of iterations to do</param>
-        /// <param name="InitialVector">Needs to be 16 ASCII characters long</param>
-        /// <param name="KeySize">Can be 128, 192, or 256</param>
+        /// <param name="plainText">Text to be encrypted</param>
+        /// <param name="password">Password to encrypt with</param>
+        /// <param name="salt">Salt to encrypt with</param>
+        /// <param name="passwordIterations">Number of iterations to do</param>
+        /// <param name="initialVector">Needs to be 16 ASCII characters long</param>
+        /// <param name="keySize">Can be 128, 192, or 256</param>
         /// <returns>An encrypted string</returns>
-        public static string Encrypt(string PlainText, string Password,
-                                     string Salt, string HashAlgorithm,
-                                     int PasswordIterations, string InitialVector,
-                                     int KeySize)
+        public static string Encrypt(string plainText, string password,
+                                     string salt, int passwordIterations,
+                                    string initialVector, int keySize)
         {
-            try
-            {
-                if (string.IsNullOrEmpty(PlainText))
-                    return String.Empty;
-                byte[] InitialVectorBytes = Encoding.ASCII.GetBytes(InitialVector);
-                byte[] SaltValueBytes = Encoding.ASCII.GetBytes(Salt);
-                byte[] PlainTextBytes = Encoding.UTF8.GetBytes(PlainText);
-                var DerivedPassword = new PasswordDeriveBytes(Password, SaltValueBytes, HashAlgorithm,
-                                                              PasswordIterations);
-                byte[] KeyBytes = DerivedPassword.GetBytes(KeySize/8);
-                byte[] CipherTextBytes = null;
+            if (string.IsNullOrEmpty(plainText))
+                return String.Empty;
+            byte[] initialVectorBytes = Encoding.ASCII.GetBytes(initialVector);
+            byte[] saltValueBytes = Encoding.ASCII.GetBytes(salt);
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            var derivedPassword = new Rfc2898DeriveBytes(password, saltValueBytes, passwordIterations);
+            byte[] keyBytes = derivedPassword.GetBytes(keySize / 8);
+            byte[] cipherTextBytes = null;
 
-                var SymmetricKey = new RijndaelManaged();
-                SymmetricKey.Mode = CipherMode.CBC;
-                using (ICryptoTransform Encryptor = SymmetricKey.CreateEncryptor(KeyBytes, InitialVectorBytes))
+            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC };
+            using (ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initialVectorBytes))
+            {
+                MemoryStream memoryStream = null;
+                try
                 {
-                    MemoryStream memoryStream = null;
-                    try
+                    memoryStream = new MemoryStream();
+                    using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
                     {
-                        memoryStream = new MemoryStream();
-                        using (var CryptoStream = new CryptoStream(memoryStream, Encryptor, CryptoStreamMode.Write))
-                        {
-                            CryptoStream.Write(PlainTextBytes, 0, PlainTextBytes.Length);
-                            CryptoStream.FlushFinalBlock();
-                            CipherTextBytes = memoryStream.ToArray();
-                            memoryStream = null;
-                        }
-                    }
-                    catch (ObjectDisposedException)
-                    {
-                    }
-                    finally
-                    {
-                        if (null != memoryStream)
-                        {
-                            memoryStream.Dispose();
-                        }
+                        cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+                        cryptoStream.FlushFinalBlock();
+                        cipherTextBytes = memoryStream.ToArray();
+                        memoryStream = null;
                     }
                 }
-                SymmetricKey.Clear();
-                return Convert.ToBase64String(CipherTextBytes);
+                catch (ObjectDisposedException)
+                {
+                }
+                finally
+                {
+                    if (null != memoryStream)
+                    {
+                        memoryStream.Dispose();
+                    }
+                }
             }
-            catch
-            {
-                throw;
-            }
+            symmetricKey.Clear();
+            if (cipherTextBytes != null) return Convert.ToBase64String(cipherTextBytes);
+            return null;
         }
 
         /// <summary>
         /// Decrypts a string
         /// </summary>
-        /// <param name="CipherText">Text to be decrypted</param>
-        /// <param name="Password">Password to decrypt with</param>
-        /// <param name="Salt">Salt to decrypt with</param>
-        /// <param name="HashAlgorithm">Can be either SHA1 or MD5</param>
-        /// <param name="PasswordIterations">Number of iterations to do</param>
-        /// <param name="InitialVector">Needs to be 16 ASCII characters long</param>
-        /// <param name="KeySize">Can be 128, 192, or 256</param>
+        /// <param name="cipherText">Text to be decrypted</param>
+        /// <param name="password">Password to decrypt with</param>
+        /// <param name="salt">Salt to decrypt with</param>
+        /// <param name="passwordIterations">Number of iterations to do</param>
+        /// <param name="initialVector">Needs to be 16 ASCII characters long</param>
+        /// <param name="keySize">Can be 128, 192, or 256</param>
         /// <returns>A decrypted string</returns>
-        public static string Decrypt(string CipherText, string Password,
-                                     string Salt, string HashAlgorithm,
-                                     int PasswordIterations, string InitialVector,
-                                     int KeySize)
+        public static string Decrypt(string cipherText, string password,
+                                     string salt, int passwordIterations,
+                                     string initialVector, int keySize)
         {
-            try
+            if (string.IsNullOrEmpty(cipherText))
+                return string.Empty;
+            byte[] initialVectorBytes = Encoding.ASCII.GetBytes(initialVector);
+            byte[] saltValueBytes = Encoding.ASCII.GetBytes(salt);
+            byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
+            var derivedPassword = new Rfc2898DeriveBytes(password, saltValueBytes, passwordIterations);
+            byte[] keyBytes = derivedPassword.GetBytes(keySize / 8);
+            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC };
+            var plainTextBytes = new byte[cipherTextBytes.Length];
+            int byteCount;
+            using (ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, initialVectorBytes))
             {
-                if (string.IsNullOrEmpty(CipherText))
-                    return "";
-                byte[] InitialVectorBytes = Encoding.ASCII.GetBytes(InitialVector);
-                byte[] SaltValueBytes = Encoding.ASCII.GetBytes(Salt);
-                byte[] CipherTextBytes = Convert.FromBase64String(CipherText);
-                var DerivedPassword = new PasswordDeriveBytes(Password, SaltValueBytes, HashAlgorithm,
-                                                              PasswordIterations);
-                byte[] KeyBytes = DerivedPassword.GetBytes(KeySize/8);
-                var SymmetricKey = new RijndaelManaged();
-                SymmetricKey.Mode = CipherMode.CBC;
-                var PlainTextBytes = new byte[CipherTextBytes.Length];
-                int ByteCount = 0;
-                using (ICryptoTransform Decryptor = SymmetricKey.CreateDecryptor(KeyBytes, InitialVectorBytes))
+                using (var memoryStream = new MemoryStream(cipherTextBytes))
                 {
-                    using (var memoryStream = new MemoryStream(CipherTextBytes))
+                    using (var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
                     {
-                        using (var CryptoStream = new CryptoStream(memoryStream, Decryptor, CryptoStreamMode.Read))
-                        {
-                            ByteCount = CryptoStream.Read(PlainTextBytes, 0, PlainTextBytes.Length);
-                        }
-                        memoryStream.Close();
+                        byteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
                     }
+                    memoryStream.Close();
                 }
-                SymmetricKey.Clear();
-                return Encoding.UTF8.GetString(PlainTextBytes, 0, ByteCount);
             }
-            catch
-            {
-                throw;
-            }
+            symmetricKey.Clear();
+            return Encoding.UTF8.GetString(plainTextBytes, 0, byteCount);
         }
 
         #endregion

@@ -1,8 +1,8 @@
 ﻿using GiaPhuc.Data;
 using System;
 using System.Collections.Generic;
-using GiaPhuc.Utility;
 using phukienipadx.Core;
+using phukienipadx.Core.Utilities;
 
 namespace GiaPhuc.App_Data
 {

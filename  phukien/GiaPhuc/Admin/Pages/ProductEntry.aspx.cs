@@ -1,19 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using GiaPhuc.Utility;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
-using System.Web.UI.WebControls;
 using phukienipadx.Core;
+using phukienipadx.Core.Utilities;
 
 namespace GiaPhuc.Admin.Pages
 {
-    public partial class PagesProductEntry : System.Web.UI.Page
+    public partial class PagesProductEntry : Page
     {
         private int ProductId
         {
@@ -33,34 +34,34 @@ namespace GiaPhuc.Admin.Pages
             {
                 //LoadManufacturers();
 
-                var product = ProductImpl.GetProductDetails(ProductId);
+                ProductInfo product = ProductImpl.GetProductDetails(ProductId);
 
                 if (null == product)
                 {
                     LoadCategories();
 
-                    this.chkActive.Checked = true;
+                    chkActive.Checked = true;
                 }
                 else
                 {
                     LoadCategories(product.CategoryIds);
 
-                    this.ddlHomeCategories.SelectedValue = product.CategoryId.ToString(CultureInfo.InvariantCulture);
+                    ddlHomeCategories.SelectedValue = product.CategoryId.ToString(CultureInfo.InvariantCulture);
 
-                    this.txtProductCode.Text = product.ProductNumber;
-                    this.txtDiscountPrice.Text = product.DiscountPrice.ToString("#,##0.##");
-                    this.txtPrice.Text = product.Price.ToString("#,##0.##");
-                    this.imgProduct.ImageUrl = product.ImageUrl;
-                    this.imgProduct.AlternateText = product.ImageOriginalUrl;
+                    txtProductCode.Text = product.ProductNumber;
+                    txtDiscountPrice.Text = product.DiscountPrice.ToString("#,##0.##");
+                    txtPrice.Text = product.Price.ToString("#,##0.##");
+                    imgProduct.ImageUrl = product.ImageUrl;
+                    imgProduct.AlternateText = product.ImageOriginalUrl;
 
-                    this.chkIsCall.Checked = product.IsCalledPrice;
-                    this.chkActive.Checked = product.IsActive;
-                    this.chkIsSpecial.Checked = product.IsSpecItem;
-                    this.chkIsDiscount.Checked = product.IsDiscountItem;
+                    chkIsCall.Checked = product.IsCalledPrice;
+                    chkActive.Checked = product.IsActive;
+                    chkIsSpecial.Checked = product.IsSpecItem;
+                    chkIsDiscount.Checked = product.IsDiscountItem;
 
-                    this.txtProductName.Text = product.ProductName;
-                    this.txtProducts_Images.Text = product.ImagesOfProductHtml;
-                    this.txtProducts_Description.Text = product.SpecificationHtml;
+                    txtProductName.Text = product.ProductName;
+                    txtProducts_Images.Text = product.ImagesOfProductHtml;
+                    txtProducts_Description.Text = product.SpecificationHtml;
                 }
             }
         }
@@ -76,24 +77,24 @@ namespace GiaPhuc.Admin.Pages
 
                 // Remove mark
 
-                using (Stream outFile = System.IO.File.OpenWrite(path))
+                using (Stream outFile = File.OpenWrite(path))
                 {
                     CopyStream(fileUpload.FileContent, outFile);
                 }
 
-                Bitmap srcImage = new Bitmap(fileUpload.FileContent);
+                var srcImage = new Bitmap(fileUpload.FileContent);
                 Bitmap newImage = ScaleImage(srcImage, 210, 140);
                 newImage.Save(thumbnailsPath);
 
                 return fileName;
             }
 
-            return this.imgProduct.AlternateText;
+            return imgProduct.AlternateText;
         }
 
         private Bitmap ScaleImage(Bitmap srcImage, int newWidth, int newHeight)
         {
-            Bitmap newImage = new Bitmap(newWidth, newHeight);
+            var newImage = new Bitmap(newWidth, newHeight);
             using (Graphics gr = Graphics.FromImage(newImage))
             {
                 gr.SmoothingMode = SmoothingMode.HighQuality;
@@ -107,102 +108,96 @@ namespace GiaPhuc.Admin.Pages
 
         protected void LnkSaveClick(object sender, EventArgs e)
         {
-            try
+            decimal price, discountPrice;
+            decimal.TryParse(txtPrice.Text, out price);
+            decimal.TryParse(txtDiscountPrice.Text, out discountPrice);
+
+            var productModel = new ProductInfo
             {
-                decimal price, discountPrice;
-                decimal.TryParse(this.txtPrice.Text, out price);
-                decimal.TryParse(this.txtDiscountPrice.Text, out discountPrice);
+                ProductId = ProductId,
+                ProductNumber = txtProductCode.Text,
+                DiscountPrice = discountPrice,
+                Price = price,
+                DetailsUrl = StringUtils.GetGoodUrl(txtProductName.Text),
+                IsCalledPrice = chkIsCall.Checked,
+                IsActive = chkActive.Checked,
+                IsSpecItem = chkIsSpecial.Checked,
+                IsDiscountItem = chkIsDiscount.Checked,
+                ProductName = txtProductName.Text,
+                SpecificationHtml = txtProducts_Description.Text,
+                ImagesOfProductHtml = txtProducts_Images.Text,
+                ManufacturerId = 0,
+                CategoryId = int.Parse(ddlHomeCategories.SelectedValue),
+                CategoryIds = new List<int>()
+            };
 
-                var productModel = new ProductInfo
-                                       {
-                                           ProductId = ProductId,
-                                           ProductNumber = this.txtProductCode.Text,
-                                           DiscountPrice = discountPrice,
-                                           Price = price,
-                                           DetailsUrl = StringUtils.GetGoodUrl(this.txtProductName.Text),
-                                           IsCalledPrice = this.chkIsCall.Checked,
-                                           IsActive = this.chkActive.Checked,
-                                           IsSpecItem = this.chkIsSpecial.Checked,
-                                           IsDiscountItem = this.chkIsDiscount.Checked,
-                                           ProductName = this.txtProductName.Text,
-                                           SpecificationHtml = this.txtProducts_Description.Text,
-                                           ImagesOfProductHtml = this.txtProducts_Images.Text,
-                                           ManufacturerId = 0,
-                                           CategoryId = int.Parse(this.ddlHomeCategories.SelectedValue),
-                                           CategoryIds = new List<int>()
-                                       };
-
-                foreach (ListItem item in chklCategory.Items)
+            foreach (ListItem item in chklCategory.Items)
+            {
+                if (item.Selected)
                 {
-                    if(item.Selected)
-                    {
-                        int categoryId = int.Parse(item.Value);
-                        productModel.CategoryIds.Add(categoryId);
+                    int categoryId = int.Parse(item.Value);
+                    productModel.CategoryIds.Add(categoryId);
 
-                        //if (SessionManager.Categories.Any(x => x.CategoryId == categoryId)) // root
-                        //{
-                        //    productModel.CategoryId = categoryId;
-                        //}
-                    }
-                }
-
-                if (productModel.ManufacturerId == 0)
-                {
-                    productModel.ManufacturerId = null;
-                }
-
-                string fileName = UploadImageFile(uplProductImage, this.txtProductCode.Text);
-                if (fileName != null) productModel.ImageOriginalUrl = fileName;
-
-                //var builder = new StringBuilder();
-                //string fileName1 = UploadImageFile(FileUpload1, this.txtProductCode.Text);
-                //if (fileName1 != null) builder.Append(fileName1);
-
-                //string fileName2 = UploadImageFile(FileUpload2, this.txtProductCode.Text);
-                //if (fileName2 != null)
-                //{
-                //    if (builder.Length > 0) builder.Append(';');
-                //    builder.Append(fileName2);
-                //}
-
-                //string fileName3 = UploadImageFile(FileUpload3, this.txtProductCode.Text);
-                //if (fileName3 != null)
-                //{
-                //    if (builder.Length > 0) builder.Append(';');
-                //    builder.Append(fileName3);
-                //}
-
-                //if (builder.Length > 0) productModel.ImagesOfProductHtml = builder.ToString();
-
-                if (ProductId == 0)
-                {
-                    if (ProductImpl.InsertProduct(productModel))
-                    {
-                        // Continues insert new entry
-                        Response.Redirect("/Admin/Pages/ProductEntry.aspx");
-                    }
-                }
-                else
-                {
-                    if (ProductImpl.UpdateProduct(productModel))
-                    {
-                        Response.Redirect("/Admin/Pages/ProductManager.aspx");
-                    }
+                    //if (SessionManager.Categories.Any(x => x.CategoryId == categoryId)) // root
+                    //{
+                    //    productModel.CategoryId = categoryId;
+                    //}
                 }
             }
-            catch
+
+            if (productModel.ManufacturerId == 0)
             {
-                throw;
+                productModel.ManufacturerId = null;
+            }
+
+            string fileName = UploadImageFile(uplProductImage, txtProductCode.Text);
+            if (fileName != null) productModel.ImageOriginalUrl = fileName;
+
+            //var builder = new StringBuilder();
+            //string fileName1 = UploadImageFile(FileUpload1, this.txtProductCode.Text);
+            //if (fileName1 != null) builder.Append(fileName1);
+
+            //string fileName2 = UploadImageFile(FileUpload2, this.txtProductCode.Text);
+            //if (fileName2 != null)
+            //{
+            //    if (builder.Length > 0) builder.Append(';');
+            //    builder.Append(fileName2);
+            //}
+
+            //string fileName3 = UploadImageFile(FileUpload3, this.txtProductCode.Text);
+            //if (fileName3 != null)
+            //{
+            //    if (builder.Length > 0) builder.Append(';');
+            //    builder.Append(fileName3);
+            //}
+
+            //if (builder.Length > 0) productModel.ImagesOfProductHtml = builder.ToString();
+
+            if (ProductId == 0)
+            {
+                if (ProductImpl.InsertProduct(productModel))
+                {
+                    // Continues insert new entry
+                    Response.Redirect("/Admin/Pages/ProductEntry.aspx");
+                }
+            }
+            else
+            {
+                if (ProductImpl.UpdateProduct(productModel))
+                {
+                    Response.Redirect("/Admin/Pages/ProductManager.aspx");
+                }
             }
         }
 
         #region Private Methods
-        /// <summary> 
-        /// Copies the contents of input to output. Doesn't close either stream. 
-        /// </summary> 
+
+        /// <summary>
+        ///     Copies the contents of input to output. Doesn't close either stream.
+        /// </summary>
         private void CopyStream(Stream input, Stream output)
         {
-            var buffer = new byte[8 * 1024];
+            var buffer = new byte[8*1024];
             int len;
             while ((len = input.Read(buffer, 0, buffer.Length)) > 0)
             {
@@ -212,17 +207,17 @@ namespace GiaPhuc.Admin.Pages
 
         private void LoadCategories(IList<int> selectedCategoryIds = null)
         {
-            var cates = CategoryImpl.GetCategories();
+            IList<CategoryInfo> cates = CategoryImpl.GetCategories();
             ddlHomeCategories.DataSource = cates;
             ddlHomeCategories.DataTextField = "Name";
             ddlHomeCategories.DataValueField = "CategoryId";
             ddlHomeCategories.DataBind();
 
-            foreach (var cate in cates)
+            foreach (CategoryInfo cate in cates)
             {
                 var listItem = new ListItem(cate.Name, cate.CategoryId.ToString(CultureInfo.InvariantCulture));
                 listItem.Attributes.Add("style",
-                                        cate.ParentId > 0 ? "padding-left: 20px" : "color: blue; font-weight: bold");
+                    cate.ParentId > 0 ? "padding-left: 20px" : "color: blue; font-weight: bold");
 
                 listItem.Attributes.Add("parent-id", cate.ParentId.ToString(CultureInfo.InvariantCulture));
 
@@ -232,11 +227,10 @@ namespace GiaPhuc.Admin.Pages
                     listItem.Attributes["style"] += ";background-color: yellow";
                 }
 
-                this.chklCategory.Items.Add(listItem);
+                chklCategory.Items.Add(listItem);
             }
         }
 
         #endregion
-
     }
 }

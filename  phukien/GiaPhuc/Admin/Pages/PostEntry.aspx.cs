@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using GiaPhuc.Data;
-using GiaPhuc.Helper;
-using GiaPhuc.Utility;
-using phukienipadx.Core;
-using phukienipadx.Bl.Models;
 using phukienipadx.Bl;
+using phukienipadx.Bl.Models;
+using phukienipadx.Core;
+using phukienipadx.Core.Utilities;
 
-namespace GiaPhuc.Admin
+namespace GiaPhuc.Admin.Pages
 {
     public partial class PostEntry : System.Web.UI.Page
     {
@@ -32,15 +24,15 @@ namespace GiaPhuc.Admin
         {
             if (!IsPostBack)
             {
-                this.ddlNewsCategory.DataSource = Define.PageTypes;
-                this.ddlNewsCategory.DataBind();
+                ddlNewsCategory.DataSource = Define.PageTypes;
+                ddlNewsCategory.DataBind();
 
                 PageInfo post = PostImpl.GetPage(PageID);
                 if (null != post)
                 {
-                    this.txtTitle.Text = post.Title;
-                    this.ddlNewsCategory.SelectedIndex = post.CategoryId;
-                    this.elm1.Value = post.HtmlContent.RemoveBadCode();
+                    txtTitle.Text = post.Title;
+                    ddlNewsCategory.SelectedIndex = post.CategoryId;
+                    elm1.Value = post.HtmlContent.RemoveBadCode();
                 }
             }
         }
@@ -49,12 +41,12 @@ namespace GiaPhuc.Admin
         {
             try
             {
-                var title = this.elm1.Value.RemoveBadCode();
+                var title = elm1.Value.RemoveBadCode();
                 PageInfo post = new PageInfo(PageID, title, StringUtils.GetGoodUrl(title))
                 {
-                    Title = this.txtTitle.Text,
-                    HtmlContent = this.elm1.Value.RemoveBadCode(),
-                    CategoryId = this.ddlNewsCategory.SelectedIndex
+                    Title = txtTitle.Text,
+                    HtmlContent = elm1.Value.RemoveBadCode(),
+                    CategoryId = ddlNewsCategory.SelectedIndex
                 };
 
                 PostImpl.SavePost(post);
@@ -73,6 +65,5 @@ namespace GiaPhuc.Admin
                 throw;
             }
         }
-
     }
 }

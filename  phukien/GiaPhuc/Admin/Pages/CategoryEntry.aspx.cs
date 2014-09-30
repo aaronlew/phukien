@@ -1,18 +1,12 @@
-﻿using GiaPhuc.App_Data;
-using GiaPhuc.Data;
-using GiaPhuc.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
+using phukienipadx.Core.Utilities;
 
 namespace GiaPhuc.Admin.Pages
 {
-    public partial class CategoryEntry : System.Web.UI.Page
+    public partial class CategoryEntry : Page
     {
         private int Id
         {
@@ -33,32 +27,26 @@ namespace GiaPhuc.Admin.Pages
                 CategoryInfo category = CategoryImpl.GetCategory(Id);
                 if (null != category)
                 {
-                    this.txtCategoryName.Text = category.Name;
+                    txtCategoryName.Text = category.Name;
                 }
             }
         }
 
         protected void lnkSave_Click(object sender, EventArgs e)
         {
-            try
+            var category = new CategoryInfo(Id, Id, txtCategoryName.Text,
+                StringUtils.GetGoodUrl(txtCategoryName.Text));
+            //Deactive = this.chkDeactive.Checked
+
+            CategoryImpl.Save(category);
+
+            if (Id == 0)
             {
-                CategoryInfo category = new CategoryInfo(Id, Id, this.txtCategoryName.Text, StringUtils.GetGoodUrl(this.txtCategoryName.Text));
-                //Deactive = this.chkDeactive.Checked
-
-                CategoryImpl.Save(category);
-
-                if (Id == 0)
-                {
-                    Response.Redirect("/Admin/Pages/CategoryEntry.aspx");
-                }
-                else
-                {
-                    Response.Redirect("/Admin/Pages/CategoryManager.aspx");
-                }
+                Response.Redirect("/Admin/Pages/CategoryEntry.aspx");
             }
-            catch
+            else
             {
-                throw;
+                Response.Redirect("/Admin/Pages/CategoryManager.aspx");
             }
         }
     }

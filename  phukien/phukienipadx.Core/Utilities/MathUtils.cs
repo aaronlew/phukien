@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-public class MathUtils
+namespace phukienipadx.Core.Utilities
 {
-    public static int Pow(int x, int a)
+    public class MathUtils
     {
-        return (int)Math.Pow(x, a);
+        public static int Pow(int x, int a)
+        {
+            return (int) Math.Pow(x, a);
+        }
     }
 }

@@ -8,14 +8,14 @@ namespace phukienipadx.Bl
     public class UserImpl
     {
         /// <summary>
-        /// Authenticate
+        ///     Authenticate
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
         public static bool Authenticate(string username, string password)
         {
-            admin admin = null;
+            admin admin;
             var repository = new adminRepository();
 
             bool bflag = false;
@@ -24,7 +24,7 @@ namespace phukienipadx.Bl
             {
                 password = Security.Encrypt(password);
                 admin = repository.GetSingleadmin(x => x.admin_name == username &&
-                    x.admin_pass == password);
+                                                       x.admin_pass == password);
             }
             catch (Exception)
             {

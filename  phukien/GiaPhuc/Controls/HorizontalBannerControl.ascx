@@ -69,5 +69,5 @@
     </div>
 </div>--%>
 <div class="wrapper">
-    <img src="../static/images/flash-demo.jpg" />
+    <img src="../static/images/flash-demo.jpg" alt="tinh tế" />
 </div>

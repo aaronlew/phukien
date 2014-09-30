@@ -143,6 +143,7 @@
     <Content Include="favicon.ico" />
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
+    <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\highlight-products\image0.jpg" />
     <Content Include="Images\highlight-products\image1.jpg" />
     <Content Include="Images\highlight-products\image2.jpg" />

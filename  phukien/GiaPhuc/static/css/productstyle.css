@@ -71,7 +71,7 @@ border-top-right-radius: 6px;
 
 .box-categories .col img
 {
-    width: 90%;
+    max-width: 90%;
     margin-left: 5%;
 }
 

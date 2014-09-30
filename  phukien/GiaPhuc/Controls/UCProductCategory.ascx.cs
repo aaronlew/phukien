@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Web.UI;
-using GiaPhuc.Utility;
+using System.Collections.Generic;
 using System.Text;
+using System.Web.UI;
+using GiaPhuc.Helper;
+using GiaPhuc.Utility;
+using phukienipadx.Bl.Models;
 
 namespace GiaPhuc.Controls
 {
-    public partial class UCProductCategory : System.Web.UI.UserControl
+    public partial class UCProductCategory : UserControl
     {
-        const string GroupSection = "<ul class=\"section group\">{0}</ul>";
-        const int PageSize = 4;
-        const int ItemPerRow = 4;
+        private const string GroupSection = "<ul class=\"section group\">{0}</ul>";
+        private const int PageSize = 4;
+        private const int ItemPerRow = 4;
 
         #region Properties
 
@@ -27,19 +30,21 @@ namespace GiaPhuc.Controls
                 {
                     int itemIndex = 0;
                     string html = string.Empty;
-                    var products = DataSource as System.Collections.Generic.List<phukienipadx.Bl.Models.ProductInfo>;
-                    if (products.Count > 0)
+                    var products = DataSource as List<ProductInfo>;
+                    if (products != null && products.Count > 0)
                     {
-                        StringBuilder htmlBuilder = new StringBuilder("<h2 class='box-heading'>");
+                        var htmlBuilder = new StringBuilder("<h2 class='box-heading'>");
                         htmlBuilder.Append(CategoryName);
                         htmlBuilder.Append("</h2>");
 
                         htmlBuilder.Append("<div class=\"box-categories info\">");
-                        foreach (phukienipadx.Bl.Models.ProductInfo item in products)
+                        foreach (ProductInfo item in products)
                         {
                             if (itemIndex > PageSize && SessionUtils.Get<bool>("AllCategories")) break;
-                            html += GiaPhuc.Helper.ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName, item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice, item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
-                            if (itemIndex % ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
+                            html += ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName,
+                                item.DetailsUrl, item.ThumbsUrl, item.DisplayPrice,
+                                item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
+                            if (itemIndex%ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
                             {
                                 htmlBuilder.AppendFormat(GroupSection, html);
                                 html = string.Empty;
@@ -48,7 +53,9 @@ namespace GiaPhuc.Controls
                         }
                         if (itemIndex < products.Count)
                         {
-                            htmlBuilder.AppendFormat("<div class=\"view-more\"><a href=\"{0}\"><span>>> Xem thêm</span></a></div>", CategoryUrl);
+                            htmlBuilder.AppendFormat(
+                                "<div class=\"view-more\"><a href=\"{0}\"><span>>> Xem thêm</span></a></div>",
+                                CategoryUrl);
                         }
                         htmlBuilder.Append("</div>");
 

@@ -1,32 +1,37 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FooterControl.ascx.cs"
     Inherits="GiaPhuc.Controls.FooterControl" %>
 <div id="footer">
-    <div id="limit" class="section group">
+    <div id="limit" class="section group" style="margin-bottom: 20px;">
         <div class="col span_1_of_4">
-            <%
-                XElement xelement1 = XElement.Load(Server.MapPath("~/web.sitemap"));
-                var urlDescList = xelement1.Descendants()
-                    .Where(sel => (string)sel.Attribute("resourceKey") == "Home")
-                    .SelectMany(e => e.Elements()).Select(nd => new
-                                {
-                                    title = nd.Attribute("title").Value,
-                                    description = nd.Attribute("description").Value,
-                                    url = nd.Attribute("url").Value
-                                });
-            %>
             <ul>
-                <%
-                    foreach (var v in urlDescList)
-                    {
-                %>
-                <li><a href="/<%=v.description %>"><span>
-                    <%=v.title %></span></a></li>
-                <%
-                    } 
-                %>
+                <li class="title">HỖ TRỢ KHÁCH HÀNG</li>
+                <li><a href="/mua-hang"><span>
+                    Hướng dẫn mua hàng</span></a></li>
+                
+                <li><a href="/su-dung"><span>
+                    Hướng dẫn sử dụng</span></a></li>
+                
+                <li><a href="/bao-hanh"><span>
+                    Quy định bảo hành</span></a></li>
             </ul>
+        </div>
+        <div class="col span_1_of_4">
+            <ul>
+                <li class="title">ABOUT TINH TẾ SHOP</li>
+                <li><a href="/gioi-thieu">Tinh Tế Shop</a></li>
+                <li><a href="/bao-mat">Chính Sách Bảo Mật</a></li>
+                <li><a href="/doi-tac">Tìm Đối Tác</a></li>
+                <li><a href="/lien-he">Liên Hệ</a></li>
+            </ul>
+        </div>
+        <div class="col span_1_of_4">
+            <ul>
+                <li class="title">Được chứng nhận:</li>
+            </ul>
+        </div>
+        <div class="col span_1_of_4">
             <ul style="font-size: 10pt; color: #999;">
-                <li class="center">Online:
+                <li class="title">Online:
                     <%= Application["OnlineUsers"] %></li>
                 <li><span id="visitorCount"></span>
                     <script type="text/javascript">
@@ -80,7 +85,7 @@
     </div>
     <div class="section group">
         <p style="font-size: 9pt">
-            <b>Cửa hàng TINH TẾ</b>
+            <b>TINH TẾ (NICE SHOP)</b>
             <br />
             Số GPKD: 41K8013138 - Ngày cấp 18/6/2012 – UBND Q.11-TP.HCM
             <br />

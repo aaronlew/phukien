@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using GiaPhuc.Controls;
 using GiaPhuc.Pages;
 using GiaPhuc.Utility;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
 using TNO.Education.Helpers;
-using GiaPhuc.Controls;
 
 namespace GiaPhuc
 {
@@ -15,10 +15,7 @@ namespace GiaPhuc
 
         private string Keyword
         {
-            get
-            {
-                return (RouteValue("keyword") ?? string.Empty).ToString().ToLower();
-            }
+            get { return (RouteValue("keyword") ?? string.Empty).ToString().ToLower(); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,8 +23,8 @@ namespace GiaPhuc
             if (!IsPostBack || Keyword != string.Empty)
             {
                 LoadProducts();
-                PostsControl postsControl = LoadControl("~/Controls/PostsControl.ascx") as PostsControl;
-                this.pnlPost.Controls.Add(postsControl);
+                var postsControl = LoadControl("~/Controls/PostsControl.ascx") as PostsControl;
+                if (postsControl != null) pnlPost.Controls.Add(postsControl);
             }
         }
 
@@ -38,10 +35,7 @@ namespace GiaPhuc
                 SessionUtils.Set("IsFirstVisit", false);
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         protected override void OnInit(EventArgs e)
@@ -81,8 +75,8 @@ namespace GiaPhuc
                 SessionUtils.Set("AllCategories", true);
             }
 
-            this.Repeater1.DataSource = categories;
-            this.Repeater1.DataBind();
+            Repeater1.DataSource = categories;
+            Repeater1.DataBind();
         }
     }
 }

@@ -40,7 +40,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col span_3_of_4">
+        <%--<div class="col span_3_of_4">
             <%
                 int i = 0;
                 foreach (phukienipadx.Bl.Models.CategoryInfo item in GiaPhuc.Utility.SessionManager.Categories)
@@ -76,6 +76,18 @@
                     i++;
                 }
             %>
-        </div>
+        </div>--%>
+    </div>
+    <div class="section group">
+        <p style="font-size: 9pt">
+            <b>Cửa hàng TINH TẾ</b>
+            <br />
+            Số GPKD: 41K8013138 - Ngày cấp 18/6/2012 – UBND Q.11-TP.HCM
+            <br />
+            Địa chỉ trụ sở chính: 174/47 Thái Phiên, Phường 8, Quận 11, Tp. Hồ Chí Minh
+            <br />
+            Email: <span style="color: blue"> phukienipadx@gmail.com</span>
+            <br />
+            Điện thoại: 0903.71.20.70 – 0969.10.71.10</p>
     </div>
 </div>

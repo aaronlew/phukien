@@ -5,16 +5,11 @@
         <div class="col span_1_of_4">
             <ul>
                 <li class="title">HỖ TRỢ KHÁCH HÀNG</li>
-                <li><a href="/mua-hang"><span>
-                    Hướng dẫn mua hàng</span></a></li>
-                <li><a href="/su-dung"><span>
-                    Hướng dẫn sử dụng</span></a></li>
-                <li><a href="/van-chuyen"><span>
-                    Chính sách vận chuyển và giao hàng</span></a></li>
-                <li><a href="/doi-tra"><span>
-                    Chính sách đổi trả hàng</span></a></li>
-                <li><a href="/bao-hanh"><span>
-                    Quy định bảo hành</span></a></li>
+                <li><a href="/mua-hang"><span>Hướng dẫn mua hàng</span></a></li>
+                <li><a href="/su-dung"><span>Hướng dẫn sử dụng</span></a></li>
+                <li><a href="/van-chuyen"><span>Chính sách vận chuyển và giao hàng</span></a></li>
+                <li><a href="/doi-tra"><span>Chính sách đổi trả hàng</span></a></li>
+                <li><a href="/bao-hanh"><span>Quy định bảo hành</span></a></li>
             </ul>
         </div>
         <div class="col span_1_of_4">
@@ -30,6 +25,12 @@
             <ul>
                 <li class="title">Được chứng nhận:</li>
             </ul>
+            <div>
+                <a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=8694" target="_blank"
+                    rel="nofollow">
+                    <img data-src="/images/da-dang-ky-bo-cong-thuong.png" src="/Images/ajax-loader.gif" alt="bo cong thuong" width="160" />
+                </a>
+            </div>
         </div>
         <div class="col span_1_of_4">
             <ul style="font-size: 10pt; color: #999;">
@@ -93,7 +94,7 @@
             <br />
             Địa chỉ trụ sở chính: 174/47 Thái Phiên, Phường 8, Quận 11, Tp. Hồ Chí Minh
             <br />
-            Email: <span style="color: blue"> phukienipadx@gmail.com</span>
+            Email: <span style="color: blue">phukienipadx@gmail.com</span>
             <br />
             Điện thoại: 0903.71.20.70 – 0969.10.71.10</p>
     </div>

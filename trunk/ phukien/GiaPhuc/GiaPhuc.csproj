@@ -144,6 +144,7 @@
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
     <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\da-dang-ky-bo-cong-thuong.PNG" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Scripts\ipadx.min.js" />

@@ -1507,7 +1507,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2e2', end
 
 #footer ul li a
 {
-    font-size: 11pt; /* color:  #006e2e; */
+    font-size: 10pt; /* color:  #006e2e; */
     color: #008bd2;
     text-decoration: none;
 }

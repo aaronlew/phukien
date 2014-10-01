@@ -144,12 +144,6 @@
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
     <Content Include="Images\ajax-loader.gif" />
-    <Content Include="Images\highlight-products\image0.jpg" />
-    <Content Include="Images\highlight-products\image1.jpg" />
-    <Content Include="Images\highlight-products\image2.jpg" />
-    <Content Include="Images\highlight-products\image3.jpg" />
-    <Content Include="Images\highlight-products\image4.jpg" />
-    <Content Include="Images\highlight-products\image5.jpg" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Scripts\ipadx.min.js" />
@@ -1638,6 +1632,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\highlight-products\" />
     <Folder Include="static\images\products\new\" />
     <Folder Include="static\images\products\thumbs\new\" />
     <Folder Include="third-party\tiny_mce\uploads\" />

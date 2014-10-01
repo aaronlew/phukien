@@ -41,6 +41,8 @@ namespace GiaPhuc.Helper
             routes.Add("Warranty", new Route("bao-hanh", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Partner", new Route("doi-tac", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Private", new Route("bao-mat", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
+            routes.Add("Ship", new Route("van-chuyen", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
+            routes.Add("Return", new Route("doi-tra", new CustomRouteHandler("~/Pages/TopicPage.aspx")));
             routes.Add("Error404", new Route("loi-404", new CustomRouteHandler("~/errors/404.aspx")));
             routes.Add("Admin", new Route("quantri", new CustomRouteHandler("~/Admin/Default.aspx")));
 

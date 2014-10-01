@@ -4,8 +4,8 @@ namespace phukienipadx.Core.Utilities
 {
     public class Security
     {
-        public static string Password1 = String.Empty;
-        public static string Password2 = String.Empty;
+        public static string Password1 = string.Empty;
+        public static string Password2 = string.Empty;
         public static string Charlong = "16CHARSLONG12345";
         public static int KeySize = 128;
 
@@ -14,7 +14,7 @@ namespace phukienipadx.Core.Utilities
             string password2 = String.IsNullOrEmpty(Password2) ? "Salt" : Password2;
             return Encryption.Encrypt(
                 value, Password1,
-                password2, 2,
+                password2, "SHA1", 2,
                 Charlong, KeySize);
         }
 
@@ -23,7 +23,7 @@ namespace phukienipadx.Core.Utilities
             string password2 = String.IsNullOrEmpty(Password2) ? "Salt" : Password2;
             return Encryption.Decrypt(
                 value, Password1,
-                password2, 2,
+                password2, "SHA1", 2,
                 Charlong, KeySize);
         }
     }

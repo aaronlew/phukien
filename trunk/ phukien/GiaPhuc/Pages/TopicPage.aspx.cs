@@ -62,6 +62,14 @@ namespace GiaPhuc.Pages
                 {
                     url = "chinh-sach-bao-mat";
                 }
+                else if (Request.Url.AbsolutePath.EndsWith("van-chuyen"))
+                {
+                    url = "chinh-sach-van-chuyen-va-giao-hang";
+                }
+                else if (Request.Url.AbsolutePath.EndsWith("doi-tra"))
+                {
+                    url = "chinh-sach-doi-tra-hang";
+                }
                 PageInfo topic = SessionManager.Topics.SingleOrDefault(x => x.Url == url);
                 if (null != topic)
                 {

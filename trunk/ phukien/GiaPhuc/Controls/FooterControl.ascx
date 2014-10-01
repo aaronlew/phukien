@@ -7,10 +7,12 @@
                 <li class="title">HỖ TRỢ KHÁCH HÀNG</li>
                 <li><a href="/mua-hang"><span>
                     Hướng dẫn mua hàng</span></a></li>
-                
                 <li><a href="/su-dung"><span>
                     Hướng dẫn sử dụng</span></a></li>
-                
+                <li><a href="/van-chuyen"><span>
+                    Chính sách vận chuyển và giao hàng</span></a></li>
+                <li><a href="/doi-tra"><span>
+                    Chính sách đổi trả hàng</span></a></li>
                 <li><a href="/bao-hanh"><span>
                     Quy định bảo hành</span></a></li>
             </ul>

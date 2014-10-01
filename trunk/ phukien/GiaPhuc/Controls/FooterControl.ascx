@@ -19,8 +19,8 @@
         </div>
         <div class="col span_1_of_4">
             <ul>
-                <li class="title">ABOUT TINH TẾ SHOP</li>
-                <li><a href="/gioi-thieu">Tinh Tế Shop</a></li>
+                <li class="title">ABOUT CỬA HÀNG TINH TẾ</li>
+                <li><a href="/gioi-thieu">Cửa hàng Tinh Tế</a></li>
                 <li><a href="/bao-mat">Chính Sách Bảo Mật</a></li>
                 <li><a href="/doi-tac">Tìm Đối Tác</a></li>
                 <li><a href="/lien-he">Liên Hệ</a></li>
@@ -33,7 +33,7 @@
         </div>
         <div class="col span_1_of_4">
             <ul style="font-size: 10pt; color: #999;">
-                <li class="title">Online:
+                <li class="title">Trực tuyến:
                     <%= Application["OnlineUsers"] %></li>
                 <li><span id="visitorCount"></span>
                     <script type="text/javascript">
@@ -87,7 +87,7 @@
     </div>
     <div class="section group">
         <p style="font-size: 9pt">
-            <b>TINH TẾ (NICE SHOP)</b>
+            <b>Cửa hàng TINH TẾ</b>
             <br />
             Số GPKD: 41K8013138 - Ngày cấp 18/6/2012 – UBND Q.11-TP.HCM
             <br />

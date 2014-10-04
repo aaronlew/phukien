@@ -108,6 +108,9 @@
     <div class="wrapper">
         <uc:Footer ID="Footer1" runat="server"></uc:Footer>
     </div>
+    <script type="text/javascript">
+        jQuery("img").lazy();
+    </script>
     </form>
 </body>
 </html>

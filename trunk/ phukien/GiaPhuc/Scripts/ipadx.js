@@ -22,8 +22,6 @@
         }
     });
 
-    jQuery("img").lazy();
-
     $('#hor-menu').dcMegaMenu({
         rowItems: '5',
         speed: 'fast',

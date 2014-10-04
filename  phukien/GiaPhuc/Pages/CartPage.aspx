@@ -2,7 +2,7 @@
     EnableEventValidation="false" CodeBehind="CartPage.aspx.cs" Inherits="GiaPhuc.Pages.CartPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <%= WebExtensions.CombresLink("cartJs") %>
+    <script src="/Scripts/knockout-2.2.1.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="cartDiv">

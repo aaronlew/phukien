@@ -16,7 +16,4 @@
         <div class="clear">
         </div>
     </div>
-    <script type="text/javascript">
-        jQuery("img").lazy();
-    </script>
 </asp:Content>

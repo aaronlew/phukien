@@ -167,6 +167,7 @@
     <Content Include="Scripts\menu\jquery.dcverticalmegamenu.1.3.js" />
     <Content Include="Scripts\menu\jquery.hoverIntent.minified.js" />
     <Content Include="Scripts\page\product.js" />
+    <Content Include="Scripts\header.js" />
     <Content Include="Scripts\slider\helper-plugins\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Scripts\slider\helper-plugins\jquery.mousewheel.min.js" />
     <Content Include="Scripts\slider\helper-plugins\jquery.touchSwipe.min.js" />
@@ -179,6 +180,7 @@
     <Content Include="static\css\AdminSite.css" />
     <Content Include="static\css\christmas.css" />
     <Content Include="static\css\christmas.min.css" />
+    <Content Include="static\css\header.css" />
     <Content Include="static\css\menu\skins\black.min.css" />
     <Content Include="static\css\product.css" />
     <Content Include="static\css\productstyle.min.css" />

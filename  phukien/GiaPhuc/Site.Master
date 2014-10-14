@@ -19,8 +19,9 @@
     <%--. Giao hàng tận nơi, giá tốt nhất. ĐT: 0903.71.20.70 (Mr.Đạt)--%>
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
-    <link href="/static/css/dropdown-menu.min.css" rel="stylesheet" type="text/css" />
+    <%--<link href="/static/css/dropdown-menu.min.css" rel="stylesheet" type="text/css" />--%>
     <link href="/static/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/header.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/productstyle.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/1024.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/response/10cols.min.css" rel="stylesheet" type="text/css" />
@@ -44,6 +45,7 @@
     <script type="text/javascript" src="/scripts/jquery.lazy.min.js"></script>
     <script type="text/javascript" src="/scripts/menu/jquery.hoverIntent.minified.js"></script>
     <script type="text/javascript" src="/scripts/menu/jquery.dcmegamenu.1.3.3.min.js"></script>
+    <script type="text/javascript" src="/scripts/header.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
@@ -63,10 +65,48 @@
 </head>
 <body>
     <form name="form1" runat="server" submitdisabledcontrols="true">
-    <uc:OnTop ID="OnTop1" runat="server"></uc:OnTop>
-    <div id="header">
-        <uc:Header ID="PageHeader1" runat="server"></uc:Header>
-        <uc:TopMenu ID="TopMenu1" runat="server"></uc:TopMenu>
+    <%--<uc:OnTop ID="OnTop1" runat="server"></uc:OnTop>--%>
+    <div id="header" class="header">
+        <div class="container clearfix">
+            <a href="#" id="logo">
+                <img src="logo.png" alt /><img class="smaller" src="logo.png" alt /></a>
+            <div id='cssmenu'>
+                <ul>
+                    <li><a href='#'>TRANG CHỦ</a></li>
+                    <li class='active has-sub'><a href='#'>CHĂM SÓC KHÁCH HÀNG</a>
+                        <ul>
+                            <li class='has-sub'><a href='#'>Product 1</a>
+                                <ul>
+                                    <li><a href='#'>Sub Product</a></li>
+                                    <li><a href='#'>Sub Product</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-sub'><a href='#'>Product 2</a>
+                                <ul>
+                                    <li><a href='#'>Sub Product</a></li>
+                                    <li><a href='#'>Sub Product</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href='#'>THANH TOÁN</a></li>
+                    <li><a href='#'>GIỚI THIỆU</a></li>
+                    <li><a href='#'>LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div class="bar">
+                <div class="box">
+                    <div class="container-3">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Tìm kiếm. ví dụ: BAO DA" />
+                    </div>
+                </div>
+                <!-- <div class="address">174/47 Thái Phiên, F8, Q11, TPHCM </div> -->
+            </div>
+        </div>
+        <!-- /header -->
+        <%--<uc:Header ID="PageHeader1" runat="server"></uc:Header>
+        <uc:TopMenu ID="TopMenu1" runat="server"></uc:TopMenu>--%>
     </div>
     <div class="clear">
     </div>

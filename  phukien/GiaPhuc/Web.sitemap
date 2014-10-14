@@ -47,6 +47,8 @@
           <siteMapNode url="/nhom-hang/bao-da-ipad-1" title="Ipad 1" description="Ipad 1" />
         </siteMapNode>
         <siteMapNode url="/nhom-hang/op-lung-bao-da-iphone" title="IPHONE"  description="IPHONE" >
+          <siteMapNode url="/nhom-hang/bao-da-iphone-6-plus" title="Iphone 6 plus"  description="Iphone 6 plus" />
+          <siteMapNode url="/nhom-hang/bao-da-iphone-6" title="Iphone 6"  description="Iphone 6" />
           <siteMapNode url="/nhom-hang/bao-da-iphone-55s" title="Iphone 5 / 5S"  description="Iphone 5 / 5S" />
           <siteMapNode url="/nhom-hang/bao-da-op-lung-iphone-5c" title="Iphone 5C"  description="Iphone 5C" />
           <siteMapNode url="/nhom-hang/bao-da-iphone-44s" title="Iphone 4 / 4S"  description="Iphone 4 / 4S" />

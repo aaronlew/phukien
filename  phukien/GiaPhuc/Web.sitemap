@@ -22,6 +22,7 @@
       </siteMapNode>
       <siteMapNode url="./nhom-hang/ban-phim-bluetooth" title="Bàn phím Bluetooth"  description="Bàn phím Bluetooth" >
         <siteMapNode url="/nhom-hang/ban-phim-bluetooth/t" title="IPAD"  description="IPAD" >
+          
           <siteMapNode url="/nhom-hang/ban-phim-ipad-air-ipad-5" title="Ipad Air (iPad 5)"  description="Ipad Air (iPad 5)" />
           <siteMapNode url="/nhom-hang/ban-phim-ipad-4-3-2-1" title="Ipad 4 / 3 / 2 / 1"  description="Ipad 4 / 3 / 2 / 1" />
           <siteMapNode url="/nhom-hang/ban-phim-ipad-mini" title="Ipad mini / Ipad retina (mini 2)"  description="Ipad mini" />
@@ -37,7 +38,10 @@
         </siteMapNode>
       </siteMapNode>
       <siteMapNode url="./nhom-hang/bao-da-ipad/t" title="BAO DA APPLE"  description="BAO DA APPLE" >
-        <siteMapNode url="/nhom-hang/bao-da-ipad" title="IPAD"  description="IPAD 4" >
+        <siteMapNode url="/nhom-hang/bao-da-ipad" title="IPAD"  description="IPAD" >
+          <siteMapNode url="/nhom-hang/ban-phim-ipad-air-2"
+                       title="Ipad Air 2"
+                       description="Ipad Air 2" />
           <siteMapNode url="/nhom-hang/bao-da-ipad-air-ipad-5" title="Ipad Air (Ipad 5)"  description="Ipad Air (Ipad 5)" />
           <siteMapNode url="/nhom-hang/bao-da-ipad-retina" title="Ipad Retina"  description="Ipad Retina" />
           <siteMapNode url="/nhom-hang/bao-da-ipad-mini" title="Ipad mini"  description="Ipad mini" />

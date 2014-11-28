@@ -5,8 +5,9 @@ namespace phukienipadx.Core
     public class Define
     {
         public const int PageSize = 11;
+        public const string EmailUser = "phukienipadx";
         public const string Email = "phukienipadx@gmail.com";
-        public const string Password = "38587323";
+        public const string Password = "Phuc@8587323";
         public const int Port = 587;
         public const string Host = "smtp.gmail.com";
         public const string CompanyName = "Nice store";
@@ -15,7 +16,7 @@ namespace phukienipadx.Core
         public static readonly string UploadFolder = ConfigurationManager.AppSettings["imgUrl"];
         public static readonly string ThumbsFolder = ConfigurationManager.AppSettings["thumbUrl"];
 
-        static public readonly string[] PageTypes = new [] {
+        static public readonly string[] PageTypes =  {
                                                                      "Chọn nhóm tin", "Bài viết", "Hướng dẫn"
                                                                  };
     }

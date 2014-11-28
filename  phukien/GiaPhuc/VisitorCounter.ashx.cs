@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using Google.GData.Analytics;
+using phukienipadx.Core;
 
 namespace GiaPhuc
 {
@@ -17,9 +18,8 @@ namespace GiaPhuc
 
         public void ProcessRequest(HttpContext context)
         {
-            var feedQuery = new AccountQuery();
             var service = new AnalyticsService("DoogalAnalytics");
-            service.setUserCredentials("phukienipadx", "38587323");
+            service.setUserCredentials(Define.EmailUser, Define.Password);
 
             var today = GetVisit(service, Id, Visit, DateTime.Today, DateTime.Today);
             var yesterday = GetVisit(service, Id, Visit, DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));

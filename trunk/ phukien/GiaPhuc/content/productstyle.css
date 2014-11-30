@@ -1,0 +1,292 @@
+﻿/* Product Layout */
+.box-heading
+{
+    font-family: 'Open Sans Condensed', 'Patrick Hand SC', sans-serif !important;
+    font-size: 13pt;
+    font-weight: bold;
+    line-height: normal;
+    font-family: sans-serif;
+    background: #F4F2F2; /* Old browsers */
+}
+.box-heading h2
+{
+    padding: 0 42px 0 0;
+    background: url(/images/cate.png) no-repeat right center;
+    display: inline-block;
+}
+.box-heading h2 span
+{
+    padding: 3px 0 3px 15px;
+    color: #fff;
+    background: #3E4095;
+    display: inline-block;
+}
+.box-heading.other {
+    font-family: 'Time News Roman' !important;
+    font-size: 12pt;
+}
+
+.box-categories
+{
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.box-categories .product-cell
+{
+    padding: 0 6px;
+    margin: 6px 0;
+    border-right: dotted 1px #666;
+    display: block;
+}
+
+.box-categories .section
+{
+    margin: 0 6px;
+    border-bottom: dotted 1px #666;
+}
+
+.box-categories .section:last-child
+{
+    border-bottom: none;
+}
+
+.box-categories .col:last-child .product-cell
+{
+    border-right: none;
+}
+
+.box-categories .product-cell .description
+{
+    min-height: 60px;
+}
+
+.box-categories .product-cell .description a
+{
+    font-size: 9pt;
+}
+
+.box-categories .col img
+{
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+.box-categories .product-cell p
+{
+    font-size: 13pt;
+    font-family: Times New Roman;
+}
+
+.box-categories .product-cell .price
+{
+    margin-top: 16px;
+    font-family: Times New Roman;
+    font-size: 13pt;
+}
+
+.view-more
+{
+    height: 38px;
+    font-family: Times New Roman;
+    font-size: 13pt;
+}
+
+.view-more a
+{
+    float: right;
+    margin-top: 4px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-more a span
+{
+    display: inline-block;
+    padding: 6px 15px 7px 15px;
+}
+
+.view-more a:hover span
+{
+    color: #ffea00;
+}
+
+.clear
+{
+    clear: both;
+}
+.box-categories .product-cell .price span
+{
+    float: left;
+    color: rgb(246, 105, 7);
+    padding-top: 6px;
+}
+
+.box-categories .product-cell .price a
+{
+    float: right;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background: darkorange;
+   /* background: url('../images/button-bg.png') 0 bottom repeat-x #023b2c;*/
+    font-size: 10pt;
+    text-transform: uppercase;
+    line-height: normal;
+    box-shadow: 0px 0px 0px #2c5304,0px 2px 2px #e1e1e1,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
+    -moz-box-shadow: 0px 0px 0px #2c5304,0px 2px 2px #e1e1e1,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
+    -webkit-box-shadow: 0px 0px 0px #2c5304,0px 2px 2px #e1e1e1,0px 0px 0px #2c5304,0px 0px 0px #2c5304;
+}
+
+.box-categories .product-cell .price a span
+{
+    color: #fff;
+    display: inline-block;
+    padding: 6px 15px 7px 15px;
+}
+
+.box-categories .product-cell .price a:hover span
+{
+    color: #ffea00;
+}
+
+.product-special .col img
+{
+    width: 96%;
+    margin-left: 2%;
+}
+
+.product-special .product-cell .col .description
+{
+    margin: 0 16px;
+}
+
+.product-special .product-cell .col .description a
+{
+    font-size: 8pt;
+    text-decoration: none;
+}
+
+.product-special .product-cell .col .description a:hover
+{
+    text-decoration: underline;
+    color: #6eb003;
+}
+
+.product-special .product-cell .col .description p
+{
+    font-size: 12pt;
+    font-family: Times New Roman;
+}
+
+.product-special .product-cell .col .description .price
+{
+    margin-bottom: 16px;
+    font-family: Times New Roman;
+    font-size: 12pt;
+}
+
+.product-special .product-cell .col .description .price span
+{
+    color: #fda001;
+    padding-top: 6px;
+}
+
+
+.product-special .section .product-cell
+{
+    margin: 16px;
+    border-bottom: dotted 1px #666;
+}
+
+.product-special .section:last-child .product-cell
+{
+    border-bottom: none;
+}
+
+.info
+{
+    border: 1px solid #ededed;
+    background-color: #fff;
+    border-radius: 0 0 6px 6px;
+    list-style: none;
+    padding: 6px 0;
+    margin-bottom: 10px;
+}
+
+ul.info li
+{
+    padding: 3px !important;
+}
+
+ul.info li.seperator
+{
+    border-bottom: dotted 1px rgb(35, 86, 109);
+}
+
+
+.products
+{
+    background-color: #fff;
+}
+
+/* ############ CART ###### */
+table.tproduct
+{
+    border: solid 1px #eee;
+    border-spacing: 1px;
+}
+
+table.tproduct thead
+{
+    background: url(/images/nav_normal_bg.png) bottom repeat-x #000;
+    text-align: center;
+    line-height: 33px;
+    color: #fff;
+}
+
+table.tproduct thead th
+{
+    font-weight: 600;
+}
+table.tproduct tbody tr:nth-child(2n+1)
+{
+    background-color: #ededed;
+}
+table.tproduct tbody tr td.quantity
+{
+    text-align: center;
+}
+
+table.tproduct tr td.price
+{
+    text-align: right;
+}
+
+table.tproduct tbody tr td.quantity span
+{
+    padding: 0 5px;
+    z-index: -99;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+table.tproduct tbody tr td.quantity a
+{
+    z-index: 99;
+    display: none;
+}
+
+table.tproduct tfoot tr
+{
+    background: url(/images/nav_normal_bg.png) bottom repeat-x #000;
+    color: #fff;
+    font-weight: bolder;
+    line-height: 38px;
+}
+
+table.tproduct tfoot tr td.grandtotal
+{
+    text-align: center;
+}

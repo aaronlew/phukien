@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web.UI;
+using GiaPhuc.Controls;
 using GiaPhuc.Data;
 using GiaPhuc.Helper;
 using phukienipadx.Core;
-using GiaPhuc.Controls;
 
 namespace GiaPhuc
 {
-    public partial class SiteMaster : System.Web.UI.MasterPage
+    public partial class SiteMaster : MasterPage
     {
-        private string Keyword { get { return Request["keyword"] ?? String.Empty; } }
+        private string Keyword
+        {
+            get { return Request["keyword"] ?? String.Empty; }
+        }
 
         public IList<EZPages> Guides
         {
@@ -39,16 +42,15 @@ namespace GiaPhuc
 
                 if (Page is Default)
                 {
-                    LeftMenuControl leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
-                    this.pnlMenu.Controls.Add(leftMenuControl);
+                    var leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
+                    pnlMenu.Controls.Add(leftMenuControl);
                 }
-                else
-                {
-                    LeftMenuControl leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
-                    this.pnlMenu1.Controls.Add(leftMenuControl);
-                }
+                //else
+                //{
+                //    var leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
+                //    pnlMenu1.Controls.Add(leftMenuControl);
+                //}
             }
-
         }
     }
 }

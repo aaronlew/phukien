@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Routing;
 
 namespace GiaPhuc.Helper
@@ -18,7 +15,7 @@ namespace GiaPhuc.Helper
         {
             // Do not use url routing for requests with .axd/.asmx/.ico extensions
             // This prevents ASP.NET from having to do File.Exists check
-            routes.Add("ignoreAXD", new Route("{resource}.axd/{*pathInfo}", new StopRoutingHandler()));
+            routes.Add("ignoreAXD", new Route("{resource}.axm/{*pathInfo}", new StopRoutingHandler()));
             routes.Add("ignoreASMX", new Route("{resource}.asmx/{*pathInfo}", new StopRoutingHandler()));
             routes.Add("ignoreICO", new Route("{resource}.ico/{*pathInfo}", new StopRoutingHandler()));
 

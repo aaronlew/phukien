@@ -116,7 +116,7 @@ div.WordSection1
                     cao nh&#7845;t.</span></p>
         <p class="MsoNormal" align="center" style='text-align: center; line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>
-                <img width="100%" id="Picture 6" src="/static/images/about/image001.gif"
+                <img width="100%" id="Picture 6" src="/images/about/image001.gif"
                     alt="Banner_Nice Store.jpg"></span></p>
         <p class="MsoNormal" style='line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>+ <b><u><span
@@ -129,7 +129,7 @@ div.WordSection1
                 d&#7909;ng s&#7843;n ph&#7849;m c&#7911;a chúng tôi.</span></p>
         <p class="MsoNormal" align="center" style='text-align: center; line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>
-                <img width="100%" id="Picture 9" src="/static/images/about/image002.gif"
+                <img width="100%" id="Picture 9" src="/images/about/image002.gif"
                     alt="bookcover.jpg"></span></p>
         <p class="MsoNormal" style='line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>+ <b>Giá h&#7845;p
@@ -139,9 +139,9 @@ div.WordSection1
                 nh&#7845;t</span></p>
         <p class="MsoNormal" align="center" style='text-align: center; line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>
-                <img width="313" height="391" id="Picture 10" src="/static/images/about/image003.gif"
-                    alt="IMG_0943.JPG"><img width="313" height="391" id="Picture 11" src="/static/images/about/image004.gif"
-                        alt="IMG_0944.JPG"><img width="313" height="391" id="Picture 12" src="/static/images/about/image005.gif"
+                <img width="313" height="391" id="Picture 10" src="/images/about/image003.gif"
+                    alt="IMG_0943.JPG"><img width="313" height="391" id="Picture 11" src="/images/about/image004.gif"
+                        alt="IMG_0944.JPG"><img width="313" height="391" id="Picture 12" src="/images/about/image005.gif"
                             alt="IMG_0945.JPG"></span></p>
         <p class="MsoNormal" style='line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>Chúng tôi cung
@@ -153,8 +153,8 @@ div.WordSection1
         </p>
         <p class="MsoNormal" align="center" style='text-align: center; line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>
-                <img width="409" height="230" id="Picture 13" src="/static/images/about/image006.gif"
-                    alt="click-buy.png"><img width="337" height="252" id="Picture 14" src="/static/images/about/image007.jpg"
+                <img width="409" height="230" id="Picture 13" src="/images/about/image006.gif"
+                    alt="click-buy.png"><img width="337" height="252" id="Picture 14" src="/images/about/image007.jpg"
                         alt="freeshiptruck.png"></span></p>
         <p class="MsoNormal" style='line-height: normal'>
             <span style='font-size: 12.0pt; font-family: "Verdana","sans-serif"'>B&#7841;n có th&#7875;
@@ -238,7 +238,7 @@ div.WordSection1
                 GI&#7844;Y PHÉP KINH DOANH :</span></b></p>
         <p class="MsoNormal">
             <span style='font-size: 12.0pt; line-height: 115%; font-family: "Verdana","sans-serif"'>
-                <img width="100%" id="Picture 15" src="/static/images/about/image008.jpg"
+                <img width="100%" id="Picture 15" src="/images/about/image008.jpg"
                     alt="finish_576x768_3.jpg"></span></p>
     </div>
 </asp:Content>

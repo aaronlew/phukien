@@ -1,7 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PostFooterControl.ascx.cs"
     Inherits="GiaPhuc.Controls.PostFooterControl" %>
-<div class="box-heading">
-    <h1><asp:Label ID="lblPostFooter" runat="server" Text="Tại sao mua hàng chỗ chúng tôi?"></asp:Label></h1>
+<div class="box-heading other">
+    <h2>
+        <span>
+            <asp:Label ID="lblPostFooter" runat="server" Text="Tại sao mua hàng chúng tôi cung cấp?"></asp:Label></span></h2>
 </div>
 <div class="info post" style="color: Black; padding: 8px;">
     <div class="section group">
@@ -12,12 +14,12 @@
         </div>
         <div class="col span_1_of_2">
             Dịch vụ tốt nhất và giá tốt nhất<br />
-            Chúng tôi tin rằng dịch vụ khách hàng là ưu tiên hàng đầu của chúng tôi , và luôn
-            cố gắng để vượt quá mong đợi của khách hàng. Chúng tôi có rất nhiều kinh nghiệm
-            quý giá về bán hàng và phục vụ sau bán hàng. Chúng tôi hiểu được nhu cầu của thị
-            trường và luôn luôn ở một vị trí để cung cấp cho người mua những sản phẩm mới nhất,
-            tốt đẹp theo nhu cầu của quí khách. Hơn nữa, đội ngũ quản lý web của chúng tôi luôn
-            cập nhật sản phẩm mới và hình ảnh chất lượng, và luôn luôn theo xu hướng thời trang.
+            Dịch vụ khách hàng là ưu tiên hàng đầu của chúng tôi và chúng tôi luôn cố gắng để
+            đáp ứng mong đợi của khách hàng. Chúng tôi có rất nhiều kinh nghiệm bán hàng quý
+            giá và phục vụ hậu mãi. Chúng tôi hiểu được nhu cầu của thị trường và luôn luôn
+            ở một vị trí để cung cấp cho người mua những sản phẩm mới nhất, tốt đẹp theo nhu
+            cầu của quí khách. Hơn nữa, đội ngũ quản lý web của chúng tôi luôn cập nhật sản
+            phẩm mới và hình ảnh chất lượng, và luôn luôn theo xu hướng thời trang.
         </div>
     </div>
     <div class="section group" style="margin-top: 30px">

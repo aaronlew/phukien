@@ -22,6 +22,15 @@ namespace GiaPhuc {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
+        /// PageHeader1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GiaPhuc.Controls.HeaderControl PageHeader1;
+        
+        /// <summary>
         /// pnlMenu control.
         /// </summary>
         /// <remarks>
@@ -47,24 +56,6 @@ namespace GiaPhuc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ArticleContent;
-        
-        /// <summary>
-        /// pnlMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder pnlMenu1;
-        
-        /// <summary>
-        /// LeftLayout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::GiaPhuc.Controls.LeftLayout LeftLayout;
         
         /// <summary>
         /// SiteMapPath1 control.

@@ -49,6 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>packages\AjaxMin.4.84.4790.14417\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Combres">
+      <HintPath>packages\combres.2.2.2.18\lib\net40\Combres.dll</HintPath>
+    </Reference>
     <Reference Include="DbLinq">
       <HintPath>Required\DbLinq.dll</HintPath>
     </Reference>
@@ -56,7 +62,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Required\DbLinq.MySql.dll</HintPath>
     </Reference>
-    <Reference Include="EcmaScript.NET.modified">
+    <Reference Include="dotless.Core">
+      <HintPath>packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified, Version=0.1.1.0, Culture=neutral, PublicKeyToken=7d53ba4f537753a5, processorArchitecture=MSIL">
       <HintPath>packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll</HintPath>
     </Reference>
     <Reference Include="Fasterflect">
@@ -99,6 +108,9 @@
     <Reference Include="WebActivator">
       <HintPath>packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
     </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Default.aspx" />
@@ -120,6 +132,9 @@
     <Content Include="Admin\template\PageTemplate.htm" />
     <Content Include="Admin\Pages\PageManager.aspx" />
     <Content Include="Admin\Pages\PageEntry.aspx" />
+    <Content Include="App_Data\combres.xml" />
+    <Content Include="App_Data\combres_full_with_annotation.xml" />
+    <Content Include="App_Data\combres_minimal.xml" />
     <Content Include="BingSiteAuth.xml" />
     <Content Include="CMS.asmx" />
     <Content Include="Controls\AdvertiseLeftSide.ascx" />
@@ -144,7 +159,34 @@
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
     <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\cate.png" />
+    <Content Include="Images\colour\digg.png" />
+    <Content Include="Images\colour\dribbble.png" />
+    <Content Include="Images\colour\facebook.png" />
+    <Content Include="Images\colour\flickr.png" />
+    <Content Include="Images\colour\forrst.png" />
+    <Content Include="Images\colour\google+.png" />
+    <Content Include="Images\colour\rss.png" />
+    <Content Include="Images\colour\share-this.png" />
+    <Content Include="Images\colour\skype.png" />
+    <Content Include="Images\colour\twitter.png" />
+    <Content Include="Images\colour\vimeo.png" />
+    <Content Include="Images\colour\you_tube.png" />
     <Content Include="Images\da-dang-ky-bo-cong-thuong.PNG" />
+    <Content Include="Images\grey\digg.png" />
+    <Content Include="Images\grey\dribbble.png" />
+    <Content Include="Images\grey\facebook.png" />
+    <Content Include="Images\grey\flickr.png" />
+    <Content Include="Images\grey\forrst.png" />
+    <Content Include="Images\grey\google+.png" />
+    <Content Include="Images\grey\rss.png" />
+    <Content Include="Images\grey\share-this.png" />
+    <Content Include="Images\grey\skype.png" />
+    <Content Include="Images\grey\twitter.png" />
+    <Content Include="Images\grey\vimeo.png" />
+    <Content Include="Images\grey\you_tube.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\smalllogo.png" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Scripts\ipadx.min.js" />
@@ -177,97 +219,95 @@
     <Content Include="Scripts\template\smartpaginator.js" />
     <Content Include="Admin\Scripts\vm\handler.js" />
     <Content Include="Admin\Scripts\vm\product-vm.js" />
-    <Content Include="static\css\AdminSite.css" />
-    <Content Include="static\css\christmas.css" />
-    <Content Include="static\css\christmas.min.css" />
-    <Content Include="static\css\header.css" />
-    <Content Include="static\css\menu\skins\black.min.css" />
-    <Content Include="static\css\product.css" />
-    <Content Include="static\css\productstyle.min.css" />
-    <Content Include="static\css\dropdown-menu.min.css" />
-    <Content Include="static\css\dropdown-menu.css" />
-    <Content Include="static\css\menu\dcmegamenu.css" />
-    <Content Include="static\css\menu\dcverticalmegamenu.css" />
-    <Content Include="static\css\menu\images\arrow_off.png" />
-    <Content Include="static\css\menu\images\arrow_on.png" />
-    <Content Include="static\css\menu\images\arrow_right.png" />
-    <Content Include="static\css\menu\images\arrow_white.png" />
-    <Content Include="static\css\menu\skins\black.css" />
-    <Content Include="static\css\menu\skins\blue.css" />
-    <Content Include="static\css\menu\skins\green.css" />
-    <Content Include="static\css\menu\skins\grey.css" />
-    <Content Include="static\css\menu\skins\images\arrow.png" />
-    <Content Include="static\css\menu\skins\images\arrow_off.png" />
-    <Content Include="static\css\menu\skins\images\arrow_on.png" />
-    <Content Include="static\css\menu\skins\images\bg_black.png" />
-    <Content Include="static\css\menu\skins\images\bg_blue.png" />
-    <Content Include="static\css\menu\skins\images\bg_green.png" />
-    <Content Include="static\css\menu\skins\images\bg_grey.png" />
-    <Content Include="static\css\menu\skins\images\bg_light_blue.png" />
-    <Content Include="static\css\menu\skins\images\bg_mega_hdr.png" />
-    <Content Include="static\css\menu\skins\images\bg_mega_hdr_full.png" />
-    <Content Include="static\css\menu\skins\images\bg_mega_hdr_on.png" />
-    <Content Include="static\css\menu\skins\images\bg_orange.png" />
-    <Content Include="static\css\menu\skins\images\bg_red.png" />
-    <Content Include="static\css\menu\skins\images\bg_sub.png" />
-    <Content Include="static\css\menu\skins\images\bg_sub_left.png" />
-    <Content Include="static\css\menu\skins\images\bg_white.png" />
-    <Content Include="static\css\menu\skins\light_blue.css" />
-    <Content Include="static\css\menu\skins\orange.css" />
-    <Content Include="static\css\menu\skins\red.css" />
-    <Content Include="static\css\menu\skins\white.css" />
-    <Content Include="static\css\site.min.css" />
-    <Content Include="static\css\slider\slider.min.css" />
-    <Content Include="static\css\slider\slider.css" />
-    <Content Include="static\css\tabs.css" />
-    <Content Include="static\images\advertise\QCAO 1.jpg" />
-    <Content Include="static\images\advertise\Qcao 2.jpg" />
-    <Content Include="static\images\advertise\Qcao 3.jpg" />
-    <Content Include="static\images\advertise\qcao 5.jpg" />
-    <Content Include="static\images\advertise\qcao 6.jpg" />
-    <Content Include="static\images\arrows.gif" />
-    <Content Include="static\images\banner\left-banner.jpg" />
-    <Content Include="static\images\banner\right-banner.jpg" />
-    <Content Include="static\images\bg-menu.png" />
-    <Content Include="static\images\bg33.jpg" />
-    <Content Include="static\images\bg_caidan.jpg" />
-    <Content Include="static\images\bg_header.gif" />
-    <Content Include="static\images\box-heading.jpg" />
-    <Content Include="static\images\button-bg.png" />
-    <Content Include="static\images\delete.png" />
+    <Content Include="content\AdminSite.css" />
+    <Content Include="content\christmas.css" />
+    <Content Include="content\christmas.min.css" />
+    <Content Include="content\header.css" />
+    <Content Include="content\menu\skins\black.min.css" />
+    <Content Include="content\product.css" />
+    <Content Include="content\productstyle.min.css" />
+    <Content Include="content\dropdown-menu.min.css" />
+    <Content Include="content\dropdown-menu.css" />
+    <Content Include="content\menu\dcmegamenu.css" />
+    <Content Include="content\menu\dcverticalmegamenu.css" />
+    <Content Include="content\menu\images\arrow_off.png" />
+    <Content Include="content\menu\images\arrow_on.png" />
+    <Content Include="content\menu\images\arrow_right.png" />
+    <Content Include="content\menu\images\arrow_white.png" />
+    <Content Include="content\menu\skins\black.css" />
+    <Content Include="content\menu\skins\blue.css" />
+    <Content Include="content\menu\skins\green.css" />
+    <Content Include="content\menu\skins\grey.css" />
+    <Content Include="content\menu\skins\images\arrow.png" />
+    <Content Include="content\menu\skins\images\arrow_off.png" />
+    <Content Include="content\menu\skins\images\arrow_on.png" />
+    <Content Include="content\menu\skins\images\bg_black.png" />
+    <Content Include="content\menu\skins\images\bg_blue.png" />
+    <Content Include="content\menu\skins\images\bg_green.png" />
+    <Content Include="content\menu\skins\images\bg_grey.png" />
+    <Content Include="content\menu\skins\images\bg_light_blue.png" />
+    <Content Include="content\menu\skins\images\bg_mega_hdr.png" />
+    <Content Include="content\menu\skins\images\bg_mega_hdr_full.png" />
+    <Content Include="content\menu\skins\images\bg_mega_hdr_on.png" />
+    <Content Include="content\menu\skins\images\bg_orange.png" />
+    <Content Include="content\menu\skins\images\bg_red.png" />
+    <Content Include="content\menu\skins\images\bg_sub.png" />
+    <Content Include="content\menu\skins\images\bg_sub_left.png" />
+    <Content Include="content\menu\skins\images\bg_white.png" />
+    <Content Include="content\menu\skins\light_blue.css" />
+    <Content Include="content\menu\skins\orange.css" />
+    <Content Include="content\menu\skins\red.css" />
+    <Content Include="content\menu\skins\white.css" />
+    <Content Include="content\site.min.css" />
+    <Content Include="content\slider\slider.min.css" />
+    <Content Include="content\slider\slider.css" />
+    <Content Include="content\tabs.css" />
+    <Content Include="Images\advertise\QCAO 1.jpg" />
+    <Content Include="Images\advertise\Qcao 2.jpg" />
+    <Content Include="Images\advertise\Qcao 3.jpg" />
+    <Content Include="Images\advertise\qcao 5.jpg" />
+    <Content Include="Images\advertise\qcao 6.jpg" />
+    <Content Include="Images\arrows.gif" />
+    <Content Include="Images\banner\left-banner.jpg" />
+    <Content Include="Images\banner\right-banner.jpg" />
+    <Content Include="Images\bg-menu.png" />
+    <Content Include="Images\bg33.jpg" />
+    <Content Include="Images\bg_caidan.jpg" />
+    <Content Include="Images\bg_header.gif" />
+    <Content Include="Images\box-heading.jpg" />
+    <Content Include="Images\button-bg.png" />
+    <Content Include="Images\delete.png" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />
-    <Content Include="static\images\about\image001.gif" />
-    <Content Include="static\images\about\image002.gif" />
-    <Content Include="static\images\about\image003.gif" />
-    <Content Include="static\images\about\image004.gif" />
-    <Content Include="static\images\about\image005.gif" />
-    <Content Include="static\images\about\image006.gif" />
-    <Content Include="static\images\about\image007.jpg" />
-    <Content Include="static\images\about\image008.jpg" />
-    <Content Include="static\images\banner\thumbl_728_001.png" />
-    <Content Include="static\images\banner\thumbl_728_002.png" />
-    <Content Include="static\images\banner\thumbl_728_003.png" />
-    <Content Include="static\images\banner\thumbl_728_004.png" />
-    <Content Include="static\images\banner\thumbl_728_005.png" />
-    <Content Include="static\images\flash-demo.jpg" />
-    <Content Include="static\images\goTop.png" />
-    <Content Include="static\images\home.png" />
-    <Content Include="static\images\hot.gif" />
-    <Content Include="static\images\imgbg.jpg" />
-    <Content Include="static\images\input.gif" />
+    <Content Include="Images\about\image001.gif" />
+    <Content Include="Images\about\image002.gif" />
+    <Content Include="Images\about\image003.gif" />
+    <Content Include="Images\about\image004.gif" />
+    <Content Include="Images\about\image005.gif" />
+    <Content Include="Images\about\image006.gif" />
+    <Content Include="Images\about\image007.jpg" />
+    <Content Include="Images\about\image008.jpg" />
+    <Content Include="Images\banner\thumbl_728_001.png" />
+    <Content Include="Images\banner\thumbl_728_002.png" />
+    <Content Include="Images\banner\thumbl_728_003.png" />
+    <Content Include="Images\banner\thumbl_728_004.png" />
+    <Content Include="Images\banner\thumbl_728_005.png" />
+    <Content Include="Images\flash-demo.jpg" />
+    <Content Include="Images\goTop.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\hot.gif" />
+    <Content Include="Images\imgbg.jpg" />
+    <Content Include="Images\input.gif" />
     <Content Include="Pages\AboutPage.aspx" />
     <Content Include="Pages\ContactPage.aspx" />
     <Content Include="pinduphong.swf" />
-    <Content Include="static\images\iPad_5_release_date.jpg" />
-    <Content Include="static\images\line_banner.png" />
-    <Content Include="static\images\line_banner_black.png" />
-    <Content Include="static\images\loading2.gif" />
-    <Content Include="static\images\logo horizontal.gif" />
-    <Content Include="static\images\logo_X.png" />
-    <Content Include="static\images\main-shining.jpg" />
-    <Content Include="static\images\nolines_minus.png" />
-    <Content Include="static\images\repeat.png" />
-    <Content Include="static\images\slide-arrow.gif" />
+    <Content Include="Images\iPad_5_release_date.jpg" />
+    <Content Include="Images\line_banner.png" />
+    <Content Include="Images\line_banner_black.png" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\main-shining.jpg" />
+    <Content Include="Images\nolines_minus.png" />
+    <Content Include="Images\repeat.png" />
+    <Content Include="Images\slide-arrow.gif" />
     <Content Include="Scripts\ddaccordion.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
@@ -275,7 +315,7 @@
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Services\CategoryService.asmx" />
     <Content Include="slides.xml" />
-    <Content Include="static\images\spinner.gif" />
+    <Content Include="Images\spinner.gif" />
     <Content Include="MJ12_150F160CCAC887085409B2912DE35AD7.txt" />
     <Content Include="Pages\CartPage.aspx" />
     <Content Include="Admin\Pages\MetaEntry.aspx" />
@@ -298,70 +338,69 @@
     <Content Include="Scripts\script_jcarousellite.js" />
     <Content Include="Scripts\smartpaginator.js" />
     <Content Include="sitemap.xml" />
-    <Content Include="static\css\productstyle.css" />
-    <Content Include="static\images\addToCart.png" />
-    <Content Include="static\images\arrow-bg.png" />
-    <Content Include="static\images\banner\18215261315520131895753485182.jpg" />
-    <Content Include="static\images\banner\18443816620131078274660184.png" />
-    <Content Include="static\images\banner\thumbl_980x340_006.png" />
-    <Content Include="static\images\banner\thumbl_980x340_007.png" />
-    <Content Include="static\images\banner\thumbl_980x340_008.png" />
-    <Content Include="static\images\box-cart.gif" />
-    <Content Include="static\images\box-head-bg.gif" />
-    <Content Include="static\images\collapse-small-blue-Shapes4FREE.png" />
-    <Content Include="static\images\expand-small-blue-Shapes4FREE.png" />
-    <Content Include="static\images\GPKD.jpg" />
-    <Content Include="static\images\grad-bg.gif" />
-    <Content Include="static\images\header_user_bg.gif" />
-    <Content Include="static\images\header_user_info_shadow.gif" />
-    <Content Include="static\images\image-background.gif" />
-    <Content Include="static\images\list-item-tail.gif" />
-    <Content Include="static\images\menu-bg.png" />
-    <Content Include="static\images\menu-footer.png" />
-    <Content Include="static\images\menu-header.png" />
-    <Content Include="static\images\menu-tail.gif" />
-    <Content Include="static\images\nav_normal_bg.png" />
-    <Content Include="static\images\search-icon.gif" />
-    <Content Include="static\images\shopping_cart_webshop.gif" />
-    <Content Include="static\css\jquery.jqzoom.css" />
-    <Content Include="static\css\tabify.css" />
-    <Content Include="static\css\Site.css" />
+    <Content Include="content\productstyle.css" />
+    <Content Include="Images\addToCart.png" />
+    <Content Include="Images\arrow-bg.png" />
+    <Content Include="Images\banner\18215261315520131895753485182.jpg" />
+    <Content Include="Images\banner\18443816620131078274660184.png" />
+    <Content Include="Images\banner\thumbl_980x340_006.png" />
+    <Content Include="Images\banner\thumbl_980x340_007.png" />
+    <Content Include="Images\banner\thumbl_980x340_008.png" />
+    <Content Include="Images\box-cart.gif" />
+    <Content Include="Images\box-head-bg.gif" />
+    <Content Include="Images\collapse-small-blue-Shapes4FREE.png" />
+    <Content Include="Images\expand-small-blue-Shapes4FREE.png" />
+    <Content Include="Images\GPKD.jpg" />
+    <Content Include="Images\grad-bg.gif" />
+    <Content Include="Images\header_user_bg.gif" />
+    <Content Include="Images\header_user_info_shadow.gif" />
+    <Content Include="Images\image-background.gif" />
+    <Content Include="Images\list-item-tail.gif" />
+    <Content Include="Images\menu-bg.png" />
+    <Content Include="Images\menu-footer.png" />
+    <Content Include="Images\menu-header.png" />
+    <Content Include="Images\menu-tail.gif" />
+    <Content Include="Images\nav_normal_bg.png" />
+    <Content Include="Images\search-icon.gif" />
+    <Content Include="Images\shopping_cart_webshop.gif" />
+    <Content Include="content\jquery.jqzoom.css" />
+    <Content Include="content\tabify.css" />
+    <Content Include="content\site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="static\css\smartpaginator.css" />
-    <Content Include="static\images\logo.png" />
-    <Content Include="static\response\1024.css" />
-    <Content Include="static\response\10cols.css" />
-    <Content Include="static\response\11cols.css" />
-    <Content Include="static\response\12cols.css" />
-    <Content Include="static\response\2cols.css" />
-    <Content Include="static\response\3cols.css" />
-    <Content Include="static\response\480.css" />
-    <Content Include="static\response\4cols.css" />
-    <Content Include="static\response\5cols.css" />
-    <Content Include="static\response\6cols.css" />
-    <Content Include="static\response\768.css" />
-    <Content Include="static\response\7cols.css" />
-    <Content Include="static\response\8cols.css" />
-    <Content Include="static\response\9cols.css" />
-    <Content Include="static\response\col.css" />
-    <Content Include="static\response\1024.min.css" />
-    <Content Include="static\response\10cols.min.css" />
-    <Content Include="static\response\11cols.min.css" />
-    <Content Include="static\response\12cols.min.css" />
-    <Content Include="static\response\2cols.min.css" />
-    <Content Include="static\response\3cols.min.css" />
-    <Content Include="static\response\480.min.css" />
-    <Content Include="static\response\4cols.min.css" />
-    <Content Include="static\response\5cols.min.css" />
-    <Content Include="static\response\6cols.min.css" />
-    <Content Include="static\response\768.min.css" />
-    <Content Include="static\response\7cols.min.css" />
-    <Content Include="static\response\8cols.min.css" />
-    <Content Include="static\response\9cols.min.css" />
-    <Content Include="static\response\col.min.css" />
-    <Content Include="static\response\html5reset.css" />
-    <Content Include="static\response\responsivegridsystem.css" />
+    <Content Include="content\smartpaginator.css" />
+    <Content Include="content\response\1024.css" />
+    <Content Include="content\response\10cols.css" />
+    <Content Include="content\response\11cols.css" />
+    <Content Include="content\response\12cols.css" />
+    <Content Include="content\response\2cols.css" />
+    <Content Include="content\response\3cols.css" />
+    <Content Include="content\response\480.css" />
+    <Content Include="content\response\4cols.css" />
+    <Content Include="content\response\5cols.css" />
+    <Content Include="content\response\6cols.css" />
+    <Content Include="content\response\768.css" />
+    <Content Include="content\response\7cols.css" />
+    <Content Include="content\response\8cols.css" />
+    <Content Include="content\response\9cols.css" />
+    <Content Include="content\response\col.css" />
+    <Content Include="content\response\1024.min.css" />
+    <Content Include="content\response\10cols.min.css" />
+    <Content Include="content\response\11cols.min.css" />
+    <Content Include="content\response\12cols.min.css" />
+    <Content Include="content\response\2cols.min.css" />
+    <Content Include="content\response\3cols.min.css" />
+    <Content Include="content\response\480.min.css" />
+    <Content Include="content\response\4cols.min.css" />
+    <Content Include="content\response\5cols.min.css" />
+    <Content Include="content\response\6cols.min.css" />
+    <Content Include="content\response\768.min.css" />
+    <Content Include="content\response\7cols.min.css" />
+    <Content Include="content\response\8cols.min.css" />
+    <Content Include="content\response\9cols.min.css" />
+    <Content Include="content\response\col.min.css" />
+    <Content Include="content\response\html5reset.css" />
+    <Content Include="content\response\responsivegridsystem.css" />
     <Content Include="template\shopcarttemplate.htm" />
     <Content Include="third-party\jtable\extensions\jquery.jtable.aspnetpagemethods.js" />
     <Content Include="third-party\jtable\extensions\jquery.jtable.aspnetpagemethods.min.js" />
@@ -1365,6 +1404,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\Combres.cs" />
     <Compile Include="CMS.asmx.cs">
       <DependentUpon>CMS.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -1636,8 +1676,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\highlight-products\" />
-    <Folder Include="static\images\products\new\" />
-    <Folder Include="static\images\products\thumbs\new\" />
+    <Folder Include="Images\products\new\" />
+    <Folder Include="Images\products\thumbs\new\" />
     <Folder Include="third-party\tiny_mce\uploads\" />
   </ItemGroup>
   <ItemGroup>
@@ -1654,8 +1694,10 @@
     <Content Include="VisitorCounter.ashx" />
     <Content Include="Admin\Web.config" />
     <Content Include="packages.config" />
+    <None Include="combres.readme" />
     <None Include="Scripts\jquery.cycle2.js.map" />
-    <None Include="static\Fonts\ANTON.ttf" />
+    <None Include="Scripts\jquery.min.map" />
+    <None Include="Fonts\ANTON.ttf" />
     <None Include="third-party\jtable\themes\basic\jtable_basic.less" />
     <None Include="third-party\jtable\themes\jqueryui\jtable_jqueryui.less" />
     <None Include="third-party\jtable\themes\jtable_theme_base.less" />
@@ -1824,7 +1866,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6644</DevelopmentServerPort>
+          <DevelopmentServerPort>9581</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

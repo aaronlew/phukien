@@ -4,9 +4,9 @@
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
-      <link rel="stylesheet" href="/static/css/jquery.jqzoom.css" type="text/css" />
-    <link rel="stylesheet" href="/static/css/tabify.css" type="text/css" />
-    <link rel="stylesheet" href="/static/css/product.css" type="text/css" />
+      <link rel="stylesheet" href="/content/jquery.jqzoom.css" type="text/css" />
+    <link rel="stylesheet" href="/content/tabify.css" type="text/css" />
+    <link rel="stylesheet" href="/content/product.css" type="text/css" />
     <script src="/Scripts/jquery-migrate-1.2.1.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.jqzoom-core.js" type="text/javascript"></script>
     <script src="/Scripts/jquery.tabify.js" type="text/javascript"></script>

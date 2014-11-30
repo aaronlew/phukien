@@ -2,8 +2,8 @@
     Inherits="GiaPhuc.Admin.Pages.Pages_ProductManager" CodeBehind="ProductManager.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <link href="/static/css/tabs.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/smartpaginator.css" rel="stylesheet" type="text/css" />
+    <link href="/content/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="/content/smartpaginator.css" rel="stylesheet" type="text/css" />
     <script src="/Scripts/template/jquery-jtemplates.js" type="text/javascript"></script>
     <script src="/Scripts/template/smartpaginator.js" type="text/javascript"></script>
     <script src="/Admin/Scripts/vm/handler.js" type="text/javascript"></script>

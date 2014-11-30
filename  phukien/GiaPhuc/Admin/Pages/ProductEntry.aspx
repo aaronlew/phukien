@@ -2,7 +2,7 @@
     Inherits="GiaPhuc.Admin.Pages.PagesProductEntry" CodeBehind="ProductEntry.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <link rel="stylesheet" href="/static/css/tabify.css" type="text/css" />
+    <link rel="stylesheet" href="/content/tabify.css" type="text/css" />
     <link href="/third-party/tiny_mce/themes/advanced/skins/default/ui.css" rel="Stylesheet"
         type="text/css" />
     <link href="/third-party/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css"

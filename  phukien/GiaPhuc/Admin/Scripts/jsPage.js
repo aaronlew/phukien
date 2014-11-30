@@ -6,7 +6,7 @@ var serviceDelete = "/CMS.asmx/DeletePage";
 $(document).ready(function () {
 
     function waiting(tag) {
-        tag.empty().html('<center><img src="/static/Images/spinner.gif" alt="spinner" style="margin: auto; padding: 0; height: auto;" /><p>If the data are loaded too long, please press F5 to reload your browser.</p><center>');
+        tag.empty().html('<center><img src="/images/spinner.gif" alt="spinner" style="margin: auto; padding: 0; height: auto;" /><p>If the data are loaded too long, please press F5 to reload your browser.</p><center>');
     }
 
     function load(pageNumber, init) {

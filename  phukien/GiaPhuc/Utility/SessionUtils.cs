@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 using GiaPhuc.App_Data;
+using MichaelKappel.Net.CSharp;
 using phukienipadx.Bl;
 using phukienipadx.Bl.Models;
-using System;
-using System.Web.Caching;
-using MichaelKappel.Net.CSharp;
 
 namespace GiaPhuc.Utility
 {
     public class SessionUtils
     {
         #region Common Methods
+
         public static T Get<T>(string key)
         {
             if (Exist(key))
-                return (T)HttpContext.Current.Session[key];
+                return (T) HttpContext.Current.Session[key];
             return default(T);
         }
 
@@ -26,7 +25,6 @@ namespace GiaPhuc.Utility
 
         public static void Clear(string key)
         {
-
             HttpContext.Current.Session.Remove(key);
         }
 
@@ -39,11 +37,23 @@ namespace GiaPhuc.Utility
         {
             return HttpContext.Current.Session[key] != null;
         }
+
         #endregion
     }
 
     public class SessionManager
     {
+        private const string CategoriesConstant = "Categories";
+
+        private const string TopicsConstant = "Topics";
+
+        private const string AllCategoriesConstant = "AllCategories";
+
+        private const string SpecProductsConstant = "SpecProducts";
+
+        private const string DiscountProductsConstant = "DiscountProducts";
+        private static readonly object obj = new object();
+
         public static IDictionary<int, ShopCart> Cart
         {
             get
@@ -57,12 +67,11 @@ namespace GiaPhuc.Utility
             set { SessionUtils.Set("Cart", value); }
         }
 
-        const string CategoriesConstant = "Categories";
         public static IList<CategoryInfo> Categories
         {
             get
             {
-                IList<CategoryInfo> categories = HelperCache.Get<IList<CategoryInfo>>(CategoriesConstant);
+                var categories = HelperCache.Get<IList<CategoryInfo>>(CategoriesConstant);
                 if (categories == null)
                     lock (obj)
                     {
@@ -76,12 +85,11 @@ namespace GiaPhuc.Utility
             }
         }
 
-        const string TopicsConstant = "Topics";
         public static IList<PageInfo> Topics
         {
             get
             {
-                IList<PageInfo> pages = HelperCache.Get<IList<PageInfo>>(TopicsConstant);
+                var pages = HelperCache.Get<IList<PageInfo>>(TopicsConstant);
                 if (pages == null)
                     lock (obj)
                     {
@@ -95,14 +103,11 @@ namespace GiaPhuc.Utility
             }
         }
 
-        static object obj = new object();
-        const string AllCategoriesConstant = "AllCategories";
-
         public static IList<CategoryInfo> AllCategories
         {
             get
             {
-                IList<CategoryInfo> categories = HelperCache.Get<IList<CategoryInfo>>(AllCategoriesConstant);
+                var categories = HelperCache.Get<IList<CategoryInfo>>(AllCategoriesConstant);
                 if (categories == null)
                     lock (obj)
                     {
@@ -116,13 +121,11 @@ namespace GiaPhuc.Utility
             }
         }
 
-        const string SpecProductsConstant = "SpecProducts";
-
         public static IList<ProductInfo> SpecProducts
         {
             get
             {
-                IList<ProductInfo> products = HelperCache.Get<IList<ProductInfo>>(SpecProductsConstant);
+                var products = HelperCache.Get<IList<ProductInfo>>(SpecProductsConstant);
                 if (products == null)
                     lock (obj)
                     {
@@ -136,13 +139,11 @@ namespace GiaPhuc.Utility
             }
         }
 
-        const string DiscountProductsConstant = "DiscountProducts";
-
         public static IList<ProductInfo> DiscountProducts
         {
             get
             {
-                IList<ProductInfo> products = HelperCache.Get<IList<ProductInfo>>(DiscountProductsConstant);
+                var products = HelperCache.Get<IList<ProductInfo>>(DiscountProductsConstant);
                 if (products == null)
                     lock (obj)
                     {

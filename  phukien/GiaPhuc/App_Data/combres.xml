@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  This file contains basic settings needed for most web apps.
+  For full Combres settings (with explanation), refer to the sample definition file: combres_full_with_annotation.xml
+  Also, refer to Combres' documentation: http://combres.codeplex.com/documentation	
+-->
+<combres xmlns='urn:combres'>
+  <filters>
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
+  </filters>
+  <resourceSets url="~/combres.axd"
+                defaultDuration="30"
+                defaultVersion="auto"
+                defaultDebugEnabled="false"
+                defaultIgnorePipelineWhenDebug="true"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="60"
+                >
+    <resourceSet name="siteCss" type="css">
+      <resource path="~/content/site.css" />
+      <resource path="~/content/header.css" />
+      <resource path="~/content/productstyle.css" />
+    </resourceSet>
+    <resourceSet name="responsiveCss"
+                 type="css">
+      <resource path="~/content/response/1024.min.css" />
+      <resource path="~/content/response/480.min.css" />
+      <resource path="~/content/response/768.min.css" />
+      <resource path="~/content/response/480.min.css" />
+      <resource path="~/content/response/2cols.min.css" />
+      <resource path="~/content/response/3cols.min.css" />
+      <resource path="~/content/response/4cols.min.css" />
+      <resource path="~/content/response/6cols.min.css" />
+      <resource path="~/content/response/7cols.min.css" />
+      <resource path="~/content/response/8cols.min.css" />
+      <resource path="~/content/response/col.min.css" />
+      <resource path="~/content/menu/skins/black.min.css" />
+      <resource path="~/content/slider/slider.min.css" />
+      <resource path="~/content/slider/slider.min.css" />
+    </resourceSet>
+    <resourceSet name="siteJs" type="js">
+      <resource path="~/scripts/jquery-1.9.0.min.js" />
+      <resource path="~/scripts/jquery.lazy.min.js" />
+      <resource path="~/scripts/menu/jquery.hoverIntent.minified.js" />
+      <resource path="~/scripts/menu/jquery.dcmegamenu.1.3.3.min.js" />
+      <resource path="~/scripts/header.js" />
+    </resourceSet>
+    <resourceSet name="defaultJs"
+                 type="js">
+      <resource path="~/scripts/jquery.cycle2.min.js" />
+      <resource path="~/scripts/jquery.cycle2.carousel.min.js" />
+      <resource path="~/scripts/kenburns.min.js" />
+      <resource path="~/scripts/ipadx.min.js" />
+    </resourceSet>
+  </resourceSets>
+</combres>

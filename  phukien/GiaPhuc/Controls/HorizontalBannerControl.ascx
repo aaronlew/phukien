@@ -17,7 +17,7 @@
                             <div class="product-cell">
                                 <div class="col span_1_of_2">
                                     <a href="#">
-                                        <img src="../static/images/about/image001.gif" alt="" /></a>
+                                        <img src="../images/about/image001.gif" alt="" /></a>
                                 </div>
                                 <div class="col span_1_of_2">
                                     <div class="description">
@@ -41,7 +41,7 @@
                             <div class="product-cell">
                                 <div class="col span_1_of_2">
                                     <a href="#">
-                                        <img src="../static/images/about/image001.gif" alt="" /></a>
+                                        <img src="../images/about/image001.gif" alt="" /></a>
                                 </div>
                                 <div class="col span_1_of_2">
                                     <div class="description">
@@ -69,5 +69,5 @@
     </div>
 </div>--%>
 <div class="wrapper">
-    <img src="../static/images/flash-demo.jpg" alt="tinh tế" />
+    <img src="/images/flash-demo.jpg" alt="tinh tế" />
 </div>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminSite.Master" AutoEventWireup="true" CodeBehind="CategoryManager.aspx.cs" Inherits="GiaPhuc.Admin.Pages.CategoryManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="/static/css/smartpaginator.css" rel="stylesheet" type="text/css" />
+    <link href="/content/smartpaginator.css" rel="stylesheet" type="text/css" />
 
     <script src="/Scripts/jquery-jtemplates.js" type="text/javascript"></script>
 

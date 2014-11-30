@@ -5,7 +5,7 @@
     </div>
     <div class="content">
         <%--<div class="main-pic">
-            <img src="/static/images/iPad_5_release_date.jpg" alt="ipad 5" title="ipad 5" /></div>--%>
+            <img src="/images/iPad_5_release_date.jpg" alt="ipad 5" title="ipad 5" /></div>--%>
         <div id="kenburns-slideshow">
         </div>
         <div class="shadow">

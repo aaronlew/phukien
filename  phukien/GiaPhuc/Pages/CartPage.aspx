@@ -297,7 +297,7 @@
                 var self = this;
                 self.ProductId = ko.observable(0);
                 self.ProductNumber = ko.observable('#');
-                self.ImagePath = ko.observable('/static/images/logo horizontal.gif');
+                self.ImagePath = ko.observable('/images/logo horizontal.gif');
                 self.ProductName = ko.observable('phukienipadx.com');
                 self.Price = ko.observable(9999);
                 self.Quantity = ko.observable(1);

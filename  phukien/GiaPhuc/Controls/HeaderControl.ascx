@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderControl.ascx.cs"
             Inherits="GiaPhuc.Controls.HeaderControl" %>
 <%@ Import Namespace="GiaPhuc.Utility" %>
-<%@ Register Src="~/Controls/SocialControl.ascx" TagName="Social" TagPrefix="uc" %>
+
 <script type="text/javascript">
     $(document).ready(function() {
         var defaultKeyword = 'Nhập từ khóa tìm kiếm';
@@ -26,17 +26,6 @@
 <div class="page-header">
     <div class="main-width">
         <div class="wrapper">
-            <uc:Social ID="social1" runat="server" />
-            <div class="logo">
-                <%--<asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="/static/images/logo_X.png"
-                    ToolTip="phukienipadx.com" AlternateText="Pin dự phòng" Height="86px" HotSpotMode="Navigate">
-                    <asp:RectangleHotSpot Top="0" Left="0" Right="160" Bottom="160" NavigateUrl="/" />
-                </asp:ImageMap>--%>
-                <asp:ImageMap ID="ImageMap2" runat="server" ImageUrl="/images/brand.jpg"
-                              ToolTip="phukienipadx.com" AlternateText="Pin dự phòng" Height="86px" HotSpotMode="Navigate">
-                    <asp:RectangleHotSpot Top="0" Left="0" Right="450" Bottom="163" NavigateUrl="/" />
-                </asp:ImageMap>
-            </div>
             <div class="float-right">
                 <div class="clear">
                 </div>

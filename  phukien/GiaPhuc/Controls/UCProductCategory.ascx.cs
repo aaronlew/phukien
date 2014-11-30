@@ -33,9 +33,9 @@ namespace GiaPhuc.Controls
                     var products = DataSource as List<ProductInfo>;
                     if (products != null && products.Count > 0)
                     {
-                        var htmlBuilder = new StringBuilder("<h2 class='box-heading'>");
-                        htmlBuilder.Append(CategoryName);
-                        htmlBuilder.Append("</h2>");
+                        var htmlBuilder = new StringBuilder("<div class='box-heading'><h2>");
+                        htmlBuilder.AppendFormat("<span>{0}</span>", CategoryName);
+                        htmlBuilder.Append("</h2></div>");
 
                         htmlBuilder.Append("<div class=\"box-categories info\">");
                         foreach (ProductInfo item in products)

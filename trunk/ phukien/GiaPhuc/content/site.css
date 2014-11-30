@@ -1107,7 +1107,7 @@ table .button
 }
 .menu ul
 {
-    padding-left: 15px;
+    padding-left: 20px;
     float: left;
     width: 199px;
 }
@@ -1116,8 +1116,8 @@ table .button
     display: block;
     float: left;
     width: 160px;
-    height: 30px;
-    line-height: 30px;
+    height: 33px;
+    line-height: 33px;
     /*background: url(/images/repeat.png) repeat scroll 0 0 transparent;*/
     background-position: 0 -803px;
 }
@@ -1126,30 +1126,31 @@ table .button
     z-index: 9999;
     font-family: sans-serif;
     font-size: 11pt;
+    font-weight: bold;
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    margin-left: -6px;
-    padding-left: 6px; /* background: url(/images/icon.png) no-repeat 178px -401px; */
+    border-bottom: #3079ed dotted 1px;
     color: #eee;
 }
 
 .menu ul li a.show_back
 {
+    width: 220px;
+    height: 33px;
+    line-height: 33px;
+    margin-left: -10px;
+    padding-left: 10px;
+    color: #000;
     background-position: 170px -401px;
-    height: 30px;
-    line-height: 30px;
-    overflow: hidden;
     background-color: #FFFFFF;
     border-color: #FFC9C9 -moz-use-text-color #FFC9C9 #FFC9C9;
     border-radius: 3px 0 0 3px;
     border-style: solid none solid solid;
     border-width: 1px 0 1px 1px;
     box-shadow: 1px 1px 2px #333333;
-    line-height: 26px;
     text-decoration: none;
-    top: -1px;
-    color: #000;
+    overflow: hidden;
 }
 
 .menu ul div.sub-nav-container
@@ -1162,13 +1163,13 @@ table .button
     box-shadow: 2px 1px 2px #333333;
     z-index: 9999;
     height: auto;
-    left: 160px;
+    left: 220px;
     position: absolute;
     text-align: left;
     top: -10000px;
     min-height: 368px;
     padding: 13px 0 15px 20px;
-    width: 700px;
+    width: 730px;
 }
 .sub-nav-container
 {
@@ -1201,21 +1202,6 @@ table .button
     padding: 0 0 0 10px;
     display: block;
     font-size: 12px;
-}
-
-#social-icons
-{
-    position: absolute;
-    z-index: 5;
-    margin-left: -130px;
-    width: 110px;
-    overflow: hidden;
-    top: 235px;
-    background-color: Navy;
-    padding: 5px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
 }
 
 #posts
@@ -1511,45 +1497,4 @@ backface-visibility gives some performance boosts.*/
     border-bottom: 1px dotted #dedede;
 }
 
-/* Social icon */
-.social-ico
-{
-    float: left;
-    margin-left: 30px;
-}
-.social-ico a
-{
-    overflow: hidden;
-    display: inline-block;
-}
-.social-ico i
-{
-    display: block;
-    width: 48px;
-    height: 48px;
-}
 
-i.ico-facebook
-{
-    background: url(/images/grey/facebook.png) no-repeat;
-}
-i.ico-googplus
-{
-    background: url(/images/grey/google+.png) no-repeat;
-}
-i.ico-twitter
-{
-    background: url(/images/grey/twitter.png) no-repeat;
-}
-i.ico-facebook:hover
-{
-    background: url(/images/colour/facebook.png) no-repeat;
-}
-i.ico-googplus:hover
-{
-    background: url(/images/colour/google+.png) no-repeat;
-}
-i.ico-twitter:hover
-{
-    background: url(/images/colour/twitter.png) no-repeat;
-}

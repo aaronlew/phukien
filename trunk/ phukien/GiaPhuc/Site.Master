@@ -17,9 +17,9 @@
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
     <link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC&subset=latin,vietnamese'
-          rel='stylesheet' type='text/css'/>
+        rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,vietnamese'
-          rel='stylesheet' type='text/css'/>
+        rel='stylesheet' type='text/css' />
     <%= WebExtensions.CombresLink("siteCss") %>
     <%= WebExtensions.CombresLink("responsiveCss") %>
     <%= WebExtensions.CombresLink("siteJs") %>
@@ -35,16 +35,36 @@
             m.parentNode.insertBefore(a, m);
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-41392819-1', 'phukienipadx.com');
+        ga('create', 'UA-41392819-1', 'auto');
         ga('send', 'pageview');
-    
+
+        $(document).ready(function () {
+//            var defaultKeyword = 'Nhập từ khóa tìm kiếm';
+
+            $("#search").keydown(function (event) {
+                var keycode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
+                if (keycode == 13) {
+//                    if ($(this).val() != defaultKeyword)
+                        window.location = "/q/" + $(this).val();
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+
+            $(".box .icon i").click(function () {
+//                if ($("#search").val() != defaultKeyword)
+                    window.location = "/q/" + $("#search").val();
+            });
+        });
+
     </script>
 </head>
 <body>
     <form name="form1" runat="server" submitdisabledcontrols="true">
     <div id="header" class="header">
         <div class="container clearfix">
-            <a href="#" id="logo">
+            <a href="/" id="logo">
                 <img src="/images/smalllogo.png" alt="big logo" />
                 <img class="smaller" src="/Images/logo.png" alt="small logo" /></a>
             <div class="social-ico">
@@ -64,16 +84,17 @@
                     <li><a href='#'>TRANG CHỦ</a></li>
                     <li class='active has-sub'><a href='#'>CHĂM SÓC KHÁCH HÀNG</a>
                         <ul>
-                            <li class='has-sub'><a href='#'>Product 1</a>
+                            <li class='has-sub'><a href='#'>Hướng dẫn</a>
                                 <ul>
-                                    <li><a href='#'>Sub Product</a></li>
-                                    <li><a href='#'>Sub Product</a></li>
+                                    <li><a href='#'>Mua hàng</a></li>
+                                    <li><a href='#'>Sử dụng</a></li>
                                 </ul>
                             </li>
-                            <li class='has-sub'><a href='#'>Product 2</a>
+                            <li class='has-sub'><a href='#'>Chính sách</a>
                                 <ul>
-                                    <li><a href='#'>Sub Product</a></li>
-                                    <li><a href='#'>Sub Product</a></li>
+                                    <li><a href='#'>Chính sách giao hàng</a></li>
+                                    <li><a href='#'>Chính sách đổi trả</a></li>
+                                    <li><a href='#'>Chính sách bảo hành</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -87,7 +108,7 @@
                 <div class="box">
                     <div class="container-3">
                         <span class="icon"><i class="fa fa-search"></i></span>
-                        <input type="search" id="search" placeholder="Tìm kiếm. ví dụ: BAO DA" />
+                        <input type="text" id="search" placeholder="Tìm kiếm. ví dụ: BAO DA" />
                     </div>
                 </div>
             </div>

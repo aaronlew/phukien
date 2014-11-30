@@ -186,6 +186,7 @@
     <Content Include="Images\grey\vimeo.png" />
     <Content Include="Images\grey\you_tube.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\search.png" />
     <Content Include="Images\smalllogo.png" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />

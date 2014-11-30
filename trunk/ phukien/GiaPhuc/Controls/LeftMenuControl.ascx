@@ -114,11 +114,11 @@
                 {
             %>
             <li class="<%=(first ? "first" : string.Empty) %> mainlist" style="position: static;">
-                <a class="navItem" href="<%=v.url %>" title="<%=v.title %>">
-                    <%=v.title %></a>
+                <a class="navItem" href="<%=v.url %>" title="<%=v.title %>"><span>
+                    <%=v.title %></span></a>
                 <%
                     if (first) first = false;
-                    if (v.children != null && v.children.Count() > 0)
+                    if (v.children != null && v.children.Any())
                     {
                         var ndChild = v.children.Select(nd => new
                         {
@@ -137,7 +137,7 @@
                         <dt><a href="<%=subItem.url %>" title="<%=subItem.title %>">
                             <%= subItem.title %></a></dt>
                         <%
-                            if (subItem.children != null && subItem.children.Count() > 0)
+                            if (subItem.children != null && subItem.children.Any())
                             {
                                 var ndChildOfChild = subItem.children.Select(nd => new
                                 {

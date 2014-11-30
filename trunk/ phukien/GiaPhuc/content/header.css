@@ -31,7 +31,8 @@
 }
 .header .container
 {
-    max-width: 900px;
+    max-width: 950px;
+    height: inherit;
     position: relative;
     margin: 0 auto;
 }
@@ -102,6 +103,19 @@
 {
     line-height: 40px;
 }
+.header #social-icons
+{
+    position: absolute;
+    z-index: 5;
+    margin-left: -130px;
+    width: 110px;
+    overflow: hidden;
+    background-color: Navy;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 
 @media all and (max-width: 660px)
 {
@@ -138,9 +152,11 @@
     right: 0;
     margin-right: 80px;
     color: #888;
-    background: #fff;
     padding: 8px 0;
-    z-index: 999;
+}
+.bar .box
+{
+    float: left;
 }
 .address
 {
@@ -150,10 +166,6 @@
 div.clear
 {
     clear: both;
-}
-.box
-{
-    float: left;
 }
 .container-3
 {
@@ -170,7 +182,7 @@ div.clear
     border: 1px solid #eee;
     font-size: 10pt;
     float: left;
-    padding-left: 45px;
+    padding-left: 32px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -211,6 +223,7 @@ div.clear
     -ms-transition: all .55s ease;
     -o-transition: all .55s ease;
     transition: all .55s ease;
+    background: url(/images/search.png) no-repeat;
     /*background: url(search-2-16.png) no-repeat;*/
 }
 .container-3 input#search:focus, .container-3 input#search:active
@@ -305,7 +318,7 @@ div.clear
 #cssmenu > ul > li > a
 {
     padding: 16px;
-    font-family: 'Patrick Hand SC', sans-serif !important;
+    font-family: sans-serif !important;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
@@ -390,9 +403,9 @@ div.clear
     padding: 10px 20px;
     width: 160px;
     font-size: 12px;
-    background: #333333;
+    background: #efefef;
     text-decoration: none;
-    color: #dddddd;
+    color: #000;
     -webkit-transition: color .2s ease;
     -moz-transition: color .2s ease;
     -ms-transition: color .2s ease;
@@ -401,7 +414,7 @@ div.clear
 }
 #cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover
 {
-    color: #ffffff;
+    color: #4169e1;
 }
 #cssmenu ul ul li.has-sub > a::after
 {
@@ -410,8 +423,8 @@ div.clear
     right: 10px;
     width: 4px;
     height: 4px;
-    border-bottom: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
     content: "";
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
@@ -430,12 +443,12 @@ div.clear
     left: 10px;
     border-bottom: 0;
     border-right: 0;
-    border-top: 1px solid #dddddd;
-    border-left: 1px solid #dddddd;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
 }
 #cssmenu ul ul li.has-sub:hover > a::after
 {
-    border-color: #ffffff;
+    border-color: #4169e1;
 }
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px)
 {
@@ -570,4 +583,49 @@ div.clear
     {
         display: none;
     }
+}
+
+/* Social icon */
+.social-ico
+{
+    position: absolute;
+    bottom: 0;
+    left: 170px;
+}
+.social-ico a
+{
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 5px;
+}
+.social-ico i
+{
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+i.ico-facebook
+{
+    background: url(/images/grey/facebook.png) no-repeat;
+}
+i.ico-googplus
+{
+    background: url(/images/grey/google+.png) no-repeat;
+}
+i.ico-twitter
+{
+    background: url(/images/grey/twitter.png) no-repeat;
+}
+i.ico-facebook:hover
+{
+    background: url(/images/colour/facebook.png) no-repeat;
+}
+i.ico-googplus:hover
+{
+    background: url(/images/colour/google+.png) no-repeat;
+}
+i.ico-twitter:hover
+{
+    background: url(/images/colour/twitter.png) no-repeat;
 }

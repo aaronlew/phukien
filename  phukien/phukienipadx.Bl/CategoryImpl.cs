@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using phukienipadx.Bl.Models;
 using phukienipadx.Dal;
@@ -19,13 +18,13 @@ namespace phukienipadx.Bl
             using (var db = new phukienipadxContext())
             {
                 IQueryable<CategoryInfo> query = from x in db.categories
-                    join y in db.categories_descriptions
-                        on x.categories_id equals y.categories_id
-                    where x.categories_id > 0
-                    orderby x.sort_order
-                    select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url);
+                                                 join y in db.categories_descriptions
+                                                     on x.categories_id equals y.categories_id
+                                                 where x.categories_id > 0
+                                                 orderby x.sort_order
+                                                 select new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url);
 
-// ReSharper disable once SuspiciousTypeConversion.Global
+                // ReSharper disable once SuspiciousTypeConversion.Global
                 List<CategoryInfo> allCategories = query as List<CategoryInfo> ?? query.ToList();
                 IEnumerable<CategoryInfo> mainCategories = allCategories.Where(x => x.ParentId == 0);
                 List<CategoryInfo> categoryModels = mainCategories as List<CategoryInfo> ?? mainCategories.ToList();
@@ -70,25 +69,25 @@ namespace phukienipadx.Bl
             var categoryDescriptionRep = new categories_descriptionsRepository();
 
             var queryProducts = from x in productRep.Findproducts(x => x.products_status == 1)
-                join y in productDescriptionRep.GetAllproducts_descriptions()
-                    on x.products_id equals y.products_id
-                select new {x, y};
+                                join y in productDescriptionRep.GetAllproducts_descriptions()
+                                    on x.products_id equals y.products_id
+                                select new { x, y };
 
             if (categoryId == 0)
             {
                 return (from item in queryProducts
-                    join y in categoryRep.GetAllcategories()
-                        on item.x.master_categories_id equals y.categories_id
-                    join z in categoryDescriptionRep.GetAllcategories_descriptions()
-                        on item.x.master_categories_id equals z.categories_id
-                    where y.home_order != null
-                    orderby y.home_order, item.x.products_price descending, item.x.products_model, item.y.products_name
-                    group item by z
-                    into g
-                    select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
-                    {
-                        Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
-                    }).ToList();
+                        join y in categoryRep.GetAllcategories()
+                            on item.x.master_categories_id equals y.categories_id
+                        join z in categoryDescriptionRep.GetAllcategories_descriptions()
+                            on item.x.master_categories_id equals z.categories_id
+                        where y.home_order != null
+                        orderby y.home_order, item.x.products_price descending, item.x.products_model, item.y.products_name
+                        group item by z
+                            into g
+                            select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
+                            {
+                                Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                            }).ToList();
             }
             categories_descriptions categoryDescription =
                 categoryDescriptionRep.GetSinglecategories_descriptions(x => x.categories_id == categoryId
@@ -119,10 +118,10 @@ namespace phukienipadx.Bl
             using (var db = new phukienipadxContext())
             {
                 var queryProducts = from x in db.products
-                    join y in db.products_descriptions
-                        on x.products_id equals y.products_id
-                    where x.products_status == 1
-                    select new {x, y};
+                                    join y in db.products_descriptions
+                                        on x.products_id equals y.products_id
+                                    where x.products_status == 1
+                                    select new { x, y };
 
                 if (categoriesUrl == string.Empty)
                 {
@@ -163,26 +162,53 @@ namespace phukienipadx.Bl
             using (var db = new phukienipadxContext())
             {
                 var queryProducts = from x in db.products
-                    join y in db.products_descriptions
-                        on x.products_id equals y.products_id
-                    where x.products_status == 1
-                    orderby x.products_price descending, x.products_model, y.products_name
-                    select new {x, y};
+                                    join y in db.products_descriptions
+                                        on x.products_id equals y.products_id
+                                    where x.products_status == 1
+                                    orderby x.products_price descending, x.products_model, y.products_name
+                                    select new { x, y };
 
 
-                // Get product list by the category Id
-                return (from item in queryProducts
-                    join z in db.categories_descriptions
-                        on item.x.master_categories_id equals z.categories_id
-                    where item.y.products_name.ToLower().Contains(keyword)
-                          || item.x.products_price.ToString().Contains(keyword)
-                          || (z.categories_name.ToLower().Contains(keyword) && z.language_id == 0)
-                    group item by z
-                    into g
-                    select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
+                // by cate
+                string keyword1 = keyword;
+                var list = (from item in queryProducts
+                            join z in db.categories_descriptions
+                                on item.x.master_categories_id equals z.categories_id
+                            where (item.y.products_name.ToLower().Contains(keyword1)
+                                  || z.categories_name.ToLower().Contains(keyword1))
+                                  && z.language_id == 0
+                            group item by z
+                                into g
+                                select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
+                                {
+                                    Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                                }).ToList();
+                if (list.Count == 0 && keyword.Contains(" "))
+                {
+                    while (keyword.Contains("  "))
+                        keyword = keyword.Replace("  ", " ");
+                    string[] keywords = keyword.Split(' ');
+                    for (int i = 0; i < keywords.Length; i++)
                     {
-                        Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
-                    }).ToList();
+                        for (int j = i + 1; j < keywords.Length; j++)
+                        {
+                            string phrase = keywords[i] + ' ' + keywords[j];
+                            list.InsertRange(0, from item in queryProducts
+                                                join z in db.categories_descriptions
+                                                    on item.x.master_categories_id equals z.categories_id
+                                                where (item.y.products_name.ToLower().Contains(phrase)
+                                                      || z.categories_name.ToLower().Contains(phrase))
+                                                      && z.language_id == 0
+                                                group item by z
+                                                    into g
+                                                    select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
+                                                    {
+                                                        Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                                                    });
+                        }
+                    }
+                }
+                return list;
             }
         }
 
@@ -195,15 +221,15 @@ namespace phukienipadx.Bl
             using (var db = new phukienipadxContext())
             {
                 IEnumerable<CategoryInfo> categories = from x in db.categories
-                    join y in db.categories_descriptions
-                        on x.categories_id equals y.categories_id
-                    where y.language_id == 0
-                    orderby (x.parent_id == 0 ? x.categories_id : x.parent_id), x.sort_order
-                    select
-                        new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url)
-                        {
-                            Active = Convert.ToBoolean(x.categories_status)
-                        };
+                                                       join y in db.categories_descriptions
+                                                           on x.categories_id equals y.categories_id
+                                                       where y.language_id == 0
+                                                       orderby (x.parent_id == 0 ? x.categories_id : x.parent_id), x.sort_order
+                                                       select
+                                                           new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url)
+                                                           {
+                                                               Active = Convert.ToBoolean(x.categories_status)
+                                                           };
 
                 return categories.ToList();
             }
@@ -219,14 +245,14 @@ namespace phukienipadx.Bl
             using (var db = new phukienipadxContext())
             {
                 IEnumerable<CategoryInfo> categories = from x in db.categories
-                    join y in db.categories_descriptions
-                        on x.categories_id equals y.categories_id
-                    where y.language_id == 0 && x.categories_id == id
-                    select
-                        new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url)
-                        {
-                            Active = Convert.ToBoolean(x.categories_status)
-                        };
+                                                       join y in db.categories_descriptions
+                                                           on x.categories_id equals y.categories_id
+                                                       where y.language_id == 0 && x.categories_id == id
+                                                       select
+                                                           new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url)
+                                                           {
+                                                               Active = Convert.ToBoolean(x.categories_status)
+                                                           };
                 return categories.SingleOrDefault();
             }
         }

@@ -6,8 +6,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="cartDiv">
-        <div class="category-caption">
-            <span>GIỎ HÀNG</span></div>
+        <div class="box-heading">
+            <h2><span>GIỎ HÀNG</span></h2></div>
         <div class="shop-cart">
             <table class="tproduct" width='100%' data-bind="visible: lines().length > 0">
                 <thead>
@@ -75,8 +75,7 @@
             <div class="clear" data-bind="visible: lines().length == 0">
                 Không có sản phẩm nào trong giỏ hàng</div>
             <div class="float-right">
-                <a href='<asp:Literal runat="server" Text="<%$Resources:Resources, BackLink%>" />'
-                    class="button"><span>Tiếp tục mua hàng</span></a>
+                <a href="/" alt="phukienipadx.com" class="button"><span>Tiếp tục mua hàng</span></a>
             </div>
             <div class="clear">
             </div>
@@ -84,8 +83,8 @@
         <div class="clear">
         </div>
         <div data-bind="visible: lines().length > 0">
-            <div class="category-caption">
-                <span>THÔNG TIN QUÝ KHÁCH</span></div>
+            <div class="box-heading">
+                <h2><span>THÔNG TIN QUÝ KHÁCH</span></h2></div>
             <table border="0" width="100%" id="custTable">
                 <tbody>
                     <tr>

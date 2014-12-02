@@ -177,6 +177,7 @@ namespace phukienipadx.Bl
                             where (item.y.products_name.ToLower().Contains(keyword1)
                                   || z.categories_name.ToLower().Contains(keyword1))
                                   && z.language_id == 0
+                                                      && z.categories_id > -1
                             group item by z
                                 into g
                                 select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
@@ -188,23 +189,65 @@ namespace phukienipadx.Bl
                     while (keyword.Contains("  "))
                         keyword = keyword.Replace("  ", " ");
                     string[] keywords = keyword.Split(' ');
-                    for (int i = 0; i < keywords.Length; i++)
+                    string phrase = keywords[keywords.Length - 1];
+                    list.InsertRange(0, from item in queryProducts
+                                        join z in db.categories_descriptions
+                                            on item.x.master_categories_id equals z.categories_id
+                                        where (item.y.products_name.ToLower().Contains(phrase)
+                                               || z.categories_name.ToLower().Contains(phrase))
+                                              && z.language_id == 0
+                                                      && z.categories_id > -1
+                                        group item by z
+                                            into g
+                                            select
+                                                new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name,
+                                                    g.Key.categories_url)
+                                                {
+                                                    Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                                                });
+                    for (int i = 0; i < keywords.Length - 1; i++)
                     {
                         for (int j = i + 1; j < keywords.Length; j++)
                         {
-                            string phrase = keywords[i] + ' ' + keywords[j];
+                            phrase = keywords[i] + ' ' + keywords[j];
                             list.InsertRange(0, from item in queryProducts
                                                 join z in db.categories_descriptions
                                                     on item.x.master_categories_id equals z.categories_id
                                                 where (item.y.products_name.ToLower().Contains(phrase)
-                                                      || z.categories_name.ToLower().Contains(phrase))
+                                                       || z.categories_name.ToLower().Contains(phrase))
                                                       && z.language_id == 0
+                                                      && z.categories_id > -1
                                                 group item by z
                                                     into g
-                                                    select new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name, g.Key.categories_url)
-                                                    {
-                                                        Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
-                                                    });
+                                                    select
+                                                        new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name,
+                                                            g.Key.categories_url)
+                                                        {
+                                                            Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                                                        });
+                        }
+                    }
+
+                    if (list.Count == 0)
+                    {
+                        for (int i = keywords.Length - 1; i > 0 && list.Count < 50; i--)
+                        {
+                            phrase = keywords[i];
+                            list.InsertRange(0, from item in queryProducts
+                                                join z in db.categories_descriptions
+                                                    on item.x.master_categories_id equals z.categories_id
+                                                where (item.y.products_name.ToLower().Contains(phrase)
+                                                       || z.categories_name.ToLower().Contains(phrase))
+                                                      && z.language_id == 0
+                                                      && z.categories_id > -1
+                                                group item by z
+                                                    into g
+                                                    select
+                                                        new CategoryInfo(0, g.Key.categories_id, g.Key.categories_name,
+                                                            g.Key.categories_url)
+                                                        {
+                                                            Products = g.Select(item => new ProductInfo(item.x, item.y)).ToList()
+                                                        });
                         }
                     }
                 }

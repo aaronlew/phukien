@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GiaPhuc.SiteMaster" %>
 
 <%--http://www.templatemonster.com/demo/31674.html--%>
-<%@ Register Src="~/Controls/HeaderControl.ascx" TagName="Header" TagPrefix="uc" %>
+<%@ Import Namespace="GiaPhuc.Utility" %>
 <%@ Register Src="~/Controls/PostFooterControl.ascx" TagName="PostFooter" TagPrefix="uc" %>
 <%@ Register Src="~/Controls/FooterControl.ascx" TagName="Footer" TagPrefix="uc" %>
+<%@ Register Src="~/Controls/LeftLayout.ascx" TagName="LeftLayout" TagPrefix="uc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi">
 <head runat="server">
@@ -39,13 +40,13 @@
         ga('send', 'pageview');
 
         $(document).ready(function () {
-//            var defaultKeyword = 'Nhập từ khóa tìm kiếm';
+            //            var defaultKeyword = 'Nhập từ khóa tìm kiếm';
 
             $("#search").keydown(function (event) {
                 var keycode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
                 if (keycode == 13) {
-//                    if ($(this).val() != defaultKeyword)
-                        window.location = "/q/" + $(this).val();
+                    //                    if ($(this).val() != defaultKeyword)
+                    window.location = "/q/" + $(this).val();
                     return false;
                 } else {
                     return true;
@@ -53,8 +54,8 @@
             });
 
             $(".box .icon i").click(function () {
-//                if ($("#search").val() != defaultKeyword)
-                    window.location = "/q/" + $("#search").val();
+                //                if ($("#search").val() != defaultKeyword)
+                window.location = "/q/" + $("#search").val();
             });
         });
 
@@ -81,40 +82,52 @@
             </div>
             <div id='cssmenu'>
                 <ul>
-                    <li><a href='#'>TRANG CHỦ</a></li>
-                    <li class='active has-sub'><a href='#'>CHĂM SÓC KHÁCH HÀNG</a>
+                    <li><a href='/'>TRANG CHỦ</a></li>
+                    <li class='active has-sub'><a href='/customer'>CHĂM SÓC KHÁCH HÀNG</a>
                         <ul>
-                            <li class='has-sub'><a href='#'>Hướng dẫn</a>
+                            <li class='has-sub'><a href='/huong-dan'>Hướng dẫn</a>
                                 <ul>
-                                    <li><a href='#'>Mua hàng</a></li>
-                                    <li><a href='#'>Sử dụng</a></li>
+                                    <li><a href='/mua-hang'>Mua hàng</a></li>
+                                    <li><a href='/su-dung'>Sử dụng</a></li>
                                 </ul>
                             </li>
-                            <li class='has-sub'><a href='#'>Chính sách</a>
+                            <li class='has-sub'><a href='/chinh-sach'>Chính sách</a>
                                 <ul>
-                                    <li><a href='#'>Chính sách giao hàng</a></li>
-                                    <li><a href='#'>Chính sách đổi trả</a></li>
-                                    <li><a href='#'>Chính sách bảo hành</a></li>
+                                    <li><a href='/van-chuyen'>Vận chuyển và giao hàng</a></li>
+                                    <li><a href='/doi-tra'>Chính sách đổi trả</a></li>
+                                    <li><a href='/bao-hanh'>Chính sách bảo hành</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><a href='#'>THANH TOÁN</a></li>
-                    <li><a href='#'>GIỚI THIỆU</a></li>
-                    <li><a href='#'>LIÊN HỆ</a></li>
+                    <li><a href='/gioi-thieu'>GIỚI THIỆU</a></li>
+                    <li><a href='/lien-he'>LIÊN HỆ</a></li>
                 </ul>
+            </div>
+            <div id="contact-info">
+                <div class="location">
+                    <a href="/lien-he">174/47 Thái Phiên • P8, Q11 • TPHCM</a></div>
+                <div class="phone">
+                    <a href="/lien-he">0903.71.20.70 • 0908.61.21.40</a></div>
+                <div class="chat">
+                    <a href="ymsgr:sendim?lieumanhdat1981">Bán hàng</a></div>
             </div>
             <div class="bar">
                 <div class="box">
-                    <div class="container-3">
+                    <div class="container-3 search">
                         <span class="icon"><i class="fa fa-search"></i></span>
                         <input type="text" id="search" placeholder="Tìm kiếm. ví dụ: BAO DA" />
                     </div>
                 </div>
+                <a href="/gio-hang" id="cart-ico" title="Giỏ hàng">Giỏ hàng
+                    <% if (SessionManager.Cart.Count > 0)
+                       { %>
+                    <span style="color: Red">
+                        <%= "(" + SessionManager.Cart.Sum(x => x.Value.Quantity) + ")" %></span>
+                    <% } %>
+                </a>
             </div>
         </div>
-        <!-- /header -->
-        <uc:Header ID="PageHeader1" runat="server"></uc:Header>
     </div>
     <div class="clear">
     </div>
@@ -130,14 +143,14 @@
         <div class="section group">
             <asp:ContentPlaceHolder ID="ArticleContent" runat="server" />
         </div>
-        <div class="section group" style="margin: 0 10px 0 0;">
-            <%--<div class="col span_1_of_5">
+        <div class="section group">
+            <div class="col span_1_of_5">
                 <asp:PlaceHolder ID="pnlMenu1" runat="server"></asp:PlaceHolder>
                 <div style="margin-left: 10px;">
                     <uc:LeftLayout ID="LeftLayout" runat="server" />
                 </div>
-            </div>--%>
-            <div class="col span_4_of_4">
+            </div>
+            <div class="col span_4_of_5">
                 <div id="siteMapPath" style="line-height: 35px">
                     <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="::">
                     </asp:SiteMapPath>

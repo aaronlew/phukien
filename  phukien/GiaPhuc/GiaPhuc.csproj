@@ -142,12 +142,10 @@
     <Content Include="Controls\LeftMenuControl.ascx" />
     <Content Include="Controls\OnTopControl.ascx" />
     <Content Include="Controls\AdvertiseControl.ascx" />
-    <Content Include="Controls\ContactControl.ascx" />
     <Content Include="Controls\FooterControl.ascx" />
     <Content Include="Controls\HorizontalBannerControl.ascx" />
     <Content Include="Controls\LeftLayout.ascx" />
     <Content Include="Controls\LocationControl.ascx" />
-    <Content Include="Controls\HeaderControl.ascx" />
     <Content Include="Controls\PostFooterControl.ascx" />
     <Content Include="Controls\PostsControl.ascx" />
     <Content Include="Controls\SocialControl.ascx" />
@@ -159,6 +157,7 @@
     <Content Include="google5ac0acf9e33b1e0e.html" />
     <Content Include="Handler\MyService.asmx" />
     <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\call.png" />
     <Content Include="Images\cate.png" />
     <Content Include="Images\colour\digg.png" />
     <Content Include="Images\colour\dribbble.png" />
@@ -185,9 +184,12 @@
     <Content Include="Images\grey\twitter.png" />
     <Content Include="Images\grey\vimeo.png" />
     <Content Include="Images\grey\you_tube.png" />
+    <Content Include="Images\location.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\search.png" />
+    <Content Include="Images\shopping_cart.png" />
     <Content Include="Images\smalllogo.png" />
+    <Content Include="Images\yahoomsg.png" />
     <Content Include="Pages\CategoryPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Scripts\ipadx.min.js" />
@@ -1445,13 +1447,6 @@
     <Compile Include="Controls\AdvertiseControl.ascx.designer.cs">
       <DependentUpon>AdvertiseControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ContactControl.ascx.cs">
-      <DependentUpon>ContactControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ContactControl.ascx.designer.cs">
-      <DependentUpon>ContactControl.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Controls\FooterControl.ascx.cs">
       <DependentUpon>FooterControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1479,13 +1474,6 @@
     </Compile>
     <Compile Include="Controls\LocationControl.ascx.designer.cs">
       <DependentUpon>LocationControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HeaderControl.ascx.cs">
-      <DependentUpon>HeaderControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\HeaderControl.ascx.designer.cs">
-      <DependentUpon>HeaderControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\PostFooterControl.ascx.cs">
       <DependentUpon>PostFooterControl.ascx</DependentUpon>

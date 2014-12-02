@@ -29,11 +29,7 @@
         event: 'click',
         fullWidth: true
     });
-
-//    $('#social-icons').scrollToFixed({ marginTop: 10,
-//        zIndex: 99
-//    });
-
+    
     $('#kenburns-slideshow').Kenburns({
         images: [
 	    		"/images/highlight-products/image0.jpg",

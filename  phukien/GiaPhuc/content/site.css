@@ -29,7 +29,6 @@ ul
 
 #layout-contain
 {
-    background-color: White;
     -webkit-box-shadow: 0px 0px 18px -1px aliceblue;
     -moz-box-shadow: 0px 0px 18px -1px aliceblue;
     box-shadow: 0px 0px 18px -1px aliceblue;
@@ -991,7 +990,6 @@ div#header #topmenu ul li:hover a
 {
     width: 70%;
 }
-
 table .button-edit, .button-delete
 {
     width: 16px;
@@ -1338,14 +1336,6 @@ div#header .page-header .wrapper .search-item div
     float: left;
 }
 */
-.search-button a
-{
-    width: 52px;
-    height: 30px;
-    cursor: pointer;
-    display: inline-block;
-    background: url(/images/search-icon.gif) no-repeat;
-}
 
 .info.post
 {
@@ -1359,43 +1349,7 @@ div#header .page-header .wrapper .search-item div
     margin-bottom: 10px;
     border: 1px solid #ededed;
 }
-/* On top address */
-#divAddress
-{
-    height: 38px;
-    overflow: hidden;
-}
-.float-top
-{
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-}
-.onTop
-{
-    height: 38px;
-    border-bottom: 1px solid #ddd;
-    background: #fefefe;
-    background: -moz-linear-gradient(top, #fefefe 0%, #ececec 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #ececec));
-    background: -webkit-linear-gradient(top, #fefefe 0%, #ececec 100%);
-    background: -o-linear-gradient(top, #fefefe 0%, #ececec 100%);
-    background: -ms-linear-gradient(top, #fefefe 0%, #ececec 100%);
-    background: linear-gradient(top, #fefefe 0%, #ececec 100%);
-}
-.onTop div
-{
-    float: left;
-}
-.onTop p
-{
-    line-height: 38px;
-}
-#cssmenu
-{
-    float: right;
-}
-
+/* main page slideshow */
 #kenburns-slideshow
 {
     position: relative;
@@ -1497,4 +1451,12 @@ backface-visibility gives some performance boosts.*/
     border-bottom: 1px dotted #dedede;
 }
 
+/* content */
+#content {
+    margin-bottom: 30px;
+}
 
+/* shopping cart */
+#cartsssDiv .shop-cart a.button {
+    background: #009ae1;
+}

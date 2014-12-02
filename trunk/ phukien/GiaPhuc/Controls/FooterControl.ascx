@@ -28,7 +28,7 @@
             <div>
                 <a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=8694" target="_blank"
                     rel="nofollow">
-                    <img data-src="/images/da-dang-ky-bo-cong-thuong.png" src="/Images/ajax-loader.gif" alt="bo cong thuong" width="160" />
+                    <img data-src="/images/da-dang-ky-bo-cong-thuong.png" src="/images/ajax-loader.gif" alt="bo cong thuong" width="160" />
                 </a>
             </div>
         </div>

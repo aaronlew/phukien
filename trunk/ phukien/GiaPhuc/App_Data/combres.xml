@@ -24,15 +24,13 @@
     <resourceSet name="responsiveCss"
                  type="css">
       <resource path="~/content/response/1024.min.css" />
-      <resource path="~/content/response/480.min.css" />
       <resource path="~/content/response/768.min.css" />
       <resource path="~/content/response/480.min.css" />
       <resource path="~/content/response/2cols.min.css" />
       <resource path="~/content/response/3cols.min.css" />
       <resource path="~/content/response/4cols.min.css" />
+      <resource path="~/content/response/5cols.min.css" />
       <resource path="~/content/response/6cols.min.css" />
-      <resource path="~/content/response/7cols.min.css" />
-      <resource path="~/content/response/8cols.min.css" />
       <resource path="~/content/response/col.min.css" />
       <resource path="~/content/menu/skins/black.min.css" />
       <resource path="~/content/slider/slider.min.css" />
@@ -50,7 +48,7 @@
       <resource path="~/scripts/jquery.cycle2.min.js" />
       <resource path="~/scripts/jquery.cycle2.carousel.min.js" />
       <resource path="~/scripts/kenburns.min.js" />
-      <resource path="~/scripts/ipadx.min.js" />
+      <resource path="~/scripts/ipadx.js" />
     </resourceSet>
   </resourceSets>
 </combres>

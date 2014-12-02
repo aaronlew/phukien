@@ -88,7 +88,7 @@
 {
     height: 50px;
 }
-.header.smaller img
+.header.smaller a#logo img
 {
     margin: 5px 0;
     height: 40px;
@@ -102,6 +102,10 @@
 .header.smaller nav a
 {
     line-height: 40px;
+}
+.header.smaller #cssmenu
+{
+    display: none;
 }
 .header #social-icons
 {
@@ -139,24 +143,82 @@
         font-size: 30px;
     }
 }
+/* contact */
+.header #contact-info
+{
+    position: absolute;
+    bottom: 48px;
+    right: 0;
+    color: #888;
+}
+.header.smaller #contact-info
+{
+    bottom: 10px;
+}
+#contact-info .location, #contact-info .phone, #contact-info .chat
+{
+    display: inline-block;
+}
+#contact-info .location a, #contact-info .phone a, #contact-info .chat a
+{
+    color: #4169e1;
+    font-size: 11pt;
+    padding-left: 22px;
+    height: 22px;
+    display: block;
+    text-decoration: none;
+}
+#contact-info .location a:hover, #contact-info .phone a:hover, #contact-info .chat a:hover
+{
+    color: #f00;
+}
+#contact-info .location a {
+    background: url(/images/location.png) no-repeat;
+}
+#contact-info .phone a
+{
+    margin-left: 22px;
+    background: url(/images/call.png) no-repeat;
+}
+#contact-info .chat a
+{
+    margin-left: 22px;
+    background: url(/images/yahoomsg.png) no-repeat;
+}
+/* search box and shopping cart */
+.header .bar
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #888;
+    padding: 2px 6px;
+}
+.header .bar .box
+{
+    margin-right: 40px;
+    display: inline-block;
+}
+.header.smaller .bar {
+    bottom: -38px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+-moz-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+-webkit-transition: height .3s;
+-moz-transition: height .3s;
+-ms-transition: height .3s;
+-o-transition: height .3s;
+transition: height .3s;
+}
+
+/* Menu */
 #cssmenu
 {
     position: absolute !important;
     top: 0;
     right: 0;
-}
-.bar
-{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 80px;
-    color: #888;
-    padding: 8px 0;
-}
-.bar .box
-{
-    float: left;
 }
 .address
 {
@@ -275,6 +337,7 @@ div.clear
     font-family: Tahoma, 'Open Sans' , sans-serif;
     line-height: 1;
     background: #ffffff;
+    z-index: 999;
 }
 #menu-line
 {
@@ -592,6 +655,10 @@ div.clear
     bottom: 0;
     left: 170px;
 }
+.header.smaller .social-ico
+{
+    left: 150px;
+}
 .social-ico a
 {
     overflow: hidden;
@@ -628,4 +695,15 @@ i.ico-googplus:hover
 i.ico-twitter:hover
 {
     background: url(/images/colour/twitter.png) no-repeat;
+}
+
+/* cart */
+#cart-ico 
+{
+    text-indent: -1000px;
+    background: url(/images/shopping_cart.png) no-repeat;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
 }

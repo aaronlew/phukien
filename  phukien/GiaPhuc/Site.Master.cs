@@ -45,11 +45,11 @@ namespace GiaPhuc
                     var leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
                     pnlMenu.Controls.Add(leftMenuControl);
                 }
-                //else
-                //{
-                //    var leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
-                //    pnlMenu1.Controls.Add(leftMenuControl);
-                //}
+                else
+                {
+                    var leftMenuControl = LoadControl("~/Controls/LeftMenuControl.ascx") as LeftMenuControl;
+                    pnlMenu1.Controls.Add(leftMenuControl);
+                }
             }
         }
     }

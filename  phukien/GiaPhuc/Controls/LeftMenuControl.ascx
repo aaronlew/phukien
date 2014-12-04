@@ -134,9 +134,10 @@
                         foreach (var subItem in ndChild)
                         {
                         %>
-                        <dt><a href="<%=subItem.url %>" title="<%=subItem.title %>">
-                            <%= subItem.title %></a></dt>
-                        <%
+                        <div class="group-menu">
+                            <dt><a href="<%=subItem.url %>" title="<%=subItem.title %>">
+                                <%= subItem.title %></a></dt>
+                            <%
                             if (subItem.children != null && subItem.children.Any())
                             {
                                 var ndChildOfChild = subItem.children.Select(nd => new
@@ -147,14 +148,17 @@
                                 });
                                 foreach (var subOfSubItem in ndChildOfChild)
                                 {
-                        %>
-                        <dd>
-                            <a href="<%=subOfSubItem.url %>" title="<%=subOfSubItem.title %>">
-                                <%= subOfSubItem.title %></a></dd>
-                        <%
+                            %>
+                            <dd>
+                                <a href="<%=subOfSubItem.url %>" title="<%=subOfSubItem.title %>">
+                                    <%= subOfSubItem.title %></a></dd>
+                            <%
                                 }
                             }
                             i++;
+                            %>
+                        </div>
+                        <%
                         }%>
                     </dl>
                 </div>

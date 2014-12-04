@@ -132,7 +132,9 @@
     <Content Include="Admin\template\PageTemplate.htm" />
     <Content Include="Admin\Pages\PageManager.aspx" />
     <Content Include="Admin\Pages\PageEntry.aspx" />
-    <Content Include="App_Data\combres.xml" />
+    <Content Include="App_Data\combres.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\combres_full_with_annotation.xml" />
     <Content Include="App_Data\combres_minimal.xml" />
     <Content Include="BingSiteAuth.xml" />

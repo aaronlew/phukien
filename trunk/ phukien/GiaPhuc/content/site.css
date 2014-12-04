@@ -1113,7 +1113,7 @@ table .button
 {
     display: block;
     float: left;
-    width: 160px;
+    width: 145px;
     height: 33px;
     line-height: 33px;
     /*background: url(/images/repeat.png) repeat scroll 0 0 transparent;*/
@@ -1123,7 +1123,7 @@ table .button
 {
     z-index: 9999;
     font-family: sans-serif;
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: bold;
     overflow: hidden;
     position: relative;
@@ -1134,12 +1134,12 @@ table .button
 
 .menu ul li a.show_back
 {
-    width: 220px;
+    width: 180px;
     height: 33px;
     line-height: 33px;
     margin-left: -10px;
     padding-left: 10px;
-    color: #000;
+    color: #666;
     background-position: 170px -401px;
     background-color: #FFFFFF;
     border-color: #FFC9C9 -moz-use-text-color #FFC9C9 #FFC9C9;
@@ -1161,13 +1161,13 @@ table .button
     box-shadow: 2px 1px 2px #333333;
     z-index: 9999;
     height: auto;
-    left: 220px;
+    left: 180px;
     position: absolute;
     text-align: left;
     top: -10000px;
     min-height: 368px;
     padding: 13px 0 15px 20px;
-    width: 730px;
+    width: 770px;
 }
 .sub-nav-container
 {
@@ -1177,9 +1177,14 @@ table .button
 .menu ul div.sub-nav-container dl
 {
     overflow: hidden;
-    width: 220px;
+    /*width: 220px;*/
 }
-#light_menu div.sub-nav-container dt a
+.sub-nav-container .group-menu 
+{
+    min-width: 24%;
+    float: left;
+}
+.sub-nav-container dt a
 {
     font: bold 11px Verdana,sans-serif;
     margin-right: 20px;
@@ -1190,8 +1195,7 @@ table .button
     display: block;
     font-size: 12px;
 }
-
-#light_menu div.sub-nav-container dd a
+.sub-nav-container dd a
 {
     color: #666666;
     font-weight: normal;

@@ -32,7 +32,7 @@ namespace GiaPhuc.Controls
 
                 if (items.Count > 0)
                 {
-                    StringBuilder html = new StringBuilder("<div class='coffee-title'/><div class='tit'><h2>CAFE - TIN TỨC</h2></div>");
+                    var html = new StringBuilder("<div class='coffee-title'/><div class='tit'><h2>CAFE - TIN TỨC</h2></div>");
                     html.Append("<div class='cycle-pager' id='pager'></div>")
                         .Append("</div>")
                         .Append("<div class='articles' data-cycle-fx='carousel' data-cycle-timeout='0' data-cycle-carousel-visible='3' data-cycle-slides='> div' data-cycle-next='#next' data-cycle-prev='#prev' data-cycle-pager='#pager'>");

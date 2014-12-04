@@ -26,7 +26,7 @@
 
         cssmenu.find('li ul').parent().addClass('has-sub');
 
-        multiTg = function() {
+        var multiTg = function() {
           cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
           cssmenu.find('.submenu-button').on('click', function() {
             $(this).toggleClass('submenu-opened');
@@ -44,7 +44,7 @@
 
         if (settings.sticky === true) cssmenu.css('position', 'fixed');
 
-        resizeFix = function() {
+        var resizeFix = function() {
           if ($( window ).width() > 768) {
             cssmenu.find('ul').show();
           }
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
   $("#cssmenu").prepend("<div id='menu-line'></div>");
 
-var foundActive = false, activeElement, linePosition = 0, menuLine = $("#cssmenu #menu-line"), lineWidth, defaultPosition, defaultWidth;
+var foundActive = false, activeElement, linePosition, menuLine = $("#cssmenu #menu-line"), lineWidth, defaultPosition, defaultWidth;
 
 $("#cssmenu > ul > li").each(function() {
   if ($(this).hasClass('active')) {

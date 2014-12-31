@@ -678,7 +678,7 @@ i.ico-facebook
 }
 i.ico-googplus
 {
-    background: url(/images/grey/google+.png) no-repeat;
+    background: url(/images/grey/googleplus.png) no-repeat;
 }
 i.ico-twitter
 {
@@ -690,7 +690,7 @@ i.ico-facebook:hover
 }
 i.ico-googplus:hover
 {
-    background: url(/images/colour/google+.png) no-repeat;
+    background: url(/images/colour/googleplus.png) no-repeat;
 }
 i.ico-twitter:hover
 {

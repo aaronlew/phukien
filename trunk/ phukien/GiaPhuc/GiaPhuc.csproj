@@ -166,7 +166,7 @@
     <Content Include="Images\colour\facebook.png" />
     <Content Include="Images\colour\flickr.png" />
     <Content Include="Images\colour\forrst.png" />
-    <Content Include="Images\colour\google+.png" />
+    <Content Include="Images\colour\googleplus.png" />
     <Content Include="Images\colour\rss.png" />
     <Content Include="Images\colour\share-this.png" />
     <Content Include="Images\colour\skype.png" />
@@ -179,7 +179,7 @@
     <Content Include="Images\grey\facebook.png" />
     <Content Include="Images\grey\flickr.png" />
     <Content Include="Images\grey\forrst.png" />
-    <Content Include="Images\grey\google+.png" />
+    <Content Include="Images\grey\googleplus.png" />
     <Content Include="Images\grey\rss.png" />
     <Content Include="Images\grey\share-this.png" />
     <Content Include="Images\grey\skype.png" />

@@ -14,7 +14,7 @@
         </div>
         <div class="col span_1_of_4">
             <ul>
-                <li class="title">ABOUT CỬA HÀNG TINH TẾ</li>
+                <li class="title">ABOUT TINH TẾ</li>
                 <li><a href="/gioi-thieu">Cửa hàng Tinh Tế</a></li>
                 <li><a href="/bao-mat">Chính Sách Bảo Mật</a></li>
                 <li><a href="/doi-tac">Tìm Đối Tác</a></li>

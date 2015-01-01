@@ -1464,3 +1464,9 @@ backface-visibility gives some performance boosts.*/
 #cartsssDiv .shop-cart a.button {
     background: #009ae1;
 }
+
+@media screen and (max-width: 950px) 
+{
+    #kenburns-slideshow { float: right;}
+    #posts ul { display: none;}
+}

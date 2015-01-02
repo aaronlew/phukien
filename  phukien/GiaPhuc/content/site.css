@@ -1195,6 +1195,10 @@ table .button
     display: block;
     font-size: 12px;
 }
+.sub-nav-container dt a:hover
+{
+    color: #3366CC
+}
 .sub-nav-container dd a
 {
     color: #666666;
@@ -1204,6 +1208,10 @@ table .button
     padding: 0 0 0 10px;
     display: block;
     font-size: 12px;
+}
+.sub-nav-container dd a:hover
+{
+    color: #3366CC
 }
 
 #posts

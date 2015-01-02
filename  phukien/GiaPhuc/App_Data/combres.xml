@@ -41,7 +41,8 @@
       <resource path="~/scripts/jquery.lazy.min.js" />
       <resource path="~/scripts/menu/jquery.hoverIntent.minified.js" />
       <resource path="~/scripts/menu/jquery.dcmegamenu.1.3.3.min.js" />
-      <resource path="~/scripts/header.js" />
+      
+<resource path="~/scripts/header.js" />
     </resourceSet>
     <resourceSet name="defaultJs"
                  type="js">

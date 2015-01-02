@@ -16,14 +16,14 @@ namespace phukienipadx.Bl
             var productDescriptionRep = new products_descriptionsRepository();
 
             var queryProducts = (from x in productRep.GetAllproducts()
-                join y in productDescriptionRep.GetAllproducts_descriptions()
-                    on x.products_id equals y.products_id
-                select new {x, y});
+                                 join y in productDescriptionRep.GetAllproducts_descriptions()
+                                     on x.products_id equals y.products_id
+                                 select new { x, y });
 
             // Get new product list
             return (from item in queryProducts
-                where Convert.ToBoolean(item.x.products_discount_type)
-                select new ProductInfo(item.x, item.y)).Take(5).ToList();
+                    where Convert.ToBoolean(item.x.products_discount_type)
+                    select new ProductInfo(item.x, item.y)).Take(5).ToList();
         }
 
         public static IList<ProductInfo> GetAllSpecProducts()
@@ -32,14 +32,14 @@ namespace phukienipadx.Bl
             var productDescriptionRep = new products_descriptionsRepository();
 
             var queryProducts = (from x in productRep.GetAllproducts()
-                join y in productDescriptionRep.GetAllproducts_descriptions()
-                    on x.products_id equals y.products_id
-                select new {x, y});
+                                 join y in productDescriptionRep.GetAllproducts_descriptions()
+                                     on x.products_id equals y.products_id
+                                 select new { x, y });
 
             // Get new product list
             return (from item in queryProducts
-                where Convert.ToBoolean(item.x.product_is_always_free_shipping)
-                select new ProductInfo(item.x, item.y)).Take(5).ToList();
+                    where Convert.ToBoolean(item.x.product_is_always_free_shipping)
+                    select new ProductInfo(item.x, item.y)).Take(5).ToList();
         }
 
         public static IList<ProductInfo> GetProductsPaging(int startIndex, int pageSize, out int totalRecords)
@@ -52,11 +52,11 @@ namespace phukienipadx.Bl
             totalRecords = allProducts.Count();
             return
                 (from x in
-                    allProducts.OrderBy(x => x.products_model).Skip(startIndex).Take(pageSize)
-                        .ToList()
-                    join y in productDescriptionRep.GetAllproducts_descriptions()
-                        on x.products_id equals y.products_id
-                    select new ProductInfo(x, y)).ToList();
+                     allProducts.OrderBy(x => x.products_model).Skip(startIndex).Take(pageSize)
+                         .ToList()
+                 join y in productDescriptionRep.GetAllproducts_descriptions()
+                     on x.products_id equals y.products_id
+                 select new ProductInfo(x, y)).ToList();
         }
 
         public static IList<ProductInfo> GetProductsPaging(string status, string keyword, int? pageNumber, int? pageSize,
@@ -96,9 +96,9 @@ namespace phukienipadx.Bl
                     query = query.PageIQuery(pageNumber.Value, pageSize.Value);
 
                 return (from x in query
-                    join y in db.products_descriptions
-                        on x.products_id equals y.products_id
-                    select new ProductInfo(x, y)).ToList();
+                        join y in db.products_descriptions
+                            on x.products_id equals y.products_id
+                        select new ProductInfo(x, y)).ToList();
             }
         }
 
@@ -108,10 +108,10 @@ namespace phukienipadx.Bl
             var productDescriptionRep = new products_descriptionsRepository();
 
             return (from x in productRep.GetAllproducts()
-                join y in productDescriptionRep.GetAllproducts_descriptions()
-                    on x.products_id equals y.products_id
-                where x.master_categories_id == categoryId
-                select new ProductInfo(x, y)).ToList();
+                    join y in productDescriptionRep.GetAllproducts_descriptions()
+                        on x.products_id equals y.products_id
+                    where x.master_categories_id == categoryId
+                    select new ProductInfo(x, y)).ToList();
         }
 
         public static ProductInfo GetProductDetails(int productId)
@@ -131,10 +131,30 @@ namespace phukienipadx.Bl
                 IEnumerable<int> productToCategories = productToCategoryRep.Findproducts_to_categories(
                     x => x.products_id == productId).Select(x => x.categories_id);
 
-                return new ProductInfo(product, description) {CategoryIds = productToCategories.ToList()};
+                return new ProductInfo(product, description) { CategoryIds = productToCategories.ToList() };
             }
 
             return null;
+        }
+
+        public string GetImage(string url)
+        {
+            using (var db = new phukienipadxContext())
+            {
+                products_description description =
+                    db.products_descriptions.FirstOrDefault(
+                        x => x.products_url == url && x.language_id == 0);
+
+                if (description != null)
+                {
+                    product product = db.products.SingleOrDefault(x => x.products_id == description.products_id);
+
+                    if (product != null)
+                        return product.products_image.RemoveBadCode();
+                }
+            }
+
+            return string.Empty;
         }
 
         public static string GetProductUrl(int id)
@@ -162,7 +182,7 @@ namespace phukienipadx.Bl
                     IQueryable<int> productToCategories = db.products_to_categories.Where(
                         x => x.products_id == description.products_id).Select(x => x.categories_id);
 
-                    return new ProductInfo(product, description) {CategoryIds = productToCategories.ToList()};
+                    return new ProductInfo(product, description) { CategoryIds = productToCategories.ToList() };
                 }
             }
 
@@ -177,12 +197,12 @@ namespace phukienipadx.Bl
             {
                 // Load the product in the same category
                 products = (from x in db.products
-                    join y in db.products_descriptions
-                        on x.products_id equals y.products_id
-                    orderby new Guid()
-                    where x.master_categories_id == categoryId
-                    orderby x.products_price descending
-                    select new ProductInfo(x, y)).Take(12).ToList();
+                            join y in db.products_descriptions
+                                on x.products_id equals y.products_id
+                            orderby new Guid()
+                            where x.master_categories_id == categoryId
+                            orderby x.products_price descending
+                            select new ProductInfo(x, y)).Take(12).ToList();
             }
 
             return products;

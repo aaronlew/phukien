@@ -31,8 +31,8 @@ namespace phukienipadx.Bl.Models
             IsDiscountItem = Convert.ToBoolean(product.products_discount_type);
             IsActive = Convert.ToBoolean(product.products_status);
 
-            DisplayDiscountPrice = string.Format("{0:n0}đ", DiscountPrice);
-            DisplayPrice = IsCalledPrice ? "Call" : string.Format("{0:n0}đ", Price);
+            DisplayDiscountPrice = string.Format("<span itemprop='price'>{0:n0}</span>đ", DiscountPrice);
+            DisplayPrice = IsCalledPrice ? "Call" : string.Format("<span itemprop='price'>{0:n0}</span>đ", Price);
         }
 
         public ProductInfo(product product)
@@ -50,8 +50,8 @@ namespace phukienipadx.Bl.Models
             IsDiscountItem = Convert.ToBoolean(product.products_discount_type);
             IsActive = Convert.ToBoolean(product.products_status);
 
-            DisplayDiscountPrice = string.Format("{0:n0}đ", DiscountPrice);
-            DisplayPrice = IsCalledPrice ? "Call" : string.Format("{0:n0}đ", Price);
+            DisplayDiscountPrice = string.Format("<span itemprop='price'>{0:n0}</span>đ", DiscountPrice);
+            DisplayPrice = IsCalledPrice ? "Call" : string.Format("<span itemprop='price'>{0:n0}</span>đ", Price);
         }
 
         public ProductInfo(products product, products_descriptions description)
@@ -60,6 +60,7 @@ namespace phukienipadx.Bl.Models
             ProductName = description.products_name;
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
+            OriginalUrl = description.products_url;
             DetailsUrl = string.Format(DetailLink, description.products_url);
             ShopCartUrl = string.Format(CartLink, description.products_url);
 
@@ -78,6 +79,7 @@ namespace phukienipadx.Bl.Models
             ProductName = description.products_name;
             SpecificationHtml = description.products_description1.RemoveBadCode();
             ImagesOfProductHtml = description.products_images.RemoveBadCode();
+            OriginalUrl = description.products_url;
             DetailsUrl = string.Format(DetailLink, description.products_url);
             ShopCartUrl = string.Format(CartLink, description.products_url);
 
@@ -98,6 +100,7 @@ namespace phukienipadx.Bl.Models
         public string ImageOriginalUrl { get; set; }
         public string ImageUrl { get; set; }
         public string ThumbsUrl { get; set; }
+        public string OriginalUrl { get; set; }
         public string DetailsUrl { get; set; }
         public string ShopCartUrl { get; set; }
         public string SpecificationHtml { get; set; }

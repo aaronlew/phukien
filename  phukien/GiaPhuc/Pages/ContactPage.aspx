@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Liên hệ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="ContactPage.aspx.cs" Inherits="GiaPhuc.Pages.ContactPage" %>
 
 <%@ Register Src="~/Controls/LocationControl.ascx" TagName="Location" TagPrefix="uc" %>

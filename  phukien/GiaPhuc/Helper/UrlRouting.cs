@@ -43,6 +43,9 @@ namespace GiaPhuc.Helper
             routes.Add("Error404", new Route("loi-404", new CustomRouteHandler("~/errors/404.aspx")));
             routes.Add("Admin", new Route("quantri", new CustomRouteHandler("~/Admin/Default.aspx")));
 
+            routes.Add("thumbs", new Route("hinh-anh/phu-kien-nho/{filename}", new ImageRouteHandler()));
+            routes.Add("originalImages", new Route("hinh-anh/phu-kien/{filename}", new ImageRouteHandler()));
+            
             // Old url
             routes.Add("Category99", new Route("trang-chu/CategoryID/{id}/{text}.html", new CustomRouteHandler("~/Pages/CategoryPage.aspx")));
             routes.Add("Category98", new Route("trang-chu/CategoryID/{id}/{text}.aspx", new CustomRouteHandler("~/Pages/CategoryPage.aspx")));

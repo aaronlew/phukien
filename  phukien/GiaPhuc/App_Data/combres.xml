@@ -36,13 +36,17 @@
       <resource path="~/content/slider/slider.min.css" />
       <resource path="~/content/slider/slider.min.css" />
     </resourceSet>
+    <resourceSet name="productCss" type="css">
+      <resource path="~/content/jquery.jqzoom.css" />
+      <resource path="~/content/tabify.css" />
+      <resource path="~/content/product.css" />
+    </resourceSet>
     <resourceSet name="siteJs" type="js">
       <resource path="~/scripts/jquery-1.9.0.min.js" />
       <resource path="~/scripts/jquery.lazy.min.js" />
       <resource path="~/scripts/menu/jquery.hoverIntent.minified.js" />
       <resource path="~/scripts/menu/jquery.dcmegamenu.1.3.3.min.js" />
-      
-<resource path="~/scripts/header.js" />
+      <resource path="~/scripts/header.js" />
     </resourceSet>
     <resourceSet name="defaultJs"
                  type="js">
@@ -50,6 +54,12 @@
       <resource path="~/scripts/jquery.cycle2.carousel.min.js" />
       <resource path="~/scripts/kenburns.min.js" />
       <resource path="~/scripts/ipadx.js" />
+    </resourceSet>
+    <resourceSet name="productJs" type="js">
+      <resource path="~/scripts/jquery-migrate-1.2.1.js" />
+      <resource path="~/scripts/jquery.jqzoom-core.js" />
+      <resource path="~/scripts/jquery.tabify.js" />
+      <resource path="~/scripts/page/product.js" />
     </resourceSet>
   </resourceSets>
 </combres>

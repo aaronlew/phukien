@@ -273,9 +273,8 @@ div.clear
 .container-3 .icon
 {
     position: absolute;
-    top: 50%;
-    margin-left: 8px;
-    margin-top: 8px;
+    top: 10px;
+    left: 10px;
     width: 24px;
     height: 24px;
     z-index: 1;

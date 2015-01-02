@@ -3,14 +3,8 @@
 
 <%@ Register Src="~/Controls/UCProductCategory.ascx" TagName="ProductCategory" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    
-      <link rel="stylesheet" href="/content/jquery.jqzoom.css" type="text/css" />
-    <link rel="stylesheet" href="/content/tabify.css" type="text/css" />
-    <link rel="stylesheet" href="/content/product.css" type="text/css" />
-    <script src="/Scripts/jquery-migrate-1.2.1.js" type="text/javascript"></script>
-    <script src="/Scripts/jquery.jqzoom-core.js" type="text/javascript"></script>
-    <script src="/Scripts/jquery.tabify.js" type="text/javascript"></script>
-    <script src="/Scripts/page/product.js" type="text/javascript"></script>
+    <%= WebExtensions.CombresLink("productCss") %>
+    <%= WebExtensions.CombresLink("productJs") %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding: 5px; width: 100%">
@@ -22,17 +16,17 @@
                     </asp:HyperLink>
                 </div>
             </div>
-            <div style="float: left;">
+            <div style="float: left;" itemscope itemtype="http://schema.org/Product">
                 <div style="color: rgb(35, 86, 109); padding: 10px; font-size: 12pt; font-weight: bold;">
                     <asp:Label ID="lblProductCode" runat="server"></asp:Label>
                 </div>
-                <div style="color: #686767; padding: 10px;">
+                <div style="color: #686767; padding: 10px;" itemprop="name">
                     <asp:Label ID="lblProductName" runat="server"></asp:Label>
                 </div>
                 <div style="color: #686767; padding: 10px;">
                     <asp:Label ID="lblManufacturers" runat="server"></asp:Label>
                 </div>
-                <div style="padding: 10px; margin-top: 10px">
+                <div style="padding: 10px; margin-top: 10px" itemscope itemtype="http://schema.org/Offer">
                     <div style="float: left; margin-right: 15px;">
                         Giá bán tại cửa hàng:</div>
                     <div style="color: red; float: left; font-weight: bold; font-size: 15pt; width: 160px;

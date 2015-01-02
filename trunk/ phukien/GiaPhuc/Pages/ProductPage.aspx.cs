@@ -43,6 +43,7 @@ namespace GiaPhuc.Pages
                     Response.End();
                 }
 
+
                 ProductInfo productModel = ProductImpl.GetProductDetails(Url);
 
                 if (null != productModel)
@@ -54,6 +55,9 @@ namespace GiaPhuc.Pages
                     Title = string.Concat("CỬA HÀNG TINH TẾ (NICE STORE) - PHỤ KIỆN IPAD - ", productModel.ProductName);
                     lblProductCode.Text = productModel.ProductNumber;
                     lblProductName.Text = productModel.ProductName;
+                    MetaDescription = productModel.ProductName;
+                    Title = productModel.ProductName;
+
                     linkProductImage.ToolTip = productModel.ProductName;
                     divProductImages.InnerHtml = productModel.ImagesOfProductHtml;
                     divProductInstruction.InnerHtml = productModel.SpecificationHtml;

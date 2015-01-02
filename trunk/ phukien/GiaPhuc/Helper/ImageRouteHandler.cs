@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Routing;
 using phukienipadx.Bl;
+using phukienipadx.Core;
 
 namespace GiaPhuc.Helper
 {
@@ -52,7 +53,7 @@ namespace GiaPhuc.Helper
             //if (request.Url != null) response.ContentType = GetContentType(request.Url.ToString());
 
             if (request.ServerVariables["HTTP_REFERER"] != null &&
-                request.ServerVariables["HTTP_REFERER"].Contains("phudieudangcap.vn") &&
+                request.ServerVariables["HTTP_REFERER"].Contains("phukienipadx.com") &&
                 request.Url != null)
             {
                 if (request.Url.AbsolutePath.StartsWith("/hinh-anh-noi-bat/dieu-khac/"))
@@ -60,17 +61,21 @@ namespace GiaPhuc.Helper
                     string path = server.MapPath("~/images/highlight-products/");
                     response.TransmitFile(path + validRequestFile);
                 }
-                else if (request.Url.AbsolutePath.StartsWith("/hinh-anh/phu-dieu/"))
+                else if (request.Url.AbsolutePath.StartsWith("/hinh-anh/phu-kien-nho/"))
                 {
                     var im = new ProductImpl();
-                    string path = server.MapPath("~/images/products/thumb/");
-                    //response.TransmitFile(path + im.GetImage(validRequestFile));
+                    string path = server.MapPath("~" + Define.ThumbsFolder);
+                    response.TransmitFile(Path.Combine(path,im.GetImage(validRequestFile)));
                 }
-                else if (request.Url.AbsolutePath.StartsWith("/hinh-anh/dieu-khac/"))
+                else if (request.Url.AbsolutePath.StartsWith("/hinh-anh/phu-kien/"))
                 {
                     var im = new ProductImpl();
-                    string path = server.MapPath("~/images/products/copyright/");
-                    //response.TransmitFile(path + im.GetImage(validRequestFile));
+                    string path = server.MapPath("~" + Define.UploadFolder);
+                    response.TransmitFile(Path.Combine(path, im.GetImage(validRequestFile)));
+                }
+                else
+                {
+                    response.TransmitFile(validRequestFile);
                 }
             }
             response.End();

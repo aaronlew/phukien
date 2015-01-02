@@ -1544,6 +1544,7 @@
     <Compile Include="Helper\CustomRouteHandler.cs" />
     <Compile Include="Helper\DirectCast.cs" />
     <Compile Include="Helper\HelperCache.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Helper\ImageRouteHandler.cs" />
     <Compile Include="Helper\IsNumeric.cs" />
     <Compile Include="Helper\ParseTo_T.cs" />

@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web.Routing;
 using GiaPhuc.Helper;
-using System.Web.Routing;
 
 namespace GiaPhuc.Pages
 {
     public class ParentPage : System.Web.UI.Page, IRoutablePage
     {
-        protected RequestContext requestContext;
+        private RequestContext _requestContext;
 
         protected object RouteValue(string key)
         {
-            if (requestContext != null && requestContext.RouteData.Values.ContainsKey(key))
-                return requestContext.RouteData.Values[key];
-            else
-                return null;
+            if (_requestContext != null && _requestContext.RouteData.Values.ContainsKey(key))
+                return _requestContext.RouteData.Values[key];
+            return null;
         }
 
         #region IRoutablePage Members
 
         public RequestContext RequestContext
         {
-            set { requestContext = value; }
+            set { _requestContext = value; }
         }
 
         #endregion

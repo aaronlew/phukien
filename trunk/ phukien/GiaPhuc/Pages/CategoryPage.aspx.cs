@@ -46,8 +46,12 @@ namespace GiaPhuc.Pages
 
                 IList<CategoryInfo> categories = CategoryImpl.GetProducts(Url);
                 SessionUtils.Set("AllCategories", false);
-                Repeater1.DataSource = categories;
-                Repeater1.DataBind();
+                if (categories.Count > 0)
+                {
+                    Title = categories[0].Name;
+                    Repeater1.DataSource = categories;
+                    Repeater1.DataBind();
+                }
             }
         }
     }

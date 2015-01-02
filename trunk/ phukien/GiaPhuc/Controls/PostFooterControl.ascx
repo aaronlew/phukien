@@ -8,7 +8,7 @@
 <div class="info post" style="color: Black; padding: 8px;">
     <div class="section group">
         <div class="col span_1_of_2">
-            Nhà bán hàng chuyên nghiệp<br />
+            <h1>Nhà bán hàng chuyên nghiệp</h1><br />
             <span>Chúng tôi là cơ sở có đăng ký kinh doanh và có wesite bán hàng riêng chuyên nghiệp
                 . Chúng tôi có khả năng chịu trách nhiệm với hàng hóa bán ra. </span>
         </div>

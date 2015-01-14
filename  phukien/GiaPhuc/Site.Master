@@ -18,9 +18,9 @@
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="914CB68D9763F8228C191DB5DD29E567" />
     <link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC&subset=latin,vietnamese'
-        rel='stylesheet' type='text/css' />
+        rel='stylesheet nofollow' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,vietnamese'
-        rel='stylesheet' type='text/css' />
+        rel='stylesheet nofollow' type='text/css' />
     <%= WebExtensions.CombresLink("siteCss") %>
     <%= WebExtensions.CombresLink("responsiveCss") %>
     <%= WebExtensions.CombresLink("siteJs") %>
@@ -64,8 +64,8 @@
 <body>
     <form name="form1" runat="server" submitdisabledcontrols="true">
     <div id="header" class="header">
-        <div class="container clearfix">
-            <a href="/" id="logo">
+        <div class="container clearfix" itemscope itemtype="http://schema.org/Thing">
+            <a href="/" id="logo" itemprop="image">
                 <img src="/images/smalllogo.png" alt="big logo" />
                 <img class="smaller" src="/Images/logo.png" alt="small logo" /></a>
             <div class="social-ico">
@@ -83,15 +83,15 @@
             <div id='cssmenu'>
                 <ul>
                     <li><a href='/'>TRANG CHỦ</a></li>
-                    <li class='active has-sub'><a href='/customer'>CHĂM SÓC KHÁCH HÀNG</a>
+                    <li class='active has-sub'><a href='/mua-hang' rel="nofollow">CHĂM SÓC KHÁCH HÀNG</a>
                         <ul>
-                            <li class='has-sub'><a href='/huong-dan'>Hướng dẫn</a>
+                            <li class='has-sub'><a href='/mua-hang' rel="nofollow">Hướng dẫn</a>
                                 <ul>
                                     <li><a href='/mua-hang'>Mua hàng</a></li>
                                     <li><a href='/su-dung'>Sử dụng</a></li>
                                 </ul>
                             </li>
-                            <li class='has-sub'><a href='/chinh-sach'>Chính sách</a>
+                            <li class='has-sub'><a href='/van-chuyen' rel="nofollow">Chính sách</a>
                                 <ul>
                                     <li><a href='/van-chuyen'>Vận chuyển và giao hàng</a></li>
                                     <li><a href='/doi-tra'>Chính sách đổi trả</a></li>
@@ -104,10 +104,10 @@
                     <li><a href='/lien-he'>LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div id="contact-info">
-                <div class="location">
+            <div id="contact-info" itemscope itemtype="http://schema.org/Organization">
+                <div class="location" itemprop="address">
                     <a href="/lien-he">174/47 Thái Phiên • P8, Q11 • TPHCM</a></div>
-                <div class="phone">
+                <div class="phone" itemprop="telephone">
                     <a href="/lien-he">0903.71.20.70 • 0908.61.21.40</a></div>
                 <div class="chat">
                     <a href="ymsgr:sendim?lieumanhdat1981">Bán hàng</a></div>
@@ -122,7 +122,7 @@
                 <a href="/gio-hang" id="cart-ico" title="Giỏ hàng">Giỏ hàng
                     <% if (SessionManager.Cart.Count > 0)
                        { %>
-                    <span style="color: Red">
+                    <span>
                         <%= "(" + SessionManager.Cart.Sum(x => x.Value.Quantity) + ")" %></span>
                     <% } %>
                 </a>
@@ -147,12 +147,12 @@
         <div class="section group">
             <div class="col span_1_of_5">
                 <asp:PlaceHolder ID="pnlMenu1" runat="server"></asp:PlaceHolder>
-                <div style="margin-left: 10px;">
+                <div id="left-menu">
                     <uc:LeftLayout ID="LeftLayout" runat="server" />
                 </div>
             </div>
             <div class="col span_4_of_5">
-                <div id="siteMapPath" style="line-height: 35px">
+                <div id="siteMapPath">
                     <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="::">
                     </asp:SiteMapPath>
                 </div>
@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-        <div class="section group" style="margin: 0 10px 10px 10px;">
+        <div class="section group" id="post-footer">
             <uc:PostFooter ID="PostFooter1" runat="server"></uc:PostFooter>
         </div>
     </div>

@@ -797,6 +797,30 @@ namespace phukienipadx.Dal
         private Nullable<global::System.Int32> _home_order;
         partial void Onhome_orderChanging(Nullable<global::System.Int32> value);
         partial void Onhome_orderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> cate_level
+        {
+            get
+            {
+                return _cate_level;
+            }
+            set
+            {
+                Oncate_levelChanging(value);
+                ReportPropertyChanging("cate_level");
+                _cate_level = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("cate_level");
+                Oncate_levelChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _cate_level;
+        partial void Oncate_levelChanging(Nullable<global::System.Int32> value);
+        partial void Oncate_levelChanged();
 
         #endregion
 

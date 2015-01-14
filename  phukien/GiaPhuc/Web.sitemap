@@ -21,7 +21,7 @@
         </siteMapNode>
       </siteMapNode>
       <siteMapNode url="./nhom-hang/ban-phim-bluetooth" title="Bàn phím Bluetooth"  description="Bàn phím Bluetooth" >
-        <siteMapNode url="/nhom-hang/ban-phim-bluetooth/t" title="IPAD"  description="IPAD" >
+        <siteMapNode url="/nhom-hang/ban-phim-ipad" title="IPAD"  description="IPAD" >
           
           <siteMapNode url="/nhom-hang/ban-phim-ipad-air-ipad-5" title="Ipad Air (iPad 5)"  description="Ipad Air (iPad 5)" />
           <siteMapNode url="/nhom-hang/ban-phim-ipad-4-3-2-1" title="Ipad 4 / 3 / 2 / 1"  description="Ipad 4 / 3 / 2 / 1" />

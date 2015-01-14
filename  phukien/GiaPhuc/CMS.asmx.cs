@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Services;
 using System.Web.Script.Services;
+using System.Web.Services;
 using GiaPhuc.App_Data;
 using GiaPhuc.Data;
-using System.Data;
 using GiaPhuc.Helper;
 using GiaPhuc.Utility;
 using phukienipadx.Bl;

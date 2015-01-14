@@ -26,9 +26,10 @@
                 <li class="title">Được chứng nhận:</li>
             </ul>
             <div>
-                <a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=8694" target="_blank"
-                    rel="nofollow">
-                    <img data-src="/images/da-dang-ky-bo-cong-thuong.png" src="/images/ajax-loader.gif" alt="bo cong thuong" width="160" />
+                <a href="http://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=8694"
+                    target="_blank" rel="nofollow">
+                    <img data-src="/images/da-dang-ky-bo-cong-thuong.png" src="/images/ajax-loader.gif"
+                        alt="bo cong thuong" width="160" />
                 </a>
             </div>
         </div>
@@ -87,15 +88,16 @@
         </div>--%>
     </div>
     <div class="section group">
-        <p style="font-size: 9pt">
-            <b>Cửa hàng TINH TẾ</b>
+        <p style="font-size: 9pt" itemscope itemtype="http://schema.org/Organization">
+            <b itemscope itemtype="http://schema.org/Thing"><span itemprop="name">Cửa hàng TINH TẾ</span></b>
             <br />
             Số GPKD: 41K8013138 - Ngày cấp 18/6/2012 – UBND Q.11-TP.HCM
             <br />
-            Địa chỉ trụ sở chính: 174/47 Thái Phiên, Phường 8, Quận 11, Tp. Hồ Chí Minh
+            Địa chỉ trụ sở chính: <span itemprop="address">174/47 Thái Phiên, Phường 8, Quận 11,
+                Tp. Hồ Chí Minh</span>
             <br />
-            Email: <span style="color: blue">phukienipadx@gmail.com</span>
+            Email: <span style="color: blue"><a href="mailto:phukienipadx@gmail.com" itemprop="email">phukienipadx@gmail.com</a></span>
             <br />
-            Điện thoại: 0903.71.20.70 – 0969.10.71.10</p>
+            Điện thoại: <span itemprop="telephone">0903.71.20.70 – 0969.10.71.10</span></p>
     </div>
 </div>

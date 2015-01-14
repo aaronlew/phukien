@@ -43,6 +43,7 @@
           <Property Name="last_modified" Type="datetime2" Precision="0" />
           <Property Name="categories_status" Type="smallint" Nullable="false" />
           <Property Name="home_order" Type="int" />
+          <Property Name="cate_level" Type="int" />
         </EntityType>
         <EntityType Name="categories_description">
           <Key>
@@ -61,7 +62,7 @@
           </Key>
           <Property Name="pages_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="languages_id" Type="int" Nullable="false" />
-          <Property Name="pages_title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="pages_title" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="alt_url" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="alt_url_external" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="pages_html_text" Type="nvarchar(max)" />
@@ -300,6 +301,7 @@
           <Property Name="last_modified" Type="DateTime" />
           <Property Name="categories_status" Type="Int16" Nullable="false" />
           <Property Type="Int32" Name="home_order" />
+          <Property Type="Int32" Name="cate_level" />
         </EntityType>
         <EntityType Name="categories_descriptions">
           <Key>
@@ -544,6 +546,7 @@
           <EntitySetMapping Name="categories">
             <EntityTypeMapping TypeName="phukienipadxModel.categories">
               <MappingFragment StoreEntitySet="categories">
+                <ScalarProperty Name="cate_level" ColumnName="cate_level" />
                 <ScalarProperty Name="home_order" ColumnName="home_order" />
                 <ScalarProperty Name="categories_id" ColumnName="categories_id" />
                 <ScalarProperty Name="categories_image" ColumnName="categories_image" />

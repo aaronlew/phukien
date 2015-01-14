@@ -267,9 +267,9 @@ namespace phukienipadx.Bl
                                                        join y in db.categories_descriptions
                                                            on x.categories_id equals y.categories_id
                                                        where y.language_id == 0
-                                                       orderby (x.parent_id == 0 ? x.categories_id : x.parent_id), x.sort_order
+                                                       orderby (x.parent_id == 0 ? x.sort_order * 100 : x.sort_order)
                                                        select
-                                                           new CategoryInfo(x.parent_id, x.categories_id, y.categories_name, y.categories_url)
+                                                           new CategoryInfo(x.parent_id, x.cate_level ?? 0, x.categories_id, y.categories_name, y.categories_url)
                                                            {
                                                                Active = Convert.ToBoolean(x.categories_status)
                                                            };

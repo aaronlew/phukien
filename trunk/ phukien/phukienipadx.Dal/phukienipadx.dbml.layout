@@ -20,12 +20,6 @@
         <elementListCompartment Id="82c24999-a5f8-4dab-8f76-46781d64f1e3" absoluteBounds="3.6399999999999997, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f8d7adff-9fc0-4320-92a9-d35e01b2ec2a" absoluteBounds="6.375, 0.75, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/phukienipadxDataContext/category" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ba7082e9-7589-4583-bb3a-958f65e19832" absoluteBounds="6.39, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ccd9416c-5577-4246-8df5-cb5a18cbaf3c" absoluteBounds="3.625, 6.375, 2, 1.7708968098958331">
       <DataClassMoniker Name="/phukienipadxDataContext/categories_description" />
       <nestedChildShapes>
@@ -36,6 +30,12 @@
       <DataClassMoniker Name="/phukienipadxDataContext/ezpage" />
       <nestedChildShapes>
         <elementListCompartment Id="15c88c7c-8a2d-4912-9d15-9d940cf24b6b" absoluteBounds="6.515, 4.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fbe8ecf-c6b0-4cfc-ad69-32bb73073848" absoluteBounds="6.375, 0.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/phukienipadxDataContext/category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9969d166-ec72-486e-8e87-2819bef185a4" absoluteBounds="6.39, 1.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

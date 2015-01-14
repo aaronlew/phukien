@@ -41,6 +41,7 @@ namespace phukienipadx.Dal.Models
             this._last__modified = categories.last_modified;
             this._categories__status = categories.categories_status;
             this._home__order = categories.home_order;
+            this._cate__level = categories.cate_level;
             this._originalcategories = categories.DeepClone();
         }
 
@@ -63,6 +64,7 @@ namespace phukienipadx.Dal.Models
             this._categories.last_modified = this._last__modified;
             this._categories.categories_status = this._categories__status;
             this._categories.home_order = this._home__order;
+            this._categories.cate_level = this._cate__level;
         	return _categories;
         }
         
@@ -77,6 +79,7 @@ namespace phukienipadx.Dal.Models
             this._last__modified = this._originalcategories.last_modified;
             this._categories__status = this._originalcategories.categories_status;
             this._home__order = this._originalcategories.home_order;
+            this._cate__level = this._originalcategories.cate_level;
         	this.Commit();
         }
         
@@ -91,6 +94,7 @@ namespace phukienipadx.Dal.Models
             this._categories.last_modified = this._originalcategories.last_modified;
             this._categories.categories_status = this._originalcategories.categories_status;
             this._categories.home_order = this._originalcategories.home_order;
+            this._categories.cate_level = this._originalcategories.cate_level;
         }
         
 
@@ -234,6 +238,20 @@ namespace phukienipadx.Dal.Models
                 {
                     this.IsDirty = true;
                     this._home__order = value;
+                }
+            }
+        }
+        
+        private Nullable<int> _cate__level;
+        public Nullable<int> cate_level
+        {
+            get { return this._cate__level; }
+            set
+            {
+                if (this._cate__level != value)
+                {
+                    this.IsDirty = true;
+                    this._cate__level = value;
                 }
             }
         }

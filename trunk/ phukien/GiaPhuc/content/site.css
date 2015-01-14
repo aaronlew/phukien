@@ -1478,3 +1478,14 @@ backface-visibility gives some performance boosts.*/
     #kenburns-slideshow { float: right;}
     #posts ul { display: none;}
 }
+
+/* site path */
+#siteMapPath {
+    line-height: 35px;
+}
+#left-menu {
+    margin-left: 10px;
+}
+#post-footer {
+    margin: 0 10px 10px 10px;
+}

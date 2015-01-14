@@ -341,7 +341,9 @@
     <Content Include="Scripts\screenshot.min.js" />
     <Content Include="Scripts\script_jcarousellite.js" />
     <Content Include="Scripts\smartpaginator.js" />
-    <Content Include="sitemap.xml" />
+    <Content Include="sitemap.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="content\productstyle.css" />
     <Content Include="Images\addToCart.png" />
     <Content Include="Images\arrow-bg.png" />
@@ -1685,6 +1687,7 @@
     <Content Include="VisitorCounter.ashx" />
     <Content Include="Admin\Web.config" />
     <Content Include="packages.config" />
+    <None Include=".htaccess" />
     <None Include="combres.readme" />
     <None Include="Scripts\jquery.cycle2.js.map" />
     <None Include="Scripts\jquery.min.map" />

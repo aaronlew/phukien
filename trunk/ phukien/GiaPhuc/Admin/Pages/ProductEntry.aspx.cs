@@ -217,7 +217,7 @@ namespace GiaPhuc.Admin.Pages
             {
                 var listItem = new ListItem(cate.Name, cate.CategoryId.ToString(CultureInfo.InvariantCulture));
                 listItem.Attributes.Add("style",
-                    cate.ParentId > 0 ? "padding-left: 20px" : "color: blue; font-weight: bold");
+                    cate.ParentId > 0 ? ("padding-left: " + cate.Level * 20 + "px") : "color: blue; font-weight: bold");
 
                 listItem.Attributes.Add("parent-id", cate.ParentId.ToString(CultureInfo.InvariantCulture));
 

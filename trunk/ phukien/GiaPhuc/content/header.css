@@ -706,3 +706,6 @@ i.ico-twitter:hover
     height: 28px;
     overflow: hidden;
 }
+#cart-ico {
+    color: red;
+}

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="phukienipadx_com" Class="phukienipadxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=123.30.185.47;Initial Catalog=phukienipadx_com;Persist Security Info=True;User ID=phukienipadx" SettingsObjectName="phukienipadx.Dal.Properties.Settings" SettingsPropertyName="phukienipadx_comConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="phu4ba65_ipadx" Class="phukienipadxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=112.78.2.106,1433;Initial Catalog=phu4ba65_ipadx;Persist Security Info=True;User ID=phu4ba65_ipadx" SettingsObjectName="phukienipadx.Dal.Properties.Settings" SettingsPropertyName="phu4ba65_ipadxConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.products" Member="products">
     <Type Name="product">
       <Column Name="products_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -56,18 +56,6 @@
       <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.categories" Member="categories">
-    <Type Name="category">
-      <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="categories_image" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
-      <Column Name="parent_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sort_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="date_added" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
-      <Column Name="last_modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
-      <Column Name="categories_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="home_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.categories_description" Member="categories_descriptions">
     <Type Name="categories_description">
       <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -96,6 +84,19 @@
       <Column Name="page_open_new_window" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="page_is_ssl" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="toc_chapter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.categories" Member="categories">
+    <Type Name="category">
+      <Column Name="categories_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="categories_image" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="parent_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sort_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_added" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="last_modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="categories_status" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="home_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cate_level" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

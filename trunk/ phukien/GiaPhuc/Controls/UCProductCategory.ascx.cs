@@ -42,7 +42,7 @@ namespace GiaPhuc.Controls
                         {
                             if (itemIndex > PageSize && SessionUtils.Get<bool>("AllCategories")) break;
                             html += ProductHelper.GetProductItemLayout(ItemPerRow, item.ProductNumber, item.ProductName,
-                                item.OriginalUrl, item.ThumbsUrl, item.DisplayPrice,
+                                item.DetailsUrl, item.OriginalUrl, item.ThumbsUrl, item.DisplayPrice,
                                 item.IsDiscountItem ? item.DisplayDiscountPrice : string.Empty);
                             if (itemIndex%ItemPerRow == ItemPerRow - 1 || itemIndex == products.Count - 1)
                             {
